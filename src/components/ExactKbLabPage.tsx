@@ -27,6 +27,7 @@ import {
   generatePharmacySheetDataUrl,
   runSevenPassBinarySearch
 } from '../utils/exactKbEngine';
+import { VisitorVisualGuide } from './VisitorVisualGuide';
 
 interface ExactKbLabPageProps {
   locale: LocaleCode;
@@ -647,6 +648,20 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
               </div>
             </div>
 
+            {/* Clear 1-line explanation of the yellow Before/After line */}
+            <div className="text-center text-xs opacity-80 flex items-center justify-center gap-1.5">
+              <MoveHorizontal className="w-3.5 h-3.5 text-[#fca311] shrink-0" />
+              <span>
+                {locale === 'fr'
+                  ? 'Glissez la ligne jaune à gauche ou à droite pour comparer l’Original (Gauche) et l’Image Compressée (Droite).'
+                  : locale === 'es'
+                    ? 'Arrastra la línea amarilla a izquierda o derecha para comparar el Original (Izquierda) y la Imagen Comprimida (Derecha).'
+                    : locale === 'ar'
+                      ? 'اسحب الخط الأصفر يميناً أو يساراً للمقارنة بين الصورة الأصلية (يسار) والصورة المضغوطة (يمين).'
+                      : 'Drag the yellow line left or right to compare Original (Left) vs. Compressed & Whitened (Right).'}
+              </span>
+            </div>
+
             {/* Primary Download CTA + 2 Secondary Export Options */}
             <div className="space-y-3 pt-2">
               <button
@@ -711,6 +726,9 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
           </div>
         </div>
       </div>
+
+      {/* ILLUSTRATED VISITOR GUIDE WITH WEBSITE SCREENS & BEFORE/AFTER EXPLANATION */}
+      <VisitorVisualGuide mode="exactkb" locale={locale} />
 
       {/* 4x6 Pharmacy Sheet Modal */}
       {showPharmacyModal && pharmacySheetUrl && (

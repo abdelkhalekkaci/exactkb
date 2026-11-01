@@ -28,6 +28,7 @@ import {
   renderSvgToHighResPngDataUrl
 } from '../utils/qrAndBarcodeEngine';
 import { TRANSLATIONS } from '../data/seoRoutesAndTranslations';
+import { VisitorVisualGuide } from './VisitorVisualGuide';
 
 interface QrPrintshopPageProps {
   locale: LocaleCode;
@@ -489,6 +490,9 @@ export const QrPrintshopPage: React.FC<QrPrintshopPageProps> = ({
           </div>
         </div>
       </div>
+
+      {/* ILLUSTRATED VISITOR GUIDE WITH WEBSITE SCREENS FOR QR GENERATOR */}
+      <VisitorVisualGuide mode="qr" locale={locale} />
     </div>
   );
 };
