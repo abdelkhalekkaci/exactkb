@@ -1,0 +1,6 @@
+{
+  "name": "ExactKB & QR Atelier",
+  "description": "100% client-side biometric photo byte-ceiling lab (7-pass binary search to exact KB, wet-ink signature cleanser, 4x6 pharmacy sheets) and forever-free vector QR & CODE-128 barcode printshop.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
