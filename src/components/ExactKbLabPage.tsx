@@ -83,7 +83,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
   const [showPharmacyModal, setShowPharmacyModal] = useState<boolean>(false);
   const [stampConfig, setStampConfig] = useState<StudioStampConfig>({
     enabled: true,
-    studioName: 'EXACTKB STUDIO',
+    studioName: 'COMPRESSPHOTO.SPACE',
     dateString: '2026-11-01',
     certificationCode: '300-DPI-VERIFIED',
     showWatermark: false,

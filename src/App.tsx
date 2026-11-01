@@ -79,7 +79,7 @@ export default function App() {
             }}
             className="font-serif text-xl font-bold tracking-tight whitespace-nowrap shrink-0"
           >
-            ExactKB <span className="text-[#fca311]">&amp;</span> QR
+            CompressPhoto<span className="text-[#fca311]">.space</span>
           </a>
 
           {/* Zone 2: Clear 2-Tool Switcher in Navbar */}
@@ -186,7 +186,7 @@ export default function App() {
             {/* Column 1: Brand & Privacy Promise */}
             <div className="space-y-2">
               <div className="font-serif text-lg font-bold">
-                ExactKB <span className="text-[#fca311]">&amp;</span> QR
+                CompressPhoto<span className="text-[#fca311]">.space</span>
               </div>
               <p className="text-xs opacity-75 leading-relaxed">
                 {t.footerDesc}
@@ -261,7 +261,7 @@ export default function App() {
           </div>
 
           <div className="pt-6 border-t border-[#14213d]/10 dark:border-[#ffffff]/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs opacity-70">
-            <div>© {new Date().getFullYear()} ExactKB &amp; QR.</div>
+            <div>© {new Date().getFullYear()} CompressPhoto.space.</div>
             <div>{t.localGuaranteeFooter}</div>
           </div>
         </div>
