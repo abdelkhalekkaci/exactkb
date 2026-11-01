@@ -96,7 +96,7 @@ export const InfoAndLegalPages: React.FC<InfoAndLegalPagesProps> = ({
 
           <div className="space-y-4 text-sm sm:text-base leading-relaxed opacity-90">
             <p>
-              <strong>CompressPhoto.space</strong> was created to solve two everyday frustrations without compromising your privacy:
+              <strong>CompressPhoto</strong> was created to solve two everyday frustrations without compromising your privacy:
             </p>
             <ul className="space-y-3 pl-4 list-disc">
               <li>
@@ -136,7 +136,7 @@ export const InfoAndLegalPages: React.FC<InfoAndLegalPagesProps> = ({
             <section className="space-y-2">
               <h2 className="text-base font-bold">1. Service Publisher / Éditeur du Service</h2>
               <p>
-                <strong>CompressPhoto.space</strong> is an independent web utility platform providing client-side image compression, biometric crop calibration, and vector QR/barcode generation.
+                <strong>CompressPhoto</strong> is an independent web utility platform providing client-side image compression, biometric crop calibration, and vector QR/barcode generation.
                 <br />
                 Official Website: <strong>https://compressphoto.space</strong> · Contact Email: <strong>contact@compressphoto.space</strong>
               </p>
@@ -175,7 +175,7 @@ export const InfoAndLegalPages: React.FC<InfoAndLegalPagesProps> = ({
             <section className="space-y-2">
               <h2 className="text-base font-bold">1. Zero Image Upload Policy</h2>
               <p>
-                Unlike traditional online image compressors that upload your files to remote cloud servers, <strong>CompressPhoto.space</strong> executes 100% of its image resizing, byte-ceiling compression, PDF generation, and signature shadow removal locally inside your browser. We never view, transmit, or store your photographs or signatures.
+                Unlike traditional online image compressors that upload your files to remote cloud servers, <strong>CompressPhoto</strong> executes 100% of its image resizing, byte-ceiling compression, PDF generation, and signature shadow removal locally inside your browser. We never view, transmit, or store your photographs or signatures.
               </p>
             </section>
 

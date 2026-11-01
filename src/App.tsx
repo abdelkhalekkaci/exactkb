@@ -70,16 +70,59 @@ export default function App() {
       {/* SIMPLE, CLEAN 3-ZONE TOP NAVBAR */}
       <header className="sticky top-0 z-40 bg-[#ffffff]/95 dark:bg-[#14213d]/95 backdrop-blur-xs border-b border-[#14213d]/15 dark:border-[#ffffff]/15">
         <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3 px-4 sm:px-6 py-4">
-          {/* Zone 1: Brand Title */}
+          {/* Zone 1: Custom Brand Logo + CompressPhoto Title */}
           <a
             href="#exactkb"
             onClick={(e) => {
               e.preventDefault();
               navigateToPage('exactkb');
             }}
-            className="font-serif text-xl font-bold tracking-tight whitespace-nowrap shrink-0"
+            className="flex items-center gap-2.5 whitespace-nowrap shrink-0 group"
           >
-            CompressPhoto<span className="text-[#fca311]">.space</span>
+            <div className="w-9 h-9 rounded-lg bg-[#14213d] dark:bg-[#ffffff] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+              <svg
+                viewBox="0 0 64 64"
+                fill="none"
+                className="w-7 h-7"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 23V14C12 12.8954 12.8954 12 14 12H23"
+                  stroke="#fca311"
+                  strokeWidth="5.5"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M52 23V14C52 12.8954 51.1046 12 50 12H41"
+                  stroke="#fca311"
+                  strokeWidth="5.5"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M12 41V50C12 51.1046 12.8954 52 14 52H23"
+                  stroke="#fca311"
+                  strokeWidth="5.5"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M52 41V50C52 51.1046 51.1046 52 50 52H41"
+                  stroke="#fca311"
+                  strokeWidth="5.5"
+                  strokeLinecap="round"
+                />
+                <circle
+                  cx="32"
+                  cy="32"
+                  r="10"
+                  className="stroke-[#ffffff] dark:stroke-[#14213d]"
+                  strokeWidth="4.5"
+                />
+                <circle cx="32" cy="32" r="4.5" fill="#fca311" />
+              </svg>
+            </div>
+            <span className="font-serif text-xl font-bold tracking-tight">
+              Compress<span className="text-[#fca311]">Photo</span>
+            </span>
           </a>
 
           {/* Zone 2: Clear 2-Tool Switcher in Navbar */}
@@ -183,10 +226,53 @@ export default function App() {
       <footer className="border-t border-[#14213d]/15 dark:border-[#ffffff]/15 py-10 mt-16 bg-[#ffffff] dark:bg-[#14213d]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {/* Column 1: Brand & Privacy Promise */}
-            <div className="space-y-2">
-              <div className="font-serif text-lg font-bold">
-                CompressPhoto<span className="text-[#fca311]">.space</span>
+            {/* Column 1: Brand Logo & Privacy Promise */}
+            <div className="space-y-2.5">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-[#14213d] dark:bg-[#ffffff] flex items-center justify-center shrink-0">
+                  <svg
+                    viewBox="0 0 64 64"
+                    fill="none"
+                    className="w-6 h-6"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 23V14C12 12.8954 12.8954 12 14 12H23"
+                      stroke="#fca311"
+                      strokeWidth="5.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M52 23V14C52 12.8954 51.1046 12 50 12H41"
+                      stroke="#fca311"
+                      strokeWidth="5.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M12 41V50C12 51.1046 12.8954 52 14 52H23"
+                      stroke="#fca311"
+                      strokeWidth="5.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M52 41V50C52 51.1046 51.1046 52 50 52H41"
+                      stroke="#fca311"
+                      strokeWidth="5.5"
+                      strokeLinecap="round"
+                    />
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="10"
+                      className="stroke-[#ffffff] dark:stroke-[#14213d]"
+                      strokeWidth="4.5"
+                    />
+                    <circle cx="32" cy="32" r="4.5" fill="#fca311" />
+                  </svg>
+                </div>
+                <span className="font-serif text-lg font-bold">
+                  Compress<span className="text-[#fca311]">Photo</span>
+                </span>
               </div>
               <p className="text-xs opacity-75 leading-relaxed">
                 {t.footerDesc}
@@ -261,7 +347,7 @@ export default function App() {
           </div>
 
           <div className="pt-6 border-t border-[#14213d]/10 dark:border-[#ffffff]/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs opacity-70">
-            <div>© {new Date().getFullYear()} CompressPhoto.space.</div>
+            <div>© {new Date().getFullYear()} CompressPhoto.</div>
             <div>{t.localGuaranteeFooter}</div>
           </div>
         </div>
