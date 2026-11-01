@@ -136,9 +136,9 @@ export const InfoAndLegalPages: React.FC<InfoAndLegalPagesProps> = ({
             <section className="space-y-2">
               <h2 className="text-base font-bold">1. Service Publisher / Éditeur du Service</h2>
               <p>
-                <strong>ExactKB &amp; QR Atelier</strong> is an independent web utility platform providing client-side image compression, biometric crop calibration, and vector QR/barcode generation.
+                <strong>ExactKB &amp; QR (compressphoto.space)</strong> is an independent web utility platform providing client-side image compression, biometric crop calibration, and vector QR/barcode generation.
                 <br />
-                Contact Email: <strong>contact@exactkb-atelier.com</strong>
+                Official Website: <strong>https://compressphoto.space</strong> · Contact Email: <strong>contact@compressphoto.space</strong>
               </p>
             </section>
 
