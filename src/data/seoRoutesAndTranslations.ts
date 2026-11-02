@@ -70,6 +70,7 @@ export interface LocaleDictionary {
   brandTitle: string;
   navExactKb: string;
   navQrStudio: string;
+  navBlog: string;
   // Photo KB Compressor Page
   kbHeroTitle: string;
   kbHeroSub: string;
@@ -145,6 +146,7 @@ export const TRANSLATIONS: Record<LocaleCode, LocaleDictionary> = {
     brandTitle: 'ExactKB & QR',
     navExactKb: 'Photo KB Compressor',
     navQrStudio: 'QR Code Generator',
+    navBlog: 'Blog & Guides',
     kbHeroTitle: 'Compress Photo or Signature to Exact KB',
     kbHeroSub: '100% private in your browser. Drop your image, pick your target KB size, and download.',
     dropTitle: 'Drop your photo or signature here, or',
@@ -215,6 +217,7 @@ export const TRANSLATIONS: Record<LocaleCode, LocaleDictionary> = {
     brandTitle: 'ExactKB & QR',
     navExactKb: 'Compresseur Photo Ko',
     navQrStudio: 'Générateur QR Code',
+    navBlog: 'Blog & Guides',
     kbHeroTitle: 'Compresser Photo ou Signature au Ko Exact',
     kbHeroSub: '100% privé dans votre navigateur. Déposez votre image, choisissez la taille max en Ko et téléchargez.',
     dropTitle: 'Glissez votre photo ou signature ici, ou',
@@ -285,6 +288,7 @@ export const TRANSLATIONS: Record<LocaleCode, LocaleDictionary> = {
     brandTitle: 'ExactKB & QR',
     navExactKb: 'Compresor Foto KB',
     navQrStudio: 'Generador Código QR',
+    navBlog: 'Blog y Guías',
     kbHeroTitle: 'Comprimir Foto o Firma al KB Exacto',
     kbHeroSub: '100% privado en tu navegador. Suelta tu imagen, elige el tamaño máximo en KB y descarga.',
     dropTitle: 'Arrastra tu foto o firma aquí, o',
@@ -355,6 +359,7 @@ export const TRANSLATIONS: Record<LocaleCode, LocaleDictionary> = {
     brandTitle: 'ExactKB & QR',
     navExactKb: 'ضاغط الصور بالكيلوبايت',
     navQrStudio: 'مولّد رمز QR',
+    navBlog: 'المدونة والأدلة',
     kbHeroTitle: 'ضغط الصورة أو التوقيع إلى حجم كيلوبايت دقيق',
     kbHeroSub: 'خصوصية 100% داخل متصفحك. اسحب صورتك، اختر الحد الأقصى بالكيلوبايت، وقم بالتنزيل فوراً.',
     dropTitle: 'أفلت صورتك أو توقيعك هنا، أو',

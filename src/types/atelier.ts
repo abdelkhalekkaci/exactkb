@@ -1,4 +1,4 @@
-export type AtelierPage = 'exactkb' | 'qr' | 'about' | 'privacy' | 'legal' | 'contact';
+export type AtelierPage = 'exactkb' | 'qr' | 'blog' | 'about' | 'privacy' | 'legal' | 'contact';
 
 export type LocaleCode = 'en' | 'fr' | 'es' | 'ar';
 

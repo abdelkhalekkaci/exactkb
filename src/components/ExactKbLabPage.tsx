@@ -96,6 +96,26 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
+    setPresetId(initialPresetId);
+    setTargetKb(initialTargetKb);
+    if (initialPresetId === 'wet-ink-sig') {
+      setWetInkEnabled(true);
+      setBackdropMode('pure-white');
+      setActiveSampleId('wet-ink-signature');
+      setSourceDataUrl(generateCuratedSampleDataUrl('wet-ink-signature'));
+      setSourceLabel('Sample Handwritten Signature');
+    } else if (initialPresetId === 'amazon-1000') {
+      setWetInkEnabled(false);
+      setBackdropMode('pure-white');
+      setActiveSampleId('ecommerce-watch');
+      setSourceDataUrl(generateCuratedSampleDataUrl('ecommerce-watch'));
+      setSourceLabel('Sample Product Photo');
+    } else {
+      setWetInkEnabled(false);
+    }
+  }, [initialPresetId, initialTargetKb]);
+
+  useEffect(() => {
     if (bridgedQrDataUrl) {
       setSourceDataUrl(bridgedQrDataUrl);
       setSourceLabel('QR Code from Printshop');
