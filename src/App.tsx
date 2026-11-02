@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
-import { BookOpen, Camera, Moon, QrCode, Sun } from 'lucide-react';
+import { Camera, Moon, QrCode, Sun } from 'lucide-react';
 import {
   AtelierPage,
   BiometricPresetId,
@@ -160,18 +160,6 @@ export default function App() {
             >
               <QrCode className="w-4 h-4" />
               <span>{t.navQrStudio}</span>
-            </button>
-
-            <button
-              onClick={() => navigateToPage('blog')}
-              className={`px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap shrink-0 cursor-pointer ${
-                activePage === 'blog'
-                  ? 'bg-[#fca311] text-[#14213d] shadow-xs'
-                  : 'hover:bg-[#fca311]/15'
-              }`}
-            >
-              <BookOpen className="w-4 h-4" />
-              <span>{t.navBlog}</span>
             </button>
           </nav>
 
