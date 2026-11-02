@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowRightLeft,
   Barcode,
@@ -43,6 +43,10 @@ export const QrPrintshopPage: React.FC<QrPrintshopPageProps> = ({
 }) => {
   const t = TRANSLATIONS[locale];
   const [payloadType, setPayloadType] = useState<QRPayloadType>(initialPayloadType);
+
+  useEffect(() => {
+    setPayloadType(initialPayloadType);
+  }, [initialPayloadType]);
 
   const [wifiData, setWifiData] = useState<WifiPayloadData>({
     ssid: 'Guest_WiFi_5G',

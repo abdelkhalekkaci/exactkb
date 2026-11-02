@@ -229,6 +229,7 @@ export default function App() {
           <SeoBlogPage
             locale={locale}
             onLaunchPreset={handleLaunchPresetFromBlog}
+            onLaunchQrPreset={handleOpenQrWithPayload}
           />
         )}
 

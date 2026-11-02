@@ -3,33 +3,80 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpen,
+  Camera,
   CheckCircle2,
   Clock,
   FileText,
   HelpCircle,
+  QrCode,
   Search,
   Sliders,
   Sparkles,
   Tag,
   Zap
 } from 'lucide-react';
-import { BiometricPresetId, LocaleCode } from '../types/atelier';
+import { BiometricPresetId, LocaleCode, QRPayloadType } from '../types/atelier';
 import {
+  BlogCategoryId,
+  LocalizedArticleContent,
   MASTER_PHOTO_KEYWORDS,
-  PHOTO_SEO_ARTICLES,
-  PhotoSeoArticle,
-  SeoKeywordCluster
+  PHOTO_SEO_ARTICLES
 } from '../data/photoSeoArticles';
+import {
+  MASTER_QR_KEYWORDS,
+  QR_SEO_ARTICLES,
+  QrBlogCategoryId
+} from '../data/qrSeoArticles';
 
 interface SeoBlogPageProps {
   locale: LocaleCode;
   onLaunchPreset: (presetId: BiometricPresetId, targetKb: number) => void;
+  onLaunchQrPreset: (payloadType: QRPayloadType) => void;
+}
+
+type ToolDomainFilter = 'all' | 'photo' | 'qr';
+type UnifiedCategoryFilter =
+  | 'all'
+  | Exclude<BlogCategoryId, 'all'>
+  | QrBlogCategoryId;
+
+interface UnifiedSeoArticle {
+  domain: 'photo' | 'qr';
+  id: string;
+  slug: string;
+  number: number;
+  category: Exclude<BlogCategoryId, 'all'> | QrBlogCategoryId;
+  readingTimeMin: number;
+  presetId?: BiometricPresetId;
+  targetKb?: number;
+  qrPayloadType?: QRPayloadType;
+  specs: {
+    dimensionsPx: string;
+    physicalSize: string;
+    dpi: string;
+    byteCeiling: string;
+  };
+  translations: Record<LocaleCode, LocalizedArticleContent>;
+}
+
+interface UnifiedKeywordItem {
+  domain: 'photo' | 'qr';
+  keyword: string;
+  category: Exclude<BlogCategoryId, 'all'> | QrBlogCategoryId;
+  specBadge: string;
+  articleId: string;
+  presetId?: BiometricPresetId;
+  targetKb?: number;
+  qrPayloadType?: QRPayloadType;
 }
 
 interface BlogUiCopy {
   badge: string;
   heroTitle: string;
   heroSub: string;
+  domainAll: string;
+  domainPhoto: string;
+  domainQr: string;
   tabArticles: string;
   tabKeywords: string;
   searchPlaceholder: string;
@@ -38,6 +85,10 @@ interface BlogUiCopy {
   catPassport: string;
   catSignature: string;
   catPdfPrint: string;
+  catQrStatic: string;
+  catQrWifiMenu: string;
+  catQrVcardChat: string;
+  catBarcodeSvg: string;
   readGuideBtn: string;
   backToAllGuides: string;
   targetKeywordsLabel: string;
@@ -49,177 +100,286 @@ interface BlogUiCopy {
   keywordMatrixTitle: string;
   keywordMatrixSub: string;
   colKeyword: string;
+  colToolDomain: string;
   colCategory: string;
   colPresetSpec: string;
   colAction: string;
   openArticleBtn: string;
   launchToolShortBtn: string;
-  qrStrategyBannerTitle: string;
-  qrStrategyBannerSub: string;
+  completeBannerTitle: string;
+  completeBannerSub: string;
   articlesCountLabel: string;
   keywordsCountLabel: string;
 }
 
 const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
   en: {
-    badge: 'SEO KNOWLEDGE HUB · PHOTO COMPRESSION EDITION',
-    heroTitle: 'Photo Compression Guides & Exact-KB Keyword Directory',
+    badge: 'SEO KNOWLEDGE HUB · PHOTO KB & QR CODE EDITION',
+    heroTitle: 'Photo Compression & QR Code Guides + Master SEO Keyword Directory',
     heroSub:
-      'Step-by-step calibration guides for 20KB, 50KB, 100KB, US Visa 2×2", Schengen 35×45mm, and handwritten signatures — with 1-click preset buttons that open the compressor pre-set for your document.',
-    tabArticles: '10 SEO Guides & Tutorials',
-    tabKeywords: 'Master SEO Keyword Directory (30+)',
-    searchPlaceholder: 'Search keywords or guides (e.g. 20kb, passport, signature, 50kb)...',
-    catAll: 'All Topics (10)',
+      'Explore 20 in-depth tutorials and 60+ high-search keywords covering Exact-KB Photo Compression (20KB, 50KB, 100KB, Passports, Signatures) and Permanent Static QR Codes (Wi-Fi, vCard 3.0, Café Menus, WhatsApp, CODE-128 & Vector SVG) — with 1-click preset launch buttons.',
+    domainAll: 'All Studio Guides (20)',
+    domainPhoto: 'Photo KB Compressor (10)',
+    domainQr: 'QR Code & Barcode (10)',
+    tabArticles: '20 SEO Guides & Tutorials',
+    tabKeywords: 'Master SEO Keyword Directory (60+)',
+    searchPlaceholder:
+      'Search keywords or guides (e.g. 20kb, passport, wifi qr, vcard, menu, barcode, svg)...',
+    catAll: 'All Topics',
     catExactKb: 'Exact KB Limits',
     catPassport: 'Passport & Visa',
     catSignature: 'Wet-Ink Signature',
     catPdfPrint: 'PDF & 4×6" Print',
+    catQrStatic: 'Permanent Static QR',
+    catQrWifiMenu: 'Wi-Fi & Café Menu QR',
+    catQrVcardChat: 'vCard & WhatsApp QR',
+    catBarcodeSvg: 'CODE-128 & Vector SVG',
     readGuideBtn: 'Read Full Guide',
-    backToAllGuides: 'Back to All 10 Guides',
+    backToAllGuides: 'Back to All 20 Guides',
     targetKeywordsLabel: 'Targeted High-Search Keywords',
-    specDimensionsLabel: 'Target Dimensions',
-    specByteLimitLabel: 'Strict Byte Ceiling',
+    specDimensionsLabel: 'Target Format / Dimensions',
+    specByteLimitLabel: 'Standard / Byte Ceiling',
     proTipLabel: 'Studio Calibration Pro Tip',
     faqHeading: 'Frequently Asked Questions',
-    relatedGuidesHeading: 'More Photo Compression Guides',
-    keywordMatrixTitle: 'Complete Photo Compression SEO Keyword Matrix',
+    relatedGuidesHeading: 'Related Studio Guides',
+    keywordMatrixTitle: 'Complete Photo KB & QR Code SEO Keyword Matrix',
     keywordMatrixSub:
-      'Every high-intent search query targeted by CompressPhoto.space, mapped directly to its matching guide and 1-click tool preset.',
+      'Every high-intent search query targeted by CompressPhoto, mapped directly to its matching guide and 1-click tool preset.',
     colKeyword: 'Searchable Keyword Phrase',
-    colCategory: 'Category & Intent',
-    colPresetSpec: 'Target KB',
+    colToolDomain: 'Tool',
+    colCategory: 'Category',
+    colPresetSpec: 'Preset Spec',
     colAction: '1-Click Action',
     openArticleBtn: 'Guide',
     launchToolShortBtn: 'Launch Preset →',
-    qrStrategyBannerTitle: 'Phase 1: Photo Compression Complete · Next Up: QR Code SEO Hub',
-    qrStrategyBannerSub:
-      'All 10 Photo Compression articles and 30+ keywords are live in EN, FR, ES & AR. Ready to replicate this exact SEO strategy for QR Code & Barcode keywords whenever you want.',
-    articlesCountLabel: '10 Complete Multilingual Articles',
-    keywordsCountLabel: '30+ High-Intent Keywords per Language'
+    completeBannerTitle:
+      'Complete Dual-Tool SEO Architecture · 10 Photo KB Guides + 10 QR Code & Barcode Guides',
+    completeBannerSub:
+      'All 20 multilingual tutorials and 60+ search keywords are active across English, Français, Español & العربية with Schema.org TechArticle + FAQPage structured data.',
+    articlesCountLabel: '20 Complete Multilingual Articles',
+    keywordsCountLabel: '60+ High-Intent Keywords per Language'
   },
   fr: {
-    badge: 'CENTRE DE GUIDES SEO · ÉDITION COMPRESSION PHOTO',
-    heroTitle: 'Guides de Compression Photo au Ko Exact & Mots-Clés SEO',
+    badge: 'CENTRE DE GUIDES SEO · COMPRESSION PHOTO & QR CODE',
+    heroTitle: 'Guides Compression Photo au Ko Exact, QR Code Vectoriel & Mots-Clés SEO',
     heroSub:
-      'Tutoriels pas-à-pas pour compresser vos photos à 20 Ko, 50 Ko, 100 Ko, Visa USA 2×2", Passeport 35×45 mm et signatures manuscrites — avec bouton 1-clic pour ouvrir l’outil pré-calibré.',
-    tabArticles: '10 Guides & Tutoriels SEO',
-    tabKeywords: 'Répertoire Mots-Clés SEO (30+)',
-    searchPlaceholder: 'Rechercher un mot-clé ou un guide (ex: 20 ko, passeport, signature, 50 ko)...',
-    catAll: 'Tous les Sujets (10)',
+      'Découvrez 20 tutoriels complets et plus de 60 mots-clés couvrant la compression photo (20 Ko, 50 Ko, 100 Ko, Passeport, Signature) et le générateur QR Code statique permanent (Wi-Fi, vCard 3.0, Menu Restaurant, WhatsApp, CODE-128 & SVG) — avec lancement 1-clic.',
+    domainAll: 'Tous les Guides (20)',
+    domainPhoto: 'Compresseur Photo Ko (10)',
+    domainQr: 'QR Code & Code-Barres (10)',
+    tabArticles: '20 Guides & Tutoriels SEO',
+    tabKeywords: 'Répertoire Mots-Clés SEO (60+)',
+    searchPlaceholder:
+      'Rechercher un mot-clé ou un guide (ex: 20 ko, passeport, qr wifi, vcard, menu, svg)...',
+    catAll: 'Tous les Sujets',
     catExactKb: 'Limites Ko Exactes',
     catPassport: 'Passeport & Visa',
     catSignature: 'Signature Manuscrite',
     catPdfPrint: 'PDF & Planche 10×15',
+    catQrStatic: 'QR Statique Permanent',
+    catQrWifiMenu: 'QR Wi-Fi & Menu Café',
+    catQrVcardChat: 'QR vCard & WhatsApp',
+    catBarcodeSvg: 'CODE-128 & Vecteur SVG',
     readGuideBtn: 'Lire le Guide Complet',
-    backToAllGuides: 'Retour aux 10 Guides',
+    backToAllGuides: 'Retour aux 20 Guides',
     targetKeywordsLabel: 'Mots-Clés SEO Ciblés',
-    specDimensionsLabel: 'Dimensions Cibles',
-    specByteLimitLabel: 'Plafond Strict en Octets',
-    proTipLabel: 'Conseil Pro de Calibrage',
+    specDimensionsLabel: 'Format / Dimensions',
+    specByteLimitLabel: 'Norme / Plafond Octets',
+    proTipLabel: 'Conseil Pro du Studio',
     faqHeading: 'Questions Fréquentes (FAQ)',
-    relatedGuidesHeading: 'Autres Guides de Compression Photo',
-    keywordMatrixTitle: 'Matrice Complète des Mots-Clés SEO Compression Photo',
+    relatedGuidesHeading: 'Guides Similaires',
+    keywordMatrixTitle: 'Matrice Complète des Mots-Clés SEO Photo Ko & QR Code',
     keywordMatrixSub:
-      'Toutes les requêtes à forte intention ciblées par CompressPhoto.space, reliées à leur article dédié et au préréglage 1-clic.',
+      'Toutes les requêtes à forte intention ciblées par CompressPhoto, reliées à leur article dédié et au préréglage 1-clic.',
     colKeyword: 'Expression Clé Recherchée',
-    colCategory: 'Catégorie & Intention',
-    colPresetSpec: 'Cible Ko',
+    colToolDomain: 'Outil',
+    colCategory: 'Catégorie',
+    colPresetSpec: 'Spécification',
     colAction: 'Action 1-Clic',
     openArticleBtn: 'Guide',
     launchToolShortBtn: 'Ouvrir Outil →',
-    qrStrategyBannerTitle: 'Phase 1 : Compression Photo Active · Prochaine Étape : SEO QR Code',
-    qrStrategyBannerSub:
-      'Les 10 articles de compression photo et plus de 30 mots-clés sont actifs en EN, FR, ES et AR. Cette même architecture est prête à être dupliquée pour le générateur QR Code.',
-    articlesCountLabel: '10 Articles Multilingues Complets',
-    keywordsCountLabel: '30+ Mots-Clés par Langue'
+    completeBannerTitle:
+      'Architecture SEO Complète · 10 Guides Compression Photo + 10 Guides QR Code & Code-Barres',
+    completeBannerSub:
+      'Les 20 articles multilingues et plus de 60 mots-clés sont actifs en EN, FR, ES et AR avec données structurées Schema.org TechArticle et FAQPage.',
+    articlesCountLabel: '20 Articles Multilingues Complets',
+    keywordsCountLabel: '60+ Mots-Clés par Langue'
   },
   es: {
-    badge: 'CENTRO DE GUÍAS SEO · EDICIÓN COMPRESIÓN DE FOTOS',
-    heroTitle: 'Guías de Compresión de Fotos al KB Exacto y Palabras Clave',
+    badge: 'CENTRO DE GUÍAS SEO · COMPRESIÓN DE FOTOS Y CÓDIGOS QR',
+    heroTitle: 'Guías de Compresión de Fotos al KB Exacto, Códigos QR y Palabras Clave',
     heroSub:
-      'Guías paso a paso para comprimir fotos a 20KB, 50KB, 100KB, Visa EE.UU. 2×2", Pasaporte 35×45mm y firmas manuscritas — con botón de 1 clic para abrir la herramienta preconfigurada.',
-    tabArticles: '10 Guías y Tutoriales SEO',
-    tabKeywords: 'Directorio de Palabras Clave (30+)',
-    searchPlaceholder: 'Buscar palabra clave o guía (ej: 20kb, pasaporte, firma, 50kb)...',
-    catAll: 'Todos los Temas (10)',
+      'Explora 20 guías paso a paso y más de 60 palabras clave sobre compresión de fotos (20KB, 50KB, 100KB, Pasaporte, Firma) y códigos QR estáticos permanentes (Wi-Fi, vCard 3.0, Menú Restaurante, WhatsApp, CODE-128 y SVG) — con botones de 1 clic.',
+    domainAll: 'Todas las Guías (20)',
+    domainPhoto: 'Compresor Fotos KB (10)',
+    domainQr: 'Código QR y Barras (10)',
+    tabArticles: '20 Guías y Tutoriales SEO',
+    tabKeywords: 'Directorio de Palabras Clave (60+)',
+    searchPlaceholder:
+      'Buscar palabra clave o guía (ej: 20kb, pasaporte, qr wifi, vcard, menú, svg)...',
+    catAll: 'Todos los Temas',
     catExactKb: 'Límites KB Exactos',
     catPassport: 'Pasaporte y Visa',
     catSignature: 'Firma Manuscrita',
     catPdfPrint: 'PDF y Hoja 10×15',
+    catQrStatic: 'QR Estático Permanente',
+    catQrWifiMenu: 'QR Wi-Fi y Menú',
+    catQrVcardChat: 'QR vCard y WhatsApp',
+    catBarcodeSvg: 'CODE-128 y Vector SVG',
     readGuideBtn: 'Leer Guía Completa',
-    backToAllGuides: 'Volver a las 10 Guías',
+    backToAllGuides: 'Volver a las 20 Guías',
     targetKeywordsLabel: 'Palabras Clave SEO Objetivo',
-    specDimensionsLabel: 'Dimensiones Objetivo',
-    specByteLimitLabel: 'Límite Estricto de Bytes',
+    specDimensionsLabel: 'Formato / Dimensiones',
+    specByteLimitLabel: 'Estándar / Límite KB',
     proTipLabel: 'Consejo Pro de Calibración',
     faqHeading: 'Preguntas Frecuentes (FAQ)',
-    relatedGuidesHeading: 'Más Guías de Compresión de Fotos',
-    keywordMatrixTitle: 'Matriz Completa de Palabras Clave SEO de Compresión de Fotos',
+    relatedGuidesHeading: 'Guías Relacionadas',
+    keywordMatrixTitle: 'Matriz Completa de Palabras Clave SEO de Fotos KB y Códigos QR',
     keywordMatrixSub:
-      'Todas las búsquedas de alta intención cubiertas por CompressPhoto.space, conectadas con su guía y ajuste preestablecido en 1 clic.',
+      'Todas las búsquedas de alta intención cubiertas por CompressPhoto, conectadas con su guía y ajuste preestablecido en 1 clic.',
     colKeyword: 'Palabra Clave Buscada',
-    colCategory: 'Categoría e Intención',
-    colPresetSpec: 'KB Objetivo',
+    colToolDomain: 'Herramienta',
+    colCategory: 'Categoría',
+    colPresetSpec: 'Especificación',
     colAction: 'Acción 1-Clic',
     openArticleBtn: 'Guía',
     launchToolShortBtn: 'Abrir Ajuste →',
-    qrStrategyBannerTitle: 'Fase 1: Compresión de Fotos Lista · Siguiente Paso: SEO Código QR',
-    qrStrategyBannerSub:
-      'Los 10 artículos de compresión de fotos y más de 30 palabras clave están activos en EN, FR, ES y AR, listos para replicar la estrategia con Códigos QR.',
-    articlesCountLabel: '10 Artículos Multilingües Completos',
-    keywordsCountLabel: '30+ Palabras Clave por Idioma'
+    completeBannerTitle:
+      'Arquitectura SEO Completa · 10 Guías de Compresión de Fotos + 10 Guías de Códigos QR',
+    completeBannerSub:
+      'Los 20 artículos multilingües y más de 60 palabras clave están activos en EN, FR, ES y AR con datos estructurados Schema.org TechArticle y FAQPage.',
+    articlesCountLabel: '20 Artículos Multilingües Completos',
+    keywordsCountLabel: '60+ Palabras Clave por Idioma'
   },
   ar: {
-    badge: 'مركز الأدلة والكلمات المفتاحية · إصدار ضغط الصور',
-    heroTitle: 'أدلة ضغط الصور بالكيلوبايت الدقيق ودليل الكلمات المفتاحية',
+    badge: 'مركز الأدلة والكلمات المفتاحية · ضغط الصور ورموز QR',
+    heroTitle: 'أدلة ضغط الصور بالكيلوبايت الدقيق وتوليد رموز QR ودليل الكلمات المفتاحية',
     heroSub:
-      'شروحات مفصلة خطوة بخطوة لضغط الصور إلى 20KB و50KB و100KB وتأشيرة أمريكا 2×2 بوصة وجواز السفر 35×45 مم والتوقيع الخطي — مع زر بنقرة واحدة لفتح الأداة مضبوطة مسبقاً.',
-    tabArticles: '10 مقالات وأدلة شاملة',
-    tabKeywords: 'دليل الكلمات المفتاحية (30+)',
-    searchPlaceholder: 'ابحث عن كلمة مفتاحية أو مقال (مثال: 20 كيلوبايت، جواز سفر، توقيع)...',
-    catAll: 'جميع المواضيع (10)',
+      'تصفح 20 دليلاً شاملاً وأكثر من 60 كلمة مفتاحية تغطي ضغط الصور (20KB و50KB و100KB وجواز السفر والتوقيع) وتوليد رموز QR الثابتة الدائمة (الواي فاي، بطاقة العمل vCard، منيو المطاعم، واتساب، باركود CODE-128 وفيكتور SVG) — مع أزرار تشغيل بنقرة واحدة.',
+    domainAll: 'جميع الأدلة (20)',
+    domainPhoto: 'ضاغط الصور بالكيلوبايت (10)',
+    domainQr: 'رموز QR والباركود (10)',
+    tabArticles: '20 مقالاً ودليلاً شاملاً',
+    tabKeywords: 'دليل الكلمات المفتاحية (60+)',
+    searchPlaceholder:
+      'ابحث عن كلمة مفتاحية أو مقال (مثال: 20 كيلوبايت، جواز سفر، واي فاي، باركود، منيو)...',
+    catAll: 'جميع المواضيع',
     catExactKb: 'حدود الكيلوبايت الدقيقة',
     catPassport: 'جواز السفر والتأشيرة',
     catSignature: 'التوقيع الخطي',
     catPdfPrint: 'ملف PDF وورقة 10×15',
+    catQrStatic: 'رمز QR ثابت ودائم',
+    catQrWifiMenu: 'رمز QR للواي فاي والمنيو',
+    catQrVcardChat: 'بطاقة vCard وواتساب',
+    catBarcodeSvg: 'باركود CODE-128 وملف SVG',
     readGuideBtn: 'قراءة الدليل الكامل',
-    backToAllGuides: 'العودة إلى جميع الأدلة (10)',
+    backToAllGuides: 'العودة إلى جميع الأدلة (20)',
     targetKeywordsLabel: 'الكلمات المفتاحية المستهدفة في محركات البحث',
-    specDimensionsLabel: 'الأبعاد القياسية',
-    specByteLimitLabel: 'السقف الأقصى للحجم',
-    proTipLabel: 'نصيحة احترافية للمعايرة',
+    specDimensionsLabel: 'الصيغة / الأبعاد القياسية',
+    specByteLimitLabel: 'المعيار / السقف الأقصى',
+    proTipLabel: 'نصيحة احترافية من الاستوديو',
     faqHeading: 'الأسئلة الشائعة (FAQ)',
-    relatedGuidesHeading: 'أدلة أخرى لضغط الصور',
-    keywordMatrixTitle: 'مصفوفة الكلمات المفتاحية الشاملة لضغط الصور (SEO)',
+    relatedGuidesHeading: 'أدلة ومقالات ذات صلة',
+    keywordMatrixTitle: 'مصفوفة الكلمات المفتاحية الشاملة لضغط الصور ورموز QR (SEO)',
     keywordMatrixSub:
-      'جميع عبارات البحث الأكثرطلباً في CompressPhoto.space مرتبطة مباشرة بالمقال المخصص وزر التشغيل بنقرة واحدة.',
+      'جميع عبارات البحث الأكثر طلباً في CompressPhoto مرتبطة مباشرة بالمقال المخصص وزر التشغيل بنقرة واحدة.',
     colKeyword: 'عبارة البحث (الكلمة المفتاحية)',
-    colCategory: 'الفئة ومستوى الطلب',
-    colPresetSpec: 'الحجم المستهدف',
+    colToolDomain: 'الأداة',
+    colCategory: 'الفئة',
+    colPresetSpec: 'المواصفات',
     colAction: 'تشغيل بنقرة واحدة',
     openArticleBtn: 'المقال',
-    launchToolShortBtn: 'تشغيل الإعداد ←',
-    qrStrategyBannerTitle: 'المرحلة 1: اكتمال مقالات ضغط الصور · الخطوة القادمة: مقالات رمز QR',
-    qrStrategyBannerSub:
-      'تم تجهيز 10 مقالات شاملة وأكثر من 30 كلمة مفتاحية بـ 4 لغات (EN, FR, ES, AR)، وجاهزون لتطبيق نفس الاستراتيجية على أداة رمز QR.',
-    articlesCountLabel: '10 مقالات شاملة بـ 4 لغات',
-    keywordsCountLabel: '+30 كلمة مفتاحية لكل لغة'
+    launchToolShortBtn: 'تشغيل الأداة ←',
+    completeBannerTitle:
+      'منظومة SEO متكاملة · 10 مقالات لضغط الصور + 10 مقالات لرموز QR والباركود',
+    completeBannerSub:
+      'جميع المقالات الـ 20 وأكثر من 60 كلمة مفتاحية متوفرة بـ 4 لغات (EN, FR, ES, AR) مع بيانات Schema.org المهيكلة لمحركات البحث.',
+    articlesCountLabel: '20 مقالاً شاملاً بـ 4 لغات',
+    keywordsCountLabel: '+60 كلمة مفتاحية لكل لغة'
   }
 };
 
-export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset }) => {
+export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
+  locale,
+  onLaunchPreset,
+  onLaunchQrPreset
+}) => {
   const ui = BLOG_UI_COPY[locale];
   const [activeTab, setActiveTab] = useState<'articles' | 'keywords'>('articles');
-  const [selectedCategory, setSelectedCategory] = useState<
-    'all' | 'exact-kb' | 'passport-visa' | 'signature' | 'pdf-print'
-  >('all');
+  const [selectedDomain, setSelectedDomain] = useState<ToolDomainFilter>('all');
+  const [selectedCategory, setSelectedCategory] =
+    useState<UnifiedCategoryFilter>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedArticleId, setSelectedArticleId] = useState<string | null>(null);
 
-  const selectedArticle: PhotoSeoArticle | null = useMemo(() => {
+  // Build unified list of all 20 SEO articles (10 Photo + 10 QR)
+  const allUnifiedArticles: UnifiedSeoArticle[] = useMemo(() => {
+    const photoMapped: UnifiedSeoArticle[] = PHOTO_SEO_ARTICLES.map((a) => ({
+      domain: 'photo',
+      id: a.id,
+      slug: a.slug,
+      number: a.number,
+      category: a.category,
+      readingTimeMin: a.readingTimeMin,
+      presetId: a.presetId,
+      targetKb: a.targetKb,
+      specs: a.specs,
+      translations: a.translations
+    }));
+
+    const qrMapped: UnifiedSeoArticle[] = QR_SEO_ARTICLES.map((q) => ({
+      domain: 'qr',
+      id: q.id,
+      slug: q.slug,
+      number: q.number,
+      category: q.category,
+      readingTimeMin: q.readingTimeMin,
+      qrPayloadType: q.qrPayloadType,
+      specs: q.specs,
+      translations: q.translations
+    }));
+
+    return [...photoMapped, ...qrMapped];
+  }, []);
+
+  // Build unified list of all 60+ keywords for current locale
+  const allUnifiedKeywords: UnifiedKeywordItem[] = useMemo(() => {
+    const photoKws = (
+      MASTER_PHOTO_KEYWORDS[locale] || MASTER_PHOTO_KEYWORDS.en
+    ).map((k) => ({
+      domain: 'photo' as const,
+      keyword: k.keyword,
+      category: k.category,
+      specBadge: `≤ ${k.targetKb} KB`,
+      articleId: k.articleId,
+      presetId: k.presetId,
+      targetKb: k.targetKb
+    }));
+
+    const qrKws = (MASTER_QR_KEYWORDS[locale] || MASTER_QR_KEYWORDS.en).map(
+      (k) => ({
+        domain: 'qr' as const,
+        keyword: k.keyword,
+        category: k.category,
+        specBadge: k.specBadge,
+        articleId: k.articleId,
+        qrPayloadType: k.qrPayloadType
+      })
+    );
+
+    return [...photoKws, ...qrKws];
+  }, [locale]);
+
+  const selectedArticle: UnifiedSeoArticle | null = useMemo(() => {
     if (!selectedArticleId) return null;
-    return PHOTO_SEO_ARTICLES.find((a) => a.id === selectedArticleId) || null;
-  }, [selectedArticleId]);
+    return allUnifiedArticles.find((a) => a.id === selectedArticleId) || null;
+  }, [selectedArticleId, allUnifiedArticles]);
+
+  // Reset category filter if user switches domain and current category belongs to the other tool
+  const handleSelectDomain = (domain: ToolDomainFilter) => {
+    setSelectedDomain(domain);
+    setSelectedCategory('all');
+  };
 
   // Dynamically update document title, meta description & JSON-LD schema for SEO
   useEffect(() => {
@@ -227,7 +387,9 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
     const metaDescEl = document.querySelector('meta[name="description"]');
     const prevDesc = metaDescEl?.getAttribute('content') || '';
 
-    let scriptEl = document.getElementById('seo-blog-jsonld') as HTMLScriptElement | null;
+    let scriptEl = document.getElementById(
+      'seo-blog-jsonld'
+    ) as HTMLScriptElement | null;
     if (!scriptEl) {
       scriptEl = document.createElement('script');
       scriptEl.id = 'seo-blog-jsonld';
@@ -260,16 +422,16 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
               url: 'https://compressphoto.space/'
             },
             mainEntityOfPage: `https://compressphoto.space/#blog/${selectedArticle.slug}`,
-            keywords: [content.primaryKeyword, ...content.secondaryKeywords].join(', ')
+            keywords: content.primaryKeywords.join(', ')
           },
           {
             '@type': 'FAQPage',
-            mainEntity: content.faq.map((item) => ({
+            mainEntity: content.faqs.map((item) => ({
               '@type': 'Question',
-              name: item.q,
+              name: item.question,
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: item.a
+                text: item.answer
               }
             }))
           }
@@ -302,7 +464,10 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
 
   const filteredArticles = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
-    return PHOTO_SEO_ARTICLES.filter((article) => {
+    return allUnifiedArticles.filter((article) => {
+      if (selectedDomain !== 'all' && article.domain !== selectedDomain) {
+        return false;
+      }
       if (selectedCategory !== 'all' && article.category !== selectedCategory) {
         return false;
       }
@@ -311,28 +476,34 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
       const haystack = [
         content.title,
         content.excerpt,
-        content.primaryKeyword,
-        ...content.secondaryKeywords
+        ...content.primaryKeywords
       ]
         .join(' ')
         .toLowerCase();
       return haystack.includes(q);
     });
-  }, [selectedCategory, searchQuery, locale]);
+  }, [allUnifiedArticles, selectedDomain, selectedCategory, searchQuery, locale]);
 
-  const filteredKeywords: SeoKeywordCluster[] = useMemo(() => {
-    const list = MASTER_PHOTO_KEYWORDS[locale] || MASTER_PHOTO_KEYWORDS.en;
+  const filteredKeywords = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
-    return list.filter((item) => {
+    return allUnifiedKeywords.filter((item) => {
+      if (selectedDomain !== 'all' && item.domain !== selectedDomain) {
+        return false;
+      }
       if (selectedCategory !== 'all' && item.category !== selectedCategory) {
         return false;
       }
       if (!q) return true;
-      return item.keyword.toLowerCase().includes(q);
+      return (
+        item.keyword.toLowerCase().includes(q) ||
+        item.specBadge.toLowerCase().includes(q)
+      );
     });
-  }, [locale, selectedCategory, searchQuery]);
+  }, [allUnifiedKeywords, selectedDomain, selectedCategory, searchQuery]);
 
-  const getCategoryLabel = (cat: 'exact-kb' | 'passport-visa' | 'signature' | 'pdf-print') => {
+  const getCategoryLabel = (
+    cat: Exclude<BlogCategoryId, 'all'> | QrBlogCategoryId
+  ) => {
     switch (cat) {
       case 'exact-kb':
         return ui.catExactKb;
@@ -342,12 +513,59 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
         return ui.catSignature;
       case 'pdf-print':
         return ui.catPdfPrint;
+      case 'qr-static':
+        return ui.catQrStatic;
+      case 'qr-wifi-menu':
+        return ui.catQrWifiMenu;
+      case 'qr-vcard-chat':
+        return ui.catQrVcardChat;
+      case 'barcode-svg':
+        return ui.catBarcodeSvg;
     }
   };
+
+  const categoryButtons = useMemo(() => {
+    const base: { id: UnifiedCategoryFilter; label: string }[] = [
+      { id: 'all', label: ui.catAll }
+    ];
+    if (selectedDomain === 'all' || selectedDomain === 'photo') {
+      base.push(
+        { id: 'exact-kb', label: ui.catExactKb },
+        { id: 'passport-visa', label: ui.catPassport },
+        { id: 'signature', label: ui.catSignature },
+        { id: 'pdf-print', label: ui.catPdfPrint }
+      );
+    }
+    if (selectedDomain === 'all' || selectedDomain === 'qr') {
+      base.push(
+        { id: 'qr-static', label: ui.catQrStatic },
+        { id: 'qr-wifi-menu', label: ui.catQrWifiMenu },
+        { id: 'qr-vcard-chat', label: ui.catQrVcardChat },
+        { id: 'barcode-svg', label: ui.catBarcodeSvg }
+      );
+    }
+    return base;
+  }, [selectedDomain, ui]);
 
   const handleOpenArticle = (articleId: string) => {
     setSelectedArticleId(articleId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleTriggerArticlePreset = (article: UnifiedSeoArticle) => {
+    if (article.domain === 'qr' && article.qrPayloadType) {
+      onLaunchQrPreset(article.qrPayloadType);
+    } else if (article.presetId && article.targetKb) {
+      onLaunchPreset(article.presetId, article.targetKb);
+    }
+  };
+
+  const handleTriggerKeywordPreset = (item: UnifiedKeywordItem) => {
+    if (item.domain === 'qr' && item.qrPayloadType) {
+      onLaunchQrPreset(item.qrPayloadType);
+    } else if (item.presetId && item.targetKb) {
+      onLaunchPreset(item.presetId, item.targetKb);
+    }
   };
 
   // ============================================================================
@@ -355,9 +573,12 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
   // ============================================================================
   if (selectedArticle) {
     const content = selectedArticle.translations[locale];
-    const relatedArticles = PHOTO_SEO_ARTICLES.filter(
-      (a) => a.id !== selectedArticle.id
-    ).slice(0, 3);
+    const relatedArticles = allUnifiedArticles
+      .filter(
+        (a) =>
+          a.domain === selectedArticle.domain && a.id !== selectedArticle.id
+      )
+      .slice(0, 3);
 
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-8">
@@ -372,13 +593,20 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
           </button>
 
           <div className="flex items-center gap-2 text-xs font-mono">
-            <span className="px-2.5 py-1 rounded-md bg-[#fca311]/20 text-[#14213d] dark:text-[#fca311] font-bold">
-              #{String(selectedArticle.number).padStart(2, '0')} ·{' '}
-              {getCategoryLabel(selectedArticle.category)}
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#fca311]/20 text-[#14213d] dark:text-[#fca311] font-bold">
+              {selectedArticle.domain === 'qr' ? (
+                <QrCode className="w-3.5 h-3.5 text-[#fca311]" />
+              ) : (
+                <Camera className="w-3.5 h-3.5 text-[#fca311]" />
+              )}
+              <span>
+                #{String(selectedArticle.number).padStart(2, '0')} ·{' '}
+                {getCategoryLabel(selectedArticle.category)}
+              </span>
             </span>
             <span className="inline-flex items-center gap-1 opacity-75">
               <Clock className="w-3.5 h-3.5 text-[#fca311]" />
-              {selectedArticle.readingMinutes} min
+              {selectedArticle.readingTimeMin} min
             </span>
           </div>
         </div>
@@ -390,7 +618,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
               {content.title}
             </h1>
             <p className="text-sm sm:text-base opacity-85 leading-relaxed">
-              {content.excerpt}
+              {content.intro}
             </p>
 
             {/* Targeted SEO Keywords Bar */}
@@ -400,15 +628,16 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
                 <span>{ui.targetKeywordsLabel}</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
-                <span className="px-2.5 py-1 rounded-md bg-[#14213d] text-[#ffffff] dark:bg-[#ffffff] dark:text-[#14213d] text-xs font-mono font-bold">
-                  ★ {content.primaryKeyword}
-                </span>
-                {content.secondaryKeywords.map((kw, idx) => (
+                {content.primaryKeywords.map((kw, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 rounded-md border border-[#14213d]/20 dark:border-[#ffffff]/20 text-xs font-mono opacity-85"
+                    className={
+                      idx === 0
+                        ? 'px-2.5 py-1 rounded-md bg-[#14213d] text-[#ffffff] dark:bg-[#ffffff] dark:text-[#14213d] text-xs font-mono font-bold'
+                        : 'px-2.5 py-1 rounded-md border border-[#14213d]/20 dark:border-[#ffffff]/20 text-xs font-mono opacity-85'
+                    }
                   >
-                    {kw}
+                    {idx === 0 ? `★ ${kw}` : kw}
                   </span>
                 ))}
               </div>
@@ -420,33 +649,41 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
             <div className="space-y-2">
               <div className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase text-[#fca311]">
                 <Zap className="w-4 h-4" />
-                <span>1-Click Calibrated Studio Preset</span>
+                <span>
+                  {selectedArticle.domain === 'qr'
+                    ? '1-Click Pre-Configured QR & Barcode Studio'
+                    : '1-Click Calibrated Exact-KB Preset'}
+                </span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 text-xs">
                 <div className="px-3 py-2 rounded-lg bg-[#ffffff] dark:bg-[#14213d] border border-[#14213d]/15 dark:border-[#ffffff]/15">
                   <span className="opacity-65 block font-mono text-[10px] uppercase">
                     {ui.specDimensionsLabel}
                   </span>
-                  <span className="font-mono font-bold">{content.specs.dimensionsPx}</span>
+                  <span className="font-mono font-bold">
+                    {selectedArticle.specs.dimensionsPx}
+                  </span>
                 </div>
                 <div className="px-3 py-2 rounded-lg bg-[#ffffff] dark:bg-[#14213d] border border-[#14213d]/15 dark:border-[#ffffff]/15">
                   <span className="opacity-65 block font-mono text-[10px] uppercase">
                     {ui.specByteLimitLabel}
                   </span>
                   <span className="font-mono font-bold text-[#fca311]">
-                    {content.specs.byteCeiling}
+                    {selectedArticle.specs.byteCeiling}
                   </span>
                 </div>
               </div>
             </div>
 
             <button
-              onClick={() =>
-                onLaunchPreset(selectedArticle.presetId, selectedArticle.targetKb)
-              }
+              onClick={() => handleTriggerArticlePreset(selectedArticle)}
               className="px-5 py-3.5 rounded-xl bg-[#fca311] text-[#14213d] font-bold text-xs sm:text-sm shadow-sm hover:opacity-95 transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer"
             >
-              <Sliders className="w-4 h-4 shrink-0" />
+              {selectedArticle.domain === 'qr' ? (
+                <QrCode className="w-4 h-4 shrink-0" />
+              ) : (
+                <Sliders className="w-4 h-4 shrink-0" />
+              )}
               <span>{content.ctaButtonLabel}</span>
             </button>
           </div>
@@ -466,15 +703,23 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
                     {sec.heading}
                   </h2>
                 </div>
-                <div className="space-y-2.5 pl-0 sm:pl-10">
-                  {sec.paragraphs.map((p, pIdx) => (
-                    <p
-                      key={pIdx}
-                      className="text-xs sm:text-sm opacity-85 leading-relaxed"
-                    >
-                      {p}
-                    </p>
-                  ))}
+                <div className="space-y-3 pl-0 sm:pl-10">
+                  <p className="text-xs sm:text-sm opacity-85 leading-relaxed">
+                    {sec.body}
+                  </p>
+                  {sec.bullets && sec.bullets.length > 0 && (
+                    <ul className="space-y-2 pt-1">
+                      {sec.bullets.map((b, bIdx) => (
+                        <li
+                          key={bIdx}
+                          className="text-xs sm:text-sm opacity-90 leading-relaxed flex items-start gap-2"
+                        >
+                          <span className="text-[#fca311] font-bold mt-0.5">•</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </section>
             ))}
@@ -498,17 +743,17 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
               <span>{ui.faqHeading}</span>
             </h2>
             <div className="grid grid-cols-1 gap-4">
-              {content.faq.map((item, idx) => (
+              {content.faqs.map((item, idx) => (
                 <div
                   key={idx}
                   className="rounded-xl border border-[#14213d]/15 dark:border-[#ffffff]/15 p-5 space-y-2"
                 >
                   <h3 className="font-bold text-sm sm:text-base flex items-start gap-2">
                     <span className="text-[#fca311] font-mono">Q.</span>
-                    <span>{item.q}</span>
+                    <span>{item.question}</span>
                   </h3>
                   <p className="text-xs sm:text-sm opacity-80 leading-relaxed pl-6">
-                    {item.a}
+                    {item.answer}
                   </p>
                 </div>
               ))}
@@ -526,9 +771,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
               </div>
             </div>
             <button
-              onClick={() =>
-                onLaunchPreset(selectedArticle.presetId, selectedArticle.targetKb)
-              }
+              onClick={() => handleTriggerArticlePreset(selectedArticle)}
               className="px-5 py-3 rounded-xl bg-[#fca311] text-[#14213d] font-bold text-xs sm:text-sm hover:opacity-95 transition-all flex items-center gap-2 shrink-0 cursor-pointer"
             >
               <span>{content.ctaButtonLabel}</span>
@@ -551,7 +794,8 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
                 >
                   <div className="space-y-1.5">
                     <span className="text-[11px] font-mono font-bold text-[#fca311]">
-                      #{String(rel.number).padStart(2, '0')} · {rel.targetKb} KB
+                      #{String(rel.number).padStart(2, '0')} ·{' '}
+                      {getCategoryLabel(rel.category)}
                     </span>
                     <h4 className="font-serif font-bold text-sm leading-snug">
                       {relContent.title}
@@ -607,8 +851,47 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
           </p>
         </div>
 
-        {/* Switch Tabs: 10 SEO Guides vs Master Keyword Matrix */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-[#14213d]/10 dark:border-[#ffffff]/10">
+        {/* TOOL SECTION FILTER: All (20) vs Photo KB Compressor (10) vs QR Code & Barcode (10) */}
+        <div className="flex flex-wrap items-center gap-2 pt-2">
+          <button
+            onClick={() => handleSelectDomain('all')}
+            className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer ${
+              selectedDomain === 'all'
+                ? 'bg-[#14213d] text-[#ffffff] dark:bg-[#ffffff] dark:text-[#14213d]'
+                : 'border border-[#14213d]/20 dark:border-[#ffffff]/20 hover:border-[#fca311]'
+            }`}
+          >
+            <BookOpen className="w-4 h-4 text-[#fca311]" />
+            <span>{ui.domainAll}</span>
+          </button>
+
+          <button
+            onClick={() => handleSelectDomain('photo')}
+            className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer ${
+              selectedDomain === 'photo'
+                ? 'bg-[#14213d] text-[#ffffff] dark:bg-[#ffffff] dark:text-[#14213d]'
+                : 'border border-[#14213d]/20 dark:border-[#ffffff]/20 hover:border-[#fca311]'
+            }`}
+          >
+            <Camera className="w-4 h-4 text-[#fca311]" />
+            <span>{ui.domainPhoto}</span>
+          </button>
+
+          <button
+            onClick={() => handleSelectDomain('qr')}
+            className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer ${
+              selectedDomain === 'qr'
+                ? 'bg-[#14213d] text-[#ffffff] dark:bg-[#ffffff] dark:text-[#14213d]'
+                : 'border border-[#14213d]/20 dark:border-[#ffffff]/20 hover:border-[#fca311]'
+            }`}
+          >
+            <QrCode className="w-4 h-4 text-[#fca311]" />
+            <span>{ui.domainQr}</span>
+          </button>
+        </div>
+
+        {/* Switch Tabs: 20 SEO Guides vs Master Keyword Matrix (60+) */}
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-[#14213d]/10 dark:border-[#ffffff]/10">
           <div className="flex items-center gap-2">
             <button
               onClick={() => setActiveTab('articles')}
@@ -650,21 +933,13 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
 
         {/* Category Filter Buttons */}
         <div className="flex flex-wrap items-center gap-1.5">
-          {(
-            [
-              { id: 'all', label: ui.catAll },
-              { id: 'exact-kb', label: ui.catExactKb },
-              { id: 'passport-visa', label: ui.catPassport },
-              { id: 'signature', label: ui.catSignature },
-              { id: 'pdf-print', label: ui.catPdfPrint }
-            ] as const
-          ).map((cat) => (
+          {categoryButtons.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
               className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-colors cursor-pointer ${
                 selectedCategory === cat.id
-                  ? 'bg-[#14213d] text-[#ffffff] dark:bg-[#ffffff] dark:text-[#14213d]'
+                  ? 'bg-[#fca311] text-[#14213d]'
                   : 'border border-[#14213d]/15 dark:border-[#ffffff]/15 hover:border-[#fca311]'
               }`}
             >
@@ -674,7 +949,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
         </div>
       </div>
 
-      {/* TAB 1: 10 PHOTO COMPRESSION SEO ARTICLES GRID */}
+      {/* TAB 1: 20 SEO ARTICLES GRID (10 PHOTO KB + 10 QR CODE & BARCODE) */}
       {activeTab === 'articles' && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredArticles.map((article) => {
@@ -687,13 +962,20 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
                 <div className="space-y-3.5">
                   {/* Top Meta Row */}
                   <div className="flex items-center justify-between gap-2 text-xs font-mono">
-                    <span className="px-2.5 py-1 rounded-md bg-[#fca311]/20 text-[#14213d] dark:text-[#fca311] font-bold">
-                      #{String(article.number).padStart(2, '0')} ·{' '}
-                      {getCategoryLabel(article.category)}
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#fca311]/20 text-[#14213d] dark:text-[#fca311] font-bold">
+                      {article.domain === 'qr' ? (
+                        <QrCode className="w-3.5 h-3.5 text-[#fca311]" />
+                      ) : (
+                        <Camera className="w-3.5 h-3.5 text-[#fca311]" />
+                      )}
+                      <span>
+                        #{String(article.number).padStart(2, '0')} ·{' '}
+                        {getCategoryLabel(article.category)}
+                      </span>
                     </span>
                     <span className="inline-flex items-center gap-1 opacity-75">
                       <Clock className="w-3.5 h-3.5 text-[#fca311]" />
-                      {article.readingMinutes} min
+                      {article.readingTimeMin} min
                     </span>
                   </div>
 
@@ -716,15 +998,16 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
                       {ui.targetKeywordsLabel}:
                     </div>
                     <div className="flex flex-wrap gap-1.5">
-                      <span className="px-2 py-0.5 rounded-md bg-[#14213d] text-[#ffffff] dark:bg-[#ffffff] dark:text-[#14213d] text-[11px] font-mono font-bold">
-                        ★ {content.primaryKeyword}
-                      </span>
-                      {content.secondaryKeywords.slice(0, 2).map((kw, i) => (
+                      {content.primaryKeywords.slice(0, 3).map((kw, i) => (
                         <span
                           key={i}
-                          className="px-2 py-0.5 rounded-md border border-[#14213d]/20 dark:border-[#ffffff]/20 text-[11px] font-mono opacity-80"
+                          className={
+                            i === 0
+                              ? 'px-2 py-0.5 rounded-md bg-[#14213d] text-[#ffffff] dark:bg-[#ffffff] dark:text-[#14213d] text-[11px] font-mono font-bold'
+                              : 'px-2 py-0.5 rounded-md border border-[#14213d]/20 dark:border-[#ffffff]/20 text-[11px] font-mono opacity-80'
+                          }
                         >
-                          {kw}
+                          {i === 0 ? `★ ${kw}` : kw}
                         </span>
                       ))}
                     </div>
@@ -734,9 +1017,11 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
                 {/* Spec Strip & Dual Action Buttons */}
                 <div className="space-y-3 pt-3 border-t border-[#14213d]/10 dark:border-[#ffffff]/10">
                   <div className="flex items-center justify-between text-[11px] font-mono opacity-80">
-                    <span>{content.specs.dimensionsPx}</span>
-                    <span className="font-bold text-[#fca311]">
-                      {content.specs.byteCeiling}
+                    <span className="truncate pr-2">
+                      {article.specs.dimensionsPx}
+                    </span>
+                    <span className="font-bold text-[#fca311] shrink-0">
+                      {article.specs.byteCeiling}
                     </span>
                   </div>
 
@@ -750,9 +1035,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
                     </button>
 
                     <button
-                      onClick={() =>
-                        onLaunchPreset(article.presetId, article.targetKb)
-                      }
+                      onClick={() => handleTriggerArticlePreset(article)}
                       className="px-3.5 py-2.5 rounded-xl bg-[#fca311] text-[#14213d] font-bold text-xs flex items-center justify-center gap-1.5 hover:opacity-95 transition-opacity cursor-pointer"
                     >
                       <Zap className="w-3.5 h-3.5 shrink-0" />
@@ -766,7 +1049,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
         </div>
       )}
 
-      {/* TAB 2: MASTER PHOTO COMPRESSION SEO KEYWORD DIRECTORY */}
+      {/* TAB 2: MASTER SEO KEYWORD DIRECTORY (PHOTO KB + QR CODE & BARCODE) */}
       {activeTab === 'keywords' && (
         <div className="rounded-2xl border-2 border-[#14213d]/15 dark:border-[#ffffff]/15 overflow-hidden bg-[#ffffff] dark:bg-[#14213d]">
           <div className="p-5 sm:p-6 border-b border-[#14213d]/15 dark:border-[#ffffff]/15 space-y-1.5">
@@ -781,6 +1064,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
               <thead>
                 <tr className="border-b border-[#14213d]/15 dark:border-[#ffffff]/15 text-[11px] font-mono uppercase text-[#fca311]">
                   <th className="py-3.5 px-4">{ui.colKeyword}</th>
+                  <th className="py-3.5 px-4">{ui.colToolDomain}</th>
                   <th className="py-3.5 px-4">{ui.colCategory}</th>
                   <th className="py-3.5 px-4">{ui.colPresetSpec}</th>
                   <th className="py-3.5 px-4 text-right">{ui.colAction}</th>
@@ -796,12 +1080,27 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
                       {item.keyword}
                     </td>
                     <td className="py-3 px-4">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#fca311]/15 font-mono text-[11px] font-bold">
+                        {item.domain === 'qr' ? (
+                          <>
+                            <QrCode className="w-3 h-3 text-[#fca311]" />
+                            <span>QR</span>
+                          </>
+                        ) : (
+                          <>
+                            <Camera className="w-3 h-3 text-[#fca311]" />
+                            <span>KB</span>
+                          </>
+                        )}
+                      </span>
+                    </td>
+                    <td className="py-3 px-4">
                       <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md border border-[#14213d]/20 dark:border-[#ffffff]/20 font-mono text-[11px]">
-                        {getCategoryLabel(item.category)} · {item.searchIntent}
+                        {getCategoryLabel(item.category)}
                       </span>
                     </td>
                     <td className="py-3 px-4 font-mono font-bold text-[#fca311]">
-                      ≤ {item.targetKb} KB
+                      {item.specBadge}
                     </td>
                     <td className="py-3 px-4 text-right">
                       <div className="inline-flex items-center gap-2">
@@ -812,9 +1111,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
                           {ui.openArticleBtn}
                         </button>
                         <button
-                          onClick={() =>
-                            onLaunchPreset(item.presetId, item.targetKb)
-                          }
+                          onClick={() => handleTriggerKeywordPreset(item)}
                           className="px-2.5 py-1.5 rounded-lg bg-[#fca311] text-[#14213d] font-bold hover:opacity-90 transition-opacity cursor-pointer"
                         >
                           {ui.launchToolShortBtn}
@@ -829,14 +1126,14 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({ locale, onLaunchPreset
         </div>
       )}
 
-      {/* PHASE 2 ROADMAP CALLOUT (QR CODE SEO STRATEGY) */}
+      {/* DUAL-TOOL SEO COMPLETION SUMMARY CALLOUT */}
       <div className="rounded-2xl border border-[#14213d]/20 dark:border-[#ffffff]/20 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="space-y-1">
           <div className="text-xs font-mono font-bold uppercase text-[#fca311]">
-            {ui.qrStrategyBannerTitle}
+            {ui.completeBannerTitle}
           </div>
           <p className="text-xs sm:text-sm opacity-80 leading-relaxed">
-            {ui.qrStrategyBannerSub}
+            {ui.completeBannerSub}
           </p>
         </div>
       </div>
