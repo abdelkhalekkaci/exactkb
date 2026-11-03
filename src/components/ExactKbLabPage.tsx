@@ -107,8 +107,8 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     } else if (initialPresetId === 'amazon-1000') {
       setWetInkEnabled(false);
       setBackdropMode('pure-white');
-      setActiveSampleId('ecommerce-watch');
-      setSourceDataUrl(generateCuratedSampleDataUrl('ecommerce-watch'));
+      setActiveSampleId('studio-product');
+      setSourceDataUrl(generateCuratedSampleDataUrl('studio-product'));
       setSourceLabel('Sample Product Photo');
     } else {
       setWetInkEnabled(false);
@@ -255,7 +255,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     const ext = mimeType === 'image/webp' ? 'webp' : mimeType === 'image/png' ? 'png' : 'jpg';
     triggerDownload(
       compressionResult.dataUrl,
-      `exactkb-${compressionResult.kb}KB.${ext}`,
+      `compressphoto-${compressionResult.kb}KB.${ext}`,
       `Downloaded ${ext.toUpperCase()} (${compressionResult.kb} KB)`
     );
   };
@@ -270,7 +270,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     );
     const url = URL.createObjectURL(blob);
     const finalKb = (finalBytes / 1024).toFixed(2);
-    triggerDownload(url, `exactkb-${finalKb}KB.pdf`, `Downloaded PDF (${finalKb} KB)`);
+    triggerDownload(url, `compressphoto-${finalKb}KB.pdf`, `Downloaded PDF (${finalKb} KB)`);
     setTimeout(() => URL.revokeObjectURL(url), 5000);
   };
 
@@ -750,6 +750,53 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
       {/* ILLUSTRATED VISITOR GUIDE WITH WEBSITE SCREENS & BEFORE/AFTER EXPLANATION */}
       <VisitorVisualGuide mode="exactkb" locale={locale} />
 
+      {/* SEMANTIC SEO SPECIFICATION & OFFICIAL PORTAL GUIDE SECTION */}
+      <section
+        aria-labelledby="compressphoto-kb-specs-heading"
+        className="pt-8 border-t border-[#14213d]/15 dark:border-[#ffffff]/15 space-y-6"
+      >
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <h2
+            id="compressphoto-kb-specs-heading"
+            className="font-serif text-2xl sm:text-3xl font-bold tracking-tight"
+          >
+            {t.kbSeoSectionTitle}
+          </h2>
+          <p className="text-xs sm:text-sm opacity-80 leading-relaxed">
+            {t.kbSeoSectionSub}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {t.kbSeoCards.map((card, idx) => (
+            <article
+              key={idx}
+              className="p-6 rounded-xl border border-[#14213d]/15 dark:border-[#ffffff]/15 bg-[#ffffff] dark:bg-[#1b2c52] flex flex-col justify-between space-y-4"
+            >
+              <div className="space-y-2">
+                <h3 className="font-serif text-base sm:text-lg font-bold leading-snug">
+                  {card.title}
+                </h3>
+                <p className="text-xs opacity-80 leading-relaxed">
+                  {card.body}
+                </p>
+              </div>
+              <ul className="space-y-1.5 pt-3 border-t border-[#14213d]/10 dark:border-[#ffffff]/10">
+                {card.specs.map((spec, sIdx) => (
+                  <li
+                    key={sIdx}
+                    className="text-xs font-medium flex items-start gap-2"
+                  >
+                    <span className="text-[#fca311] font-bold">•</span>
+                    <span>{spec}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
       {/* 4x6 Pharmacy Sheet Modal */}
       {showPharmacyModal && pharmacySheetUrl && (
         <div className="fixed inset-0 z-50 bg-[#14213d]/85 flex items-center justify-center p-4 overflow-y-auto">
@@ -790,7 +837,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
                 onClick={() =>
                   triggerDownload(
                     pharmacySheetUrl,
-                    `exactkb-4x6-sheet-${presetId}.jpg`,
+                    `compressphoto-4x6-sheet-${presetId}.jpg`,
                     'Downloaded 4×6 inch (10×15 cm) 8-Photo Sheet'
                   )
                 }

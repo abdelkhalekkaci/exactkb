@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Camera, Moon, QrCode, Sun } from 'lucide-react';
 import {
   AtelierPage,
@@ -11,20 +11,107 @@ import {
   LocaleCode,
   QRPayloadType
 } from './types/atelier';
-import { TRANSLATIONS } from './data/seoRoutesAndTranslations';
+import {
+  LOCALIZED_ROUTE_META,
+  TRANSLATIONS
+} from './data/seoRoutesAndTranslations';
 import { ExactKbLabPage } from './components/ExactKbLabPage';
 import { QrPrintshopPage } from './components/QrPrintshopPage';
 import { CustomAtelierCursor } from './components/CustomAtelierCursor';
 import { InfoAndLegalPages } from './components/InfoAndLegalPages';
 import { SeoBlogPage } from './components/SeoBlogPage';
 
+const SITE_ORIGIN = 'https://compressphoto.space';
+
+interface ParsedRoute {
+  page: AtelierPage;
+  blogSlug: string | null;
+}
+
+export function getPathForPage(
+  page: AtelierPage,
+  blogSlug?: string | null
+): string {
+  switch (page) {
+    case 'exactkb':
+      return '/';
+    case 'qr':
+      return '/qr';
+    case 'blog':
+      return blogSlug ? `/blog/${blogSlug}` : '/blog';
+    case 'about':
+      return '/about';
+    case 'legal':
+      return '/legal';
+    case 'privacy':
+      return '/privacy';
+    case 'contact':
+      return '/contact';
+  }
+}
+
+function parseLocationRoute(): ParsedRoute {
+  if (typeof window === 'undefined') {
+    return { page: 'exactkb', blogSlug: null };
+  }
+
+  const rawPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  const rawHash = window.location.hash.replace(/^#\/?/, '');
+
+  // Support legacy hash URLs if visited directly
+  if (rawPath === '/' && rawHash) {
+    if (rawHash === 'qr') return { page: 'qr', blogSlug: null };
+    if (rawHash === 'blog') return { page: 'blog', blogSlug: null };
+    if (rawHash.startsWith('blog/')) {
+      return { page: 'blog', blogSlug: rawHash.slice(5) || null };
+    }
+    if (rawHash === 'about') return { page: 'about', blogSlug: null };
+    if (rawHash === 'legal') return { page: 'legal', blogSlug: null };
+    if (rawHash === 'privacy') return { page: 'privacy', blogSlug: null };
+    if (rawHash === 'contact') return { page: 'contact', blogSlug: null };
+  }
+
+  if (rawPath === '/qr') return { page: 'qr', blogSlug: null };
+  if (rawPath === '/blog') return { page: 'blog', blogSlug: null };
+  if (rawPath.startsWith('/blog/')) {
+    const slug = decodeURIComponent(rawPath.slice('/blog/'.length)).trim();
+    return { page: 'blog', blogSlug: slug || null };
+  }
+  if (rawPath === '/about') return { page: 'about', blogSlug: null };
+  if (rawPath === '/legal') return { page: 'legal', blogSlug: null };
+  if (rawPath === '/privacy') return { page: 'privacy', blogSlug: null };
+  if (rawPath === '/contact') return { page: 'contact', blogSlug: null };
+
+  return { page: 'exactkb', blogSlug: null };
+}
+
+function parseInitialLocale(): LocaleCode {
+  if (typeof window === 'undefined') return 'en';
+  const params = new URLSearchParams(window.location.search);
+  const langParam = params.get('lang')?.toLowerCase();
+  if (
+    langParam === 'en' ||
+    langParam === 'fr' ||
+    langParam === 'es' ||
+    langParam === 'ar'
+  ) {
+    return langParam;
+  }
+  return 'en';
+}
+
 export default function App() {
-  const [activePage, setActivePage] = useState<AtelierPage>('exactkb');
-  const [locale, setLocale] = useState<LocaleCode>('en');
+  const initialRoute = parseLocationRoute();
+  const [activePage, setActivePage] = useState<AtelierPage>(initialRoute.page);
+  const [activeBlogSlug, setActiveBlogSlug] = useState<string | null>(
+    initialRoute.blogSlug
+  );
+  const [locale, setLocale] = useState<LocaleCode>(parseInitialLocale);
   const [darkMode, setDarkMode] = useState<boolean>(false);
 
   // Studio Calibration & Cross-Tool Bridge State
-  const [exactKbPreset, setExactKbPreset] = useState<BiometricPresetId>('schengen-35x45');
+  const [exactKbPreset, setExactKbPreset] =
+    useState<BiometricPresetId>('schengen-35x45');
   const [exactKbTarget, setExactKbTarget] = useState<number>(50);
   const [bridgedQrDataUrl, setBridgedQrDataUrl] = useState<string | null>(null);
   const [qrPayloadType, setQrPayloadType] = useState<QRPayloadType>('url');
@@ -32,7 +119,7 @@ export default function App() {
   const t = TRANSLATIONS[locale];
   const isRtl = locale === 'ar';
 
-  // Sync Light (#ffffff) and Dark (#14213d) Mode with <html>
+  // Sync Light (#ffffff) and Dark (#14213d) Mode + lang/dir with <html>
   useEffect(() => {
     const root = document.documentElement;
     if (darkMode) {
@@ -40,11 +127,118 @@ export default function App() {
     } else {
       root.classList.remove('dark');
     }
-  }, [darkMode]);
+    root.setAttribute('lang', locale);
+    root.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
+  }, [darkMode, locale, isRtl]);
 
-  const navigateToPage = (page: AtelierPage) => {
-    setActivePage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Listen to browser Back/Forward navigation
+  useEffect(() => {
+    const handlePopState = () => {
+      const parsed = parseLocationRoute();
+      setActivePage(parsed.page);
+      setActiveBlogSlug(parsed.blogSlug);
+      setLocale(parseInitialLocale());
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Synchronize <link rel="canonical">, hreflang tags, <meta property="og:url">, and localized page-specific title/description
+  useEffect(() => {
+    const canonicalPath = getPathForPage(activePage, activeBlogSlug);
+    const canonicalUrl = `${SITE_ORIGIN}${canonicalPath}`;
+
+    let canonicalEl = document.querySelector(
+      'link[rel="canonical"]'
+    ) as HTMLLinkElement | null;
+    if (!canonicalEl) {
+      canonicalEl = document.createElement('link');
+      canonicalEl.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalEl);
+    }
+    canonicalEl.setAttribute('href', canonicalUrl);
+
+    // Sync hreflang alternate links for the active path
+    const hreflangMap: Record<string, string> = {
+      en: canonicalUrl,
+      fr: `${canonicalUrl}?lang=fr`,
+      es: `${canonicalUrl}?lang=es`,
+      ar: `${canonicalUrl}?lang=ar`,
+      'x-default': canonicalUrl
+    };
+    Object.entries(hreflangMap).forEach(([langCode, url]) => {
+      let linkEl = document.querySelector(
+        `link[rel="alternate"][hreflang="${langCode}"]`
+      ) as HTMLLinkElement | null;
+      if (!linkEl) {
+        linkEl = document.createElement('link');
+        linkEl.setAttribute('rel', 'alternate');
+        linkEl.setAttribute('hreflang', langCode);
+        document.head.appendChild(linkEl);
+      }
+      linkEl.setAttribute('href', url);
+    });
+
+    const ogUrlEl = document.querySelector('meta[property="og:url"]');
+    if (ogUrlEl) {
+      ogUrlEl.setAttribute('content', canonicalUrl);
+    }
+
+    // Blog page manages its own dynamic localized hub/article title & description
+    if (activePage !== 'blog') {
+      const meta = LOCALIZED_ROUTE_META[locale][activePage];
+      document.title = meta.title;
+
+      const descEl = document.querySelector('meta[name="description"]');
+      if (descEl) descEl.setAttribute('content', meta.description);
+
+      const ogTitleEl = document.querySelector('meta[property="og:title"]');
+      if (ogTitleEl) ogTitleEl.setAttribute('content', meta.title);
+
+      const ogDescEl = document.querySelector('meta[property="og:description"]');
+      if (ogDescEl) ogDescEl.setAttribute('content', meta.description);
+
+      const twTitleEl = document.querySelector('meta[name="twitter:title"]');
+      if (twTitleEl) twTitleEl.setAttribute('content', meta.title);
+
+      const twDescEl = document.querySelector('meta[name="twitter:description"]');
+      if (twDescEl) twDescEl.setAttribute('content', meta.description);
+    }
+  }, [activePage, activeBlogSlug, locale]);
+
+  const navigateToPage = useCallback(
+    (page: AtelierPage, blogSlug: string | null = null) => {
+      const targetPath = getPathForPage(page, blogSlug);
+      const targetUrl =
+        locale === 'en' ? targetPath : `${targetPath}?lang=${locale}`;
+      if (
+        typeof window !== 'undefined' &&
+        `${window.location.pathname}${window.location.search}` !== targetUrl
+      ) {
+        window.history.pushState({}, '', targetUrl);
+      }
+      setActivePage(page);
+      setActiveBlogSlug(page === 'blog' ? blogSlug : null);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    [locale]
+  );
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    page: AtelierPage,
+    blogSlug: string | null = null
+  ) => {
+    if (
+      !e.metaKey &&
+      !e.ctrlKey &&
+      !e.shiftKey &&
+      !e.altKey &&
+      e.button === 0
+    ) {
+      e.preventDefault();
+      navigateToPage(page, blogSlug);
+    }
   };
 
   const handleOpenQrWithPayload = (payloadType: QRPayloadType = 'url') => {
@@ -83,11 +277,8 @@ export default function App() {
         <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3 px-4 sm:px-6 py-4">
           {/* Zone 1: Custom Brand Logo + CompressPhoto Title */}
           <a
-            href="#exactkb"
-            onClick={(e) => {
-              e.preventDefault();
-              navigateToPage('exactkb');
-            }}
+            href="/"
+            onClick={(e) => handleLinkClick(e, 'exactkb')}
             className="flex items-center gap-2.5 whitespace-nowrap shrink-0 group"
           >
             <div className="w-9 h-9 rounded-lg bg-[#14213d] dark:bg-[#ffffff] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
@@ -137,9 +328,10 @@ export default function App() {
           </a>
 
           {/* Zone 2: Clear 2-Tool Switcher in Navbar */}
-          <nav className="flex items-center gap-2">
-            <button
-              onClick={() => navigateToPage('exactkb')}
+          <nav aria-label="Primary Tools" className="flex items-center gap-2">
+            <a
+              href="/"
+              onClick={(e) => handleLinkClick(e, 'exactkb')}
               className={`px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                 activePage === 'exactkb'
                   ? 'bg-[#fca311] text-[#14213d] shadow-xs'
@@ -148,10 +340,11 @@ export default function App() {
             >
               <Camera className="w-4 h-4" />
               <span>{t.navExactKb}</span>
-            </button>
+            </a>
 
-            <button
-              onClick={() => navigateToPage('qr')}
+            <a
+              href="/qr"
+              onClick={(e) => handleLinkClick(e, 'qr')}
               className={`px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                 activePage === 'qr'
                   ? 'bg-[#fca311] text-[#14213d] shadow-xs'
@@ -160,7 +353,7 @@ export default function App() {
             >
               <QrCode className="w-4 h-4" />
               <span>{t.navQrStudio}</span>
-            </button>
+            </a>
           </nav>
 
           {/* Zone 3: 4-Language Toggle (EN / FR / ES / AR) & Theme Toggle */}
@@ -175,7 +368,20 @@ export default function App() {
                 return (
                   <button
                     key={code}
-                    onClick={() => setLocale(code)}
+                    onClick={() => {
+                      setLocale(code);
+                      if (typeof window !== 'undefined') {
+                        const currentPath = getPathForPage(
+                          activePage,
+                          activeBlogSlug
+                        );
+                        const nextUrl =
+                          code === 'en'
+                            ? currentPath
+                            : `${currentPath}?lang=${code}`;
+                        window.history.replaceState({}, '', nextUrl);
+                      }
+                    }}
                     className={`px-2 py-1 rounded-md text-xs font-mono font-bold uppercase transition-colors cursor-pointer ${
                       active
                         ? 'bg-[#fca311] text-[#14213d]'
@@ -228,6 +434,8 @@ export default function App() {
         {activePage === 'blog' && (
           <SeoBlogPage
             locale={locale}
+            activeArticleSlug={activeBlogSlug}
+            onSelectArticleSlug={(slug) => navigateToPage('blog', slug)}
             onLaunchPreset={handleLaunchPresetFromBlog}
             onLaunchQrPreset={handleOpenQrWithPayload}
           />
@@ -305,28 +513,31 @@ export default function App() {
               </div>
               <ul className="space-y-1.5 text-xs font-semibold">
                 <li>
-                  <button
-                    onClick={() => navigateToPage('exactkb')}
+                  <a
+                    href="/"
+                    onClick={(e) => handleLinkClick(e, 'exactkb')}
                     className="hover:text-[#fca311] transition-colors cursor-pointer"
                   >
                     {t.navExactKb}
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => navigateToPage('qr')}
+                  <a
+                    href="/qr"
+                    onClick={(e) => handleLinkClick(e, 'qr')}
                     className="hover:text-[#fca311] transition-colors cursor-pointer"
                   >
                     {t.navQrStudio}
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => navigateToPage('blog')}
+                  <a
+                    href="/blog"
+                    onClick={(e) => handleLinkClick(e, 'blog')}
                     className="hover:text-[#fca311] transition-colors cursor-pointer"
                   >
                     {t.navBlog}
-                  </button>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -338,36 +549,40 @@ export default function App() {
               </div>
               <ul className="space-y-1.5 text-xs font-semibold">
                 <li>
-                  <button
-                    onClick={() => navigateToPage('about')}
+                  <a
+                    href="/about"
+                    onClick={(e) => handleLinkClick(e, 'about')}
                     className="hover:text-[#fca311] transition-colors cursor-pointer"
                   >
                     {t.navAbout}
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => navigateToPage('legal')}
+                  <a
+                    href="/legal"
+                    onClick={(e) => handleLinkClick(e, 'legal')}
                     className="hover:text-[#fca311] transition-colors cursor-pointer"
                   >
                     {t.navLegal}
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => navigateToPage('privacy')}
+                  <a
+                    href="/privacy"
+                    onClick={(e) => handleLinkClick(e, 'privacy')}
                     className="hover:text-[#fca311] transition-colors cursor-pointer"
                   >
                     {t.navPrivacy}
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => navigateToPage('contact')}
+                  <a
+                    href="/contact"
+                    onClick={(e) => handleLinkClick(e, 'contact')}
                     className="hover:text-[#fca311] transition-colors cursor-pointer"
                   >
                     {t.navContact}
-                  </button>
+                  </a>
                 </li>
               </ul>
             </div>

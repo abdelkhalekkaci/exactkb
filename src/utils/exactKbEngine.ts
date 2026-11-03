@@ -321,7 +321,7 @@ export async function runSevenPassBinarySearch(
   }
 
   const finalBytesArr = dataUrlToUint8Array(bestCandidate.dataUrl);
-  const blob = new Blob([finalBytesArr], { type: mimeType });
+  const blob = new Blob([finalBytesArr as unknown as BlobPart], { type: mimeType });
   const blobUrl = URL.createObjectURL(blob);
   const durationMs = Math.max(12, Math.round(performance.now() - t0));
 
@@ -413,7 +413,7 @@ export function compileExactKbPdfBlob(
   if (offset + trailerEstimate < targetBytes * 0.94) {
     const padLen = Math.max(0, Math.min(2048, Math.floor(targetBytes * 0.92 - offset - trailerEstimate)));
     if (padLen > 32) {
-      pushStr(`% ExactKB Atelier Calibration Seal: ${'A'.repeat(padLen - 40)}\n`);
+      pushStr(`% CompressPhoto Calibration Seal: ${'A'.repeat(padLen - 40)}\n`);
     }
   }
 
@@ -485,7 +485,7 @@ export async function generatePharmacySheetDataUrl(
   ctx.fillStyle = '#161514';
   ctx.font = '600 19px "JetBrains Mono", monospace';
   ctx.fillText(
-    `EXACTKB ATELIER · 4×6 IN (10×15 CM) 300 DPI PHARMACY PRINT SHEET · ${presetLabel.toUpperCase()} (${physicalSizeLabel})`,
+    `COMPRESSPHOTO.SPACE · 4×6 IN (10×15 CM) 300 DPI PHARMACY PRINT SHEET · ${presetLabel.toUpperCase()} (${physicalSizeLabel})`,
     72,
     56
   );

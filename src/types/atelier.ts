@@ -64,16 +64,50 @@ export interface StudioStampConfig {
 }
 
 export type QRPayloadType =
+  | 'url'
   | 'wifi'
   | 'vcard'
   | 'menu'
   | 'whatsapp'
-  | 'url'
-  | 'code128';
+  | 'email'
+  | 'phone'
+  | 'sms'
+  | 'location'
+  | 'event'
+  | 'social'
+  | 'payment'
+  | 'appstore'
+  | 'text'
+  | 'code128'
+  | 'custom'
+  | 'barcode';
 
-export type FinderPatternStyle = 'square' | 'rounded' | 'diamond';
-export type ModuleDotStyle = 'square' | 'dots' | 'bars';
-export type CenterEmblemPreset = 'none' | 'atelier-seal' | 'wifi-badge' | 'bistro-cup' | 'vcard-monogram' | 'custom';
+export type QRCategoryFilter =
+  | 'all'
+  | 'web'
+  | 'contact'
+  | 'venue'
+  | 'commerce'
+  | 'custom';
+
+export type FinderPatternStyle = 'square' | 'rounded' | 'circle' | 'diamond' | 'leaf';
+export type FinderInnerStyle = 'square' | 'rounded' | 'circle' | 'diamond';
+export type ModuleDotStyle = 'square' | 'rounded' | 'dots' | 'diamond' | 'bars' | 'hbars' | 'classy';
+export type QRErrorCorrectionLevel = 'L' | 'M' | 'Q' | 'H';
+export type QRGradientDirection = 'diagonal' | 'vertical' | 'horizontal' | 'radial';
+export type QRFrameStyle = 'none' | 'bottom-banner' | 'top-banner' | 'outline-box';
+
+export type CenterEmblemPreset =
+  | 'none'
+  | 'scan-me'
+  | 'wifi-badge'
+  | 'bistro-cup'
+  | 'vcard-monogram'
+  | 'whatsapp-badge'
+  | 'pay-badge'
+  | 'atelier-seal'
+  | 'custom';
+
 export type PrintProofType = 'tent-card' | 'business-card' | 'flat-drafting';
 
 export interface WifiPayloadData {
@@ -89,9 +123,13 @@ export interface VCardPayloadData {
   title: string;
   organization: string;
   phone: string;
+  workPhone?: string;
   email: string;
   website: string;
+  street?: string;
   city: string;
+  country?: string;
+  note?: string;
 }
 
 export interface MenuPayloadData {
@@ -105,6 +143,74 @@ export interface MenuPayloadData {
 export interface WhatsappPayloadData {
   phone: string;
   message: string;
+}
+
+export interface EmailPayloadData {
+  email: string;
+  subject: string;
+  body: string;
+  encoding: 'mailto' | 'matmsg';
+}
+
+export interface PhonePayloadData {
+  phone: string;
+}
+
+export interface SmsPayloadData {
+  phone: string;
+  message: string;
+}
+
+export interface LocationPayloadData {
+  latitude: string;
+  longitude: string;
+  query: string;
+  format: 'geo' | 'maps';
+}
+
+export interface EventPayloadData {
+  title: string;
+  location: string;
+  startDateTime: string;
+  endDateTime: string;
+  description: string;
+}
+
+export interface SocialPayloadData {
+  platform: 'instagram' | 'tiktok' | 'linkedin' | 'youtube' | 'x' | 'facebook' | 'telegram' | 'custom';
+  handleOrUrl: string;
+}
+
+export interface PaymentPayloadData {
+  method: 'paypal' | 'upi' | 'bitcoin' | 'ethereum' | 'iban' | 'custom';
+  recipient: string;
+  recipientName: string;
+  amount: string;
+  currency: string;
+  note: string;
+}
+
+export interface AppStorePayloadData {
+  appName: string;
+  iosUrl: string;
+  androidUrl: string;
+  primaryTarget: 'universal' | 'ios' | 'android';
+  universalUrl: string;
+}
+
+export interface CustomKeyValuePair {
+  id: string;
+  key: string;
+  value: string;
+}
+
+export interface CustomBuilderPayloadData {
+  mode: 'uri-scheme' | 'key-value' | 'raw';
+  scheme: string;
+  path: string;
+  format: 'json' | 'lines' | 'mecard' | 'query';
+  pairs: CustomKeyValuePair[];
+  rawString: string;
 }
 
 export interface SeoRoute {

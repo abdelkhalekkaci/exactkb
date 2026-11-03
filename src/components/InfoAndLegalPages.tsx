@@ -42,32 +42,75 @@ export const InfoAndLegalPages: React.FC<InfoAndLegalPagesProps> = ({
     setFormSubmitted(true);
   };
 
-  const INFO_TABS: { id: 'about' | 'legal' | 'privacy' | 'contact'; label: string; icon: React.ReactNode }[] = [
-    { id: 'about', label: 'About / À Propos', icon: <Info className="w-4 h-4" /> },
-    { id: 'legal', label: 'Legal Notice / Mentions Légales', icon: <FileText className="w-4 h-4" /> },
-    { id: 'privacy', label: 'Privacy Policy / Confidentialité', icon: <Lock className="w-4 h-4" /> },
-    { id: 'contact', label: 'Contact Us', icon: <Mail className="w-4 h-4" /> }
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    page: AtelierPage
+  ) => {
+    if (
+      !e.metaKey &&
+      !e.ctrlKey &&
+      !e.shiftKey &&
+      !e.altKey &&
+      e.button === 0
+    ) {
+      e.preventDefault();
+      onNavigate(page);
+    }
+  };
+
+  const INFO_TABS: {
+    id: 'about' | 'legal' | 'privacy' | 'contact';
+    href: string;
+    label: string;
+    icon: React.ReactNode;
+  }[] = [
+    {
+      id: 'about',
+      href: '/about',
+      label: 'About / À Propos',
+      icon: <Info className="w-4 h-4" />
+    },
+    {
+      id: 'legal',
+      href: '/legal',
+      label: 'Legal Notice / Mentions Légales',
+      icon: <FileText className="w-4 h-4" />
+    },
+    {
+      id: 'privacy',
+      href: '/privacy',
+      label: 'Privacy Policy / Confidentialité',
+      icon: <Lock className="w-4 h-4" />
+    },
+    {
+      id: 'contact',
+      href: '/contact',
+      label: 'Contact Us',
+      icon: <Mail className="w-4 h-4" />
+    }
   ];
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-8">
       {/* Top Bar: Back to Tool + Sub-Navigation for Info Pages */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#14213d]/15 dark:border-[#ffffff]/15">
-        <button
-          onClick={() => onNavigate('exactkb')}
+        <a
+          href="/"
+          onClick={(e) => handleLinkClick(e, 'exactkb')}
           className="inline-flex items-center gap-2 text-xs font-bold px-3.5 py-2 rounded-lg bg-[#fca311] text-[#14213d] hover:bg-[#e5920e] transition-colors w-fit cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Photo KB Compressor</span>
-        </button>
+        </a>
 
-        <div className="flex flex-wrap items-center gap-2">
+        <nav aria-label="Information and Legal Navigation" className="flex flex-wrap items-center gap-2">
           {INFO_TABS.map((tab) => {
             const active = activePage === tab.id;
             return (
-              <button
+              <a
                 key={tab.id}
-                onClick={() => onNavigate(tab.id)}
+                href={tab.href}
+                onClick={(e) => handleLinkClick(e, tab.id)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 border transition-colors cursor-pointer ${
                   active
                     ? 'bg-[#fca311] text-[#14213d] border-[#fca311]'
@@ -76,10 +119,10 @@ export const InfoAndLegalPages: React.FC<InfoAndLegalPagesProps> = ({
               >
                 {tab.icon}
                 <span>{tab.label}</span>
-              </button>
+              </a>
             );
           })}
-        </div>
+        </nav>
       </div>
 
       {/* 1. ABOUT / À PROPOS PAGE */}

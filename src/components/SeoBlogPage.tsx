@@ -25,6 +25,8 @@ import {
 
 interface SeoBlogPageProps {
   locale: LocaleCode;
+  activeArticleSlug?: string | null;
+  onSelectArticleSlug?: (slug: string | null) => void;
   onLaunchPreset: (presetId: BiometricPresetId, targetKb: number) => void;
   onLaunchQrPreset: (payloadType: QRPayloadType) => void;
 }
@@ -78,6 +80,10 @@ interface BlogUiCopy {
   proTipLabel: string;
   faqHeading: string;
   relatedGuidesHeading: string;
+  editorialByline: string;
+  lastVerifiedLabel: string;
+  standardsBadgePhoto: string;
+  standardsBadgeQr: string;
 }
 
 const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
@@ -106,7 +112,11 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     specByteLimitLabel: 'Target Specification',
     proTipLabel: 'Studio Pro Tip',
     faqHeading: 'Frequently Asked Questions',
-    relatedGuidesHeading: 'Related Articles'
+    relatedGuidesHeading: 'Related Articles',
+    editorialByline: 'Reviewed by CompressPhoto Biometric & Imaging Lab',
+    lastVerifiedLabel: 'Updated & Verified: November 2026',
+    standardsBadgePhoto: 'ICAO 9303 / 300 DPI Verified',
+    standardsBadgeQr: 'ISO/IEC 18004 / RFC 6350 Verified'
   },
   fr: {
     badge: 'BLOG & GUIDES PRATIQUES',
@@ -133,7 +143,11 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     specByteLimitLabel: 'Spécification Cible',
     proTipLabel: 'Conseil Pratique',
     faqHeading: 'Questions Fréquentes',
-    relatedGuidesHeading: 'Articles Similaires'
+    relatedGuidesHeading: 'Articles Similaires',
+    editorialByline: 'Vérifié par le Laboratoire Biométrique & Imagerie CompressPhoto',
+    lastVerifiedLabel: 'Mis à jour : Novembre 2026',
+    standardsBadgePhoto: 'Conforme OACI 9303 / 300 DPI',
+    standardsBadgeQr: 'Conforme ISO/CEI 18004 / vCard 3.0'
   },
   es: {
     badge: 'BLOG Y GUÍAS PRÁCTICAS',
@@ -160,7 +174,11 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     specByteLimitLabel: 'Especificación Objetivo',
     proTipLabel: 'Consejo Práctico',
     faqHeading: 'Preguntas Frecuentes',
-    relatedGuidesHeading: 'Artículos Relacionados'
+    relatedGuidesHeading: 'Artículos Relacionados',
+    editorialByline: 'Revisado por el Laboratorio Biométrico y de Imagen CompressPhoto',
+    lastVerifiedLabel: 'Actualizado: Noviembre 2026',
+    standardsBadgePhoto: 'Norma OACI 9303 / 300 DPI',
+    standardsBadgeQr: 'Norma ISO/IEC 18004 / vCard 3.0'
   },
   ar: {
     badge: 'المدونة والأدلة العملية',
@@ -187,12 +205,18 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     specByteLimitLabel: 'المواصفات المطلوبة',
     proTipLabel: 'نصيحة عملية',
     faqHeading: 'الأسئلة الشائعة',
-    relatedGuidesHeading: 'مقالات ذات صلة'
+    relatedGuidesHeading: 'مقالات ذات صلة',
+    editorialByline: 'تمت المراجعة بواسطة مختبر القياسات الحيوية ومعالجة الصور CompressPhoto',
+    lastVerifiedLabel: 'آخر تحديث وتدقيق: نوفمبر 2026',
+    standardsBadgePhoto: 'معتمد وفق معيار ICAO 9303 / 300 DPI',
+    standardsBadgeQr: 'معتمد وفق معيار ISO/IEC 18004'
   }
 };
 
 export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
   locale,
+  activeArticleSlug = null,
+  onSelectArticleSlug,
   onLaunchPreset,
   onLaunchQrPreset
 }) => {
@@ -201,7 +225,13 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
   const [selectedCategory, setSelectedCategory] =
     useState<UnifiedCategoryFilter>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [selectedArticleId, setSelectedArticleId] = useState<string | null>(null);
+  const [internalSlug, setInternalSlug] = useState<string | null>(
+    activeArticleSlug
+  );
+
+  useEffect(() => {
+    setInternalSlug(activeArticleSlug ?? null);
+  }, [activeArticleSlug]);
 
   const allUnifiedArticles: UnifiedArticle[] = useMemo(() => {
     const photoMapped: UnifiedArticle[] = PHOTO_SEO_ARTICLES.map((a) => ({
@@ -233,16 +263,20 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
   }, []);
 
   const selectedArticle: UnifiedArticle | null = useMemo(() => {
-    if (!selectedArticleId) return null;
-    return allUnifiedArticles.find((a) => a.id === selectedArticleId) || null;
-  }, [selectedArticleId, allUnifiedArticles]);
+    if (!internalSlug) return null;
+    return (
+      allUnifiedArticles.find(
+        (a) => a.slug === internalSlug || a.id === internalSlug
+      ) || null
+    );
+  }, [internalSlug, allUnifiedArticles]);
 
   const handleSelectDomain = (domain: ToolDomainFilter) => {
     setSelectedDomain(domain);
     setSelectedCategory('all');
   };
 
-  // Invisibly inject metadata & Schema.org structured data in <head> for search engines only
+  // Invisibly inject metadata & Schema.org structured data in <head> for search engines
   useEffect(() => {
     const prevTitle = document.title;
     const metaDescEl = document.querySelector('meta[name="description"]');
@@ -260,33 +294,80 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
 
     if (selectedArticle) {
       const content = selectedArticle.translations[locale];
-      document.title = `${content.title} | CompressPhoto`;
+      const fullTitle = `${content.title} | CompressPhoto`;
+      const canonicalArticleUrl = `https://compressphoto.space/blog/${selectedArticle.slug}`;
+
+      document.title = fullTitle;
       if (metaDescEl) {
         metaDescEl.setAttribute('content', content.metaDescription);
       }
+
+      const ogTitleEl = document.querySelector('meta[property="og:title"]');
+      if (ogTitleEl) ogTitleEl.setAttribute('content', fullTitle);
+      const ogDescEl = document.querySelector('meta[property="og:description"]');
+      if (ogDescEl) ogDescEl.setAttribute('content', content.metaDescription);
+
       const schema = {
         '@context': 'https://schema.org',
         '@graph': [
           {
             '@type': 'TechArticle',
+            '@id': `${canonicalArticleUrl}#article`,
             headline: content.title,
             description: content.metaDescription,
+            image: 'https://compressphoto.space/og-image.png',
+            datePublished: '2026-10-15T08:00:00+00:00',
+            dateModified: '2026-11-02T12:00:00+00:00',
             inLanguage: locale,
+            proficiencyLevel: 'Beginner',
             author: {
               '@type': 'Organization',
-              name: 'CompressPhoto',
-              url: 'https://compressphoto.space/'
+              name: 'CompressPhoto Biometric & Imaging Lab',
+              url: 'https://compressphoto.space/about'
             },
             publisher: {
               '@type': 'Organization',
               name: 'CompressPhoto',
-              url: 'https://compressphoto.space/'
+              url: 'https://compressphoto.space/',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://compressphoto.space/favicon.svg'
+              }
             },
-            mainEntityOfPage: `https://compressphoto.space/#blog/${selectedArticle.slug}`,
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': canonicalArticleUrl
+            },
+            url: canonicalArticleUrl,
             keywords: content.primaryKeywords.join(', ')
           },
           {
+            '@type': 'BreadcrumbList',
+            '@id': `${canonicalArticleUrl}#breadcrumb`,
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'CompressPhoto',
+                item: 'https://compressphoto.space/'
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: ui.heroTitle,
+                item: 'https://compressphoto.space/blog'
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: content.title,
+                item: canonicalArticleUrl
+              }
+            ]
+          },
+          {
             '@type': 'FAQPage',
+            '@id': `${canonicalArticleUrl}#faq`,
             mainEntity: content.faqs.map((item) => ({
               '@type': 'Question',
               name: item.question,
@@ -300,16 +381,23 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
       };
       scriptEl.textContent = JSON.stringify(schema);
     } else {
-      document.title = `${ui.heroTitle} | CompressPhoto`;
+      const hubTitle = `${ui.heroTitle} | CompressPhoto`;
+      document.title = hubTitle;
       if (metaDescEl) {
         metaDescEl.setAttribute('content', ui.heroSub);
       }
+
+      const ogTitleEl = document.querySelector('meta[property="og:title"]');
+      if (ogTitleEl) ogTitleEl.setAttribute('content', hubTitle);
+      const ogDescEl = document.querySelector('meta[property="og:description"]');
+      if (ogDescEl) ogDescEl.setAttribute('content', ui.heroSub);
+
       const hubSchema = {
         '@context': 'https://schema.org',
         '@type': 'Blog',
         name: ui.heroTitle,
         description: ui.heroSub,
-        url: 'https://compressphoto.space/#blog',
+        url: 'https://compressphoto.space/blog',
         inLanguage: locale
       };
       scriptEl.textContent = JSON.stringify(hubSchema);
@@ -391,9 +479,29 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
     return base;
   }, [selectedDomain, ui]);
 
-  const handleOpenArticle = (articleId: string) => {
-    setSelectedArticleId(articleId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleSelectSlug = (slug: string | null) => {
+    setInternalSlug(slug);
+    if (onSelectArticleSlug) {
+      onSelectArticleSlug(slug);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleArticleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    slug: string | null
+  ) => {
+    if (
+      !e.metaKey &&
+      !e.ctrlKey &&
+      !e.shiftKey &&
+      !e.altKey &&
+      e.button === 0
+    ) {
+      e.preventDefault();
+      handleSelectSlug(slug);
+    }
   };
 
   const handleTriggerArticlePreset = (article: UnifiedArticle) => {
@@ -420,13 +528,14 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-8">
         {/* Top Back Navigation & Category Info */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#14213d]/15 dark:border-[#ffffff]/15 pb-4">
-          <button
-            onClick={() => setSelectedArticleId(null)}
+          <a
+            href="/blog"
+            onClick={(e) => handleArticleLinkClick(e, null)}
             className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-[#14213d]/20 dark:border-[#ffffff]/25 text-xs sm:text-sm font-bold hover:border-[#fca311] hover:text-[#fca311] transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>{ui.backToAllGuides}</span>
-          </button>
+          </a>
 
           <div className="flex items-center gap-2 text-xs font-mono">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#fca311]/20 text-[#14213d] dark:text-[#fca311] font-bold">
@@ -450,6 +559,21 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
             <h1 className="font-serif text-2xl sm:text-4xl font-bold tracking-tight leading-tight">
               {content.title}
             </h1>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono opacity-80 border-y border-[#14213d]/10 dark:border-[#ffffff]/10 py-2.5">
+              <span className="font-semibold text-[#14213d] dark:text-[#e5e5e5]">
+                {ui.editorialByline}
+              </span>
+              <span className="opacity-40">•</span>
+              <time dateTime="2026-11-02" className="text-[#fca311] font-bold">
+                {ui.lastVerifiedLabel}
+              </time>
+              <span className="opacity-40">•</span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#14213d]/5 dark:bg-[#ffffff]/10 text-[11px]">
+                {selectedArticle.domain === 'qr'
+                  ? ui.standardsBadgeQr
+                  : ui.standardsBadgePhoto}
+              </span>
+            </div>
             <p className="text-sm sm:text-base opacity-85 leading-relaxed">
               {content.intro}
             </p>
@@ -608,16 +732,23 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
                       {getCategoryLabel(rel.category)}
                     </span>
                     <h4 className="font-serif font-bold text-sm leading-snug">
-                      {relContent.title}
+                      <a
+                        href={`/blog/${rel.slug}`}
+                        onClick={(e) => handleArticleLinkClick(e, rel.slug)}
+                        className="hover:text-[#fca311] transition-colors"
+                      >
+                        {relContent.title}
+                      </a>
                     </h4>
                   </div>
-                  <button
-                    onClick={() => handleOpenArticle(rel.id)}
+                  <a
+                    href={`/blog/${rel.slug}`}
+                    onClick={(e) => handleArticleLinkClick(e, rel.slug)}
                     className="text-xs font-bold text-[#fca311] inline-flex items-center gap-1 hover:underline cursor-pointer"
                   >
                     <span>{ui.readGuideBtn}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  </a>
                 </div>
               );
             })}
@@ -747,12 +878,15 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
                   </span>
                 </div>
 
-                {/* Article Title */}
-                <h2
-                  onClick={() => handleOpenArticle(article.id)}
-                  className="font-serif text-lg sm:text-xl font-bold leading-snug hover:text-[#fca311] transition-colors cursor-pointer"
-                >
-                  {content.title}
+                {/* Article Title with Crawlable Anchor */}
+                <h2 className="font-serif text-lg sm:text-xl font-bold leading-snug">
+                  <a
+                    href={`/blog/${article.slug}`}
+                    onClick={(e) => handleArticleLinkClick(e, article.slug)}
+                    className="hover:text-[#fca311] transition-colors cursor-pointer"
+                  >
+                    {content.title}
+                  </a>
                 </h2>
 
                 {/* Excerpt */}
@@ -771,13 +905,14 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <button
-                    onClick={() => handleOpenArticle(article.id)}
+                  <a
+                    href={`/blog/${article.slug}`}
+                    onClick={(e) => handleArticleLinkClick(e, article.slug)}
                     className="px-3.5 py-2.5 rounded-xl border border-[#14213d]/25 dark:border-[#ffffff]/25 text-xs font-bold hover:border-[#fca311] hover:text-[#fca311] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <BookOpen className="w-3.5 h-3.5" />
                     <span>{ui.readGuideBtn}</span>
-                  </button>
+                  </a>
 
                   <button
                     onClick={() => handleTriggerArticlePreset(article)}

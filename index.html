@@ -4,25 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>ExactKB &amp; QR Atelier — Precision Photo Byte Lab &amp; Vector QR Printshop</title>
+    <title>Compress Photo to 20KB, 50KB, 100KB Online | CompressPhoto</title>
     <meta
       name="description"
-      content="100% client-side 7-pass binary-search image compressor to exact KB ceilings (10KB, 20KB, 50KB), biometric passport &amp; wet-ink signature lab, and permanent vector QR &amp; CODE-128 printshop."
-    />
-    <meta property="og:title" content="ExactKB &amp; QR Atelier — Precision Photo Byte Lab &amp; Vector QR Printshop" />
-    <meta
-      property="og:description"
-      content="Lock passport photos and wet-ink signatures to an exact KB ceiling in 7 binary-search passes, or press non-expiring vector QR codes and retail barcodes locally in your browser."
+      content="Compress passport photos, visa portraits, and signatures to 20KB, 50KB, or 100KB online. Crop 35x45mm &amp; 2x2 IDs and generate static vector QR codes in browser."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://compressphoto.space/" />
-    <meta property="og:site_name" content="ExactKB &amp; QR — CompressPhoto.space" />
+    <meta property="og:site_name" content="CompressPhoto" />
+    <meta
+      property="og:title"
+      content="Compress Photo to 20KB, 50KB, 100KB Online | CompressPhoto"
+    />
+    <meta
+      property="og:description"
+      content="Compress passport photos, visa portraits, and signatures to 20KB, 50KB, or 100KB online. Crop 35x45mm &amp; 2x2 IDs and generate static vector QR codes in browser."
+    />
+    <meta property="og:image" content="https://compressphoto.space/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="CompressPhoto — Compress Photos to 20KB, 50KB, 100KB Online &amp; Permanent Static Vector QR Code Generator"
+    />
     <link rel="canonical" href="https://compressphoto.space/" />
+    <link rel="alternate" hreflang="en" href="https://compressphoto.space/" />
+    <link rel="alternate" hreflang="fr" href="https://compressphoto.space/?lang=fr" />
+    <link rel="alternate" hreflang="es" href="https://compressphoto.space/?lang=es" />
+    <link rel="alternate" hreflang="ar" href="https://compressphoto.space/?lang=ar" />
+    <link rel="alternate" hreflang="x-default" href="https://compressphoto.space/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ExactKB &amp; QR Atelier — Precision Photo Byte Lab &amp; Vector QR Printshop" />
+    <meta
+      name="twitter:title"
+      content="Compress Photo to 20KB, 50KB, 100KB Online | CompressPhoto"
+    />
     <meta
       name="twitter:description"
-      content="100% client-side 7-pass binary-search image compressor to exact KB ceilings, biometric passport &amp; wet-ink signature lab, and vector QR printshop."
+      content="Compress passport photos, visa portraits, and signatures to 20KB, 50KB, or 100KB online. Crop 35x45mm &amp; 2x2 IDs and generate static vector QR codes in browser."
+    />
+    <meta name="twitter:image" content="https://compressphoto.space/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="CompressPhoto — Compress Photos to 20KB, 50KB, 100KB Online &amp; Permanent Vector QR Generator"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,12 +59,45 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "SoftwareApplication",
-            "name": "ExactKB & QR Atelier",
+            "@type": "Organization",
+            "@id": "https://compressphoto.space/#organization",
+            "name": "CompressPhoto",
             "url": "https://compressphoto.space/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://compressphoto.space/favicon.svg"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "contact@compressphoto.space",
+              "contactType": "customer support",
+              "availableLanguage": ["en", "fr", "es", "ar"]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://compressphoto.space/#website",
+            "url": "https://compressphoto.space/",
+            "name": "CompressPhoto",
+            "description": "Compress passport photos, visa portraits, and signatures to 20KB, 50KB, or 100KB online. Crop 35x45mm & 2x2 IDs and generate static vector QR codes in browser.",
+            "publisher": {
+              "@id": "https://compressphoto.space/#organization"
+            },
+            "inLanguage": ["en", "fr", "es", "ar"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://compressphoto.space/#software",
+            "name": "CompressPhoto",
+            "alternateName": "CompressPhoto.space",
+            "url": "https://compressphoto.space/",
+            "image": "https://compressphoto.space/og-image.png",
             "applicationCategory": "MultimediaApplication",
             "operatingSystem": "All",
-            "description": "100% client-side 7-pass binary-search photo compressor to exact KB limits, biometric passport & wet-ink signature lab, and non-expiring vector QR & CODE-128 barcode printshop.",
+            "description": "Compress passport photos, visa portraits, and signatures to 20KB, 50KB, or 100KB online. Crop 35x45mm & 2x2 IDs and generate static vector QR codes in browser.",
+            "publisher": {
+              "@id": "https://compressphoto.space/#organization"
+            },
             "offers": {
               "@type": "Offer",
               "price": "0",
@@ -56,4 +113,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
