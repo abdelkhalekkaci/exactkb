@@ -1400,75 +1400,75 @@ export const TOOL_LANDING_PAGES: ToolLandingPageConfig[] = [
     }
   },
   {
-    slug: 'compress-photo-to-200kb',
-    presetId: 'us-visa-2x2',
-    targetKb: 200,
+    slug: 'compress-photo-to-500kb',
+    presetId: 'amazon-1000',
+    targetKb: 500,
     badgeText: {
-      en: '200 KB HIGH-DEFINITION · VISA, PASSPORT & E-COMMERCE',
-      fr: 'LIMITE 200 KO HAUTE DÉFINITION · VISA & PASSEPORT',
-      es: 'LÍMITE 200 KB ALTA DEFINICIÓN · VISA Y PASAPORTE',
-      ar: 'سقف 200 كيلوبايت عالي الوضوح · للتأشيرات وجوازات السفر'
+      en: '500 KB STUDIO HD · DOCUMENTS, E-COMMERCE & HIGH-RES ID',
+      fr: 'LIMITE 500 KO HAUTE DÉFINITION · DOCUMENTS & E-COMMERCE',
+      es: 'LÍMITE 500 KB ALTA DEFINICIÓN · DOCUMENTOS Y E-COMMERCE',
+      ar: 'سقف 500 كيلوبايت فائق الوضوح · للوثائق والتجارة الإلكترونية'
     },
     title: {
-      en: 'Compress Photo to 200KB Online Free (High Quality 300 DPI) | CompressPhoto',
-      fr: 'Compresser Photo à 200 Ko en Ligne Gratuit (Haute Qualité) | CompressPhoto',
-      es: 'Comprimir Foto a 200KB Online Gratis (Alta Calidad) | CompressPhoto',
-      ar: 'ضغط الصورة إلى 200 كيلوبايت أونلاين مجاناً بجودة عالية | CompressPhoto'
+      en: 'Compress Photo to 500KB Online Free (High Resolution 300 DPI) | CompressPhoto',
+      fr: 'Compresser Photo à 500 Ko en Ligne Gratuit (Haute Définition) | CompressPhoto',
+      es: 'Comprimir Foto a 500KB Online Gratis (Alta Resolución) | CompressPhoto',
+      ar: 'ضغط الصورة إلى 500 كيلوبايت أونلاين مجاناً بدقة فائقة | CompressPhoto'
     },
     metaDescription: {
-      en: 'Compress high-resolution visa photos (US DS-160 240KB max), passport scans, and profile pictures under 200KB online with near-lossless 300 DPI clarity.',
-      fr: 'Compressez vos photos de visa (DS-160), passeports et portraits haute résolution à moins de 200 Ko en ligne sans aucune perte visible.',
-      es: 'Comprime fotos de visa (DS-160), pasaportes y retratos de alta resolución a menos de 200KB online conservando toda la nitidez.',
-      ar: 'اضغط صور التأشيرات وجوازات السفر والصور عالية الدقة إلى أقل من 200 كيلوبايت أونلاين مع الحفاظ الكامل على التفاصيل.'
+      en: 'Shrink large 5MB–10MB smartphone or DSLR photos under 500KB online with near-lossless 300 DPI clarity. Ideal for passport scans, e-commerce, and web uploads.',
+      fr: 'Réduisez vos photos de 5 Mo à 10 Mo sous la barre des 500 Ko en ligne sans aucune perte visible. Idéal pour les scans de passeport, dossiers et e-commerce.',
+      es: 'Reduce fotos pesadas de 5MB–10MB a menos de 500KB online sin pérdida visible de calidad. Ideal para documentos escaneados, visas y comercio electrónico.',
+      ar: 'قلّص حجم الصور الكبيرة من 5–10 ميجابايت إلى أقل من 500 كيلوبايت أونلاين بجودة استوديو فائقة الوضوح.'
     },
     h1: {
-      en: 'Compress Photo to 200KB Online (High-Resolution 300 DPI)',
-      fr: 'Compresser une Photo à 200 Ko en Ligne (Haute Définition)',
-      es: 'Comprimir Foto a 200KB Online (Alta Resolución 300 DPI)',
-      ar: 'ضغط الصورة إلى 200 كيلوبايت أونلاين بجودة عالية'
+      en: 'Compress Photo to 500KB Online (Studio High-Definition)',
+      fr: 'Compresser une Photo à 500 Ko en Ligne (Qualité Studio)',
+      es: 'Comprimir Foto a 500KB Online (Calidad de Estudio)',
+      ar: 'ضغط الصورة إلى 500 كيلوبايت أونلاين بجودة فائقة'
     },
     subtitle: {
-      en: 'Perfect for US Visa DS-160 & Green Card Lottery (240KB limit), international e-Visas, and high-detail ID documents.',
-      fr: 'Parfait pour le visa américain DS-160 et DV Lottery (limite 240 Ko), les e-Visas internationaux et les documents haute netteté.',
-      es: 'Perfecto para la visa de EE.UU. DS-160 y Lotería DV (límite 240KB), e-Visas internacionales y documentos de alta nitidez.',
-      ar: 'مثالي لتأشيرة أمريكا DS-160 واللوتري (الحد الأقصى 240 كيلوبايت) والتأشيرات الإلكترونية الدولية.'
+      en: 'Reduces multi-megabyte camera photos and full-page ID scans strictly under 500KB while preserving razor-sharp text and textures.',
+      fr: 'Réduit vos photos de plusieurs mégaoctets et scans de pièces d’identité sous 500 Ko tout en conservant une netteté maximale.',
+      es: 'Reduce fotos de varios megabytes y documentos escaneados por debajo de 500KB conservando la máxima nitidez.',
+      ar: 'يقلص الصور عالية الدقة والوثائق الممسوحة ضوئياً إلى أقل من 500 كيلوبايت مع الحفاظ التام على وضوح النصوص والتفاصيل.'
     },
     directAnswer: {
-      en: 'Many modern embassy portals—including the US Department of State CEAC (240 KB max), UK eVisa, and Canada IRCC—accept photos up to 200KB–240KB. Compressing to 200KB preserves studio-grade skin detail while guaranteeing instant upload acceptance.',
-      fr: 'De nombreux portails consulaires (comme le DS-160 américain limité à 240 Ko ou les visas internationaux) acceptent jusqu’à 200 Ko. Ce réglage conserve une qualité studio maximale sans jamais dépasser la limite.',
-      es: 'Muchos portales consulares (como el DS-160 de EE.UU. con límite de 240 KB) permiten hasta 200 KB. Este ajuste conserva calidad de estudio garantizando una subida sin errores.',
-      ar: 'تقبل العديد من بوابات السفارات الحديثة (مثل تأشيرة أمريكا DS-160 بحد 240 كيلوبايت) صوراً حتى 200 كيلوبايت، مما يمنحك أعلى جودة ممكنة مع ضمان القبول الفوري.'
+      en: 'When an immigration portal, university application, or e-commerce store enforces a 500KB maximum file size, uploading a raw 4 MB smartphone photo will fail. Upload your image above to lock it between 460 KB and 498 KB with virtually zero quality loss.',
+      fr: 'Lorsqu’un site administratif ou universitaire impose une taille maximale de 500 Ko, une photo brute de smartphone (4 Mo) est refusée. Importez votre image ci-dessus pour la verrouiller sous 500 Ko sans perte visible.',
+      es: 'Cuando un portal administrativo o universitario exige un máximo de 500 KB, sube tu foto arriba para ajustarla justo por debajo de 500 KB manteniendo toda su calidad original.',
+      ar: 'عندما تشترط بوابة إلكترونية أو جامعة ألا يتجاوز حجم الصورة أو الوثيقة 500 كيلوبايت، ارفع ملفك أعلاه ليتم ضبطه بدقة تحت 500 كيلوبايت دون أي فقدان في الوضوح.'
     },
     portalSpecs: {
-      dimensionsMm: '51 × 51 mm (2×2") or 35 × 45 mm',
-      dimensionsPx: '600 × 600 px (300 DPI)',
-      maxKb: '≤ 200.0 KB (Max 240 KB)',
-      background: 'Pure White (#FFFFFF)',
-      standardCode: 'US DOS / International e-Visa'
+      dimensionsMm: 'Custom / 1000 × 1000 px / A4 Scan',
+      dimensionsPx: '1000 × 1000 px (300 DPI)',
+      maxKb: '≤ 500.0 KB (512,000 Bytes)',
+      background: 'Pure White or Original',
+      standardCode: '500KB High-Resolution Portal Spec'
     },
     specificFaqs: {
       en: [
         {
-          question: 'Does a 200KB photo meet the US Visa DS-160 240KB requirement?',
-          answer: 'Yes. The US Department of State requires a 600×600 pixel JPEG under 240 KB. Locking your photo under 200 KB ensures 100% compliance with maximum visual sharpness.'
+          question: 'Can I compress a 5MB photo to 500KB without making it blurry?',
+          answer: 'Yes. A 500KB budget is generous enough to preserve 100% crisp edges and natural color gradients in JPEG, WebP, or PDF format.'
         }
       ],
       fr: [
         {
-          question: 'Une photo de 200 Ko respecte-t-elle la limite de 240 Ko du visa US DS-160 ?',
-          answer: 'Oui. Le Département d’État américain exige un fichier 600×600 px inférieur à 240 Ko. Une cible à 200 Ko garantit une qualité optimale et une acceptation immédiate.'
+          question: 'Puis-je réduire une photo de 5 Mo à 500 Ko sans perte de netteté ?',
+          answer: 'Oui. Un plafond de 500 Ko permet de conserver une netteté irréprochable en JPG, WebP ou PDF.'
         }
       ],
       es: [
         {
-          question: '¿Una foto de 200KB cumple el requisito de 240KB de la visa DS-160?',
-          answer: 'Sí. El Departamento de Estado de EE.UU. exige una imagen de 600×600 px menor de 240 KB. Ajustarla bajo 200 KB asegura la máxima nitidez.'
+          question: '¿Puedo reducir una foto de 5MB a 500KB sin perder nitidez?',
+          answer: 'Sí. Un límite de 500 KB es suficiente para mantener bordes nítidos y colores fieles en formato JPG, WebP o PDF.'
         }
       ],
       ar: [
         {
-          question: 'هل تتوافق صورة 200 كيلوبايت مع شرط 240 كيلوبايت لتأشيرة أمريكا DS-160؟',
-          answer: 'نعم، تشترط الخارجية الأمريكية صورة بمقاس 600×600 بكسل وأقل من 240 كيلوبايت، لذا فإن حجم 200 كيلوبايت يمنحك أعلى دقة مع قبول مضمون.'
+          question: 'هل يمكنني ضغط صورة بحجم 5 ميجابايت إلى 500 كيلوبايت دون فقدان دقتها؟',
+          answer: 'نعم، سعة 500 كيلوبايت كافية تماماً للحفاظ على أعلى درجات الوضوح والتفاصيل بصيغة JPG أو WebP أو PDF.'
         }
       ]
     }
