@@ -1,0 +1,6 @@
+{
+  "name": "CompressPhoto",
+  "description": "Compress passport photos, visa portraits, and signatures to 20KB, 50KB, or 100KB online. Crop 35x45mm & 2x2 IDs and generate static vector QR codes in browser.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

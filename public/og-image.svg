@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#14213D"/>
+  <rect x="36" y="36" width="1128" height="558" rx="24" stroke="#FCA311" stroke-opacity="0.35" stroke-width="3"/>
+  <!-- Brand Icon -->
+  <g transform="translate(88, 96)">
+    <rect width="96" height="96" rx="20" fill="#FFFFFF"/>
+    <path d="M20 36V22C20 20.8954 20.8954 20 22 20H36" stroke="#FCA311" stroke-width="8" stroke-linecap="round"/>
+    <path d="M76 36V22C76 20.8954 75.1046 20 74 20H60" stroke="#FCA311" stroke-width="8" stroke-linecap="round"/>
+    <path d="M20 60V74C20 75.1046 20.8954 76 22 76H36" stroke="#FCA311" stroke-width="8" stroke-linecap="round"/>
+    <path d="M76 60V74C76 75.1046 75.1046 76 74 76H60" stroke="#FCA311" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="48" cy="48" r="15" stroke="#14213D" stroke-width="7"/>
+    <circle cx="48" cy="48" r="7" fill="#FCA311"/>
+  </g>
+  <!-- Title & Copy -->
+  <text x="208" y="158" fill="#FFFFFF" font-family="Georgia, serif" font-size="56" font-weight="bold">Compress<tspan fill="#FCA311">Photo</tspan>.space</text>
+  <text x="88" y="276" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="bold">Exact KB Photo Compressor</text>
+  <text x="88" y="344" fill="#FCA311" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="bold">&amp; Permanent Vector QR Studio</text>
+  <text x="88" y="424" fill="#E5E5E5" font-family="monospace" font-size="26">20KB · 50KB · 100KB · 35x45mm Passport · Wet-Ink Signature · SVG QR &amp; CODE-128</text>
+  <!-- Bottom Pill -->
+  <rect x="88" y="476" width="590" height="58" rx="12" fill="#FCA311"/>
+  <text x="116" y="514" fill="#14213D" font-family="monospace" font-size="24" font-weight="bold">100% BROWSER-LOCAL · ZERO SERVER UPLOADS</text>
+</svg>

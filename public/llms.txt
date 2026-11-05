@@ -1,0 +1,47 @@
+# CompressPhoto (https://compressphoto.space)
+
+> CompressPhoto is a 100% client-side, zero-upload biometric photo & signature compression studio. It locks JPEG, WebP, PNG, and ISO-32000 PDF files to exact kilobyte ceilings (10KB, 20KB, 50KB, 100KB, 200KB) at 300 DPI for government passport, visa, and civil service exam portals. All processing runs inside browser RAM (GDPR compliant, open-source auditable).
+
+- Full AI Specification Documentation: [https://compressphoto.space/llms-full.txt](https://compressphoto.space/llms-full.txt)
+- Open-Source Repository: [https://github.com/abdelkhalekkaci/exactkb](https://github.com/abdelkhalekkaci/exactkb)
+
+## Multilingual Studio Editions
+- English (Global): [https://compressphoto.space/](https://compressphoto.space/)
+- Français (France ANTS / Maroc CNIE / Schengen): [https://compressphoto.space/fr](https://compressphoto.space/fr)
+- Español (Pasaporte / Visa EE.UU. DS-160): [https://compressphoto.space/es](https://compressphoto.space/es)
+- العربية (البطاقة الوطنية المغربية CNIE / جواز السفر / تأشيرة أمريكا): [https://compressphoto.space/ar](https://compressphoto.space/ar)
+
+## Dedicated Exact-KB & Official Portal Compressors
+- [Compress Photo to 20KB Online (Exact Byte Lock)](https://compressphoto.space/compress-photo-to-20kb)
+- [Compress Photo to 50KB Online (Passport & Visa 300 DPI)](https://compressphoto.space/compress-photo-to-50kb)
+- [Compress Photo to 100KB Online (Zero Visual Loss)](https://compressphoto.space/compress-photo-to-100kb)
+- [Compress Photo to 200KB Online (High Resolution)](https://compressphoto.space/compress-photo-to-200kb)
+- [Compress Handwritten Signature to 20KB (With Paper Shadow Removal)](https://compressphoto.space/compress-signature-to-20kb)
+- [France ANTS & ANEF ID Photo Compressor (35x45mm 50KB)](https://compressphoto.space/fr/ants-photo-identite-50ko)
+- [Morocco CNIE & Biometric Passport Photo Tool (35x45mm 50KB)](https://compressphoto.space/fr/photo-cnie-maroc-35x45mm)
+- [35x45mm ICAO Biometric Passport Photo Compressor (413x531 px)](https://compressphoto.space/passport-photo-35x45mm-50kb)
+- [US Visa DS-160 & Green Card DV Lottery Photo Tool (2x2" 600x600 px)](https://compressphoto.space/ds160-photo-compressor-600x600)
+- [India SSC, UPSC, IBPS & NEET Photo (20-50KB) & Signature (10-20KB) Compressor](https://compressphoto.space/ssc-upsc-photo-signature-20kb)
+- [Convert & Compress Photo to PDF Under 50KB / 100KB](https://compressphoto.space/compress-photo-to-pdf-under-50kb)
+- [Amazon 1000x1000 Pure White Background Product Photo Compressor](https://compressphoto.space/amazon-1000x1000-white-background-photo)
+
+## Biometric Photo & Signature Engineering Guides
+- [How to Compress a Photo to 20KB Exact Without Losing Quality](https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality)
+- [Compress Handwritten Signature to 20KB & Remove Paper Shadow](https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow)
+- [How to Compress a Photo to 50KB Online for Passport & Visa Portals](https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa)
+- [35x45mm Biometric Passport ID Photo Size in Pixels (300 DPI Guide)](https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide)
+- [US Visa DS-160 & DV Lottery 2x2 Inch (600x600 px) Photo Compressor](https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor)
+- [Compress Photo to 100KB Without Losing Sharpness (300 DPI)](https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi)
+- [How to Print 8 Passport Photos on a Single 4x6 Inch (10x15cm) Sheet](https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet)
+- [Convert and Compress Photo to Exact-KB PDF Under 50KB or 100KB](https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb)
+- [Pure White Background (#FFFFFF) for Passport Photos & Amazon 1000x1000](https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000)
+- [JPEG vs WebP vs PNG: Exact-KB Binary Search Compression Explained](https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search)
+
+## Secondary Utility Sub-Application
+- [Permanent Static QR Code & CODE-128 Vector Barcode Studio](https://compressphoto.space/qr)
+
+## Trust, Legal & Zero-Server Privacy
+- [About CompressPhoto Biometric & Imaging Lab](https://compressphoto.space/about)
+- [Zero-Server Privacy Policy & GDPR Compliance](https://compressphoto.space/privacy)
+- [Legal Notice & Terms of Use](https://compressphoto.space/legal)
+- [Contact & Technical Support](https://compressphoto.space/contact)
