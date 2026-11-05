@@ -1,19 +1,16 @@
 import React from 'react';
 import {
   Camera,
-  CheckCircle2,
   FileText,
   Globe,
   Grid,
   Layers,
   Lock,
   QrCode,
-  ShieldCheck,
   Sliders
 } from 'lucide-react';
 import { AtelierPage, LocaleCode } from '../types/atelier';
 import { TRANSLATIONS } from '../data/seoRoutesAndTranslations';
-import { TOOL_LANDING_PAGES } from '../data/toolLandingPages';
 
 export type ProFeatureId =
   | 'grid-framing'
@@ -51,185 +48,171 @@ interface FooterProCopy {
     id: ProFeatureId;
     title: string;
     desc: string;
-    competitorPrice: string;
+    ctaLabel: string;
   }>;
   colExactKb: string;
   colPortals: string;
-  colStudioGuides: string;
   colTrustLegal: string;
-  openSourceLabel: string;
-  standardsLine: string;
-  zeroUploadGuarantee: string;
+  languageLabel: string;
+  privacyGuarantee: string;
 }
 
 const FOOTER_PRO_COPY: Record<LocaleCode, FooterProCopy> = {
   en: {
-    proRibbonKicker: 'ZERO PAYWALLS · ZERO WATERMARKS · 100% FREE FOREVER',
+    proRibbonKicker: 'INCLUDED FREE · NO WATERMARKS · NO SIGN-UP REQUIRED',
     proRibbonTitle:
-      'Premium Studio Capabilities Other Websites Charge $7–$19 For — Included Free',
+      'Complete Passport, Visa & Exam Photo Studio — All Pro Tools Included Free',
     proRibbonSub:
-      'Because all image processing runs locally inside your own browser RAM, our server cost per photo is $0.00. Click any Pro feature below to launch it in the studio:',
+      'Everything you need to prepare, align, and print official ID photos and signatures in one place. Select any tool below to use it:',
     freeFeatures: [
       {
         id: 'grid-framing',
-        title: 'Biometric ICAO Face Grid & Framing',
-        desc: 'Live eye-line & crown-to-chin overlay with pan, zoom, tilt & lighting controls.',
-        competitorPrice: '$9.95 on photo booths → LAUNCH FREE'
+        title: 'Face & Eye Alignment Guide',
+        desc: 'Check official head size and eye level with zoom, tilt, and brightness adjustments.',
+        ctaLabel: 'Open Alignment Guide'
       },
       {
         id: 'print-sheet',
-        title: '4×6" (10×15 cm) 8-Photo Print Sheet',
-        desc: '300 DPI pharmacy print sheet with millimeter crop marks & studio date stamp.',
-        competitorPrice: '$6.99 on ID sites → LAUNCH FREE'
+        title: 'Printable 4×6" (10×15 cm) Sheet',
+        desc: 'Generate a ready-to-print sheet of 8 passport or visa photos with cut marks.',
+        ctaLabel: 'Create Print Sheet'
       },
       {
         id: 'name-slate',
-        title: 'Official Name & Date Photo Slate',
-        desc: '1-click DOP name & date plate at the bottom of your photo locked under 20KB/50KB.',
-        competitorPrice: 'Paid Pro add-on → LAUNCH FREE'
+        title: 'Add Name & Date on Photo',
+        desc: 'Place a clean name and photo date banner at the bottom for exam applications.',
+        ctaLabel: 'Add Name & Date'
       },
       {
         id: 'batch-queue',
-        title: 'Unlimited Multi-Photo Batch Queue',
-        desc: 'Drop multiple photos at once and lock every file to your exact KB ceiling simultaneously.',
-        competitorPrice: '$12/mo on cloud tools → LAUNCH FREE'
+        title: 'Batch Compress Multiple Photos',
+        desc: 'Upload and compress several photos at once to your exact KB limit in one click.',
+        ctaLabel: 'Open Batch Compressor'
       }
     ],
-    colExactKb: 'Exact-KB Compressors',
-    colPortals: 'Official Portal Presets',
-    colStudioGuides: 'Vector Studio & Guides',
-    colTrustLegal: 'Trust, Privacy & Standards',
-    openSourceLabel: 'Auditable Open-Source Engine (GitHub)',
-    standardsLine:
-      'ICAO Doc 9303 · ISO/IEC 19794-5 · US CEAC DS-160 · ISO-32000-1 PDF · 300 DPI JFIF',
-    zeroUploadGuarantee:
-      '100% Client-Side RAM Execution — Zero Bytes Ever Leave Your Device (GDPR Compliant)'
+    colExactKb: 'Compress by KB Size',
+    colPortals: 'Official Country & Exam Presets',
+    colTrustLegal: 'Guides & Information',
+    languageLabel: 'Language:',
+    privacyGuarantee:
+      '100% Private & Secure — Your photos are processed directly on your device and never uploaded.'
   },
   fr: {
-    proRibbonKicker: 'ZÉRO ABONNEMENT · ZÉRO FILIGRANE · 100 % GRATUIT À VIE',
+    proRibbonKicker: '100 % GRATUIT · SANS FILIGRANE · SANS INSCRIPTION',
     proRibbonTitle:
-      'Les Options Payantes ailleurs (7 € à 19 €) — Intégrées 100 % Gratuitement',
+      'Studio Photo d’Identité, Passeport & Signature — Tous les Outils Pro Gratuits',
     proRibbonSub:
-      'Comme tout le calcul s’exécute dans la mémoire RAM de votre propre appareil, nos serveurs ne coûtent rien par photo. Cliquez sur une fonction Pro pour l’activer :',
+      'Tout ce qu’il vous faut pour ajuster, vérifier et imprimer vos photos officielles et signatures. Cliquez sur un outil pour l’ouvrir :',
     freeFeatures: [
       {
         id: 'grid-framing',
-        title: 'Grille Biométrique OACI & Recadrage Pro',
-        desc: 'Alignement yeux/menton en direct avec zoom, déplacement, rotation et luminosité.',
-        competitorPrice: '8,90 € en cabine → LANCER GRATUIT'
+        title: 'Guide d’Alignement Visage & Yeux',
+        desc: 'Vérifiez la taille de la tête et la hauteur des yeux avec zoom, rotation et lumière.',
+        ctaLabel: 'Ouvrir le Guide'
       },
       {
         id: 'print-sheet',
-        title: 'Planche 10×15 cm (4×6") de 8 Photos',
-        desc: 'Planche 300 DPI prête à imprimer avec traits de coupe millimétrés et tampon date.',
-        competitorPrice: '5,99 € ailleurs → LANCER GRATUIT'
+        title: 'Planche Imprimable 10×15 cm (8 Photos)',
+        desc: 'Créez une planche de 8 photos d’identité prête à imprimer avec traits de coupe.',
+        ctaLabel: 'Créer une Planche'
       },
       {
         id: 'name-slate',
-        title: 'Bandeau Officiel Nom + Date sur Photo',
-        desc: 'Ajoutez votre nom et la date de prise de vue en bas de la photo sous 20 Ko / 50 Ko.',
-        competitorPrice: 'Option Pro payante → LANCER GRATUIT'
+        title: 'Bandeau Nom & Date sur Photo',
+        desc: 'Ajoutez votre nom et la date de prise de vue en bas de la photo tout en restant sous 20 Ko / 50 Ko.',
+        ctaLabel: 'Ajouter Nom & Date'
       },
       {
         id: 'batch-queue',
-        title: 'Compression par Lot (Batch Illimité)',
-        desc: 'Compressez plusieurs photos simultanément au Ko exact sans limite quotidienne.',
-        competitorPrice: '12 €/mois ailleurs → LANCER GRATUIT'
+        title: 'Compression par Lot Multi-Photos',
+        desc: 'Compressez plusieurs photos simultanément au poids exact en un seul clic.',
+        ctaLabel: 'Compresser par Lot'
       }
     ],
-    colExactKb: 'Compression au Ko Exact',
-    colPortals: 'Portails Officiels & Pays',
-    colStudioGuides: 'Studio QR & Guides',
-    colTrustLegal: 'Confiance, RGPD & Normes',
-    openSourceLabel: 'Code Open-Source Auditable (GitHub)',
-    standardsLine:
-      'OACI Doc 9303 · ISO/IEC 19794-5 (ANTS / CNIE) · US DS-160 · PDF ISO-32000-1 · 300 DPI',
-    zeroUploadGuarantee:
-      'Exécution 100 % Locale en RAM — Aucun Fichier Envoyé sur Serveur (Conforme RGPD)'
+    colExactKb: 'Compresser par Poids (Ko)',
+    colPortals: 'Formats Officiels par Pays',
+    colTrustLegal: 'Guides & Informations',
+    languageLabel: 'Langue :',
+    privacyGuarantee:
+      '100 % Privé et Sécurisé — Vos photos sont traitées directement sur votre appareil et ne sont jamais envoyées.'
   },
   es: {
-    proRibbonKicker: 'CERO SUSCRIPCIONES · CERO MARCAS DE AGUA · 100% GRATIS',
+    proRibbonKicker: '100% GRATIS · SIN MARCAS DE AGUA · SIN REGISTRO',
     proRibbonTitle:
-      'Funciones Pro por las que otros sitios cobran $7–$19 — Aquí 100% Gratis',
+      'Estudio Completo de Fotos para Pasaporte, Visa y Firma — Herramientas Pro Gratis',
     proRibbonSub:
-      'Como todo el procesamiento ocurre localmente en la memoria RAM de tu navegador, incluimos gratis todas las herramientas avanzadas de estudio. Haz clic para activar:',
+      'Todo lo que necesitas para encuadrar, verificar e imprimir tus fotos oficiales. Selecciona cualquier herramienta para abrirla:',
     freeFeatures: [
       {
         id: 'grid-framing',
-        title: 'Guía Biométrica OACI y Encuadre Pro',
-        desc: 'Alineación de ojos y barbilla con controles de zoom, rotación, encuadre y luz.',
-        competitorPrice: '$9.95 en otros sitios → ABRIR GRATIS'
+        title: 'Guía de Alineación de Rostro y Ojos',
+        desc: 'Verifica el tamaño de la cabeza y la altura de los ojos con zoom, rotación y brillo.',
+        ctaLabel: 'Abrir Guía'
       },
       {
         id: 'print-sheet',
-        title: 'Hoja 10×15 cm (4×6") con 8 Fotos',
-        desc: 'Plantilla de impresión a 300 DPI con guías de corte milimétricas y sello de fecha.',
-        competitorPrice: '$6.99 en otros sitios → ABRIR GRATIS'
+        title: 'Hoja Imprimible 10×15 cm (8 Fotos)',
+        desc: 'Genera una plantilla lista para imprimir con 8 fotos y líneas de corte.',
+        ctaLabel: 'Crear Hoja 10×15'
       },
       {
         id: 'name-slate',
-        title: 'Rótulo Oficial Nombre + Fecha en Foto',
-        desc: 'Inserta tu nombre y fecha de captura al pie de la foto manteniendo el límite de 20KB/50KB.',
-        competitorPrice: 'Función Pro de pago → ABRIR GRATIS'
+        title: 'Añadir Nombre y Fecha en la Foto',
+        desc: 'Coloca tu nombre y fecha de captura al pie de la foto manteniendo el límite de KB.',
+        ctaLabel: 'Añadir Nombre y Fecha'
       },
       {
         id: 'batch-queue',
-        title: 'Compresión por Lotes Ilimitada (Batch)',
-        desc: 'Comprime múltiples fotos simultáneamente al KB exacto sin límites diarios.',
-        competitorPrice: '$12/mes en otros sitios → ABRIR GRATIS'
+        title: 'Comprimir Múltiples Fotos por Lotes',
+        desc: 'Sube y comprime varias fotos al mismo tiempo al peso exacto en KB.',
+        ctaLabel: 'Comprimir por Lotes'
       }
     ],
-    colExactKb: 'Compresión por KB Exacto',
-    colPortals: 'Portales Oficiales y Visas',
-    colStudioGuides: 'Estudio QR y Guías',
-    colTrustLegal: 'Confianza, Privacidad y Legal',
-    openSourceLabel: 'Motor de Código Abierto Auditable (GitHub)',
-    standardsLine:
-      'OACI Doc 9303 · ISO/IEC 19794-5 · US CEAC DS-160 · PDF ISO-32000-1 · 300 DPI JFIF',
-    zeroUploadGuarantee:
-      'Procesamiento 100% Local en RAM — Cero Archivos Subidos a Servidores (RGPD)'
+    colExactKb: 'Comprimir por Peso (KB)',
+    colPortals: 'Formatos Oficiales por País',
+    colTrustLegal: 'Guías e Información',
+    languageLabel: 'Idioma:',
+    privacyGuarantee:
+      '100% Privado y Seguro — Tus fotos se procesan directamente en tu dispositivo y nunca se suben a internet.'
   },
   ar: {
-    proRibbonKicker: 'بدون اشتراكات · بدون علامة مائية · مجاني 100% مدى الحياة',
+    proRibbonKicker: 'مجاني 100% · بدون علامة مائية · بدون تسجيل حساب',
     proRibbonTitle:
-      'ميزات احترافية مدفوعة في المواقع الأخرى (7$ إلى 19$) — متاحة هنا مجاناً بالكامل',
+      'استوديو متكامل لصور جواز السفر والتأشيرات والتوقيع — جميع الأدوات الاحترافية مجاناً',
     proRibbonSub:
-      'لأن جميع عمليات المعالجة تتم محلياً داخل ذاكرة متصفحك (RAM)، نوفر لك جميع أدوات الاستوديو الاحترافية مجاناً. انقر على أي ميزة لتشغيلها:',
+      'كل ما تحتاجه لضبط ومحاذاة وطباعة صورك الرسمية في مكان واحد. اختر أي أداة أدناه لتشغيلها مباشرة:',
     freeFeatures: [
       {
         id: 'grid-framing',
-        title: 'شبكة المحاذاة البيومترية ICAO والتحكم بالصورة',
-        desc: 'محاذاة دقيقة للعينين والذقن مع التحكم بالتكبير والإزاحة والدوران والإضاءة.',
-        competitorPrice: '9.95$ في المواقع الأخرى ← تشغيل مجاناً'
+        title: 'شبكة محاذاة الوجه والعينين',
+        desc: 'تحقق من مقاس الرأس ومستوى العينين مع أدوات التكبير والدوران وتعديل الإضاءة.',
+        ctaLabel: 'فتح أداة المحاذاة'
       },
       {
         id: 'print-sheet',
-        title: 'ورقة طباعة 10×15 سم (4×6 بوصة) تضم 8 صور',
-        desc: 'جاهزة للطباعة بدقة 300 DPI مع علامات قص بالمليمتر وختم التاريخ.',
-        competitorPrice: '6.99$ في المواقع الأخرى ← تشغيل مجاناً'
+        title: 'ورقة طباعة 10×15 سم (8 صور)',
+        desc: 'احصل على ورقة جاهزة للطباعة تضم 8 صور شخصية مع علامات قص دقيقة.',
+        ctaLabel: 'إنشاء ورقة الطباعة'
       },
       {
         id: 'name-slate',
-        title: 'شريط الاسم وتاريخ الصورة الرسمي (DOP)',
-        desc: 'إضافة الاسم وتاريخ التقاط الصورة أسفل الصورة الشخصية مع تثبيت الحجم تحت 20 أو 50 كيلوبايت.',
-        competitorPrice: 'ميزة مدفوعة ← تشغيل مجاناً'
+        title: 'إضافة الاسم والتاريخ على الصورة',
+        desc: 'أضف شريط الاسم وتاريخ الصورة أسفل الصورة الشخصية مع الحفاظ على الحجم بالكيلوبايت.',
+        ctaLabel: 'إضافة الاسم والتاريخ'
       },
       {
         id: 'batch-queue',
-        title: 'ضغط دفعات متعددة من الصور (Batch) بلا حدود',
-        desc: 'ارفع واضغط عشرات الصور دفعة واحدة بالكيلوبايت الدقيق بدون أي قيود يومية.',
-        competitorPrice: '12$/شهرياً ← تشغيل مجاناً'
+        title: 'ضغط عدة صور دفعة واحدة',
+        desc: 'ارفع واضغط مجموعة من الصور في وقت واحد بالحجم الدقيق بالكيلوبايت بنقرة واحدة.',
+        ctaLabel: 'فتح ضغط الدفعات'
       }
     ],
-    colExactKb: 'ضغط بالكيلوبايت الدقيق',
-    colPortals: 'البوابات الحكومية الرسمية',
-    colStudioGuides: 'استوديو QR والأدلة التقنية',
-    colTrustLegal: 'الخصوصية والمعايير القانونية',
-    openSourceLabel: 'محرك مفتوح المصدر قابل للتدقيق (GitHub)',
-    standardsLine:
-      'ICAO Doc 9303 · ISO/IEC 19794-5 · US DS-160 · ISO-32000-1 PDF · 300 DPI JFIF',
-    zeroUploadGuarantee:
-      'معالجة محلية 100% داخل الذاكرة — لا تغادر صورك جهازك أبداً (متوافق مع GDPR)'
+    colExactKb: 'ضغط حسب الحجم بالكيلوبايت',
+    colPortals: 'المقاسات الرسمية حسب الدولة',
+    colTrustLegal: 'الأدلة والمعلومات',
+    languageLabel: 'اللغة:',
+    privacyGuarantee:
+      'خصوصية وأمان 100% — تتم معالجة صورك مباشرة على جهازك ولا يتم رفعها إلى أي خادم.'
   }
 };
 
@@ -256,7 +239,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
 
   return (
     <footer className="mt-20 border-t border-[#14213d]/15 dark:border-[#ffffff]/15 bg-[#14213d] text-[#ffffff]">
-      {/* TOP ARCHITECTURAL RIBBON: PAID-ELSEWHERE PRO FEATURES INCLUDED FREE */}
+      {/* TOP RIBBON: FREE PRO TOOLS FOR VISITORS */}
       <div className="border-b border-[#ffffff]/10 bg-[#1b2c52]/60">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 space-y-6">
           <div className="max-w-3xl space-y-2">
@@ -290,8 +273,8 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                     {feat.desc}
                   </p>
                 </div>
-                <div className="pt-2 border-t border-[#ffffff]/10 text-[11px] font-mono font-semibold text-[#fca311] flex items-center justify-between">
-                  <span>✓ {feat.competitorPrice}</span>
+                <div className="pt-2 border-t border-[#ffffff]/10 text-xs font-bold text-[#fca311] flex items-center justify-between">
+                  <span>{feat.ctaLabel}</span>
                   <span className="group-hover:translate-x-0.5 transition-transform">
                     →
                   </span>
@@ -302,10 +285,10 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
         </div>
       </div>
 
-      {/* MAIN 5-COLUMN STUDIO DIRECTORY */}
+      {/* MAIN 4-COLUMN VISITOR DIRECTORY */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 space-y-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8">
-          {/* Column 1 (4 cols): Brand Identity, Architecture & Language Switcher */}
+          {/* Column 1 (4 cols): Brand Identity & Language Switcher */}
           <div className="lg:col-span-4 space-y-4">
             <a
               href={langPrefix || '/'}
@@ -353,25 +336,20 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   <circle cx="32" cy="32" r="4.5" fill="#fca311" />
                 </svg>
               </div>
-              <div>
-                <span className="font-serif text-xl font-bold tracking-tight text-[#ffffff] block leading-none">
-                  Compress<span className="text-[#fca311]">Photo</span>
-                </span>
-                <span className="text-[10px] font-mono text-[#ffffff]/60 tracking-wider uppercase">
-                  compressphoto.space
-                </span>
-              </div>
+              <span className="font-serif text-xl font-bold tracking-tight text-[#ffffff] block leading-none">
+                Compress<span className="text-[#fca311]">Photo</span>
+              </span>
             </a>
 
             <p className="text-xs text-[#ffffff]/75 leading-relaxed">
               {t.footerDesc}
             </p>
 
-            {/* Interactive Subdirectory Language Selector */}
+            {/* Language Selector */}
             <div className="space-y-1.5 pt-1">
-              <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#ffffff]/65">
+              <div className="flex items-center gap-1.5 text-xs text-[#ffffff]/70">
                 <Globe className="w-3.5 h-3.5 text-[#fca311]" />
-                <span>Studio Editions:</span>
+                <span>{copy.languageLabel}</span>
               </div>
               <div className="flex flex-wrap items-center gap-1.5">
                 {(
@@ -409,23 +387,11 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 })}
               </div>
             </div>
-
-            <div className="pt-1">
-              <a
-                href="https://github.com/abdelkhalekkaci/exactkb"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-mono text-[#fca311] hover:underline"
-              >
-                <ShieldCheck className="w-4 h-4 shrink-0" />
-                <span>{copy.openSourceLabel}</span>
-              </a>
-            </div>
           </div>
 
           {/* Column 2 (2 cols): Exact-KB Compressors */}
           <div className="lg:col-span-2 space-y-3">
-            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#fca311]">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#fca311]">
               {copy.colExactKb}
             </div>
             <ul className="space-y-2 text-xs text-[#ffffff]/85">
@@ -437,7 +403,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  20 KB Photo Compressor
+                  Compress Photo to 20 KB
                 </a>
               </li>
               <li>
@@ -448,7 +414,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  50 KB Passport &amp; Visa
+                  Compress Photo to 50 KB
                 </a>
               </li>
               <li>
@@ -459,7 +425,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  100 KB High-Clarity
+                  Compress Photo to 100 KB
                 </a>
               </li>
               <li>
@@ -470,7 +436,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  200 KB High-Res Lock
+                  Compress Photo to 200 KB
                 </a>
               </li>
               <li>
@@ -481,7 +447,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  Signature &lt; 20 KB
+                  Signature Under 20 KB
                 </a>
               </li>
               <li>
@@ -505,7 +471,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
 
           {/* Column 3 (3 cols): Official Government & Exam Portals */}
           <div className="lg:col-span-3 space-y-3">
-            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#fca311]">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#fca311]">
               {copy.colPortals}
             </div>
             <ul className="space-y-2 text-xs text-[#ffffff]/85">
@@ -517,7 +483,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  🇫🇷 France ANTS &amp; ANEF (35×45mm · 50Ko)
+                  🇫🇷 France ANTS (35×45 mm)
                 </a>
               </li>
               <li>
@@ -528,7 +494,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  🇲🇦 Maroc CNIE &amp; Passeport (35×45mm)
+                  🇲🇦 Morocco CNIE &amp; Passport (35×45 mm)
                 </a>
               </li>
               <li>
@@ -544,7 +510,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  🇺🇸 US Visa DS-160 &amp; DV Lottery (2×2&quot;)
+                  🇺🇸 US Visa DS-160 &amp; Green Card (2×2&quot;)
                 </a>
               </li>
               <li>
@@ -560,7 +526,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  🇪🇺 Schengen &amp; ICAO Passport (413×531 px)
+                  🇪🇺 Schengen, UK &amp; Canada Passport
                 </a>
               </li>
               <li>
@@ -592,15 +558,15 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  📦 Amazon 1000×1000 Pure White Studio
+                  📦 E-Commerce 1000×1000 White Background
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 4 (3 cols): Studio Modules, Guides, Legal & AI Catalog */}
+          {/* Column 4 (3 cols): Guides, QR Studio & Legal Pages */}
           <div className="lg:col-span-3 space-y-3">
-            <div className="text-xs font-mono font-bold uppercase tracking-wider text-[#fca311]">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#fca311]">
               {copy.colTrustLegal}
             </div>
             <ul className="space-y-2 text-xs text-[#ffffff]/85">
@@ -611,7 +577,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   className="hover:text-[#fca311] transition-colors flex items-center gap-1.5"
                 >
                   <Camera className="w-3.5 h-3.5 text-[#fca311]" />
-                  <span>{t.navBlog} (20 Tutorials)</span>
+                  <span>{t.navBlog}</span>
                 </a>
               </li>
               <li>
@@ -664,51 +630,15 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
           </div>
         </div>
 
-        {/* BOTTOM ARCHITECTURAL BAR: STANDARDS, SITEMAP/LLMS LINKS & COPYRIGHT */}
-        <div className="pt-8 border-t border-[#ffffff]/12 space-y-4">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs text-[#ffffff]/75">
-            <div className="flex items-center gap-2">
-              <Lock className="w-3.5 h-3.5 text-[#fca311] shrink-0" />
-              <span>{copy.zeroUploadGuarantee}</span>
-            </div>
-            <div className="font-mono text-[11px] text-[#ffffff]/60">
-              {copy.standardsLine}
-            </div>
+        {/* CLEAN VISITOR BOTTOM BAR (NO SITEMAP, NO LLMS.TXT, NO DEVELOPER KEYWORDS) */}
+        <div className="pt-8 border-t border-[#ffffff]/12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#ffffff]/70">
+          <div className="flex items-center gap-2 text-center sm:text-start">
+            <Lock className="w-3.5 h-3.5 text-[#fca311] shrink-0" />
+            <span>{copy.privacyGuarantee}</span>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#ffffff]/60 pt-2">
-            <div>
-              © {new Date().getFullYear()} CompressPhoto (compressphoto.space).
-              All rights reserved.
-            </div>
-            <div className="flex flex-wrap items-center gap-3 font-mono text-[11px]">
-              <a
-                href="/sitemap.xml"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#fca311] transition-colors"
-              >
-                Sitemap.xml (156 URLs)
-              </a>
-              <span aria-hidden="true">·</span>
-              <a
-                href="/llms.txt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#fca311] transition-colors"
-              >
-                llms.txt
-              </a>
-              <span aria-hidden="true">·</span>
-              <a
-                href="/llms-full.txt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#fca311] transition-colors"
-              >
-                llms-full.txt
-              </a>
-            </div>
+          <div className="text-[#ffffff]/60 shrink-0">
+            © {new Date().getFullYear()} CompressPhoto (compressphoto.space).
           </div>
         </div>
       </div>

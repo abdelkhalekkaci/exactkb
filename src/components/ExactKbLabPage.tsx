@@ -659,7 +659,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     triggerDownload(
       url,
       `compressphoto-${finalKb}KB.pdf`,
-      `Downloaded ISO-32000 PDF (${finalKb} KB ≤ ${targetKb} KB)`
+      `Downloaded PDF (${finalKb} KB ≤ ${targetKb} KB)`
     );
     setTimeout(() => URL.revokeObjectURL(url), 5000);
   };
@@ -1780,7 +1780,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
                   </span>
                   <span aria-hidden="true">·</span>
                   <span>
-                    ✓ {effectiveWidth}×{effectiveHeight} px (300 DPI JFIF)
+                    ✓ {effectiveWidth}×{effectiveHeight} px (300 DPI)
                   </span>
                   <span aria-hidden="true">·</span>
                   <span>✓ {geo.checklistSrgbPass}</span>

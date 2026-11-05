@@ -143,7 +143,7 @@ export const InfoAndLegalPages: React.FC<InfoAndLegalPagesProps> = ({
             </p>
             <ul className="space-y-3 pl-4 list-disc">
               <li>
-                <strong>Strict Kilobyte Limits on Official Portals:</strong> Government visa applications (Schengen 35×45 mm, France ANTS, Morocco CNIE, US Visa 2×2&quot;) and civil-service exam portals require exact pixel dimensions and strict file-size ceilings (such as <code>&lt; 20 KB</code> or <code>&lt; 50 KB</code>). Our 7-pass binary-search engine locks your image or handwritten signature right under your chosen KB limit in milliseconds.
+                <strong>Strict Kilobyte Limits on Official Portals:</strong> Government visa applications (Schengen 35×45 mm, France ANTS, Morocco CNIE, US Visa 2×2&quot;) and civil-service exam portals require exact pixel dimensions and strict file-size ceilings (such as <code>&lt; 20 KB</code> or <code>&lt; 50 KB</code>). CompressPhoto locks your photo or handwritten signature right under your chosen KB limit in milliseconds.
               </li>
               <li>
                 <strong>Non-Expiring Vector QR Codes:</strong> Many online QR generators insert middleman tracking links that expire unless you pay a monthly subscription. Our QR &amp; Barcode generator encodes your URL, Wi-Fi credentials, Business Card (vCard 3.0), or Menu directly into the vector matrix so your printed codes work forever.
@@ -154,9 +154,9 @@ export const InfoAndLegalPages: React.FC<InfoAndLegalPagesProps> = ({
           <div className="p-5 rounded-xl border-2 border-[#fca311] bg-[#fca311]/10 flex items-start gap-3.5">
             <ShieldCheck className="w-6 h-6 text-[#fca311] shrink-0 mt-0.5" />
             <div className="text-xs sm:text-sm space-y-1">
-              <div className="font-bold">100% Client-Side Guarantee (Zero Server Uploads)</div>
+              <div className="font-bold">100% Private &amp; Secure (No Server Uploads)</div>
               <p className="opacity-85">
-                Every photo, passport scan, signature, and QR code is processed strictly inside your own device’s web browser using HTML5 Canvas. Your personal files never leave your computer or phone.
+                Every photo, passport scan, signature, and QR code is processed directly inside your own web browser. Your personal files never leave your computer or phone.
               </p>
             </div>
           </div>
@@ -179,7 +179,7 @@ export const InfoAndLegalPages: React.FC<InfoAndLegalPagesProps> = ({
             <section className="space-y-2">
               <h2 className="text-base font-bold">1. Service Publisher / Éditeur du Service</h2>
               <p>
-                <strong>CompressPhoto</strong> is an independent web utility platform providing client-side image compression, biometric crop calibration, and vector QR/barcode generation.
+                <strong>CompressPhoto</strong> is an independent online platform providing photo size compression, passport &amp; ID photo formatting, and vector QR/barcode generation.
                 <br />
                 Official Website: <strong>https://compressphoto.space</strong> · Contact Email: <strong>contact@compressphoto.space</strong>
               </p>
@@ -188,7 +188,7 @@ export const InfoAndLegalPages: React.FC<InfoAndLegalPagesProps> = ({
             <section className="space-y-2">
               <h2 className="text-base font-bold">2. Intellectual Property / Propriété Intellectuelle</h2>
               <p>
-                All interface designs, client-side compression algorithms, and software code on this website are protected by copyright law. Any images, signatures, or QR codes you generate using this tool belong 100% to you and may be used freely for personal, administrative, or commercial purposes.
+                All interface designs and software on this website are protected by copyright law. Any images, signatures, or QR codes you create using this tool belong 100% to you and may be used freely for personal, administrative, or commercial purposes.
               </p>
             </section>
 

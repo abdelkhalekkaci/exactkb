@@ -174,7 +174,7 @@ export const OFFICIAL_PORTAL_SPEC_TABLE: OfficialPortalSpecRow[] = [
   {
     id: 'exact-pdf-document',
     portalName: {
-      en: 'Official ID / Photo wrapped in ISO-32000 PDF',
+      en: 'Official ID / Photo to PDF (< 50 KB / 100 KB)',
       fr: 'Photo ou Pièce d’Identité en PDF < 50 Ko / 100 Ko',
       es: 'Foto o Documento en PDF exacto < 50 KB / 100 KB',
       ar: 'تحويل وضغط الصورة إلى ملف PDF أقل من 50 أو 100 كيلوبايت'
@@ -187,9 +187,9 @@ export const OFFICIAL_PORTAL_SPEC_TABLE: OfficialPortalSpecRow[] = [
     presetId: 'schengen-35x45',
     routeSlug: 'compress-photo-to-pdf-under-50kb',
     backgroundSpec: {
-      en: 'Single-page ISO-32000 PDF locked under KB cap',
-      fr: 'PDF ISO-32000 1 page verrouillé sous la limite Ko',
-      es: 'PDF ISO-32000 de 1 página bajo el límite KB',
+      en: 'Single-page PDF locked under KB limit',
+      fr: 'PDF 1 page verrouillé sous la limite Ko',
+      es: 'PDF de 1 página bajo el límite KB',
       ar: 'ملف PDF قياسي بصفحة واحدة تحت سقف الكيلوبايت'
     }
   },
@@ -371,7 +371,7 @@ export const TOOL_LANDING_PAGES: ToolLandingPageConfig[] = [
         },
         {
           question: 'Can I also download my 50KB photo as a PDF file?',
-          answer: 'Yes. Click the "Download PDF (≤ 50 KB)" button below the preview to wrap your calibrated image inside a standards-compliant ISO-32000 PDF locked under 50 KB.'
+          answer: 'Yes. Click the "Download PDF (≤ 50 KB)" button below the preview to save your calibrated photo as a ready-to-upload PDF locked under 50 KB.'
         }
       ],
       fr: [
@@ -1027,9 +1027,9 @@ export const TOOL_LANDING_PAGES: ToolLandingPageConfig[] = [
       ar: 'تحويل وضغط الصورة إلى PDF بحجم أقل من 50 أو 100 كيلوبايت أونلاين | CompressPhoto'
     },
     metaDescription: {
-      en: 'Convert any JPG, PNG, or WebP photo or ID scan into an ISO-32000 PDF file locked strictly under 20KB, 50KB, or 100KB in your browser.',
-      fr: 'Convertissez une photo d’identité, un passeport ou une signature en un fichier PDF conforme ISO-32000 pesant strictement moins de 20 Ko, 50 Ko ou 100 Ko.',
-      es: 'Convierte cualquier foto o documento escaneado en un archivo PDF ISO-32000 con un peso estrictamente inferior a 20KB, 50KB o 100KB.',
+      en: 'Convert any JPG, PNG, or WebP photo or ID scan into a clean PDF file locked strictly under 20KB, 50KB, or 100KB in your browser.',
+      fr: 'Convertissez une photo d’identité, un passeport ou une signature en un fichier PDF pesant strictement moins de 20 Ko, 50 Ko ou 100 Ko.',
+      es: 'Convierte cualquier foto o documento escaneado en un archivo PDF con un peso estrictamente inferior a 20KB, 50KB o 100KB.',
       ar: 'حوّل واضغط أي صورة شخصية أو وثيقة إلى ملف PDF قياسي بحجم يقل عن 20 أو 50 أو 100 كيلوبايت مباشرة داخل متصفحك.'
     },
     h1: {
@@ -1039,23 +1039,23 @@ export const TOOL_LANDING_PAGES: ToolLandingPageConfig[] = [
       ar: 'تحويل وضغط الصورة إلى ملف PDF أقل من 50 أو 100 كيلوبايت'
     },
     subtitle: {
-      en: 'Accounts for PDF container header overhead automatically so the final .pdf file never exceeds your 20KB, 50KB, or 100KB upload limit.',
-      fr: 'Calcule automatiquement le poids de l’en-tête PDF afin que le fichier .pdf final ne dépasse jamais votre limite de 20 Ko, 50 Ko ou 100 Ko.',
-      es: 'Calcula automáticamente la sobrecarga del contenedor PDF para que el archivo .pdf final nunca supere tu límite de 20KB, 50KB o 100KB.',
+      en: 'Accounts for PDF file structure automatically so the final .pdf document never exceeds your 20KB, 50KB, or 100KB upload limit.',
+      fr: 'Calcule automatiquement le poids du document PDF afin que le fichier .pdf final ne dépasse jamais votre limite de 20 Ko, 50 Ko ou 100 Ko.',
+      es: 'Calcula automáticamente el tamaño del documento PDF para que el archivo .pdf final nunca supere tu límite de 20KB, 50KB o 100KB.',
       ar: 'يحسب حجم ترويسة ملف PDF تلقائياً لضمان عدم تجاوز الملف النهائي لسقف 20 أو 50 أو 100 كيلوبايت.'
     },
     directAnswer: {
-      en: 'Standard image-to-PDF converters add 15–40 KB of font and metadata overhead, pushing a 45 KB JPEG over a 50 KB limit. CompressPhoto subtracts the exact 1.4 KB ISO-32000 wrapper budget before compressing the image stream so the exported PDF stays strictly below your target KB.',
-      fr: 'Les convertisseurs PDF classiques ajoutent 15 à 40 Ko de métadonnées, faisant passer une image de 45 Ko au-dessus de la limite de 50 Ko. CompressPhoto déduit la taille exacte de l’enveloppe ISO-32000 avant la compression afin que le fichier PDF final reste strictement sous 50 Ko.',
-      es: 'Los convertidores PDF normales añaden entre 15 y 40 KB de metadatos. CompressPhoto descuenta el peso exacto de la cabecera ISO-32000 antes de comprimir la imagen para que el PDF final nunca supere los 50 KB.',
+      en: 'Standard image-to-PDF converters add 15–40 KB of extra overhead, pushing a 45 KB photo over a 50 KB limit. CompressPhoto accounts for the PDF wrapper before compressing your image so the exported PDF stays strictly below your target KB.',
+      fr: 'Les convertisseurs PDF classiques ajoutent 15 à 40 Ko de données supplémentaires, faisant passer une image de 45 Ko au-dessus de la limite de 50 Ko. CompressPhoto prend en compte l’enveloppe PDF avant la compression afin que le fichier PDF final reste strictement sous 50 Ko.',
+      es: 'Los convertidores PDF normales añaden entre 15 y 40 KB adicionales. CompressPhoto descuenta el peso del formato PDF antes de comprimir la imagen para que el PDF final nunca supere los 50 KB.',
       ar: 'تضيف أدوات تحويل PDF التقليدية ما بين 15 و40 كيلوبايت من البيانات الإضافية. يقوم CompressPhoto بخصم حجم غلاف PDF مسبقاً لضمان بقاء ملف PDF النهائي تحت 50 كيلوبايت بدقة.'
     },
     portalSpecs: {
-      dimensionsMm: '35 × 45 mm / Custom PDF Page',
+      dimensionsMm: '35 × 45 mm / Standard PDF Page',
       dimensionsPx: '413 × 531 px (300 DPI)',
-      maxKb: '≤ 50.0 KB PDF (ISO-32000)',
+      maxKb: '≤ 50.0 KB PDF',
       background: 'Pure White (#FFFFFF)',
-      standardCode: 'ISO-32000-1 PDF 1.4 Stream'
+      standardCode: 'Official Portal PDF'
     },
     specificFaqs: {
       en: [
@@ -1195,302 +1195,302 @@ export interface RichHomeGeoContent {
 export const HOME_GEO_CONTENT: Record<LocaleCode, RichHomeGeoContent> = {
   en: {
     directAnswer:
-      'CompressPhoto is a 100% client-side biometric photo and signature compressor that locks JPEG, WebP, PNG, and ISO-32000 PDF files to exact kilobyte ceilings (10KB, 20KB, 50KB, 100KB, 200KB) at 300 DPI. All processing runs in browser RAM with zero server uploads.',
-    specTableHeading: 'Official Biometric Photo & Signature Requirements by Portal (2026)',
+      'CompressPhoto resizes and compresses passport photos, visa portraits, and handwritten signatures to exact kilobyte limits (10KB, 20KB, 50KB, 100KB, 200KB) at 300 DPI. Your files are processed privately on your own device and are never uploaded to any server.',
+    specTableHeading: 'Official Photo & Signature Sizes by Country & Portal (2026)',
     specTableSub:
-      'Click any official government or exam specification below to pre-calibrate the compressor to that exact pixel resolution and kilobyte limit.',
+      'Select any official passport, visa, or exam format below to set the exact pixel dimensions and kilobyte limit automatically.',
     colPortal: 'Official Portal / Document',
     colDimensionsMm: 'Physical Size',
     colPixels: 'Pixels @ 300 DPI',
-    colMaxKb: 'Byte Ceiling',
-    colAction: 'Quick Calibration',
-    applyPresetBtn: 'Load Preset →',
-    rejectionTitle: 'Why Government & Exam Portals Reject Uploaded Photos (And How We Fix It)',
+    colMaxKb: 'Max File Size',
+    colAction: 'Quick Setup',
+    applyPresetBtn: 'Use This Size →',
+    rejectionTitle: 'Why Online Portals Reject Uploaded Photos (And How We Fix It)',
     rejectionSub:
-      'Automated validation scripts check four strict technical parameters inside your file header before accepting an upload:',
+      'Online application forms check four main requirements before accepting your photo or signature:',
     rejectionReasons: [
       {
-        title: '01. Byte Ceiling Overflow (e.g., 20.4 KB on a 20.0 KB limit)',
-        desc: 'Standard sliders only guess quality percentages (1–100%). Our 7-pass binary search tests exact byte output until the file locks safely between 90% and 99% of your target KB cap.'
+        title: '01. File Size Slightly Over the Limit (e.g., 20.4 KB on a 20 KB limit)',
+        desc: 'Normal quality sliders only guess percentages. Our tool locks the exact file size safely below your required kilobyte limit while keeping the clearest possible image.'
       },
       {
-        title: '02. Wrong Pixel Aspect Ratio or Low DPI',
-        desc: 'Cropping freehand breaks the 35×45 mm (413×531 px) or 2×2 inch (600×600 px) biometric matrix. Our presets lock exact 300 DPI pixel geometry automatically.'
+        title: '02. Wrong Dimensions or Low Print Resolution',
+        desc: 'Cropping by hand breaks the official 35×45 mm (413×531 px) or 2×2 inch (600×600 px) proportions. Our presets apply the exact 300 DPI dimensions automatically.'
       },
       {
-        title: '03. Smartphone HEIC / Display P3 Color Profile Rejection',
-        desc: 'iPhone and modern Android cameras embed wide-gamut ICC profiles and GPS EXIF tags that crash legacy government validators. We strip EXIF bloat and normalize to pure 24-bit sRGB.'
+        title: '03. Unsupported Smartphone Photo Formats (HEIC)',
+        desc: 'Many government portals reject raw iPhone or Android camera files. We automatically convert your photo into a universally accepted standard JPEG, PNG, or PDF.'
       },
       {
-        title: '04. Grey Paper Shadows on Photographed Signatures',
-        desc: 'Indoor lighting makes white paper look grey in phone photos. Our Wet-Ink Signature mode applies luminance thresholding to turn paper #FFFFFF white while keeping ink strokes sharp under 20 KB.'
+        title: '04. Grey Shadows on Photographed Signatures',
+        desc: 'Indoor lighting makes white paper look grey in phone photos. Our Signature mode turns the paper background clean white while keeping your pen strokes sharp under 20 KB.'
       }
     ],
-    faqHeading: 'Frequently Asked Questions — Exact-KB Photo & Biometric ID Compression',
+    faqHeading: 'Frequently Asked Questions — Photo & Signature Compression',
     faqSub:
-      'Verified technical answers for passport, visa, civil service exam, and signature uploads.',
+      'Helpful answers for preparing passport, visa, exam, and signature files.',
     faqs: [
       {
-        question: 'How can I compress a photo to exactly 20KB or 50KB without losing quality?',
+        question: 'How can I compress a photo to 20KB or 50KB without making it blurry?',
         answer:
-          'Upload your photo, choose your document preset (e.g., 35×45 mm Passport or Wet-Ink Signature), and click 20 KB or 50 KB. CompressPhoto runs a 7-pass binary search over JPEG quantization tables at 300 DPI, stripping unnecessary EXIF metadata while preserving facial sharpness.'
+          'Upload your photo, choose your document type (such as 35×45 mm Passport or Signature), and click 20 KB or 50 KB. The tool optimizes the file size at 300 DPI while keeping facial details clear and sharp.'
       },
       {
-        question: 'Are my passport photos or signatures ever uploaded to a cloud server?',
+        question: 'Are my passport photos or signatures uploaded to any server?',
         answer:
-          'Never. CompressPhoto is architected as a zero-upload client-side studio. Every image is decoded, cropped, whitened, and compressed directly inside your browser RAM using HTML5 Canvas. You can even disconnect from the internet after loading the page and the compressor continues to work.'
+          'No. Every photo and signature is processed directly inside your web browser on your own phone or computer. Your personal images never leave your device.'
       },
       {
-        question: 'What are the exact pixel dimensions for a 35×45 mm passport photo and a 2×2 inch US visa photo?',
+        question: 'What are the pixel dimensions for a 35×45 mm passport photo and a 2×2 inch US visa photo?',
         answer:
-          'At the international 300 DPI print standard (ICAO Doc 9303), a 35×45 mm passport photo (France ANTS, Morocco CNIE, Schengen, UK) is 413 × 531 pixels. A 2×2 inch US Visa (DS-160 / Green Card DV Lottery) photo is 600 × 600 pixels.'
+          'At the standard 300 DPI resolution, a 35×45 mm passport photo (France ANTS, Morocco CNIE, Schengen, UK) is 413 × 531 pixels. A 2×2 inch US Visa (DS-160 / Green Card Lottery) photo is 600 × 600 pixels.'
       },
       {
         question: 'How do I remove the grey background from a handwritten signature photo under 20KB?',
         answer:
-          'Select the "Handwritten Signature" preset in Step 1. The built-in Wet-Ink Cleanser automatically converts shadowed grey paper into pure #FFFFFF white and locks the 560×180 px image under 20 KB.'
+          'Select the "Handwritten Signature" option in Step 1. The signature cleaner automatically turns shadowed grey paper into pure white and keeps the file under 20 KB.'
       },
       {
-        question: 'Can I convert and compress a photo into a PDF under 50KB or 100KB?',
+        question: 'Can I save my compressed photo as a PDF under 50KB or 100KB?',
         answer:
-          'Yes. After compressing your image, click "Download as PDF (≤ Target KB)". Our engine subtracts the exact ISO-32000 PDF header overhead beforehand so the final .pdf file never exceeds your kilobyte limit.'
+          'Yes. After compressing your image, click "Download as PDF" below the preview. The exported PDF file is guaranteed to stay under your selected kilobyte limit.'
       },
       {
         question: 'How can I print 8 passport photos on a single 4×6 inch (10×15 cm) sheet?',
         answer:
-          'Click "Printable 4×6 Sheet (8 Photos)" below the preview to generate a 300 DPI 4×6 inch (10×15 cm) pharmacy print sheet containing 8 calibrated passport photos with precision cut guides.'
+          'Click "4×6" Print Sheet (8 Photos)" below the preview to download a ready-to-print 4×6 inch (10×15 cm) sheet containing 8 passport photos with cut lines.'
       }
     ],
-    dedicatedToolsHeading: 'Dedicated Exact-KB & Official Portal Compressors',
+    dedicatedToolsHeading: 'Popular Photo & Official Portal Tools',
     dedicatedToolsSub:
-      'Open a pre-calibrated studio page tailored to your exact kilobyte ceiling or government portal:',
-    eeatBadgeTitle: 'Verified 100% Client-Side Biometric Engine (Open-Source Auditable)',
+      'Open a ready-to-use compressor pre-set for your required kilobyte size or application portal:',
+    eeatBadgeTitle: 'Official Passport, Visa & Signature Standards',
     eeatBadgeDesc:
-      'Calibrated to ICAO Doc 9303, ISO/IEC 19794-5 (35×45 mm), and US Department of State CEAC (600×600 px) standards. Zero server storage, GDPR compliant.',
-    checklistTitle: 'Biometric & Portal Compliance Verification',
-    checklistKbPass: 'Byte Ceiling Locked',
-    checklistDpiPass: '300 DPI Geometry',
-    checklistSrgbPass: '24-bit sRGB (EXIF Cleaned)',
-    checklistPrivacyPass: '100% Local RAM (0 Bytes Uploaded)'
+      'Pre-set for 35×45 mm passports, 2×2 inch US visas, and civil service exam signatures. 100% private on your device.',
+    checklistTitle: 'Photo Quality Check',
+    checklistKbPass: 'Exact KB Size Verified',
+    checklistDpiPass: '300 DPI Resolution',
+    checklistSrgbPass: 'Ready for Online Upload',
+    checklistPrivacyPass: '100% Private on Your Device'
   },
   fr: {
     directAnswer:
-      'CompressPhoto est un studio de compression photo biométrique et de signature 100 % local qui verrouille vos fichiers JPEG, WebP, PNG et PDF ISO-32000 au kilo-octet exact (10 Ko, 20 Ko, 50 Ko, 100 Ko, 200 Ko) à 300 DPI. Aucun fichier n’est envoyé sur un serveur (conforme RGPD).',
-    specTableHeading: 'Tableau Officiel des Normes Photos d’Identité, Passeports & Concours (2026)',
+      'CompressPhoto redimensionne et compresse vos photos d’identité, passeports, visas et signatures manuscrites au poids exact en kilo-octets (10 Ko, 20 Ko, 50 Ko, 100 Ko, 200 Ko) en 300 DPI. Vos photos sont traitées directement sur votre appareil et ne sont jamais envoyées sur internet.',
+    specTableHeading: 'Tableau des Formats Officiels Photos d’Identité, Passeports & Concours (2026)',
     specTableSub:
-      'Cliquez sur n’importe quel portail officiel ci-dessous (ANTS, CNIE Maroc, Visa US DS-160, Signature) pour pré-calibrer automatiquement le compresseur.',
-    colPortal: 'Portail Officiel / Document',
+      'Cliquez sur n’importe quel organisme ci-dessous (ANTS, CNIE Maroc, Visa US DS-160, Signature) pour régler automatiquement les bonnes dimensions.',
+    colPortal: 'Organisme / Document',
     colDimensionsMm: 'Format (mm)',
-    colPixels: 'Pixels à 300 DPI',
+    colPixels: 'Dimensions (300 DPI)',
     colMaxKb: 'Poids Max (Ko)',
-    colAction: 'Calibration Directe',
-    applyPresetBtn: 'Appliquer ce format →',
-    rejectionTitle: 'Pourquoi votre photo est refusée sur ANTS, ANEF, CNIE ou DS-160 (Et comment notre outil corrige cela)',
+    colAction: 'Réglage Rapide',
+    applyPresetBtn: 'Utiliser ce format →',
+    rejectionTitle: 'Pourquoi votre photo est refusée sur les sites officiels (Et comment éviter cela)',
     rejectionSub:
-      'Les robots de validation gouvernementaux vérifient 4 critères techniques stricts dans l’en-tête de votre fichier avant d’accepter l’envoi :',
+      'Les portails en ligne vérifient 4 points essentiels avant d’accepter votre photo ou signature :',
     rejectionReasons: [
       {
-        title: '01. Dépassement au Ko près (ex : 50,3 Ko pour une limite à 50,0 Ko)',
-        desc: 'Les compresseurs classiques fonctionnent au hasard avec un pourcentage de qualité. Notre algorithme de recherche binaire en 7 passes verrouille le poids en octets juste sous votre limite.'
+        title: '01. Fichier légèrement trop lourd (ex : 50,3 Ko pour une limite à 50 Ko)',
+        desc: 'Notre outil ajuste automatiquement la compression pour que votre fichier reste juste en dessous du poids maximum autorisé tout en restant parfaitement net.'
       },
       {
-        title: '02. Mauvais ratio de pixels ou densité inférieure à 300 DPI',
-        desc: 'Un recadrage manuel déforme la géométrie biométrique 35×45 mm (413×531 px) ou 2×2 pouces (600×600 px). Nos presets verrouillent la résolution exacte à 300 DPI.'
+        title: '02. Dimensions incorrectes ou résolution trop faible',
+        desc: 'Un recadrage manuel déforme souvent le format 35×45 mm (413×531 px) ou 2×2 pouces (600×600 px). Nos formats appliquent la taille exacte en 300 DPI.'
       },
       {
-        title: '03. Rejet du format iPhone (HEIC / Profil couleur Display P3)',
-        desc: 'Les smartphones récents intègrent des profils ICC incompatibles avec les serveurs administratifs. Nous nettoyons les métadonnées EXIF et convertissons l’image en sRGB 24 bits universel.'
+        title: '03. Format photo de smartphone non reconnu (HEIC)',
+        desc: 'De nombreux sites administratifs refusent le format brut des téléphones récents. Nous convertissons automatiquement votre image en JPEG, PNG ou PDF standard.'
       },
       {
-        title: '04. Ombre grise sur les signatures manuscrites photographiées',
-        desc: 'Une feuille blanche photographiée au téléphone apparaît grise, ce qui bloque la lecture optique. Notre mode Signature blanchit le papier en #FFFFFF tout en gardant un poids inférieur à 20 Ko.'
+        title: '04. Ombre grise sur les signatures photographiées',
+        desc: 'Une feuille blanche prise en photo au téléphone paraît souvent grise. Le mode Signature blanchit le fond du papier tout en gardant un fichier inférieur à 20 Ko.'
       }
     ],
-    faqHeading: 'Questions Fréquentes (FAQ) — Compression Photo au Ko Exact & Normes Biométriques',
+    faqHeading: 'Questions Fréquentes (FAQ) — Compression Photo & Formats d’Identité',
     faqSub:
-      'Réponses techniques vérifiées pour vos démarches ANTS, ANEF, CNIE Maroc, Visa US DS-160 et concours.',
+      'Conseils pratiques pour réussir vos démarches ANTS, CNIE Maroc, Visa US DS-160 et concours.',
     faqs: [
       {
-        question: 'Comment compresser une photo à exactement 20 Ko ou 50 Ko sans perdre en qualité ?',
+        question: 'Comment compresser une photo à 20 Ko ou 50 Ko sans perdre en netteté ?',
         answer:
-          'Importez votre photo, sélectionnez votre format (ex : Passeport 35×45 mm ou Signature) et cliquez sur 20 Ko ou 50 Ko. Notre moteur exécute une recherche binaire en 7 passes à 300 DPI qui supprime les métadonnées EXIF superflues tout en préservant une netteté parfaite du visage.'
+          'Importez votre photo, choisissez votre format (ex : Passeport 35×45 mm ou Signature) et cliquez sur 20 Ko ou 50 Ko. L’outil ajuste le poids au Ko près en 300 DPI tout en préservant la netteté du visage.'
       },
       {
-        question: 'Mes photos d’identité ou de passeport sont-elles envoyées sur un serveur ?',
+        question: 'Mes photos d’identité sont-elles envoyées sur un serveur ?',
         answer:
-          'Jamais. CompressPhoto fonctionne à 100 % localement dans la mémoire vive (RAM) de votre navigateur grâce à HTML5 Canvas. Vos photos personnelles ne quittent jamais votre appareil (conformité totale RGPD).'
+          'Non, jamais. Toutes les modifications sont effectuées directement sur votre téléphone ou votre ordinateur. Vos photos personnelles restent 100 % privées.'
       },
       {
-        question: 'Quelle est la taille exacte en pixels pour une photo ANTS (France) ou CNIE (Maroc) ?',
+        question: 'Quelle est la taille en pixels pour une photo ANTS (France) ou CNIE (Maroc) ?',
         answer:
-          'Le format officiel 35×45 mm correspond exactement à 413 × 531 pixels à une résolution de 300 DPI, avec un poids recommandé inférieur à 50 Ko en JPEG sRGB.'
+          'Le format officiel 35×45 mm correspond exactement à 413 × 531 pixels en 300 DPI, avec un poids recommandé inférieur à 50 Ko.'
       },
       {
-        question: 'Comment enlever l’ombre grise d’une signature manuscrite et la réduire sous 20 Ko ?',
+        question: 'Comment enlever l’ombre grise d’une signature manuscrite sous 20 Ko ?',
         answer:
-          'Sélectionnez le format « Signature Manuscrite » à l’Étape 1. Le filtre adaptatif convertit automatiquement le fond gris du papier en blanc pur (#FFFFFF) et verrouille le fichier 560×180 px sous 20 Ko.'
+          'Choisissez « Signature Manuscrite » à l’Étape 1. Le nettoyage automatique rend le papier parfaitement blanc et réduit le fichier sous 20 Ko.'
       },
       {
-        question: 'Comment convertir et compresser une photo en PDF de moins de 50 Ko ou 100 Ko ?',
+        question: 'Comment convertir une photo en PDF de moins de 50 Ko ou 100 Ko ?',
         answer:
-          'Après la compression de votre photo, cliquez sur le bouton « Télécharger en PDF (≤ Cible Ko) ». Notre moteur déduit automatiquement le poids de l’enveloppe ISO-32000 pour que le PDF final ne dépasse jamais votre limite.'
+          'Après la compression de votre photo, cliquez sur « Télécharger en PDF » sous l’aperçu pour obtenir un document PDF respectant votre limite en Ko.'
       },
       {
-        question: 'Puis-je imprimer gratuitement une planche de 8 photos d’identité sur papier 10×15 cm ?',
+        question: 'Comment imprimer 8 photos d’identité sur une feuille 10×15 cm ?',
         answer:
-          'Oui, cliquez sur « Planche 4×6" (8 Photos) » sous l’aperçu pour télécharger une planche 10×15 cm à 300 DPI contenant 8 photos 35×45 mm avec repères de découpe.'
+          'Cliquez sur « Planche 4×6" (8 Photos) » sous l’aperçu pour télécharger une planche 10×15 cm prête à imprimer avec 8 photos et repères de découpe.'
       }
     ],
-    dedicatedToolsHeading: 'Outils Dédiés par Taille en Ko & par Portail Officiel',
+    dedicatedToolsHeading: 'Outils par Poids en Ko & par Démarche Officielle',
     dedicatedToolsSub:
-      'Accédez directement au compresseur pré-réglé pour votre démarche administrative ou votre limite en Ko :',
-    eeatBadgeTitle: 'Moteur Biométrique 100 % Local Vérifié (Code Open-Source Auditable)',
+      'Ouvrez directement l’outil pré-réglé pour votre démarche ou votre limite de poids :',
+    eeatBadgeTitle: 'Formats Officiels Passeport, Visa & Signature',
     eeatBadgeDesc:
-      'Calibré selon les normes OACI Doc 9303, ISO/IEC 19794-5 (ANTS / CNIE 35×45 mm) et US CEAC DS-160 (600×600 px). Zéro serveur, conforme RGPD.',
-    checklistTitle: 'Contrôle de Conformité Biométrique & Portail',
-    checklistKbPass: 'Plafond Ko Respecté',
-    checklistDpiPass: 'Géométrie 300 DPI',
-    checklistSrgbPass: 'Profil sRGB Pur (Sans EXIF)',
-    checklistPrivacyPass: '100 % Local RAM (0 Octet Envoyé)'
+      'Calibré pour les photos 35×45 mm (ANTS, CNIE), visas US 2×2" (DS-160) et signatures. 100 % privé sur votre appareil.',
+    checklistTitle: 'Vérification de la Photo',
+    checklistKbPass: 'Poids en Ko Respecté',
+    checklistDpiPass: 'Résolution 300 DPI',
+    checklistSrgbPass: 'Prêt pour Dossier en Ligne',
+    checklistPrivacyPass: '100 % Privé sur Votre Appareil'
   },
   es: {
     directAnswer:
-      'CompressPhoto es un estudio de compresión de fotos biométricas y firmas 100% local en el navegador que fija archivos JPEG, WebP, PNG y PDF ISO-32000 al kilobyte exacto (10KB, 20KB, 50KB, 100KB, 200KB) a 300 DPI sin subir archivos a ningún servidor.',
-    specTableHeading: 'Tabla Oficial de Requisitos de Fotos de Pasaporte, Visa y Exámenes (2026)',
+      'CompressPhoto ajusta el tamaño y comprime tus fotos de pasaporte, visa y firmas manuscritas al peso exacto en kilobytes (10KB, 20KB, 50KB, 100KB, 200KB) a 300 DPI. Tus fotos se procesan de forma privada en tu propio dispositivo y nunca se suben a internet.',
+    specTableHeading: 'Tabla de Formatos Oficiales de Fotos de Pasaporte, Visa y Exámenes (2026)',
     specTableSub:
-      'Haz clic en cualquier portal oficial abajo para precalibrar automáticamente el compresor con esa resolución en píxeles y límite de KB.',
-    colPortal: 'Portal Oficial / Documento',
+      'Selecciona cualquier formato oficial abajo para ajustar automáticamente las dimensiones en píxeles y el peso máximo en KB.',
+    colPortal: 'Trámite / Documento',
     colDimensionsMm: 'Tamaño (mm)',
-    colPixels: 'Píxeles a 300 DPI',
-    colMaxKb: 'Límite KB',
-    colAction: 'Calibración Rápida',
-    applyPresetBtn: 'Aplicar formato →',
-    rejectionTitle: 'Por qué los portales oficiales rechazan tu foto (Y cómo lo solucionamos)',
+    colPixels: 'Dimensiones (300 DPI)',
+    colMaxKb: 'Peso Máx (KB)',
+    colAction: 'Ajuste Rápido',
+    applyPresetBtn: 'Usar este formato →',
+    rejectionTitle: 'Por qué los sitios oficiales rechazan tu foto (Y cómo evitarlo)',
     rejectionSub:
-      'Los validadores automáticos comprueban 4 parámetros técnicos estrictos antes de aceptar tu archivo:',
+      'Los formularios en línea revisan 4 requisitos principales antes de aceptar tu archivo:',
     rejectionReasons: [
       {
-        title: '01. Exceso de peso por pocos bytes (ej. 20,3 KB en un límite de 20,0 KB)',
-        desc: 'Nuestra búsqueda binaria de 7 pasadas ajusta las tablas JPEG hasta fijar el archivo entre el 90% y el 99% de tu límite exacto en KB.'
+        title: '01. Archivo ligeramente superior al límite (ej. 20,3 KB en un límite de 20 KB)',
+        desc: 'Nuestra herramienta ajusta el peso exacto para que tu foto quede justo por debajo del límite permitido manteniendo la mejor nitidez.'
       },
       {
-        title: '02. Proporción de píxeles incorrecta o menos de 300 DPI',
-        desc: 'Nuestros ajustes preestablecidos bloquean automáticamente la geometría exacta de 35×45 mm (413×531 px) o 2×2 pulgadas (600×600 px) a 300 DPI.'
+        title: '02. Proporción incorrecta o baja resolución',
+        desc: 'Nuestros formatos aplican automáticamente el tamaño exacto de 35×45 mm (413×531 px) o 2×2 pulgadas (600×600 px) a 300 DPI.'
       },
       {
-        title: '03. Incompatibilidad con formato iPhone (HEIC / Display P3)',
-        desc: 'Eliminamos los metadatos EXIF innecesarios y convertimos la imagen al espacio de color estándar sRGB de 24 bits.'
+        title: '03. Formato de cámara de móvil no compatible (HEIC)',
+        desc: 'Convertimos automáticamente la imagen de tu teléfono a formato JPEG, PNG o PDF compatible con todos los portales oficiales.'
       },
       {
         title: '04. Sombra gris en firmas manuscritas fotografiadas',
-        desc: 'El modo Firma Manuscrita convierte el fondo de papel gris en blanco puro #FFFFFF manteniendo el peso bajo 20 KB.'
+        desc: 'El modo Firma limpia el fondo gris del papel dejándolo blanco puro y manteniendo el archivo por debajo de 20 KB.'
       }
     ],
-    faqHeading: 'Preguntas Frecuentes (FAQ) — Compresión de Fotos al KB Exacto',
+    faqHeading: 'Preguntas Frecuentes (FAQ) — Compresión de Fotos y Firmas',
     faqSub:
-      'Respuestas técnicas verificadas para pasaportes, visas, trámites gubernamentales y firmas.',
+      'Respuestas prácticas para preparar fotos de pasaporte, visa, trámites y firmas.',
     faqs: [
       {
-        question: '¿Cómo comprimir una foto a exactamente 20KB o 50KB sin perder calidad?',
+        question: '¿Cómo comprimir una foto a 20KB o 50KB sin perder nitidez?',
         answer:
-          'Sube tu foto, elige el formato (ej. Pasaporte 35×45 mm o Firma) y selecciona 20 KB o 50 KB. Nuestro motor ejecuta una búsqueda binaria de 7 pasadas a 300 DPI conservando la nitidez facial.'
+          'Sube tu foto, elige el formato (ej. Pasaporte 35×45 mm o Firma) y selecciona 20 KB o 50 KB. La herramienta optimiza el archivo a 300 DPI conservando la claridad del rostro.'
       },
       {
-        question: '¿Mis fotos de pasaporte o firmas se suben a algún servidor?',
+        question: '¿Mis fotos o firmas se suben a algún servidor?',
         answer:
-          'Nunca. Todo el procesamiento ocurre 100% localmente dentro de la memoria RAM de tu navegador.'
+          'No, nunca. Todo el proceso se realiza directamente en tu teléfono u ordenador. Tus imágenes nunca salen de tu dispositivo.'
       },
       {
-        question: '¿Cuáles son las dimensiones exactas en píxeles para 35×45 mm y 2×2 pulgadas?',
+        question: '¿Cuáles son las medidas en píxeles para 35×45 mm y 2×2 pulgadas?',
         answer:
           'A 300 DPI, 35×45 mm equivale a 413 × 531 píxeles y 2×2 pulgadas (Visa EE.UU. DS-160) equivale a 600 × 600 píxeles.'
       },
       {
-        question: '¿Puedo convertir y comprimir una foto a PDF menor de 50KB?',
+        question: '¿Puedo guardar mi foto comprimida en formato PDF menor de 50KB?',
         answer:
-          'Sí, haz clic en "Descargar en PDF (≤ KB)" debajo de la vista previa para generar un PDF ISO-32000 bloqueado bajo tu límite de KB.'
+          'Sí, haz clic en "Descargar en PDF" debajo de la vista previa para obtener un archivo PDF garantizado por debajo de tu límite de KB.'
       }
     ],
-    dedicatedToolsHeading: 'Herramientas Dedicadas por Tamaño en KB y Portal Oficial',
+    dedicatedToolsHeading: 'Herramientas por Peso en KB y Trámites Oficiales',
     dedicatedToolsSub:
-      'Abre una página precalibrada para tu límite exacto de kilobytes o trámite oficial:',
-    eeatBadgeTitle: 'Motor Biométrico 100% Local Verificado (Código Abierto Auditable)',
+      'Abre directamente el compresor configurado para tu límite de kilobytes o trámite:',
+    eeatBadgeTitle: 'Formatos Oficiales de Pasaporte, Visa y Firma',
     eeatBadgeDesc:
-      'Calibrado según las normas OACI Doc 9303, ISO/IEC 19794-5 (35×45 mm) y US CEAC DS-160 (600×600 px). Cero servidores, compatible con RGPD.',
-    checklistTitle: 'Verificación de Cumplimiento Biométrico',
-    checklistKbPass: 'Límite KB Bloqueado',
-    checklistDpiPass: 'Geometría 300 DPI',
-    checklistSrgbPass: 'Perfil sRGB Puro (Sin EXIF)',
-    checklistPrivacyPass: '100% Local RAM (0 Bytes Subidos)'
+      'Configurado para pasaportes de 35×45 mm, visas de EE.UU. de 2×2" y firmas. 100% privado en tu dispositivo.',
+    checklistTitle: 'Verificación de la Foto',
+    checklistKbPass: 'Peso en KB Correcto',
+    checklistDpiPass: 'Resolución 300 DPI',
+    checklistSrgbPass: 'Listo para Subir en Línea',
+    checklistPrivacyPass: '100% Privado en Tu Dispositivo'
   },
   ar: {
     directAnswer:
-      'منصة CompressPhoto هي أداة محلية 100% داخل المتصفح لضغط الصور البيومترية وجوازات السفر والتوقيعات الخطية وتثبيت حجم ملفات JPEG وWebP وPNG وPDF عند سقف الكيلوبايت الدقيق (10، 20، 50، 100، 200 كيلوبايت) بدقة 300 DPI دون رفع أي ملفات إلى الخادم.',
-    specTableHeading: 'الجدول الرسمي لمواصفات صور جواز السفر والتأشيرات والامتحانات (2026)',
+      'تتيح لك منصة CompressPhoto ضبط أبعاد وضغط صور جواز السفر والتأشيرات والتوقيعات الخطية بالحجم الدقيق بالكيلوبايت (10، 20، 50، 100، 200 كيلوبايت) بدقة 300 DPI. تتم معالجة صورك بخصوصية تامة على جهازك مباشرة دون رفعها لأي خادم.',
+    specTableHeading: 'جدول المقاسات الرسمية لصور جواز السفر والتأشيرات والامتحانات (2026)',
     specTableSub:
-      'اضغط على أي بوابة رسمية أدناه (CNIE المغرب، ANTS فرنسا، تأشيرة أمريكا DS-160، التوقيع الخطي) لضبط الأداة تلقائياً.',
-    colPortal: 'البوابة الرسمية / الوثيقة',
+      'اختر أي وثيقة رسمية أدناه (البطاقة الوطنية CNIE، جواز السفر، تأشيرة أمريكا DS-160، التوقيع الخطي) لضبط الأبعاد والحجم تلقائياً.',
+    colPortal: 'الوثيقة / البوابة الرسمية',
     colDimensionsMm: 'المقاس (مم)',
-    colPixels: 'الأبعاد عند 300 DPI',
+    colPixels: 'الأبعاد (300 DPI)',
     colMaxKb: 'الحد الأقصى للحجم',
-    colAction: 'الضبط السريع',
-    applyPresetBtn: 'تطبيق هذا المقاس ←',
-    rejectionTitle: 'لماذا ترفض البوابات الحكومية رفع صورتك؟ (وكيف تعالج أداتنا ذلك)',
+    colAction: 'ضبط سريع',
+    applyPresetBtn: 'استخدام هذا المقاس ←',
+    rejectionTitle: 'لماذا ترفض المواقع الرسمية قبول صورتك؟ (وكيف نضمن قبولها)',
     rejectionSub:
-      'تفحص أنظمة القبول الآلي 4 معايير تقنية دقيقة في ملف الصورة قبل قبوله:',
+      'تتحقق نماذج التسجيل الإلكترونية من 4 شروط أساسية قبل قبول ملف الصورة أو التوقيع:',
     rejectionReasons: [
       {
-        title: '01. تجاوز الحجم بجزء بسيط (مثل 20.3 كيلوبايت عند حد 20.0 كيلوبايت)',
-        desc: 'تختبر خوارزمية البحث الثنائي المكونة من 7 مراحل الحجم الدقيق بالبايت لتثبيت الملف بأمان تحت السقف المطلوب.'
+        title: '01. تجاوز الحجم المسموح به بجزء بسيط (مثل 20.3 كيلوبايت عند حد 20 كيلوبايت)',
+        desc: 'تقوم أداتنا بضبط حجم الملف بدقة ليبقى أقل من الحد الأقصى المطلوب مع الحفاظ على أعلى وضوح ممكن للملامح.'
       },
       {
-        title: '02. اختلاف نسبة الأبعاد أو دقة أقل من 300 DPI',
-        desc: 'تضبط قوالبنا الجاهزة أبعاد 35×45 مم (413×531 بكسل) أو 2×2 بوصة (600×600 بكسل) بدقة 300 DPI تلقائياً.'
+        title: '02. مقاسات غير مطابقة أو دقة ضعيفة',
+        desc: 'تطبق قوالبنا الجاهزة المقاس الرسمي 35×45 مم (413×531 بكسل) أو 2×2 بوصة (600×600 بكسل) بدقة 300 DPI تلقائياً.'
       },
       {
-        title: '03. رفض صيغة هواتف آيفون (HEIC / Display P3)',
-        desc: 'نزيل بيانات EXIF الزائدة ونحول الصورة إلى نطاق الألوان القياسي sRGB المتوافق مع جميع المواقع الحكومية.'
+        title: '03. صيغ كاميرا الهاتف غير المدعومة (HEIC)',
+        desc: 'نحول صور الهاتف تلقائياً إلى صيغة JPEG أو PNG أو PDF قياسية مقبولة في جميع المواقع الحكومية.'
       },
       {
-        title: '04. الظل الرمادي في صور التوقيع الخطي المصورة بالهاتف',
-        desc: 'يحول فلتر التوقيع الذكي خلفية الورق الرمادية إلى اللون الأبيض النقي #FFFFFF مع تثبيت الحجم تحت 20 كيلوبايت.'
+        title: '04. الخلفية الرمادية في صور التوقيع المصورة بالهاتف',
+        desc: 'يقوم وضع التوقيع الخطي بتحويل خلفية الورقة الرمادية إلى اللون الأبيض النقي مع تقليص الحجم تحت 20 كيلوبايت.'
       }
     ],
-    faqHeading: 'الأسئلة الشائعة (FAQ) — ضغط الصور بالكيلوبايت الدقيق والمواصفات البيومترية',
+    faqHeading: 'الأسئلة الشائعة — ضغط الصور الشخصية والتوقيعات',
     faqSub:
-      'إجابات تقنية موثقة لصور جواز السفر والبطاقة الوطنية CNIE وتأشيرة أمريكا DS-160 والتوقيعات.',
+      'إجابات مبسطة لتجهيز صور جواز السفر والبطاقة الوطنية والتأشيرات والتوقيعات.',
     faqs: [
       {
-        question: 'كيف أضغط صورة إلى 20 أو 50 كيلوبايت بالضبط دون فقدان الجودة؟',
+        question: 'كيف أضغط صورة إلى 20 أو 50 كيلوبايت دون أن تفقد وضوحها؟',
         answer:
-          'ارفع صورتك واختر القالب المناسب (مثل جواز السفر 35×45 مم أو التوقيع الخطي) ثم حدد 20 أو 50 كيلوبايت. يقوم المحرك بتشغيل بحث ثنائي من 7 مراحل بدقة 300 DPI مع الحفاظ على وضوح ملامح الوجه.'
+          'ارفع صورتك واختر نوع الوثيقة (مثل جواز السفر 35×45 مم أو التوقيع) ثم اختر 20 أو 50 كيلوبايت. ستقوم الأداة بضبط الحجم بدقة 300 DPI مع الحفاظ على وضوح الوجه.'
       },
       {
-        question: 'هل يتم رفع صوري الشخصية أو التوقيع إلى أي خادم خارجي؟',
+        question: 'هل يتم رفع صوري الشخصية إلى الإنترنت؟',
         answer:
-          'أبداً. تعمل منصة CompressPhoto محلياً بنسبة 100% داخل ذاكرة متصفحك (RAM)، ولا تغادر صورك جهازك مطلقاً.'
+          'لا، أبداً. تتم جميع خطوات القص والضغط مباشرة على هاتفك أو حاسوبك، ولا تغادر صورك جهازك نهائياً.'
       },
       {
-        question: 'ما هو المقاس الدقيق بالبكسل لصورة 35×45 مم (CNIE / ANTS) وصورة 2×2 بوصة (تأشيرة أمريكا)؟',
+        question: 'ما هو المقاس بالبكسل لصورة 35×45 مم وصورة تأشيرة أمريكا 2×2 بوصة؟',
         answer:
-          'عند دقة 300 DPI، يعادل مقاس 35×45 مم بالضبط 413 × 531 بكسل، ويعادل مقاس 2×2 بوصة لتأشيرة أمريكا DS-160 واللوتري 600 × 600 بكسل.'
+          'عند دقة 300 DPI، يعادل مقاس 35×45 مم 413 × 531 بكسل، ويعادل مقاس 2×2 بوصة لتأشيرة أمريكا واللوتري 600 × 600 بكسل.'
       },
       {
-        question: 'كيف أحول الصورة إلى ملف PDF بحجم أقل من 50 أو 100 كيلوبايت؟',
+        question: 'كيف أحفظ الصورة بصيغة PDF بحجم أقل من 50 كيلوبايت؟',
         answer:
-          'بعد ضغط الصورة، اضغط على زر تحميل بصيغة PDF أسفل المعاينة لتوليد ملف PDF قياسي مضمون تحت سقف الكيلوبايت المحدد.'
+          'بعد ضغط الصورة، اضغط على زر تحميل بصيغة PDF أسفل المعاينة للحصول على ملف PDF جاهز ومضمون تحت الحجم المحدد.'
       }
     ],
-    dedicatedToolsHeading: 'أدوات مخصصة حسب حجم الكيلوبايت والبوابات الرسمية',
+    dedicatedToolsHeading: 'أدوات جاهزة حسب الحجم بالكيلوبايت ونوع الوثيقة',
     dedicatedToolsSub:
-      'افتح الأداة المعايرة مسبقاً حسب الحجم المطلوب أو البوابة الحكومية الخاصة بك:',
-    eeatBadgeTitle: 'محرك بيومتري محلي 100% موثق (مفتوح المصدر وقابل للتدقيق)',
+      'افتح الأداة المضبوطة مسبقاً حسب الحجم أو الوثيقة المطلوبة:',
+    eeatBadgeTitle: 'المقاسات الرسمية لجوازات السفر والتأشيرات والتوقيعات',
     eeatBadgeDesc:
-      'معاير وفق معايير منظمة الطيران المدني ICAO Doc 9303 وISO/IEC 19794-5 وتأشيرة أمريكا DS-160. بدون خوادم ومتوافق مع GDPR.',
-    checklistTitle: 'فحص المطابقة البيومترية الفوري',
-    checklistKbPass: 'تثبيت سقف الكيلوبايت',
-    checklistDpiPass: 'أبعاد 300 DPI قياسية',
-    checklistSrgbPass: 'نطاق ألوان sRGB نقي',
-    checklistPrivacyPass: 'معالجة محلية 100% (0 بايت مرفوع)'
+      'مضبوط مسبقاً لصور 35×45 مم وتأشيرات أمريكا 2×2 بوصة والتوقيعات. خصوصية تامة 100% على جهازك.',
+    checklistTitle: 'فحص جاهزية الصورة',
+    checklistKbPass: 'الحجم بالكيلوبايت مطابق',
+    checklistDpiPass: 'دقة 300 DPI',
+    checklistSrgbPass: 'جاهز للرفع الإلكتروني',
+    checklistPrivacyPass: 'خصوصية 100% على جهازك'
   }
 };
