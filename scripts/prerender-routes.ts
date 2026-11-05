@@ -923,6 +923,58 @@ ${urlEntries}
 `;
 }
 
+function generateLlmsTxt(): string {
+  const toolLines = TOOL_LANDING_PAGES.map(
+    (t) => `- [${t.h1.en}](${SITE_ORIGIN}/${t.slug})`
+  ).join('\n');
+
+  const frToolLines = TOOL_LANDING_PAGES.map(
+    (t) => `- [${t.h1.fr}](${SITE_ORIGIN}/fr/${t.slug})`
+  ).join('\n');
+
+  const photoBlogLines = PHOTO_SEO_ARTICLES.map(
+    (a) => `- [${a.translations.en.title}](${SITE_ORIGIN}/blog/${a.slug})`
+  ).join('\n');
+
+  const qrBlogLines = QR_SEO_ARTICLES.map(
+    (q) => `- [${q.translations.en.title}](${SITE_ORIGIN}/blog/${q.slug})`
+  ).join('\n');
+
+  return `# CompressPhoto (${SITE_ORIGIN})
+
+> CompressPhoto is a 100% private, browser-based passport photo, visa portrait, and handwritten signature compression studio. It resizes and locks JPEG, WebP, PNG, and PDF files to exact kilobyte limits (10KB, 20KB, 30KB, 50KB, 100KB, 200KB, 500KB) at 300 DPI for official government and exam portals.
+
+- Full Documentation: [${SITE_ORIGIN}/llms-full.txt](${SITE_ORIGIN}/llms-full.txt)
+- Sitemap (All 212 Multilingual URLs): [${SITE_ORIGIN}/sitemap.xml](${SITE_ORIGIN}/sitemap.xml)
+
+## Multilingual Studio Editions
+- English (Global): [${SITE_ORIGIN}/](${SITE_ORIGIN}/)
+- Français (France ANTS / Campus France / Maroc CNIE / Schengen): [${SITE_ORIGIN}/fr](${SITE_ORIGIN}/fr)
+- Español (Pasaporte / Visa EE.UU. DS-160): [${SITE_ORIGIN}/es](${SITE_ORIGIN}/es)
+- العربية (البطاقة الوطنية المغربية CNIE / جواز السفر / تأشيرة أمريكا): [${SITE_ORIGIN}/ar](${SITE_ORIGIN}/ar)
+
+## Dedicated Photo, Signature & Official Portal Tools (English)
+${toolLines}
+
+## Outils Dédiés Photo d'Identité, ANTS, CNIE & Concours (Français)
+${frToolLines}
+
+## Photo & Signature Compression Guides (${PHOTO_SEO_ARTICLES.length} Articles)
+${photoBlogLines}
+
+## Static QR Code & Print Guides (${QR_SEO_ARTICLES.length} Articles)
+- [Static QR Code & CODE-128 Barcode Generator](${SITE_ORIGIN}/qr)
+${qrBlogLines}
+
+## Information & Legal Pages
+- [Blog & Guides Hub](${SITE_ORIGIN}/blog)
+- [About CompressPhoto](${SITE_ORIGIN}/about)
+- [Privacy Policy](${SITE_ORIGIN}/privacy)
+- [Legal Notice & Terms](${SITE_ORIGIN}/legal)
+- [Contact](${SITE_ORIGIN}/contact)
+`;
+}
+
 function main() {
   const indexHtmlPath = path.join(DIST_DIR, 'index.html');
   if (!fs.existsSync(indexHtmlPath)) {
@@ -948,9 +1000,15 @@ function main() {
   fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), sitemapXml, 'utf-8');
   fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), sitemapXml, 'utf-8');
 
+  // Generate and write synchronized llms.txt to both public/ and dist/
+  const llmsTxt = generateLlmsTxt();
+  fs.writeFileSync(path.join(PUBLIC_DIR, 'llms.txt'), llmsTxt, 'utf-8');
+  fs.writeFileSync(path.join(DIST_DIR, 'llms.txt'), llmsTxt, 'utf-8');
+
   console.log(
-    `[prerender-routes] Successfully pre-rendered ${routes.length} localized static HTML routes (EN, FR, ES, AR) and updated sitemap.xml.`
+    `[prerender-routes] Successfully pre-rendered ${routes.length} localized static HTML routes (EN, FR, ES, AR) and updated sitemap.xml & llms.txt.`
   );
 }
 
 main();
+
