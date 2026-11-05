@@ -92,9 +92,9 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     heroTitle: 'Photo Compression & QR Code Guides',
     heroSub:
       'Step-by-step tutorials on compressing photos to exact kilobyte limits (20KB, 50KB, 100KB, Passports, Signatures) and generating permanent static QR codes & vector barcodes — with 1-click tool presets.',
-    domainAll: 'All Articles (20)',
-    domainPhoto: 'Compress Photo (10)',
-    domainQr: 'QR Code & Barcode (10)',
+    domainAll: `All Articles (${PHOTO_SEO_ARTICLES.length + QR_SEO_ARTICLES.length})`,
+    domainPhoto: `Compress Photo (${PHOTO_SEO_ARTICLES.length})`,
+    domainQr: `QR Code & Barcode (${QR_SEO_ARTICLES.length})`,
     searchPlaceholder:
       'Search articles (e.g. 20kb, passport, signature, wifi qr, vcard, menu, barcode)...',
     catAll: 'All Topics',
@@ -123,9 +123,9 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     heroTitle: 'Guides Compression Photo & QR Code',
     heroSub:
       'Tutoriels étape par étape pour compresser vos photos au kilo-octet exact (20 Ko, 50 Ko, 100 Ko, Passeport, Signature) et créer des QR codes statiques permanents et codes-barres vectoriels — avec ouverture de l’outil en 1 clic.',
-    domainAll: 'Tous les Articles (20)',
-    domainPhoto: 'Compresser Photo (10)',
-    domainQr: 'QR Code & Code-Barres (10)',
+    domainAll: `Tous les Articles (${PHOTO_SEO_ARTICLES.length + QR_SEO_ARTICLES.length})`,
+    domainPhoto: `Compresser Photo (${PHOTO_SEO_ARTICLES.length})`,
+    domainQr: `QR Code & Code-Barres (${QR_SEO_ARTICLES.length})`,
     searchPlaceholder:
       'Rechercher un article (ex: 20 ko, passeport, signature, qr wifi, vcard, menu)...',
     catAll: 'Tous les Sujets',
@@ -154,9 +154,9 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     heroTitle: 'Guías de Compresión de Fotos y Códigos QR',
     heroSub:
       'Tutoriales paso a paso para comprimir fotos al kilobyte exacto (20KB, 50KB, 100KB, Pasaporte, Firma) y crear códigos QR estáticos permanentes y códigos de barras vectoriales — con ajustes listos en 1 clic.',
-    domainAll: 'Todos los Artículos (20)',
-    domainPhoto: 'Comprimir Foto (10)',
-    domainQr: 'Código QR y Barras (10)',
+    domainAll: `Todos los Artículos (${PHOTO_SEO_ARTICLES.length + QR_SEO_ARTICLES.length})`,
+    domainPhoto: `Comprimir Foto (${PHOTO_SEO_ARTICLES.length})`,
+    domainQr: `Código QR y Barras (${QR_SEO_ARTICLES.length})`,
     searchPlaceholder:
       'Buscar un artículo (ej: 20kb, pasaporte, firma, qr wifi, vcard, menú)...',
     catAll: 'Todos los Temas',
@@ -185,9 +185,9 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     heroTitle: 'أدلة ضغط الصور وإنشاء رموز QR',
     heroSub:
       'شروحات خطوة بخطوة لضغط الصور بالحجم الدقيق بالكيلوبايت (20KB و50KB و100KB وصور الجواز والتوقيع) وإنشاء رموز QR الثابتة الدائمة والباركود — مع فتح الأداة بالإعدادات الجاهزة بنقرة واحدة.',
-    domainAll: 'جميع المقالات (20)',
-    domainPhoto: 'ضغط الصور (10)',
-    domainQr: 'رموز QR والباركود (10)',
+    domainAll: `جميع المقالات (${PHOTO_SEO_ARTICLES.length + QR_SEO_ARTICLES.length})`,
+    domainPhoto: `ضغط الصور (${PHOTO_SEO_ARTICLES.length})`,
+    domainQr: `رموز QR والباركود (${QR_SEO_ARTICLES.length})`,
     searchPlaceholder:
       'ابحث في المقالات (مثال: 20 كيلوبايت، جواز سفر، توقيع، واي فاي، منيو، باركود)...',
     catAll: 'جميع المواضيع',

@@ -47,7 +47,9 @@ export const MASTER_QR_KEYWORDS: Record<LocaleCode, QrMasterKeywordItem[]> = {
     { keyword: 'static vs dynamic qr code difference', category: 'qr-static', qrPayloadType: 'url', specBadge: 'Privacy & Security', articleId: 'qr-static-vs-dynamic-privacy' },
     { keyword: 'why my qr code expired and how to fix', category: 'qr-static', qrPayloadType: 'url', specBadge: 'Replace Expired QR', articleId: 'qr-static-vs-dynamic-privacy' },
     { keyword: 'compress qr code image under 20kb', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'QR ≤ 20.0 KB Exact', articleId: 'qr-compress-under-20kb' },
-    { keyword: 'resize qr code for government portal upload', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'Crisp Module Edges', articleId: 'qr-compress-under-20kb' }
+    { keyword: 'resize qr code for government portal upload', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'Crisp Module Edges', articleId: 'qr-compress-under-20kb' },
+    { keyword: 'is qr code generator safe avoid quishing scams', category: 'qr-static', qrPayloadType: 'url', specBadge: 'Direct URL · No Proxy', articleId: 'qr-code-security-quishing-scams-guide' },
+    { keyword: 'qr code size for business card and minimum print size', category: 'barcode-svg', qrPayloadType: 'vcard', specBadge: 'Min 20×20 mm · 300 DPI', articleId: 'qr-code-size-guide-for-print-and-business-cards' }
   ],
   fr: [
     { keyword: 'générateur qr code gratuit sans inscription', category: 'qr-static', qrPayloadType: 'url', specBadge: 'QR Statique · 0 €', articleId: 'qr-forever-free-static' },
@@ -65,7 +67,9 @@ export const MASTER_QR_KEYWORDS: Record<LocaleCode, QrMasterKeywordItem[]> = {
     { keyword: 'exporter qr code vectoriel svg 300 dpi impression', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'Vecteur SVG Infini', articleId: 'qr-vector-svg-300dpi-print' },
     { keyword: 'générateur code-barres code 128 gratuit en ligne', category: 'barcode-svg', qrPayloadType: 'barcode', specBadge: 'CODE-128B Vectoriel', articleId: 'qr-code128-barcode-generator' },
     { keyword: 'différence qr code statique et dynamique', category: 'qr-static', qrPayloadType: 'url', specBadge: 'Sécurité & Vie Privée', articleId: 'qr-static-vs-dynamic-privacy' },
-    { keyword: 'compresser image qr code moins de 20 ko', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'QR ≤ 20,0 Ko Exact', articleId: 'qr-compress-under-20kb' }
+    { keyword: 'compresser image qr code moins de 20 ko', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'QR ≤ 20,0 Ko Exact', articleId: 'qr-compress-under-20kb' },
+    { keyword: 'sécurité qr code éviter arnaques quishing', category: 'qr-static', qrPayloadType: 'url', specBadge: 'Lien Direct Sécurisé', articleId: 'qr-code-security-quishing-scams-guide' },
+    { keyword: 'taille minimum qr code impression carte de visite', category: 'barcode-svg', qrPayloadType: 'vcard', specBadge: 'Min 20×20 mm · 300 DPI', articleId: 'qr-code-size-guide-for-print-and-business-cards' }
   ],
   es: [
     { keyword: 'generador de códigos qr gratis sin registro', category: 'qr-static', qrPayloadType: 'url', specBadge: 'QR Estático · 0 $', articleId: 'qr-forever-free-static' },
@@ -81,7 +85,9 @@ export const MASTER_QR_KEYWORDS: Record<LocaleCode, QrMasterKeywordItem[]> = {
     { keyword: 'descargar código qr vectorial svg 300 dpi imprenta', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'Vector SVG Infinito', articleId: 'qr-vector-svg-300dpi-print' },
     { keyword: 'generador código de barras code 128 gratis', category: 'barcode-svg', qrPayloadType: 'barcode', specBadge: 'CODE-128B Etiquetas', articleId: 'qr-code128-barcode-generator' },
     { keyword: 'diferencia entre código qr estático y dinámico', category: 'qr-static', qrPayloadType: 'url', specBadge: 'Privacidad y Seguridad', articleId: 'qr-static-vs-dynamic-privacy' },
-    { keyword: 'comprimir imagen de código qr a menos de 20kb', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'QR ≤ 20.0 KB Exactos', articleId: 'qr-compress-under-20kb' }
+    { keyword: 'comprimir imagen de código qr a menos de 20kb', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'QR ≤ 20.0 KB Exactos', articleId: 'qr-compress-under-20kb' },
+    { keyword: 'es seguro un generador de códigos qr evitar quishing', category: 'qr-static', qrPayloadType: 'url', specBadge: 'Enlace Directo Seguro', articleId: 'qr-code-security-quishing-scams-guide' },
+    { keyword: 'tamaño mínimo de código qr para imprimir tarjetas de visita', category: 'barcode-svg', qrPayloadType: 'vcard', specBadge: 'Mín 20×20 mm · 300 DPI', articleId: 'qr-code-size-guide-for-print-and-business-cards' }
   ],
   ar: [
     { keyword: 'إنشاء رمز QR مجاني بدون تسجيل', category: 'qr-static', qrPayloadType: 'url', specBadge: 'رمز ثابت · مجاني دائماً', articleId: 'qr-forever-free-static' },
@@ -95,7 +101,9 @@ export const MASTER_QR_KEYWORDS: Record<LocaleCode, QrMasterKeywordItem[]> = {
     { keyword: 'تحميل رمز QR بصيغة فيكتور SVG ودقة 300 DPI للمطابع', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'ملف SVG للمطابع', articleId: 'qr-vector-svg-300dpi-print' },
     { keyword: 'مُوَلِّد باركود CODE-128 مجاني للمنتجات والمخازن', category: 'barcode-svg', qrPayloadType: 'barcode', specBadge: 'باركود CODE-128B', articleId: 'qr-code128-barcode-generator' },
     { keyword: 'الفرق بين رمز QR الثابت والديناميكي ولماذا يتوقف الرمز', category: 'qr-static', qrPayloadType: 'url', specBadge: 'الأمان والخصوصية', articleId: 'qr-static-vs-dynamic-privacy' },
-    { keyword: 'ضغط صورة رمز QR تحت 20 كيلوبايت للبوابات الرسمية', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'أقل من 20 كيلوبايت', articleId: 'qr-compress-under-20kb' }
+    { keyword: 'ضغط صورة رمز QR تحت 20 كيلوبايت للبوابات الرسمية', category: 'barcode-svg', qrPayloadType: 'url', specBadge: 'أقل من 20 كيلوبايت', articleId: 'qr-compress-under-20kb' },
+    { keyword: 'أمان رموز QR وكيفية تجنب روابط التصيد والاحتيال', category: 'qr-static', qrPayloadType: 'url', specBadge: 'رابط مباشر وآمن', articleId: 'qr-code-security-quishing-scams-guide' },
+    { keyword: 'أقل مقاس لطباعة رمز QR على بطاقات العمل والعبوات', category: 'barcode-svg', qrPayloadType: 'vcard', specBadge: '20×20 مم · 300 DPI', articleId: 'qr-code-size-guide-for-print-and-business-cards' }
   ]
 };
 
@@ -1569,6 +1577,312 @@ export const QR_SEO_ARTICLES: QrSeoArticle[] = [
           {
             question: 'هل يتأثر مسح رمز QR بعد ضغطه إلى أقل من 20 كيلوبايت؟',
             answer: 'لا على الإطلاق، لأن التباين العالي بين المربعات الداكنة والخلفية البيضاء النقية يحافظ على حدة الحواف بنسبة 100%.'
+          }
+        ]
+      }
+    }
+  },
+
+  // =========================================================================
+  // QR ARTICLE 11 (#25): QR CODE SECURITY & AVOIDING QUISHING SCAMS
+  // =========================================================================
+  {
+    id: 'qr-code-security-quishing-scams-guide',
+    slug: 'is-qr-code-generator-safe-how-to-avoid-quishing-and-redirect-scams',
+    number: 25,
+    category: 'qr-static',
+    readingTimeMin: 5,
+    qrPayloadType: 'url',
+    specs: {
+      dimensionsPx: 'Direct Destination URL Inspection',
+      physicalSize: 'Zero Third-Party Redirects',
+      dpi: '100% Private Browser Generation',
+      byteCeiling: 'Anti-Quishing Verified'
+    },
+    translations: {
+      en: {
+        title: 'Is Your QR Code Generator Safe? How to Avoid Quishing Scams & Redirect Hijacking',
+        metaDescription: 'Learn what QR code phishing (quishing) is, why third-party redirect QR generators pose security and privacy risks, and how to generate verifiable, direct Static QR codes safely.',
+        excerpt: 'Cybersecurity agencies warn against opaque short-URL redirect QR codes ("quishing"). Learn how direct Static QR codes let your customers verify your true domain before tapping.',
+        primaryKeywords: [
+          'is qr code generator safe',
+          'qr code security how to avoid quishing scams',
+          'qr code tracking vs privacy',
+          'qr code generator without redirect'
+        ],
+        intro: '"Quishing" (QR code phishing) happens when an attacker—or an untrusted third-party QR redirect service—routes a scanned QR code through an opaque short link (such as qr-link.co/x89a) that hides the true destination URL from the user’s phone camera preview.',
+        sections: [
+          {
+            heading: 'Why Direct Static QR Codes Are the Gold Standard for Security & Trust',
+            body: 'When a customer points an iPhone or Android camera at a QR code, a preview banner appears at the top of the screen showing the encoded domain name:',
+            bullets: [
+              'Transparent Domain Preview: A direct Static QR code displays your actual website address (e.g., https://yourcompany.com/menu) right on the phone screen, building immediate customer trust.',
+              'Zero Middleman Hijacking: Because there is no third-party redirect server in between, an expired domain or compromised QR vendor can never redirect your printed posters to spam or malware.',
+              '100% Private Wi-Fi & Contact Encoding: When you create a Wi-Fi or vCard QR code on CompressPhoto, your Wi-Fi password and phone number are encoded directly inside your own browser and never sent to any external server.'
+            ]
+          },
+          {
+            heading: '3 Security Best Practices for Businesses Printing QR Codes',
+            body: '1. Always encode your own HTTPS domain directly inside a Static QR code. 2. In public spaces (like restaurant tables or parking meters), print your visible domain URL underneath the QR code so customers can verify the camera preview matches the printed text. 3. Check your physical table tents periodically to ensure no one has placed a sticker over your original code.'
+          }
+        ],
+        proTip: 'Always use HTTPS URLs on your own domain when generating a QR code so your visitors see the secure domain name in their camera preview.',
+        ctaButtonLabel: 'Create Direct & Secure Static QR Code →',
+        faqs: [
+          {
+            question: 'Is it safe to enter my Wi-Fi password into CompressPhoto’s QR Generator?',
+            answer: 'Yes. Your Wi-Fi SSID and password are processed 100% locally inside your web browser and are never transmitted over the internet.'
+          },
+          {
+            question: 'How can customers tell a QR code is safe before opening it?',
+            answer: 'Because our Static QR codes encode your true URL without a short-link redirect, iOS and Android cameras display your exact domain name in the notification banner before the user taps it.'
+          }
+        ]
+      },
+      fr: {
+        title: 'Votre Générateur de QR Code Est-Il Sûr ? Comment Éviter le « Quishing » et les Redirections',
+        metaDescription: 'Découvrez comment fonctionne l’arnaque au QR code (quishing), pourquoi les liens de redirection tiers posent un problème de sécurité et comment créer un QR code statique direct et fiable.',
+        excerpt: 'Les liens raccourcis opaques cachent la véritable adresse web aux utilisateurs. Découvrez pourquoi un QR code statique direct affichant votre propre nom de domaine rassure vos clients.',
+        primaryKeywords: [
+          'générateur qr code sûr et sécurisé',
+          'éviter arnaque qr code quishing',
+          'qr code sans redirection ni pistage'
+        ],
+        intro: 'Le « quishing » (hameçonnage par QR code) exploite souvent des liens raccourcis opaques qui empêchent l’utilisateur de voir l’adresse réelle du site avant de cliquer. À l’inverse, un QR code statique direct affiche clairement votre vrai nom de domaine sur l’écran du téléphone.',
+        sections: [
+          {
+            heading: 'Pourquoi l’Encodage Direct Protège Votre Entreprise et Vos Clients',
+            body: 'Lorsqu’un client scanne votre QR code avec son iPhone ou Android, une bannière affiche le domaine cible :',
+            bullets: [
+              'Transparence totale : votre propre domaine (ex: https://votrerestaurant.fr) s’affiche clairement avant l’ouverture.',
+              'Aucun serveur intermédiaire : vos affiches ne risquent jamais d’être détournées ou désactivées par un prestataire tiers.',
+              'Mot de passe Wi-Fi 100 % privé : vos identifiants Wi-Fi et cartes de visite vCard sont générés sur votre appareil sans jamais être envoyés sur internet.'
+            ]
+          }
+        ],
+        proTip: 'Affichez toujours le nom de votre site en petit texte sous le QR code imprimé afin que vos clients puissent vérifier que l’aperçu caméra correspond bien.',
+        ctaButtonLabel: 'Créer un QR Code Direct & Sécurisé →',
+        faqs: [
+          {
+            question: 'Est-il sûr de saisir mon mot de passe Wi-Fi pour créer une affiche Wi-Fi invité ?',
+            answer: 'Oui, le QR code Wi-Fi est créé directement dans votre navigateur : votre mot de passe ne quitte jamais votre appareil.'
+          }
+        ]
+      },
+      es: {
+        title: '¿Es Seguro Tu Generador de Códigos QR? Cómo Evitar el Quishing y las Redirecciones',
+        metaDescription: 'Aprende qué es el quishing (fraude por código QR), por qué los enlaces cortos de terceros ocultan el destino real y cómo crear códigos QR estáticos directos y seguros.',
+        excerpt: 'Los códigos QR con enlaces cortos ocultan la web real al escanear. Descubre por qué un código QR estático directo muestra tu dominio real y protege a tus clientes.',
+        primaryKeywords: [
+          'es seguro un generador de códigos qr',
+          'seguridad códigos qr evitar quishing',
+          'código qr sin redirección ni rastreo'
+        ],
+        intro: 'Cuando un cliente escanea un código QR estático directo con la cámara de su móvil, ve inmediatamente tu dominio real (por ejemplo, https://tunegocio.com) antes de abrir el enlace.',
+        sections: [
+          {
+            heading: 'Ventajas de Seguridad de un Código QR Estático Directo',
+            body: 'Protege tanto a tu negocio como a tus visitantes:',
+            bullets: [
+              'Vista previa transparente del dominio real en la pantalla del teléfono.',
+              'Cero servidores intermediarios que puedan caducar o redirigir a publicidad.',
+              'Contraseñas Wi-Fi y datos vCard procesados 100% en tu propio dispositivo.'
+            ]
+          }
+        ],
+        proTip: 'Usa siempre enlaces HTTPS de tu propio dominio para inspirar máxima confianza al escanear.',
+        ctaButtonLabel: 'Crear Código QR Directo y Seguro →',
+        faqs: [
+          {
+            question: '¿Es seguro introducir mi clave Wi-Fi para generar un cartel QR?',
+            answer: 'Sí, la clave se codifica directamente en tu navegador y nunca se envía a ningún servidor.'
+          }
+        ]
+      },
+      ar: {
+        title: 'هل مولد رموز QR آمن؟ كيفية حماية عملائك من روابط التصيد (Quishing) والتحويلات الوسيطة',
+        metaDescription: 'تعرف على مخاطر الروابط المختصرة المخفية في رموز QR، ولماذا تمنحك رموز QR الثابتة المباشرة أعلى درجات الأمان والخصوصية لعلامتك التجارية وعملائك.',
+        excerpt: 'تخفي الروابط الوسيطة عنوان الموقع الحقيقي عند مسح الرمز بالكاميرا. اكتشف كيف يعرض رمز QR الثابت المباشر اسم نطاقك الحقيقي بوضوح أمام العميل.',
+        primaryKeywords: [
+          'هل مولد رمز QR آمن',
+          'حماية رمز QR من الاحتيال والتصيد',
+          'إنشاء رمز QR مباشر بدون روابط وسيطة'
+        ],
+        intro: 'عندما يوجه العميل كاميرا هاتفه نحو رمز QR ثابت ومباشر، يظهر له اسم موقعك الحقيقي مباشرة على شاشة الهاتف قبل الضغط عليه، مما يمنحه ثقة وأماناً كاملين.',
+        sections: [
+          {
+            heading: 'لماذا يُعد الرمز الثابت المباشر الخيار الأكثر أماناً؟',
+            body: 'يوفر الترميز المباشر داخل متصفحك ثلاث مزايا أمنية أساسية:',
+            bullets: [
+              'إظهار عنوان موقعك الحقيقي (HTTPS) بوضوح في إشعار الكاميرا.',
+              'عدم المرور بأي خادم وسيط قد يتوقف أو يغير وجهة الرابط مستقبلاً.',
+              'تشفير كلمات مرور الواي فاي وبطاقات العمل محلياً على جهازك دون إرسالها لأي جهة.'
+            ]
+          }
+        ],
+        proTip: 'اطبع دائماً اسم موقعك بخط صغير أسفل رمز QR المطبوع ليتمكن الزائر من مطابقة الرابط الظاهر على شاشة هاتفه.',
+        ctaButtonLabel: 'إنشاء رمز QR مباشر وآمن الآن ←',
+        faqs: [
+          {
+            question: 'هل من الآمن كتابة كلمة مرور الواي فاي لإنشاء لوحة QR للضيوف؟',
+            answer: 'نعم تماماً، لأن عملية إنشاء الرمز تتم داخل متصفحك مباشرة ولا تغادر كلمة المرور جهازك أبداً.'
+          }
+        ]
+      }
+    }
+  },
+
+  // =========================================================================
+  // QR ARTICLE 12 (#26): QR CODE SIZE GUIDE FOR PRINT (BUSINESS CARDS & FLYERS)
+  // =========================================================================
+  {
+    id: 'qr-code-size-guide-for-print-and-business-cards',
+    slug: 'qr-code-minimum-size-for-printing-business-cards-flyers-and-packaging',
+    number: 26,
+    category: 'barcode-svg',
+    readingTimeMin: 5,
+    qrPayloadType: 'vcard',
+    specs: {
+      dimensionsPx: 'Min 20×20 mm (0.8×0.8 in) @ 300 DPI',
+      physicalSize: '10:1 Distance-to-Size Ratio',
+      dpi: 'Vector SVG & 2400×2400 px PNG',
+      byteCeiling: '4-Module Quiet Zone Margin'
+    },
+    translations: {
+      en: {
+        title: 'QR Code Size Guide for Print: Minimum Size for Business Cards, Menus, Flyers & Packaging',
+        metaDescription: 'What is the minimum size for printing a QR code on a business card, restaurant table tent, flyer, or poster? Complete print sizing table + SVG vs PNG format guide.',
+        excerpt: 'Print a QR code too small and phone cameras cannot focus on the modules. Use the 10:1 scanning distance rule and our print size chart for business cards, menus, and signage.',
+        primaryKeywords: [
+          'qr code size for business card',
+          'qr code minimum size for printing',
+          'qr code for packaging signage flyers',
+          'best file format for qr codes svg vs png',
+          'qr code error correction levels'
+        ],
+        intro: 'One of the most common printing mistakes is shrinking a dense vCard or URL QR code down to 10 mm on a business card or product label, rendering it unscannable under indoor lighting. Following two simple print rules guarantees a 100% first-second scan rate.',
+        sections: [
+          {
+            heading: 'Recommended Print Dimensions by Medium (The 10:1 Distance Rule)',
+            body: 'As a rule of thumb, your QR code width should be roughly 1/10th of the distance from which a person will scan it:',
+            bullets: [
+              'Business Cards & Product Labels (Scanned from 15–20 cm): Minimum 20 × 20 mm (0.8 × 0.8 inches). For a dense vCard with many fields, use 22–25 mm.',
+              'Restaurant Table Tents & Flyers (Scanned from 30–50 cm): 30 × 30 mm to 40 × 40 mm (1.2 to 1.6 inches).',
+              'Storefront Windows & Event Posters (Scanned from 1–2 meters): 100 × 100 mm to 200 × 200 mm (4 to 8 inches).',
+              'Quiet Zone Margin: Always keep the white border (at least 4 module widths) around the perimeter so the camera can isolate the 3 corner finder squares.'
+            ]
+          },
+          {
+            heading: 'Best File Format for Print: Vector SVG vs. 300 DPI PNG',
+            body: 'For professional print design in Adobe Illustrator, InDesign, Affinity, or Canva, download the Vector SVG format—it uses mathematical paths that stay razor-sharp whether printed at 20 mm on a business card or 2 meters on a billboard. For Word documents, thermal label printers, or quick office printing, download the 300 DPI High-Res PNG.'
+          }
+        ],
+        proTip: 'When printing a QR code smaller than 25 × 25 mm on a business card, keep the URL concise so the grid squares remain large and easy for any phone camera to focus on.',
+        ctaButtonLabel: 'Open Print-Ready SVG & 300 DPI QR Studio →',
+        faqs: [
+          {
+            question: 'What is the absolute minimum size to print a QR code?',
+            answer: 'For standard smartphones, 20 × 20 mm (0.8 × 0.8 inches) is the safe minimum for a business card or product label, and 15 × 15 mm is the absolute physical limit for a short URL printed at 300+ DPI.'
+          },
+          {
+            question: 'Should I use SVG or PNG for printing my business card QR code?',
+            answer: 'Both work great, but SVG is vector-based so print shops can scale it to any size with zero pixelation.'
+          }
+        ]
+      },
+      fr: {
+        title: 'Guide des Tailles d’Impression QR Code : Carte de Visite, Menu, Flyer et Packaging (SVG vs PNG)',
+        metaDescription: 'Quelle est la taille minimale pour imprimer un QR code sur une carte de visite, un menu de restaurant, un flyer ou une affiche ? Tableau des dimensions en mm/cm et choix SVG vs PNG.',
+        excerpt: 'Un QR code imprimé trop petit devient illisible. Découvrez la taille minimale en millimètres pour vos cartes de visite, chevalets de table, flyers et emballages.',
+        primaryKeywords: [
+          'taille qr code carte de visite',
+          'taille minimum qr code impression',
+          'quel format pour imprimer un qr code svg ou png',
+          'qr code pour emballage et flyer'
+        ],
+        intro: 'Imprimer un QR code trop petit ou sans marge blanche autour est l’erreur la plus fréquente en imprimerie. Voici les dimensions recommandées selon le support pour garantir un scan instantané.',
+        sections: [
+          {
+            heading: 'Tableau des Tailles d’Impression selon le Support',
+            body: 'La largeur du QR code doit représenter environ un dixième de la distance de scan :',
+            bullets: [
+              'Carte de Visite & Étiquette Produit (scan à 15–20 cm) : 20 × 20 mm minimum (2,0 × 2,0 cm). Préférez 22 à 25 mm pour une vCard complète.',
+              'Menu de Restaurant, Chevalet de Table & Flyer A5 : 30 × 30 mm à 40 × 40 mm (3 à 4 cm).',
+              'Affiche Vitrine, Roll-up & Salon Professionnel (scan à 1–2 m) : 10 × 10 cm à 20 × 20 cm.',
+              'Format d’export : privilégiez le SVG vectoriel pour votre imprimeur (Canva, Illustrator, InDesign) ou le PNG Haute Résolution 300 DPI.'
+            ]
+          }
+        ],
+        proTip: 'Téléchargez toujours le fichier SVG vectoriel pour vos cartes de visite et supports imprimés afin d’obtenir des bords parfaitement nets.',
+        ctaButtonLabel: 'Créer un QR Code Prêt à Imprimer (SVG / 300 DPI) →',
+        faqs: [
+          {
+            question: 'Quelle est la taille minimale pour un QR code sur une carte de visite ?',
+            answer: '20 × 20 mm (2 × 2 cm) est la taille recommandée pour une lecture immédiate sur tous les smartphones.'
+          }
+        ]
+      },
+      es: {
+        title: 'Guía de Tamaño de Código QR para Imprimir: Tarjetas de Visita, Menús, Flyers y Envases',
+        metaDescription: '¿Cuál es el tamaño mínimo para imprimir un código QR en una tarjeta de visita, menú de restaurante, folleto o cartel? Tabla de medidas en mm y guía SVG vs PNG.',
+        excerpt: 'Si imprimes un código QR demasiado pequeño, la cámara del móvil no podrá enfocarlo. Consulta las medidas mínimas para tarjetas de presentación, menús y cartelería.',
+        primaryKeywords: [
+          'tamaño código qr para tarjeta de visita',
+          'tamaño mínimo código qr para imprimir',
+          'mejor formato para imprimir código qr svg o png',
+          'código qr para envases y flyers'
+        ],
+        intro: 'Seguir la regla de distancia 10:1 y elegir el formato vectorial adecuado garantiza que cualquier teléfono escanee tu código QR impreso en menos de un segundo.',
+        sections: [
+          {
+            heading: 'Medidas Recomendadas según el Soporte Impreso',
+            body: 'Usa estas dimensiones mínimas para asegurar una lectura perfecta:',
+            bullets: [
+              'Tarjetas de Visita y Etiquetas de Producto: mínimo 20 × 20 mm (2 × 2 cm).',
+              'Menús de Restaurante, Mesas y Flyers: de 30 × 30 mm a 40 × 40 mm (3 a 4 cm).',
+              'Carteles, Escaparates y Eventos (escaneo a 1–2 metros): de 10 × 10 cm a 20 × 20 cm.',
+              'Formato recomendado: descarga siempre el archivo SVG vectorial o el PNG a 300 DPI.'
+            ]
+          }
+        ],
+        proTip: 'Para imprenta profesional o diseño en Canva e Illustrator, descarga el formato SVG vectorial incluido gratis.',
+        ctaButtonLabel: 'Abrir Generador QR para Imprenta (SVG / 300 DPI) →',
+        faqs: [
+          {
+            question: '¿Cuál es el tamaño mínimo seguro para imprimir un código QR?',
+            answer: '20 × 20 mm (2 × 2 cm) es el tamaño mínimo recomendado para tarjetas de visita y etiquetas.'
+          }
+        ]
+      },
+      ar: {
+        title: 'دليل مقاسات طباعة رمز QR: الحجم الأدنى لبطاقات العمل، المنيو، المطبوعات والعبوات',
+        metaDescription: 'ما هو أقل مقاس لطباعة رمز QR على بطاقة العمل (الكارت الشخصي) أو منيو المطعم أو الملصقات؟ تعرف على جدول المقاسات بالمليمتر والفرق بين صيغة SVG وPNG للمطابع.',
+        excerpt: 'طباعة رمز QR بحجم صغير جداً قد يمنع كاميرا الهاتف من التركيز عليه. تعرف على المقاس المثالي بالمليمتر والسنتيمتر لكل نوع من المطبوعات.',
+        primaryKeywords: [
+          'مقاس رمز QR لبطاقة العمل',
+          'أقل مقاس لطباعة رمز QR',
+          'أفضل صيغة لطباعة الباركود SVG أو PNG',
+          'رمز QR للمنتجات والمطبوعات'
+        ],
+        intro: 'لضمان مسح رمز QR المطبوع في أجزاء من الثانية، يجب اختيار المقاس المناسب لمسافة القراءة واستخدام ملف فيكتور SVG أو صورة عالية الدقة 300 DPI.',
+        sections: [
+          {
+            heading: 'المقاسات الموصى بها عند الطباعة',
+            body: 'اختر المقاس المناسب حسب نوع المطبوعات:',
+            bullets: [
+              'بطاقات العمل (الكروت الشخصية) وملصقات المنتجات: الحد الأدنى الموصى به 20 × 20 مم (2 × 2 سم).',
+              'منيو المطاعم والكافيهات والبروشورات: من 30 × 30 مم إلى 40 × 40 مم (3 إلى 4 سم).',
+              'اللوحات الإعلانية وواجهات المحلات: من 10 × 10 سم إلى 20 × 20 سم.',
+              'صيغة الملف للمطابع: حمّل ملف SVG الفيكتور أو صورة PNG بدقة 300 DPI.'
+            ]
+          }
+        ],
+        proTip: 'عند تصميم بطاقة عمل أو غلاف منتج للطباعة، استخدم زر تحميل SVG للحصول على أعلى دقة طباعة ممكنة.',
+        ctaButtonLabel: 'فتح استوديو طباعة رموز QR بدقة 300 DPI ←',
+        faqs: [
+          {
+            question: 'ما هو أقل مقاس آمن لطباعة رمز QR على بطاقة العمل؟',
+            answer: 'المقاس الآمن والمثالي لبطاقات العمل هو 20 × 20 مم (2 × 2 سم) مع الحفاظ على الهامش الأبيض المحيط بالرمز.'
           }
         ]
       }

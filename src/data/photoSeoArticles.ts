@@ -29,7 +29,11 @@ export const MASTER_PHOTO_KEYWORDS: Record<LocaleCode, MasterKeywordItem[]> = {
     { keyword: 'compress jpg to pdf under 50kb', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-exact-kb-pdf' },
     { keyword: 'pure white background passport photo', category: 'passport-visa', presetId: 'amazon-1000', targetKb: 200, articleId: 'pure-white-background-passport-amazon' },
     { keyword: 'amazon 1000x1000 white background jpg', category: 'passport-visa', presetId: 'amazon-1000', targetKb: 200, articleId: 'pure-white-background-passport-amazon' },
-    { keyword: 'jpeg vs webp exact kb compression', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' }
+    { keyword: 'jpeg vs webp exact kb compression', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
+    { keyword: 'passport photo size in mm cm inches by country', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: 'passport-photo-size-by-country-hub' },
+    { keyword: 'why is my photo rejected on upload', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
+    { keyword: 'ssc upsc ibps sbi neet photo signature size', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 20, articleId: 'indian-government-exam-photo-signature-guide' },
+    { keyword: 'how to compress photo on iphone android without uploading', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
   ],
   fr: [
     { keyword: 'compresser photo 20 ko exact', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
@@ -44,7 +48,11 @@ export const MASTER_PHOTO_KEYWORDS: Record<LocaleCode, MasterKeywordItem[]> = {
     { keyword: 'planche 8 photos identité 10x15 cm', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'print-8-passport-photos-4x6-sheet' },
     { keyword: 'convertir photo en pdf moins de 50 ko', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-exact-kb-pdf' },
     { keyword: 'fond blanc pur photo identité et amazon', category: 'passport-visa', presetId: 'amazon-1000', targetKb: 200, articleId: 'pure-white-background-passport-amazon' },
-    { keyword: 'comparatif compression jpeg webp png', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' }
+    { keyword: 'comparatif compression jpeg webp png', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
+    { keyword: 'taille photo passeport et visa par pays ants cnie', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: 'passport-photo-size-by-country-hub' },
+    { keyword: 'pourquoi ma photo est refusée en ligne 7 erreurs', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
+    { keyword: 'dimensions photo et signature concours ssc upsc ibps', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 20, articleId: 'indian-government-exam-photo-signature-guide' },
+    { keyword: 'réduire taille photo en ko sur iphone et android', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
   ],
   es: [
     { keyword: 'comprimir foto a 20kb exactos', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
@@ -58,7 +66,11 @@ export const MASTER_PHOTO_KEYWORDS: Record<LocaleCode, MasterKeywordItem[]> = {
     { keyword: 'plantilla 8 fotos carnet en hoja 10x15 cm', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'print-8-passport-photos-4x6-sheet' },
     { keyword: 'convertir foto a pdf menos de 50kb', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-exact-kb-pdf' },
     { keyword: 'fondo blanco puro foto pasaporte y amazon', category: 'passport-visa', presetId: 'amazon-1000', targetKb: 200, articleId: 'pure-white-background-passport-amazon' },
-    { keyword: 'diferencia compresión jpeg vs webp vs png', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' }
+    { keyword: 'diferencia compresión jpeg vs webp vs png', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
+    { keyword: 'tamaño foto pasaporte y visa por país en mm y píxeles', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: 'passport-photo-size-by-country-hub' },
+    { keyword: 'por qué rechazan mi foto al subirla 7 errores', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
+    { keyword: 'tamaño foto y firma exámenes ssc upsc ibps', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 20, articleId: 'indian-government-exam-photo-signature-guide' },
+    { keyword: 'cómo reducir peso de foto en kb en iphone y android', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
   ],
   ar: [
     { keyword: 'ضغط الصورة إلى 20 كيلوبايت', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
@@ -72,7 +84,11 @@ export const MASTER_PHOTO_KEYWORDS: Record<LocaleCode, MasterKeywordItem[]> = {
     { keyword: 'طباعة 8 صور جواز سفر في ورقة 10x15 سم', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'print-8-passport-photos-4x6-sheet' },
     { keyword: 'تحويل الصورة إلى PDF أقل من 50 كيلوبايت', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-exact-kb-pdf' },
     { keyword: 'خلفية بيضاء نقية لصور الجواز وأمازون', category: 'passport-visa', presetId: 'amazon-1000', targetKb: 200, articleId: 'pure-white-background-passport-amazon' },
-    { keyword: 'مقارنة ضغط الصور بصيغة JPEG و WebP و PNG', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' }
+    { keyword: 'مقارنة ضغط الصور بصيغة JPEG و WebP و PNG', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
+    { keyword: 'مقاسات صور جواز السفر والتأشيرات حسب الدولة', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: 'passport-photo-size-by-country-hub' },
+    { keyword: 'لماذا يتم رفض الصورة عند الرفع 7 أخطاء شائعة', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
+    { keyword: 'مقاس الصورة والتوقيع لامتحانات SSC وUPSC وIBPS', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 20, articleId: 'indian-government-exam-photo-signature-guide' },
+    { keyword: 'كيفية تقليل حجم الصورة بالكيلوبايت على الآيفون والأندرويد', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
   ]
 };
 
@@ -1373,6 +1389,645 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
           {
             question: 'هل يمكنني رفع صورة PNG وتنزيلها بصيغة JPG أقل من 30 كيلوبايت؟',
             answer: 'نعم، بمجرد إفلات ملف PNG يتم تحويله وضغطه تلقائياً إلى JPG تحت السقف المحدد.'
+          }
+        ]
+      }
+    }
+  },
+
+  // =========================================================================
+  // ARTICLE 11: PASSPORT & VISA PHOTO SIZE REQUIREMENTS BY COUNTRY (HUB)
+  // =========================================================================
+  {
+    id: 'passport-photo-size-by-country-hub',
+    slug: 'passport-and-visa-photo-size-requirements-by-country-guide',
+    number: 11,
+    category: 'passport-visa',
+    readingTimeMin: 6,
+    presetId: 'schengen-35x45',
+    targetKb: 50,
+    specs: {
+      dimensionsPx: '413×531 px · 600×600 px · 591×827 px',
+      physicalSize: '35×45 mm · 2×2 in · 50×70 mm',
+      dpi: '300 DPI',
+      byteCeiling: '20 KB – 200 KB by Portal'
+    },
+    translations: {
+      en: {
+        title: 'Passport & Visa Photo Size Requirements by Country (mm, Inches, Pixels & KB Table)',
+        metaDescription: 'Complete comparison table of official passport and visa photo sizes by country: France ANTS & Morocco CNIE (35x45mm, 50KB), US DS-160 (2x2 inch, 600x600 px), UK, Canada (50x70mm), and India.',
+        excerpt: 'Confused between 35×45 mm, 2×2 inches, and 50×70 mm? Use this complete international reference table to find the exact millimeter dimensions, 300 DPI pixels, and maximum KB limit for every country.',
+        primaryKeywords: [
+          'passport photo size by country',
+          'passport photo size in mm cm inches',
+          '35x45 mm photo size in pixels',
+          '2x2 inch photo in pixels 600x600',
+          'photo size for passport 4.5x3.5'
+        ],
+        intro: 'Every government immigration portal enforces its own combination of physical dimensions (in millimeters or inches), digital pixel resolution at 300 DPI, and maximum kilobyte (KB) file size. Submitting a US 2×2 inch square photo to a European 35×45 mm portal—or uploading a 1.5 MB image where 50 KB is the maximum—triggers an automatic rejection.',
+        sections: [
+          {
+            heading: 'International Passport & Visa Size Reference (300 DPI)',
+            body: 'Below are the official digital and print specifications used by major embassies and identity portals worldwide:',
+            bullets: [
+              'European Union, Schengen, France (ANTS / Campus France), Morocco (CNIE) & UK: 35 × 45 mm (3.5 × 4.5 cm), which equals 413 × 531 pixels at 300 DPI. Online portals typically cap file size at 50 KB.',
+              'United States (US Passport, DS-160 Visa & DV Green Card Lottery): 2 × 2 inches (51 × 51 mm square), which equals 600 × 600 pixels at 300 DPI. Maximum file size is 240 KB (100 KB–200 KB recommended).',
+              'Canada (IRCC Passport, Visitor Visa & Permanent Resident Card): 50 × 70 mm (2 × 2¾ inches), which equals 591 × 827 pixels at 300 DPI (minimum 420 × 540 px for digital uploads).',
+              'India (Passport Seva, SSC, UPSC, IBPS & NEET Exams): 35 × 45 mm (3.5 × 4.5 cm) for exams with a strict 20 KB to 50 KB file-size limit, and 2 × 2 inches (600 × 600 px) for OCI and US/international visas.'
+            ]
+          },
+          {
+            heading: 'How to Convert Millimeters or Inches into Pixels (DPI vs. Pixels vs. KB)',
+            body: 'Digital screens measure images in pixels, while printers measure in millimeters or inches. The bridge between the two is DPI (Dots Per Inch). At the international standard of 300 DPI (11.811 pixels per millimeter), 35 mm × 11.811 = 413 pixels wide, and 45 mm × 11.811 = 531 pixels high. Meanwhile, Kilobytes (KB) measure how much storage space the compressed file occupies.'
+          }
+        ],
+        proTip: 'You never have to calculate pixels manually—select your destination country or document in Step 1 of CompressPhoto and both the 300 DPI pixel frame and KB limit are applied automatically.',
+        ctaButtonLabel: 'Open Country Passport & Visa Preset →',
+        faqs: [
+          {
+            question: 'Is a 3.5 × 4.5 cm photo the same as 35 × 45 mm?',
+            answer: 'Yes. 3.5 cm × 4.5 cm is identical to 35 mm × 45 mm (413 × 531 pixels at 300 DPI).'
+          },
+          {
+            question: 'Can I print any country’s passport photo on a 4×6 inch (10×15 cm) sheet?',
+            answer: 'Yes. After formatting your photo, click "4×6\\" Print Sheet (8 Photos)" to arrange 8 properly scaled photos with crop lines on a single postcard sheet.'
+          }
+        ]
+      },
+      fr: {
+        title: 'Taille Photo Passeport & Visa par Pays : Tableau Complet (mm, Pixels 300 DPI et Poids en Ko)',
+        metaDescription: 'Découvrez les dimensions officielles en mm, pixels (300 DPI) et kilo-octets (Ko) pour les photos de passeport et visa : France ANTS, Campus France, Maroc CNIE (35x45 mm), USA (2x2"), Royaume-Uni et Canada (50x70 mm).',
+        excerpt: '35×45 mm, 2×2 pouces ou 50×70 mm ? Consultez notre tableau récapitulatif des tailles officielles en millimètres, pixels et poids maximum en Ko pour chaque pays.',
+        primaryKeywords: [
+          'taille photo passeport par pays',
+          'photo ANTS taille 50 ko',
+          'photo CNIE Maroc taille ko',
+          'photo identité numérique norme 35x45 mm',
+          'taille photo passeport canada 50x70 mm'
+        ],
+        intro: 'Chaque administration impose ses propres dimensions physiques (en millimètres ou en pouces), sa définition en pixels à 300 DPI et son poids maximal en kilo-octets (Ko). Voici les normes exactes pour réussir votre dépôt en ligne du premier coup.',
+        sections: [
+          {
+            heading: 'Récapitulatif des Formats Officiels par Pays (300 DPI)',
+            body: 'Voici les dimensions exactes exigées par les principaux portails officiels :',
+            bullets: [
+              'France (ANTS, Passeport, CNI, Permis & Campus France) : 35 × 45 mm (3,5 × 4,5 cm), soit 413 × 531 pixels en 300 DPI, avec un poids inférieur à 50 Ko.',
+              'Maroc (CNIE, Passeport Biométrique & Concours) : 35 × 45 mm (413 × 531 pixels en 300 DPI), fond blanc ou gris très clair, fichier inférieur à 50 Ko.',
+              'États-Unis (Visa US DS-160, DV Lottery Green Card & ESTA) : format carré 2 × 2 pouces (51 × 51 mm), soit 600 × 600 pixels sur fond blanc pur, poids inférieur à 240 Ko (cible 100 Ko idéale).',
+              'Canada (Passeport, Visa IRCC & Résidence Permanente) : 50 × 70 mm, soit 591 × 827 pixels en 300 DPI (minimum 420 × 540 px en ligne).'
+            ]
+          }
+        ],
+        proTip: 'Cliquez simplement sur votre démarche (ANTS, CNIE Maroc, Campus France, Visa US ou Canada) dans le tableau de la page d’accueil pour appliquer automatiquement la bonne taille.',
+        ctaButtonLabel: 'Choisir Mon Format Pays →',
+        faqs: [
+          {
+            question: 'Le format 3,5 × 4,5 cm est-il identique au 35 × 45 mm ?',
+            answer: 'Oui, 3,5 × 4,5 cm correspond exactement à 35 × 45 mm, soit 413 × 531 pixels à 300 DPI.'
+          }
+        ]
+      },
+      es: {
+        title: 'Tamaño de Foto de Pasaporte y Visa por País: Tabla de Medidas en mm, Píxeles y KB',
+        metaDescription: 'Tabla completa de medidas oficiales de fotos de pasaporte y visa por país: Europa/Schengen (35x45 mm, 50KB), Visa EE.UU. DS-160 (2x2 pulgadas, 600x600 px), Reino Unido y Canadá (50x70 mm).',
+        excerpt: '¿Dudas entre 35×45 mm, 2×2 pulgadas y 50×70 mm? Consulta las dimensiones exactas en milímetros, píxeles a 300 DPI y límite de KB para cada país.',
+        primaryKeywords: [
+          'tamaño foto pasaporte por país',
+          'medidas foto pasaporte en mm cm y píxeles',
+          'foto 35x45 mm en píxeles',
+          'foto 2x2 pulgadas en píxeles 600x600'
+        ],
+        intro: 'Cada consulado y portal gubernamental exige una proporción específica en milímetros o pulgadas, además de un peso máximo en kilobytes (KB). Usar la medida incorrecta provoca el rechazo automático del formulario.',
+        sections: [
+          {
+            heading: 'Medidas Oficiales por País a 300 DPI',
+            body: 'Estas son las especificaciones estándar para trámites en línea e impresión:',
+            bullets: [
+              'Unión Europea, Espacio Schengen, Francia (ANTS), Marruecos (CNIE) y Reino Unido: 35 × 45 mm (413 × 531 píxeles a 300 DPI), peso recomendado ≤ 50 KB.',
+              'Estados Unidos (Visa DS-160 y Lotería DV Green Card): 2 × 2 pulgadas (51 × 51 mm = 600 × 600 píxeles a 300 DPI), fondo blanco puro y peso ≤ 100–200 KB.',
+              'Canadá (Pasaporte y Visa IRCC): 50 × 70 mm (591 × 827 píxeles a 300 DPI), peso ≤ 100 KB.'
+            ]
+          }
+        ],
+        proTip: 'Selecciona el formato de tu país en el Paso 1 para aplicar al instante las medidas en píxeles y el peso en KB.',
+        ctaButtonLabel: 'Abrir Formato de Pasaporte y Visa →',
+        faqs: [
+          {
+            question: '¿Es lo mismo 3,5 × 4,5 cm que 35 × 45 mm?',
+            answer: 'Sí, ambas medidas son idénticas y equivalen a 413 × 531 píxeles a 300 DPI.'
+          }
+        ]
+      },
+      ar: {
+        title: 'مقاسات صور جواز السفر والتأشيرات حسب الدولة (جدول المقاسات بالمليمتر والبكسل والكيلوبايت)',
+        metaDescription: 'دليل شامل لمقاسات صور جواز السفر والتأشيرات حسب الدولة: المغرب CNIE وفرنسا ANTS وشنغن (35×45 مم، 50 كيلوبايت)، تأشيرة أمريكا واللوتري (2×2 بوصة، 600×600 بكسل)، وكندا (50×70 مم).',
+        excerpt: 'تعرف على المقاسات الرسمية الدقيقة بالمليمتر والبكسل (بدقة 300 DPI) والحد الأقصى للحجم بالكيلوبايت لكل دولة.',
+        primaryKeywords: [
+          'مقاسات صور جواز السفر حسب الدولة',
+          'صورة CNIE المغرب حجم كيلوبايت',
+          'مقاس صورة 35x45 بالبكسل',
+          'مقاس صورة اللوتري وتأشيرة أمريكا 600x600'
+        ],
+        intro: 'تفرض كل بوابة حكومية أو قنصلية مقاساً محدداً بالمليمتر أو البوصة مع سقف صارم لحجم الملف بالكيلوبايت. يساعدك هذا الدليل على اختيار المقاس الصحيح فوراً.',
+        sections: [
+          {
+            heading: 'جدول المقاسات العالمية المعتمدة (بدقة 300 DPI)',
+            body: 'إليك الأبعاد الرسمية الأكثر استخداماً في البوابات الإلكترونية:',
+            bullets: [
+              'المغرب (البطاقة الوطنية CNIE وجواز السفر)، فرنسا (ANTS وCampus France)، منطقة شنغن وبريطانيا: 35 × 45 مم (يعادل 413 × 531 بكسل بدقة 300 DPI) وبحجم أقل من 50 كيلوبايت.',
+              'الولايات المتحدة الأمريكية (تأشيرة DS-160 واللوتري DV Lottery): مربع 2 × 2 بوصة (51 × 51 مم = 600 × 600 بكسل) بخلفية بيضاء نقية وحجم 100 إلى 200 كيلوبايت.',
+              'كندا (جواز السفر وتأشيرة IRCC والإقامة الدائمة): 50 × 70 مم (يعادل 591 × 827 بكسل بدقة 300 DPI).'
+            ]
+          }
+        ],
+        proTip: 'اختر الدولة أو الوثيقة المطلوبة من الجدول في الصفحة الرئيسية ليتم ضبط الأبعاد والحجم بالكيلوبايت تلقائياً.',
+        ctaButtonLabel: 'فتح أداة مقاسات الجواز والتأشيرة ←',
+        faqs: [
+          {
+            question: 'هل مقاس 3.5 × 4.5 سم هو نفسه 35 × 45 مم؟',
+            answer: 'نعم، المقاسان متطابقان تماماً ويعادلان 413 × 531 بكسل عند دقة 300 DPI.'
+          }
+        ]
+      }
+    }
+  },
+
+  // =========================================================================
+  // ARTICLE 12: WHY UPLOADS FAIL — THE 7 COMMON PHOTO REJECTION MISTAKES
+  // =========================================================================
+  {
+    id: 'why-photo-upload-rejected-7-mistakes',
+    slug: 'why-is-my-photo-rejected-on-upload-7-common-mistakes-fixed',
+    number: 12,
+    category: 'exact-kb',
+    readingTimeMin: 5,
+    presetId: 'schengen-35x45',
+    targetKb: 50,
+    specs: {
+      dimensionsPx: 'Exact Aspect Ratio & DPI',
+      physicalSize: 'JPEG / PNG / PDF Validation',
+      dpi: '300 DPI',
+      byteCeiling: 'Strict KB Cap + White Backdrop'
+    },
+    translations: {
+      en: {
+        title: 'Why Is My Photo Rejected on Upload? The 7 Common Mistakes & How to Fix Them Instantly',
+        metaDescription: 'Photo too large or rejected by an online portal? Learn the 7 exact reasons government and exam websites reject photos (KB size, aspect ratio, HEIC format, grey shadows) and fix them in 1 click.',
+        excerpt: 'Getting an "Invalid file size or dimension" error on an application portal? Here are the 7 automated checks that reject uploaded photos and signatures—and how to pass every single one.',
+        primaryKeywords: [
+          'why is my photo rejected on upload',
+          'photo too large to upload what to do',
+          'photo size increases after compression why',
+          'how to remove shadow from signature photo',
+          'how to make photo background white'
+        ],
+        intro: 'When you upload a passport photo or handwritten signature to a government, visa, or exam portal, an automated script inspects your file in less than a second. If even one parameter is slightly off, the portal rejects the upload—often with a vague error message.',
+        sections: [
+          {
+            heading: 'The 7 Reasons Online Portals Reject Photos & Signatures',
+            body: 'Here is what the portal validation script is actually checking behind the scenes:',
+            bullets: [
+              '1. File Size 1 KB Over the Limit (e.g., 50.4 KB on a 50 KB portal): Binary kilobyte limits (50 × 1,024 = 51,200 bytes) are absolute. CompressPhoto locks your file safely below the ceiling (e.g., 47–49.8 KB).',
+              '2. File Too Small (Below Minimum KB): Many Indian exam portals require "20 KB to 50 KB" and reject a 12 KB image as low-quality. Choosing 30 KB or 50 KB keeps your file inside the valid window.',
+              '3. Wrong Aspect Ratio (Freehand Cropping): Cropping a photo by eye on your phone leaves random dimensions like 408 × 519 px instead of the required 413 × 531 px (35×45 mm) or 600 × 600 px (2×2").',
+              '4. Smartphone HEIC or PNG Format Instead of Standard JPEG: iPhones shoot in .HEIC and screenshots save as heavy .PNG files. Most government portals only accept standard .JPG or .PDF.',
+              '5. Off-White or Shadowed Background: Indoor walls look yellow or grey (RGB 230,230,230) in camera photos. Selecting "Pure White" normalizes the studio canvas.',
+              '6. Grey Paper Shadow on Handwritten Signatures: Taking a phone photo of white paper creates a grey gradient that fails signature contrast checks and wastes kilobytes.',
+              '7. Wrong Head Size or Eye Position: The chin-to-crown height must occupy 70–80% of the frame. Use the Face & Eye Alignment Guide to position your portrait before downloading.'
+            ]
+          },
+          {
+            heading: 'Why Does My Photo Size Sometimes Increase After Editing?',
+            body: 'If you crop or re-save a compressed JPEG in a basic phone gallery app, the app often re-encodes it at 95–100% quality or saves it as an uncompressed PNG—making a 40 KB file jump to 300 KB. Always run the Exact-KB Compressor as your final step before uploading.'
+          }
+        ],
+        proTip: 'If a portal requires a file "between 20 KB and 50 KB", pick the 30 KB or 50 KB button in Step 2 so your file lands around 28 KB or 48 KB—safely inside both limits.',
+        ctaButtonLabel: 'Fix & Compress My Photo Now →',
+        faqs: [
+          {
+            question: 'What should I do if a portal says "Photo too large to upload"?',
+            answer: 'Drop your photo into CompressPhoto, select your required size in Step 2 (such as 20 KB, 50 KB, or 100 KB), and download the ready-to-upload JPG or PDF.'
+          },
+          {
+            question: 'How do I convert an iPhone HEIC or PNG screenshot into a 50KB JPG?',
+            answer: 'Simply upload the file into CompressPhoto. The tool automatically converts it to a standard JPEG locked under 50 KB.'
+          }
+        ]
+      },
+      fr: {
+        title: 'Pourquoi Ma Photo Est Refusée en Ligne ? Les 7 Erreurs Fréquentes et Comment les Corriger',
+        metaDescription: 'Votre photo d’identité ou signature est refusée sur ANTS, Campus France, CNIE ou un site de concours ? Découvrez les 7 causes de rejet (poids en Ko, dimensions, HEIC, ombre) et corrigez-les en 1 clic.',
+        excerpt: 'Message d’erreur « Fichier trop volumineux » ou « Format non conforme » ? Voici les 7 vérifications automatiques des portails officiels et comment valider votre photo immédiatement.',
+        primaryKeywords: [
+          'pourquoi ma photo est refusée en ligne',
+          'photo trop lourde pour envoyer que faire',
+          'réduire la taille d’une photo en ko',
+          'comment blanchir le fond d’une photo d’identité'
+        ],
+        intro: 'Lorsque vous déposez une photo d’identité ou une signature sur un site administratif (ANTS, Campus France, CNIE, visa), un programme vérifie instantanément votre fichier. Voici les 7 erreurs qui bloquent l’envoi et comment les résoudre.',
+        sections: [
+          {
+            heading: 'Les 7 Causes de Rejet sur les Portails Officiels',
+            body: 'Voici ce que vérifie le serveur lors du téléversement :',
+            bullets: [
+              '1. Poids supérieur d’un seul Ko à la limite (ex: 50,4 Ko pour 50 Ko maximum).',
+              '2. Proportions modifiées par un recadrage manuel approximatif au lieu du 35×45 mm (413×531 px) ou 2×2 pouces (600×600 px).',
+              '3. Format iPhone (.HEIC) ou capture d’écran (.PNG) non reconnu par les portails qui exigent du .JPG.',
+              '4. Fond de mur grisâtre ou jaunâtre au lieu d’un fond clair ou blanc uni.',
+              '5. Ombre grise sur le papier d’une signature photographiée au téléphone.',
+              '6. Visage trop petit, trop proche ou décentré (utilisez notre Guide d’Alignement Visage & Yeux).',
+              '7. Enveloppe PDF trop lourde : un PDF classique ajoute 20 à 40 Ko de métadonnées ; notre export PDF déduit ce poids automatiquement.'
+            ]
+          }
+        ],
+        proTip: 'Effectuez toujours la compression au Ko exact comme dernière étape avant de téléverser votre fichier sur le portail.',
+        ctaButtonLabel: 'Corriger et Compresser Ma Photo →',
+        faqs: [
+          {
+            question: 'Pourquoi ma photo devient-elle plus lourde après l’avoir recadrée sur mon téléphone ?',
+            answer: 'Les applications galerie ré-enregistrent souvent l’image à 100 % de qualité ou en PNG. Passez-la dans CompressPhoto en dernière étape pour verrouiller son poids en Ko.'
+          }
+        ]
+      },
+      es: {
+        title: '¿Por Qué Rechazan Mi Foto al Subirla? Los 7 Errores Comunes y Cómo Solucionarlos',
+        metaDescription: '¿Tu foto o firma es rechazada en un formulario online? Descubre las 7 causas de error (peso en KB, medidas en píxeles, formato HEIC/PNG, sombras) y corrígelas en 1 clic.',
+        excerpt: 'Si recibes un error de "archivo demasiado grande" o "dimensiones inválidas", revisa estos 7 puntos clave para que tu foto o firma sea aceptada al instante.',
+        primaryKeywords: [
+          'por qué rechazan mi foto al subirla',
+          'foto demasiado grande para subir qué hacer',
+          'por qué aumenta el tamaño de la foto al comprimir',
+          'cómo poner fondo blanco a una foto'
+        ],
+        intro: 'Los portales de visas, pasaportes y exámenes validan automáticamente cada imagen subida. Si falla un solo requisito técnico, el sistema bloquea el archivo.',
+        sections: [
+          {
+            heading: 'Los 7 Motivos de Rechazo Más Frecuentes',
+            body: 'Nuestro compresor corrige automáticamente estos 7 problemas:',
+            bullets: [
+              '1. Exceder el límite por pocos kilobytes (ej. 50,5 KB cuando el máximo es 50 KB).',
+              '2. Recorte manual sin la proporción exacta de 35×45 mm (413×531 px) o 2×2 pulgadas (600×600 px).',
+              '3. Subir archivos HEIC de iPhone o capturas PNG pesadas en lugar de JPEG estándar.',
+              '4. Sombras grises en el papel al fotografiar una firma manuscrita.',
+              '5. Fondo oscuro o amarillento en lugar de blanco limpio (#FFFFFF).',
+              '6. Rostro descentrado o tamaño de cabeza fuera de norma.',
+              '7. Archivos PDF que superan el límite por culpa de los metadatos del convertidor.'
+            ]
+          }
+        ],
+        proTip: 'Usa siempre CompressPhoto como el último paso antes de subir tu archivo al portal oficial.',
+        ctaButtonLabel: 'Corregir y Comprimir Mi Foto Ahora →',
+        faqs: [
+          {
+            question: '¿Qué hago si el portal dice que mi foto es demasiado grande?',
+            answer: 'Sube tu foto a CompressPhoto, elige el límite requerido (20 KB, 50 KB o 100 KB) y descarga el archivo JPG o PDF listo para subir.'
+          }
+        ]
+      },
+      ar: {
+        title: 'لماذا يتم رفض الصورة عند الرفع؟ أشهر 7 أخطاء وكيفية إصلاحها فوراً',
+        metaDescription: 'هل تظهر لك رسالة خطأ عند رفع الصورة الشخصية أو التوقيع في المواقع الرسمية؟ تعرف على الأسباب السبعة لرفض الصور (الحجم بالكيلوبايت، الأبعاد، صيغة HEIC، ظل الورق) وعالجها بنقرة واحدة.',
+        excerpt: 'تعرّف على الفحوصات الآلية السبعة التي تؤدي لرفض الصور والتوقيعات في مواقع التأشيرات والتوظيف وكيفية اجتيازها بنجاح من المرة الأولى.',
+        primaryKeywords: [
+          'لماذا يتم رفض الصورة عند الرفع',
+          'حجم الصورة كبير جداً للرفع ماذا أفعل',
+          'كيفية إزالة الظل من صورة التوقيع',
+          'جعل خلفية الصورة بيضاء'
+        ],
+        intro: 'تستخدم بوابات التسجيل الإلكترونية ومواقع السفارات فحصاً آلياً يرفض الصورة فوراً إذا خالفت أياً من الشروط السبعة التالية.',
+        sections: [
+          {
+            heading: 'الأسباب السبعة لرفض الصور والتوقيعات وكيفية حلها',
+            body: 'تعالج أداة CompressPhoto جميع هذه المشاكل تلقائياً:',
+            bullets: [
+              '1. تجاوز الحد الأقصى للكيلوبايت ولو بجزء بسيط (مثل 50.3 كيلوبايت عند حد 50 كيلوبايت).',
+              '2. القص اليدوي العشوائي بدلاً من الأبعاد الرسمية 413×531 بكسل (35×45 مم) أو 600×600 بكسل (2×2 بوصة).',
+              '3. رفع صور الآيفون بصيغة HEIC أو لقطات الشاشة بصيغة PNG الثقيلة بدلاً من صيغة JPG القياسية.',
+              '4. ظهور ظل رمادي على الورقة عند تصوير التوقيع الخطي بالهاتف.',
+              '5. خلفية غير موحدة أو مائلة للاصفرار بدلاً من الأبيض النقي.',
+              '6. عدم تمركز الوجه والعينين في المكان الصحيح (استخدم دليل محاذاة الوجه والعينين).',
+              '7. زيادة حجم ملف PDF عن الحد المسموح بسبب البيانات الإضافية في برامج التحويل التقليدية.'
+            ]
+          }
+        ],
+        proTip: 'اجعل ضغط الصورة في CompressPhoto الخطوة الأخيرة دائماً قبل رفع الملف مباشرة إلى الموقع الرسمي.',
+        ctaButtonLabel: 'إصلاح وضغط صورتي الآن ←',
+        faqs: [
+          {
+            question: 'ماذا أفعل إذا ظهرت رسالة "حجم الصورة كبير جداً"؟',
+            answer: 'ارفع صورتك في الأداة، واختر السقف المطلوب (20 أو 50 أو 100 كيلوبايت)، ثم حمّل الملف الجاهز للرفع.'
+          }
+        ]
+      }
+    }
+  },
+
+  // =========================================================================
+  // ARTICLE 13: INDIAN EXAMS (SSC, UPSC, IBPS, SBI, RRB, NEET) PHOTO & SIGNATURE
+  // =========================================================================
+  {
+    id: 'indian-government-exam-photo-signature-guide',
+    slug: 'ssc-upsc-ibps-sbi-neet-photo-and-signature-size-requirements',
+    number: 13,
+    category: 'passport-visa',
+    readingTimeMin: 6,
+    presetId: 'schengen-35x45',
+    targetKb: 20,
+    specs: {
+      dimensionsPx: 'Photo: 35×45 mm · Sig: 140×60 ratio',
+      physicalSize: 'SSC · UPSC · IBPS · SBI · NEET',
+      dpi: '300 DPI + Name & Date Slate',
+      byteCeiling: 'Photo: 20–50 KB · Sig: 10–20 KB'
+    },
+    translations: {
+      en: {
+        title: 'SSC, UPSC, IBPS, SBI PO, Railway & NEET Photo and Signature Size Guide (20KB–50KB)',
+        metaDescription: 'Official photo and signature size, pixel dimensions, KB limits, and Name & Date of Photo (DOP) rules for SSC CGL/CHSL, UPSC, IBPS, SBI PO/Clerk, RRB Railway, and NEET/JEE exams.',
+        excerpt: 'Complete exam-by-exam specification guide for SSC, UPSC, IBPS, SBI, RRB, and NEET/JEE—covering 20KB–50KB photos, 10KB–20KB signatures, and how to add your Name & Date on the photo.',
+        primaryKeywords: [
+          'SSC photo size 20kb 50kb',
+          'UPSC photo and signature size',
+          'IBPS photo signature size',
+          'SBI PO clerk photo size',
+          'NEET JEE photo size with name and date',
+          'government exam photo resize'
+        ],
+        intro: 'Competitive exam portals in India—including SSC (CGL, CHSL, MTS, GD), UPSC, IBPS, SBI, RRB Railways, and NTA (NEET / JEE)—enforce strict kilobyte windows for both your passport photograph and your scanned wet-ink signature.',
+        sections: [
+          {
+            heading: 'Exam-by-Exam Photo & Signature Requirements',
+            body: 'Check the exact KB range and dimension rules before uploading your files:',
+            bullets: [
+              'SSC (CGL, CHSL, MTS, GD Constable): Passport photo 3.5 cm × 4.5 cm (35×45 mm) between 20 KB and 50 KB in JPEG format. Signature: 4.0 cm × 2.0 cm between 10 KB and 20 KB.',
+              'IBPS & SBI (PO, Clerk, SO, RRB): Photograph (4.5 cm × 3.5 cm) between 20 KB and 50 KB. Signature in black ink on white paper (140 × 60 pixels ratio) between 10 KB and 20 KB.',
+              'UPSC (Civil Services IAS, NDA, CDS): Photograph and signature between 20 KB and 300 KB (35×45 mm or square portrait with clear white background).',
+              'NTA NEET UG & JEE Main: Passport size photo (10 KB to 200 KB) on a white background with 80% face coverage, typically including candidate Name and Date of Photo (DOP) printed at the bottom, plus signature (4 KB to 30 KB).'
+            ]
+          },
+          {
+            heading: 'How to Add Candidate Name & Date of Photo (DOP) for Free',
+            body: 'Many exam notifications ask for a clear slate at the bottom of the photograph showing your full name and the date the photograph was taken. In CompressPhoto, click "Add Name & Date on Photo" below Step 2 to generate a compliant white or black bottom banner automatically before compressing to 20 KB or 50 KB.'
+          }
+        ],
+        proTip: 'For "20 KB to 50 KB" photo requirements, choose 30 KB or 50 KB so your file lands safely between 28 KB and 48 KB. For "10 KB to 20 KB" signatures, choose Signature mode + 20 KB.',
+        ctaButtonLabel: 'Open Exam Photo & Signature Resizer →',
+        faqs: [
+          {
+            question: 'Should I sign with black or blue ink for IBPS and SBI exams?',
+            answer: 'IBPS and SBI notifications specify signing on white paper with a black ink pen (not in capital letters). In Signature mode, you can also clean grey paper shadows so the background is pure white under 20 KB.'
+          },
+          {
+            question: 'How do I compress a signature between 10KB and 20KB?',
+            answer: 'Select "Signature (< 20 KB)" in Step 1 and "20 KB" in Step 2. The tool locks your signature between 14 KB and 19.8 KB—right inside the 10–20 KB window.'
+          }
+        ]
+      },
+      fr: {
+        title: 'Guide des Tailles Photo & Signature pour Concours (SSC, UPSC, IBPS, NEET : 20 Ko–50 Ko)',
+        metaDescription: 'Découvrez les dimensions exactes et limites en Ko (20 à 50 Ko pour la photo, 10 à 20 Ko pour la signature) ainsi que l’ajout du bandeau Nom & Date pour les portails de concours.',
+        excerpt: 'Récapitulatif complet des exigences de poids (20–50 Ko) et de dimensions pour les photos d’inscription aux concours et examens, avec ajout du nom et de la date.',
+        primaryKeywords: [
+          'photo concours 20 ko 50 ko',
+          'signature 10 ko 20 ko en ligne',
+          'ajouter nom et date sur photo identité'
+        ],
+        intro: 'Les portails d’inscription aux concours exigent à la fois une photo d’identité entre 20 Ko et 50 Ko et une signature manuscrite sur fond blanc entre 10 Ko et 20 Ko.',
+        sections: [
+          {
+            heading: 'Normes Photo (20–50 Ko) et Signature (10–20 Ko)',
+            body: 'Utilisez nos préréglages dédiés pour valider les deux fichiers en moins de 30 secondes :',
+            bullets: [
+              'Photo d’identité 3,5 × 4,5 cm (35×45 mm) : sélectionnez 30 Ko ou 50 Ko pour obtenir un fichier compris entre 28 Ko et 48 Ko.',
+              'Signature sur papier blanc : sélectionnez « Signature (< 20 Ko) » pour supprimer l’ombre du papier et obtenir un fichier entre 14 Ko et 19,8 Ko.',
+              'Bandeau Nom & Date : activez l’outil « Ajouter Nom & Date » sous l’Étape 2 pour inscrire vos informations au bas de la photo.'
+            ]
+          }
+        ],
+        proTip: 'Utilisez le bouton « Ajouter Nom & Date » pour générer gratuitement le bandeau réglementaire en bas de votre photo.',
+        ctaButtonLabel: 'Ouvrir l’Outil Photo & Signature Concours →',
+        faqs: [
+          {
+            question: 'Comment obtenir une signature entre 10 Ko et 20 Ko ?',
+            answer: 'Choisissez le mode Signature à l’Étape 1 et la cible 20 Ko à l’Étape 2 : le fichier final pèsera entre 14 Ko et 19,8 Ko.'
+          }
+        ]
+      },
+      es: {
+        title: 'Guía de Tamaño de Foto y Firma para Exámenes (SSC, UPSC, IBPS, NEET: 20KB–50KB)',
+        metaDescription: 'Consulta las medidas exactas y límites de peso (20KB a 50KB para fotos y 10KB a 20KB para firmas) con opción de añadir Nombre y Fecha en la foto.',
+        excerpt: 'Guía práctica para ajustar fotos de 20–50 KB, firmas de 10–20 KB y añadir la banda inferior con nombre y fecha para portales de exámenes.',
+        primaryKeywords: [
+          'tamaño foto examen 20kb 50kb',
+          'comprimir firma entre 10kb y 20kb',
+          'añadir nombre y fecha en foto carnet'
+        ],
+        intro: 'Los portales de exámenes oficiales requieren una fotografía de 3,5 × 4,5 cm (entre 20 KB y 50 KB) y una firma escaneada sobre papel blanco (entre 10 KB y 20 KB).',
+        sections: [
+          {
+            heading: 'Ajuste Rápido de Foto, Firma y Banda de Nombre/Fecha',
+            body: 'Prepara ambos archivos desde tu navegador en segundos:',
+            bullets: [
+              'Fotografía (20 KB – 50 KB): elige el formato Pasaporte 35×45 mm y el objetivo de 30 KB o 50 KB.',
+              'Firma (10 KB – 20 KB): elige Firma (< 20 KB) para blanquear el papel y ajustar el peso entre 14 KB y 19,8 KB.',
+              'Nombre y Fecha en la Foto: activa el panel debajo del Paso 2 para imprimir tu nombre y fecha en el borde inferior.'
+            ]
+          }
+        ],
+        proTip: 'Activa la opción "Añadir Nombre y Fecha" debajo del Paso 2 para incluir tus datos en la parte inferior de la foto gratis.',
+        ctaButtonLabel: 'Abrir Compresor para Exámenes →',
+        faqs: [
+          {
+            question: '¿Cómo lograr que mi firma pese entre 10KB y 20KB?',
+            answer: 'Selecciona "Firma (< 20 KB)" en el Paso 1 y "20 KB" en el Paso 2 para obtener un archivo limpio de entre 14 KB y 19,8 KB.'
+          }
+        ]
+      },
+      ar: {
+        title: 'دليل مقاسات الصورة والتوقيع للامتحانات والمباريات (SSC وUPSC وIBPS وNEET: من 20 إلى 50 كيلوبايت)',
+        metaDescription: 'تعرف على المقاسات الرسمية للصورة الشخصية (20 إلى 50 كيلوبايت) والتوقيع الخطي (10 إلى 20 كيلوبايت) مع ميزة إضافة شريط الاسم وتاريخ الصورة مجاناً.',
+        excerpt: 'دليل شامل لضبط الصور الشخصية والتوقيعات الخطية لبوابات الامتحانات والمباريات الرسمية مع إمكانية كتابة الاسم والتاريخ أسفل الصورة.',
+        primaryKeywords: [
+          'مقاس الصورة والتوقيع للامتحانات 20 كيلوبايت',
+          'ضغط التوقيع بين 10 و20 كيلوبايت',
+          'إضافة الاسم والتاريخ على الصورة الشخصية'
+        ],
+        intro: 'تشترط بوابات التسجيل في الامتحانات والمباريات رفع صورة شخصية بمقاس 3.5×4.5 سم (بحجم بين 20 و50 كيلوبايت) وتوقيع خطي على ورق أبيض (بحجم بين 10 و20 كيلوبايت).',
+        sections: [
+          {
+            heading: 'خطوات تجهيز الصورة والتوقيع وشريط الاسم والتاريخ',
+            body: 'يمكنك إنجاز جميع المتطلبات في صفحة واحدة:',
+            bullets: [
+              'الصورة الشخصية (20 – 50 كيلوبايت): اختر مقاس 35×45 مم وحدد 30 أو 50 كيلوبايت.',
+              'التوقيع الخطي (10 – 20 كيلوبايت): اختر وضع التوقيع لإزالة ظل الورقة وضبط الحجم بين 14 و19.8 كيلوبايت.',
+              'شريط الاسم والتاريخ: فعّل خيار إضافة الاسم والتاريخ أسفل الخطوة الثانية لطباعة بياناتك بوضوح أسفل الصورة.'
+            ]
+          }
+        ],
+        proTip: 'استخدم أداة إضافة الاسم والتاريخ المدمجة لكتابة اسمك وتاريخ التقاط الصورة في الشريط السفلي مجاناً.',
+        ctaButtonLabel: 'فتح أداة صور وتوقيعات الامتحانات ←',
+        faqs: [
+          {
+            question: 'كيف أضمن بقاء حجم التوقيع بين 10 و20 كيلوبايت؟',
+            answer: 'اختر وضع التوقيع في الخطوة الأولى وحدد 20 كيلوبايت في الخطوة الثانية ليتم تثبيت الحجم بين 14 و19.8 كيلوبايت.'
+          }
+        ]
+      }
+    }
+  },
+
+  // =========================================================================
+  // ARTICLE 14: COMPRESS PHOTO ON IPHONE & ANDROID WITHOUT UPLOADING (PRIVACY)
+  // =========================================================================
+  {
+    id: 'compress-photo-on-iphone-android-without-uploading',
+    slug: 'how-to-compress-photo-on-iphone-and-android-offline-without-uploading',
+    number: 14,
+    category: 'exact-kb',
+    readingTimeMin: 5,
+    presetId: 'schengen-35x45',
+    targetKb: 50,
+    specs: {
+      dimensionsPx: 'iPhone (iOS) · Android · Windows · Mac',
+      physicalSize: 'HEIC / JPG / PNG to Exact KB',
+      dpi: '300 DPI Local Processing',
+      byteCeiling: '100% Private on Your Device'
+    },
+    translations: {
+      en: {
+        title: 'How to Reduce Photo Size in KB on iPhone & Android Without Uploading to Any Server',
+        metaDescription: 'Learn how to compress photos to 20KB, 50KB, or 100KB on iPhone, iPad, Android, Windows, and Mac directly in your browser without uploading sensitive ID photos to external servers.',
+        excerpt: 'Taking a passport photo or signature with your phone? Learn why smartphone cameras create 4 MB files—and how to shrink them to an exact KB size privately on your phone without installing sketchy apps.',
+        primaryKeywords: [
+          'how to reduce photo size on phone',
+          'how to compress photo on iPhone Android',
+          'compress photo without uploading',
+          'private image compressor',
+          'safe passport photo online'
+        ],
+        intro: 'Modern iPhone and Android cameras capture 12 MP to 48 MP photos that weigh 3 MB to 8 MB each. When you need to upload that photo to a visa, passport, or job portal from your phone, most mobile apps either add watermarks, ask for a paid subscription, or upload your private identity photo to a remote server.',
+        sections: [
+          {
+            heading: 'How to Compress a Photo to Exact KB on iPhone (Safari) & Android (Chrome)',
+            body: 'You do not need to install any mobile app. Open CompressPhoto directly in Safari or Chrome on your phone:',
+            bullets: [
+              '1. Tap the upload box to pick a photo from your Photo Library or take a live camera photo.',
+              '2. Choose your preset (35×45 mm Passport, 2×2" US Visa, Signature, or Custom Dimensions).',
+              '3. Tap your target KB size (10 KB, 20 KB, 50 KB, 100 KB, or 200 KB).',
+              '4. Tap Download JPG or Download PDF to save the file directly to your phone’s Files or Downloads folder.'
+            ]
+          },
+          {
+            heading: 'Why Private On-Device Processing Matters for Passport & ID Photos',
+            body: 'Passport photos, national ID cards, and handwritten signatures are sensitive biometric data. Unlike traditional cloud compressors that upload your files to a remote server, CompressPhoto processes every pixel inside your own phone or computer browser. Your photos never leave your device.'
+          }
+        ],
+        proTip: 'When photographing a document or signature with your phone, shoot near a window in natural daylight so there is no harsh phone shadow across the paper.',
+        ctaButtonLabel: 'Compress Photo on My Device Now →',
+        faqs: [
+          {
+            question: 'Does CompressPhoto work on iPhone HEIC photos?',
+            answer: 'Yes. Selecting a photo from your iPhone library automatically converts it into a universally accepted .JPG or .PDF under your chosen KB limit.'
+          },
+          {
+            question: 'Are my photos ever stored or uploaded online?',
+            answer: 'Never. All resizing and compression happen 100% locally on your own phone or computer.'
+          }
+        ]
+      },
+      fr: {
+        title: 'Comment Réduire la Taille d’une Photo en Ko sur iPhone & Android Sans l’Envoyer sur un Serveur',
+        metaDescription: 'Apprenez à compresser une photo à 20 Ko, 50 Ko ou 100 Ko sur iPhone, Android, PC et Mac directement dans votre navigateur, sans application et en toute confidentialité.',
+        excerpt: 'Réduisez le poids de vos photos d’identité et signatures sur iPhone ou Android au Ko exact sans installer d’application payante et sans envoyer vos fichiers sur internet.',
+        primaryKeywords: [
+          'comment réduire la taille d’une photo sur téléphone',
+          'compresser photo sur iphone et android',
+          'compresser photo sans envoyer sur serveur',
+          'compresseur d’image privé rgpd'
+        ],
+        intro: 'Les appareils photo des iPhone et smartphones Android génèrent des fichiers de 3 à 8 Mo. Pour un dossier ANTS, CNIE, Campus France ou un visa, il faut ramener ce fichier sous 50 Ko ou 100 Ko tout en protégeant vos données personnelles.',
+        sections: [
+          {
+            heading: 'Compresser une Photo sur iPhone (Safari) ou Android (Chrome) en 3 Secondes',
+            body: 'Aucune application à télécharger : tout fonctionne directement depuis le navigateur de votre téléphone :',
+            bullets: [
+              '1. Touchez la zone d’importation pour choisir une photo dans votre galerie.',
+              '2. Sélectionnez votre format (Passeport 35×45 mm, Visa US 2×2", Signature ou Sur Mesure).',
+              '3. Choisissez la limite en Ko souhaitée (10 Ko, 20 Ko, 50 Ko, 100 Ko ou 200 Ko) et téléchargez votre fichier JPG ou PDF.'
+            ]
+          },
+          {
+            heading: 'Confidentialité Totale pour Vos Pièces d’Identité',
+            body: 'Vos photos d’identité et signatures sont des données sensibles. Contrairement aux sites classiques qui envoient vos fichiers sur des serveurs distants, CompressPhoto traite vos images directement sur votre téléphone ou ordinateur.'
+          }
+        ],
+        proTip: 'Prenez votre photo face à une fenêtre bien éclairée devant un mur clair pour éviter toute ombre derrière la tête.',
+        ctaButtonLabel: 'Compresser une Photo sur Mon Appareil →',
+        faqs: [
+          {
+            question: 'Est-ce que cela fonctionne avec les photos iPhone au format HEIC ?',
+            answer: 'Oui, votre photo iPhone est automatiquement convertie en fichier .JPG ou .PDF standard compatible avec tous les sites officiels.'
+          }
+        ]
+      },
+      es: {
+        title: 'Cómo Reducir el Tamaño de una Foto en KB en iPhone y Android Sin Subirla a Internet',
+        metaDescription: 'Aprende a comprimir fotos a 20KB, 50KB o 100KB en iPhone, Android, Windows y Mac directamente en tu navegador con privacidad total y sin instalar aplicaciones.',
+        excerpt: 'Reduce el peso de tus fotos de pasaporte y firmas en iPhone o Android al KB exacto sin marcas de agua, sin suscripciones y sin subir tus documentos a ningún servidor.',
+        primaryKeywords: [
+          'cómo reducir tamaño de foto en el móvil',
+          'comprimir foto en iphone y android',
+          'comprimir foto sin subir a internet',
+          'compresor de imágenes privado'
+        ],
+        intro: 'Las cámaras de iPhone y Android crean fotos de 3 MB a 8 MB. Con CompressPhoto puedes reducirlas a 20 KB, 50 KB o 100 KB directamente desde Safari o Chrome sin que tus fotos salgan de tu teléfono.',
+        sections: [
+          {
+            heading: '3 Pasos desde Tu Teléfono o Computadora',
+            body: 'Sin instalar aplicaciones ni registrarte:',
+            bullets: [
+              '1. Toca el recuadro de subida y elige la foto desde tu galería.',
+              '2. Selecciona el formato (Pasaporte 35×45 mm, Visa 2×2", Firma o Personalizado).',
+              '3. Elige el peso máximo en KB (10 KB, 20 KB, 50 KB, 100 KB o 200 KB) y descarga tu JPG o PDF.'
+            ]
+          }
+        ],
+        proTip: 'Toma la foto frente a una ventana con luz natural uniforme para evitar sombras en el rostro o en el papel de la firma.',
+        ctaButtonLabel: 'Comprimir Foto en Mi Dispositivo →',
+        faqs: [
+          {
+            question: '¿Convierte automáticamente las fotos HEIC de iPhone a JPG?',
+            answer: 'Sí, cualquier foto de iPhone se guarda automáticamente como archivo JPG o PDF universal.'
+          }
+        ]
+      },
+      ar: {
+        title: 'كيفية تقليل حجم الصورة بالكيلوبايت على الآيفون والأندرويد دون رفعها لأي خادم',
+        metaDescription: 'تعلم كيفية ضغط الصور الشخصية والتوقيعات إلى 20 أو 50 أو 100 كيلوبايت على هواتف الآيفون والأندرويد والحاسوب مباشرة في متصفحك بخصوصية تامة 100%.',
+        excerpt: 'قلّص حجم صور جواز السفر والبطاقة الوطنية والتوقيعات على هاتفك المحمول بالكيلوبايت الدقيق دون تثبيت تطبيقات مدفوعة ودون رفع صورك الخاصة إلى الإنترنت.',
+        primaryKeywords: [
+          'كيفية تقليل حجم الصورة على الهاتف',
+          'ضغط الصور على الآيفون والأندرويد بالكيلوبايت',
+          'ضغط الصور بدون رفعها للإنترنت',
+          'تجهيز صورة جواز السفر بأمان'
+        ],
+        intro: 'تلتقط كاميرات الهواتف الحديثة صوراً يتراوح حجمها بين 3 و8 ميجابايت. تتيح لك أداة CompressPhoto تقليصها إلى 20 أو 50 أو 100 كيلوبايت مباشرة من متصفح الهاتف (Safari أو Chrome) مع بقاء صورك الخاصة داخل جهازك 100%.',
+        sections: [
+          {
+            heading: 'ضغط الصور من الهاتف في 3 خطوات بسيطة',
+            body: 'لا حاجة لتحميل أي تطبيق على هاتفك:',
+            bullets: [
+              '1. اضغط على مربع الرفع لاختيار الصورة من ألبوم الكاميرا في هاتفك.',
+              '2. اختر نوع الوثيقة (جواز سفر 35×45 مم، تأشيرة أمريكا 2×2 بوصة، أو توقيع خطي).',
+              '3. اختر الحجم المطلوب بالكيلوبايت وحمّل الصورة فوراً بصيغة JPG أو PDF.'
+            ]
+          }
+        ],
+        proTip: 'عند التقاط صورة شخصية أو توقيع بالهاتف، قف في إضاءة نهارية طبيعية لتجنب ظهور الظلال على الخلفية.',
+        ctaButtonLabel: 'ضغط الصورة على جهازي الآن ←',
+        faqs: [
+          {
+            question: 'هل تعمل الأداة مع صور الآيفون بصيغة HEIC؟',
+            answer: 'نعم، يتم تحويل صور الآيفون تلقائياً إلى صيغة JPG أو PDF مقبولة في جميع البوابات الرسمية.'
           }
         ]
       }
