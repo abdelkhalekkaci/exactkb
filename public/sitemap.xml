@@ -3,339 +3,2259 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
-  <!-- ===================================================================== -->
-  <!-- CORE STUDIO TOOLS & CONTENT HUB (3 URLs)                              -->
-  <!-- ===================================================================== -->
   <url>
     <loc>https://compressphoto.space/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/" />
   </url>
 
   <url>
-    <loc>https://compressphoto.space/qr</loc>
-    <lastmod>2026-11-02</lastmod>
+    <loc>https://compressphoto.space/compress-photo-to-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/compress-photo-to-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/compress-photo-to-100kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-100kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/compress-photo-to-200kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-200kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/compress-signature-to-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-signature-to-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ants-photo-identite-50ko</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ants-photo-identite-50ko" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/photo-cnie-maroc-35x45mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/photo-cnie-maroc-35x45mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/passport-photo-35x45mm-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/passport-photo-35x45mm-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ds160-photo-compressor-600x600</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ds160-photo-compressor-600x600" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ssc-upsc-photo-signature-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ssc-upsc-photo-signature-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/compress-photo-to-pdf-under-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-pdf-under-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/amazon-1000x1000-white-background-photo</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/amazon-1000x1000-white-background-photo" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/compress-photo-to-10kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-10kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/compress-photo-to-30kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-30kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/compress-photo-to-200kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-200kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ssc-upsc-ibps-photo-signature-resizer</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ssc-upsc-ibps-photo-signature-resizer" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/campus-france-photo-50ko</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/campus-france-photo-50ko" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/uk-passport-photo-35x45mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/uk-passport-photo-35x45mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/canada-passport-visa-photo-50x70mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/canada-passport-visa-photo-50x70mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/passport-photo-4x6-print-sheet</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/passport-photo-4x6-print-sheet" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/qr</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/qr" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/qr?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/qr?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/qr?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/qr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/qr" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/qr" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/qr" />
   </url>
 
   <url>
     <loc>https://compressphoto.space/blog</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog" />
   </url>
 
-  <!-- ===================================================================== -->
-  <!-- PHOTO COMPRESSION & BIOMETRIC PASSPORT GUIDES (10 URLs)               -->
-  <!-- ===================================================================== -->
-  <url>
-    <loc>https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-  </url>
-
-  <!-- ===================================================================== -->
-  <!-- PERMANENT STATIC QR CODE & VECTOR BARCODE GUIDES (10 URLs)            -->
-  <!-- ===================================================================== -->
-  <url>
-    <loc>https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
-  </url>
-
-  <url>
-    <loc>https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
-  </url>
-
-  <!-- ===================================================================== -->
-  <!-- TRUST, E-E-A-T & GDPR LEGAL PAGES (4 URLs)                            -->
-  <!-- ===================================================================== -->
   <url>
     <loc>https://compressphoto.space/about</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+    <priority>0.65</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/about" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/about?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/about?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/about?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/about" />
   </url>
 
   <url>
     <loc>https://compressphoto.space/legal</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/legal" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/legal?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/legal?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/legal?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/legal" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/legal" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/legal" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/legal" />
   </url>
 
   <url>
     <loc>https://compressphoto.space/privacy</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+    <priority>0.55</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/privacy" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/privacy?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/privacy?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/privacy?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/privacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/privacy" />
   </url>
 
   <url>
     <loc>https://compressphoto.space/contact</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/contact" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/contact?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/contact?lang=es" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/contact?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/contact" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/contact" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/compress-photo-to-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/compress-photo-to-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/compress-photo-to-100kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-100kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/compress-photo-to-200kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-200kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/compress-signature-to-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-signature-to-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/ants-photo-identite-50ko</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ants-photo-identite-50ko" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/photo-cnie-maroc-35x45mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/photo-cnie-maroc-35x45mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/passport-photo-35x45mm-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/passport-photo-35x45mm-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/ds160-photo-compressor-600x600</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ds160-photo-compressor-600x600" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/ssc-upsc-photo-signature-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ssc-upsc-photo-signature-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/compress-photo-to-pdf-under-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-pdf-under-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/amazon-1000x1000-white-background-photo</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/amazon-1000x1000-white-background-photo" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/compress-photo-to-10kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-10kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/compress-photo-to-30kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-30kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/compress-photo-to-200kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-200kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/ssc-upsc-ibps-photo-signature-resizer</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ssc-upsc-ibps-photo-signature-resizer" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/campus-france-photo-50ko</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/campus-france-photo-50ko" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/uk-passport-photo-35x45mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/uk-passport-photo-35x45mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/canada-passport-visa-photo-50x70mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/canada-passport-visa-photo-50x70mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/passport-photo-4x6-print-sheet</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/passport-photo-4x6-print-sheet" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/qr</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/qr" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/qr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/qr" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/qr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/qr" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/about</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/about" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/legal</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/legal" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/legal" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/legal" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/legal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/legal" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/privacy</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/privacy" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/contact</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/contact" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/how-to-compress-photo-to-50kb-online-passport-visa</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/pure-white-background-passport-photo-and-amazon-1000x1000</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/how-to-create-permanent-qr-code-that-never-expires-free</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/wifi-qr-code-generator-share-guest-wifi-without-password</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/vcard-3-0-qr-code-generator-digital-business-card-offline</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/blog/how-to-compress-qr-code-image-under-20kb-without-blur</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/compress-photo-to-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/compress-photo-to-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/compress-photo-to-100kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-100kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/compress-photo-to-200kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-200kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/compress-signature-to-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-signature-to-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/ants-photo-identite-50ko</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ants-photo-identite-50ko" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/photo-cnie-maroc-35x45mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/photo-cnie-maroc-35x45mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/passport-photo-35x45mm-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/passport-photo-35x45mm-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/ds160-photo-compressor-600x600</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ds160-photo-compressor-600x600" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/ssc-upsc-photo-signature-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ssc-upsc-photo-signature-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/compress-photo-to-pdf-under-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-pdf-under-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/amazon-1000x1000-white-background-photo</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/amazon-1000x1000-white-background-photo" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/compress-photo-to-10kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-10kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/compress-photo-to-30kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-30kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/compress-photo-to-200kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-200kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/ssc-upsc-ibps-photo-signature-resizer</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ssc-upsc-ibps-photo-signature-resizer" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/campus-france-photo-50ko</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/campus-france-photo-50ko" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/uk-passport-photo-35x45mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/uk-passport-photo-35x45mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/canada-passport-visa-photo-50x70mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/canada-passport-visa-photo-50x70mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/passport-photo-4x6-print-sheet</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/passport-photo-4x6-print-sheet" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/qr</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/qr" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/qr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/qr" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/qr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/qr" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/about</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/about" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/legal</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/legal" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/legal" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/legal" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/legal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/legal" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/privacy</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/privacy" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/contact</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/contact" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/how-to-compress-photo-to-50kb-online-passport-visa</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/pure-white-background-passport-photo-and-amazon-1000x1000</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/how-to-create-permanent-qr-code-that-never-expires-free</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/wifi-qr-code-generator-share-guest-wifi-without-password</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/vcard-3-0-qr-code-generator-digital-business-card-offline</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/blog/how-to-compress-qr-code-image-under-20kb-without-blur</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/compress-photo-to-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/compress-photo-to-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/compress-photo-to-100kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-100kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/compress-photo-to-200kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-200kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/compress-signature-to-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-signature-to-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-signature-to-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/ants-photo-identite-50ko</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ants-photo-identite-50ko" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ants-photo-identite-50ko" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/photo-cnie-maroc-35x45mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/photo-cnie-maroc-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/photo-cnie-maroc-35x45mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/passport-photo-35x45mm-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/passport-photo-35x45mm-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/passport-photo-35x45mm-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/ds160-photo-compressor-600x600</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ds160-photo-compressor-600x600" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ds160-photo-compressor-600x600" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/ssc-upsc-photo-signature-20kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ssc-upsc-photo-signature-20kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ssc-upsc-photo-signature-20kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/compress-photo-to-pdf-under-50kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-pdf-under-50kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-pdf-under-50kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/amazon-1000x1000-white-background-photo</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/amazon-1000x1000-white-background-photo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/amazon-1000x1000-white-background-photo" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/compress-photo-to-10kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-10kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-10kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/compress-photo-to-30kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-30kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-30kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/compress-photo-to-200kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/compress-photo-to-200kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/compress-photo-to-200kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/ssc-upsc-ibps-photo-signature-resizer</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/ssc-upsc-ibps-photo-signature-resizer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/ssc-upsc-ibps-photo-signature-resizer" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/campus-france-photo-50ko</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/campus-france-photo-50ko" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/campus-france-photo-50ko" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/uk-passport-photo-35x45mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/uk-passport-photo-35x45mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/uk-passport-photo-35x45mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/canada-passport-visa-photo-50x70mm</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/canada-passport-visa-photo-50x70mm" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/canada-passport-visa-photo-50x70mm" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/passport-photo-4x6-print-sheet</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/passport-photo-4x6-print-sheet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/passport-photo-4x6-print-sheet" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/qr</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/qr" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/qr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/qr" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/qr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/qr" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/about</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/about" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/legal</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/legal" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/legal" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/legal" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/legal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/legal" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/privacy</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/privacy" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/contact</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/contact" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-photo-to-20kb-exact-without-losing-quality" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-handwritten-signature-to-20kb-remove-paper-shadow" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/how-to-compress-photo-to-50kb-online-passport-visa</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-photo-to-50kb-online-passport-visa" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/35x45mm-biometric-passport-id-photo-size-pixels-guide" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/pure-white-background-passport-photo-and-amazon-1000x1000</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/how-to-create-permanent-qr-code-that-never-expires-free</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-create-permanent-qr-code-that-never-expires-free" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/wifi-qr-code-generator-share-guest-wifi-without-password</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/wifi-qr-code-generator-share-guest-wifi-without-password" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/vcard-3-0-qr-code-generator-digital-business-card-offline</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/vcard-3-0-qr-code-generator-digital-business-card-offline" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/restaurant-cafe-menu-qr-code-generator-table-tent-free" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/whatsapp-qr-code-generator-click-to-chat-prefilled-message" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-add-custom-logo-to-qr-code-30-percent-error-correction" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/vector-svg-vs-300-dpi-png-qr-code-for-print-packaging-signage" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/free-code-128-barcode-generator-printable-sku-labels-svg-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/static-vs-dynamic-qr-code-difference-privacy-security-guide" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/blog/how-to-compress-qr-code-image-under-20kb-without-blur</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/how-to-compress-qr-code-image-under-20kb-without-blur" />
   </url>
 </urlset>

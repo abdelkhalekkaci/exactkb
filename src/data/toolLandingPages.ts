@@ -6,6 +6,7 @@ export interface ToolLandingPageConfig {
   targetKb: number;
   customWidth?: number;
   customHeight?: number;
+  autoFeature?: 'grid-framing' | 'print-sheet' | 'name-slate';
   badgeText: Record<LocaleCode, string>;
   title: Record<LocaleCode, string>;
   metaDescription: Record<LocaleCode, string>;
@@ -108,10 +109,10 @@ export const OFFICIAL_PORTAL_SPEC_TABLE: OfficialPortalSpecRow[] = [
   {
     id: 'india-ssc-upsc',
     portalName: {
-      en: 'India SSC, UPSC, IBPS, SBI & NEET Photo Upload',
-      fr: 'Inde SSC, UPSC, IBPS & Concours Administratifs',
-      es: 'India SSC, UPSC, IBPS y Portales Oficiales',
-      ar: 'الهند SSC وUPSC وIBPS وبوابات الامتحانات'
+      en: 'India SSC, UPSC, IBPS, SBI & NEET (Photo + Name/Date)',
+      fr: 'Inde SSC, UPSC, IBPS & NEET (Photo + Nom & Date)',
+      es: 'India SSC, UPSC, IBPS y NEET (Foto + Nombre y Fecha)',
+      ar: 'الهند SSC وUPSC وIBPS وNEET (صورة مع الاسم والتاريخ)'
     },
     countryFlag: '🇮🇳',
     dimensionsMm: '35 × 45 mm',
@@ -119,12 +120,100 @@ export const OFFICIAL_PORTAL_SPEC_TABLE: OfficialPortalSpecRow[] = [
     targetKbLabel: '20 KB – 50 KB Exact',
     targetKbValue: 20,
     presetId: 'schengen-35x45',
-    routeSlug: 'compress-photo-to-20kb',
+    routeSlug: 'ssc-upsc-ibps-photo-signature-resizer',
     backgroundSpec: {
-      en: 'Plain white background, both ears visible',
-      fr: 'Fond blanc uni, visage dégagé',
-      es: 'Fondo blanco liso, rostro despejado',
-      ar: 'خلفية بيضاء سادة مع وضوح الوجه'
+      en: 'White background, optional Name & Date banner',
+      fr: 'Fond blanc uni, bandeau Nom & Date en option',
+      es: 'Fondo blanco liso, banda de Nombre y Fecha opcional',
+      ar: 'خلفية بيضاء سادة مع خيار شريط الاسم والتاريخ'
+    }
+  },
+  {
+    id: 'campus-france',
+    portalName: {
+      en: 'Campus France (Études en France Pastel Portal)',
+      fr: 'Campus France (Dossier Études en France < 50 Ko)',
+      es: 'Campus France (Portal Études en France < 50 KB)',
+      ar: 'كامبوس فرانس Campus France (ملف الدراسة في فرنسا < 50 كيلوبايت)'
+    },
+    countryFlag: '🎓',
+    dimensionsMm: '35 × 45 mm',
+    dimensionsPx: '413 × 531 px (300 DPI)',
+    targetKbLabel: '≤ 50 KB Strict',
+    targetKbValue: 50,
+    presetId: 'schengen-35x45',
+    routeSlug: 'campus-france-photo-50ko',
+    backgroundSpec: {
+      en: 'Plain light or white background, strict 50 KB max',
+      fr: 'Fond clair ou blanc uni, maximum 50 Ko obligatoire',
+      es: 'Fondo claro o blanco, máximo estricto de 50 KB',
+      ar: 'خلفية فاتحة أو بيضاء بحد أقصى 50 كيلوبايت'
+    }
+  },
+  {
+    id: 'uk-hmpo-passport',
+    portalName: {
+      en: 'UK Passport & Visa Photo (HM Passport Office)',
+      fr: 'Passeport & Visa Royaume-Uni (UK 35×45 mm)',
+      es: 'Pasaporte y Visa Reino Unido (UK 35×45 mm)',
+      ar: 'جواز السفر وتأشيرة بريطانيا (UK 35×45 مم)'
+    },
+    countryFlag: '🇬🇧',
+    dimensionsMm: '35 × 45 mm',
+    dimensionsPx: '413 × 531 px (300 DPI)',
+    targetKbLabel: '≤ 50 KB – 100 KB',
+    targetKbValue: 50,
+    presetId: 'schengen-35x45',
+    routeSlug: 'uk-passport-photo-35x45mm',
+    backgroundSpec: {
+      en: 'Plain cream, light grey, or white background',
+      fr: 'Fond uni clair ou blanc sans ombre',
+      es: 'Fondo claro uniforme o blanco sin sombras',
+      ar: 'خلفية فاتحة موحدة أو بيضاء بدون ظلال'
+    }
+  },
+  {
+    id: 'canada-ircc-visa',
+    portalName: {
+      en: 'Canada Passport, Visa & PR Photo (IRCC 50×70 mm)',
+      fr: 'Passeport, Visa & RP Canada (IRCC 50×70 mm)',
+      es: 'Pasaporte y Visa de Canadá (IRCC 50×70 mm)',
+      ar: 'جواز سفر وتأشيرة كندا (IRCC مقاس 50×70 مم)'
+    },
+    countryFlag: '🇨🇦',
+    dimensionsMm: '50 × 70 mm',
+    dimensionsPx: '591 × 827 px (300 DPI)',
+    targetKbLabel: '≤ 100 KB',
+    targetKbValue: 100,
+    presetId: 'custom',
+    routeSlug: 'canada-passport-visa-photo-50x70mm',
+    backgroundSpec: {
+      en: 'Plain white or light-colored background',
+      fr: 'Fond blanc uni ou très clair sans ombre',
+      es: 'Fondo blanco liso o claro sin sombras',
+      ar: 'خلفية بيضاء سادة وواضحة بدون ظلال'
+    }
+  },
+  {
+    id: 'printable-4x6-sheet',
+    portalName: {
+      en: '4×6 Inch (10×15 cm) Sheet of 8 Passport Photos',
+      fr: 'Planche Photo 10×15 cm (4×6") de 8 Photos d’Identité',
+      es: 'Hoja Imprimible 10×15 cm (4×6") con 8 Fotos de Pasaporte',
+      ar: 'ورقة طباعة 10×15 سم (4×6 بوصة) تضم 8 صور شخصية'
+    },
+    countryFlag: '🖨️',
+    dimensionsMm: '101.6 × 152.4 mm (4×6")',
+    dimensionsPx: '1800 × 1200 px (300 DPI)',
+    targetKbLabel: '8 Photos + Cut Marks',
+    targetKbValue: 50,
+    presetId: 'schengen-35x45',
+    routeSlug: 'passport-photo-4x6-print-sheet',
+    backgroundSpec: {
+      en: 'Ready to print at home or pharmacy photo kiosk',
+      fr: 'Prêt à imprimer chez soi ou en borne photo',
+      es: 'Listo para imprimir en casa o en tienda de fotos',
+      ar: 'جاهزة للطباعة المنزليّة أو في استوديو التصوير'
     }
   },
   {
@@ -1154,6 +1243,618 @@ export const TOOL_LANDING_PAGES: ToolLandingPageConfig[] = [
         {
           question: 'لماذا ترفض أمازون الصور ذات الخلفية الرمادية الفاتحة؟',
           answer: 'تفحص خوارزميات أمازون حواف الصورة للتأكد من أنها باللون الأبيض النقي RGB(255,255,255)، وتقوم أداتنا بضبط ذلك تلقائياً بمقاس 1000×1000 بكسل.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'compress-photo-to-10kb',
+    presetId: 'wet-ink-sig',
+    targetKb: 10,
+    badgeText: {
+      en: '10 KB STRICT LIMIT · SIGNATURE & THUMBPRINT READY',
+      fr: 'LIMITE EXACTE 10 KO · SIGNATURE & PHOTO D’IDENTITÉ',
+      es: 'LÍMITE EXACTO 10 KB · FIRMA Y FOTO DE DOCUMENTO',
+      ar: 'حجم 10 كيلوبايت دقيق · للتوقيعات والصور الرسمية'
+    },
+    title: {
+      en: 'Compress Photo & Signature to 10KB Online Free (Exact Size) | CompressPhoto',
+      fr: 'Compresser Photo et Signature à 10 Ko en Ligne Gratuit | CompressPhoto',
+      es: 'Comprimir Foto y Firma a 10KB Online Gratis (Tamaño Exacto) | CompressPhoto',
+      ar: 'ضغط الصورة والتوقيع إلى 10 كيلوبايت أونلاين مجاناً | CompressPhoto'
+    },
+    metaDescription: {
+      en: 'Compress any signature scan, thumb impression, or ID photo under 10KB online without losing sharpness. Removes grey paper shadows privately on your device.',
+      fr: 'Compressez une signature manuscrite ou une photo d’identité à moins de 10 Ko en ligne sans perte de netteté. Nettoyage du fond blanc 100% privé.',
+      es: 'Comprime cualquier firma manuscrita o foto de documento a menos de 10KB online sin perder nitidez. Limpieza de fondo blanco 100% privada.',
+      ar: 'اضغط أي توقيع خطي أو بصمة أو صورة شخصية إلى أقل من 10 كيلوبايت أونلاين بدقة عالية وخصوصية تامة على جهازك.'
+    },
+    h1: {
+      en: 'Compress Photo & Signature to 10KB Online (Exact Size)',
+      fr: 'Compresser une Photo ou Signature à 10 Ko en Ligne',
+      es: 'Comprimir Foto o Firma a 10KB Online (Tamaño Exacto)',
+      ar: 'ضغط الصورة أو التوقيع إلى 10 كيلوبايت أونلاين'
+    },
+    subtitle: {
+      en: 'Built for portals requiring a strict 10KB–20KB file size for handwritten signatures, thumb impressions, and compact ID photos.',
+      fr: 'Conçu pour les formulaires exigeant un fichier inférieur à 10 Ko ou 20 Ko pour les signatures manuscrites et photos d’identité.',
+      es: 'Diseñado para portales que exigen un peso máximo de 10KB a 20KB para firmas manuscritas y fotos de solicitud.',
+      ar: 'مصمم للبوابات التي تشترط حجماً لا يتجاوز 10 إلى 20 كيلوبايت للتوقيعات الخطية والبصمات والصور الشخصية.'
+    },
+    directAnswer: {
+      en: 'To compress a signature or photo under 10KB without making it unreadable, upload your image above. The tool automatically whitens shadowed paper and locks the file size between 8.5 KB and 9.9 KB.',
+      fr: 'Pour réduire une signature ou une photo sous 10 Ko tout en gardant un tracé net, importez votre image ci-dessus. L’outil blanchit le papier et verrouille le poids juste sous 10 Ko.',
+      es: 'Para reducir una firma o foto a menos de 10KB conservando trazos nítidos, sube tu imagen arriba. La herramienta blanquea el papel y ajusta el peso justo debajo de 10 KB.',
+      ar: 'لضغط صورة التوقيع أو الوثيقة تحت 10 كيلوبايت مع الحفاظ على وضوح الخط، ارفع صورتك أعلاه ليتم تبييض الخلفية وضبط الحجم تلقائياً تحت 10 كيلوبايت.'
+    },
+    portalSpecs: {
+      dimensionsMm: '47 × 15 mm / 35 × 45 mm',
+      dimensionsPx: '560 × 180 px (300 DPI)',
+      maxKb: '≤ 10.0 KB Strict',
+      background: 'Pure White Paper (#FFFFFF)',
+      standardCode: '10KB Exam & Portal Spec'
+    },
+    specificFaqs: {
+      en: [
+        {
+          question: 'How do I keep a 10KB signature clear and readable?',
+          answer: 'By turning shadowed grey paper into pure white (#FFFFFF), almost all of the 10KB budget is dedicated to your pen strokes so the signature stays crisp.'
+        },
+        {
+          question: 'Can I also compress a portrait photo to 10KB?',
+          answer: 'Yes. Switch Step 1 from Signature to Passport (35×45 mm) and keep Step 2 at 10 KB to compress any portrait under 10,240 bytes.'
+        }
+      ],
+      fr: [
+        {
+          question: 'Comment garder une signature lisible à moins de 10 Ko ?',
+          answer: 'En transformant le fond gris du papier en blanc pur (#FFFFFF), l’outil concentre toute la qualité sur le trait du stylo tout en restant sous 10 Ko.'
+        }
+      ],
+      es: [
+        {
+          question: '¿Cómo mantener una firma legible en menos de 10KB?',
+          answer: 'Al convertir el fondo gris del papel en blanco puro (#FFFFFF), toda la calidad se dedica al trazo del bolígrafo sin superar los 10 KB.'
+        }
+      ],
+      ar: [
+        {
+          question: 'كيف أحافظ على وضوح التوقيع بحجم أقل من 10 كيلوبايت؟',
+          answer: 'من خلال تحويل خلفية الورقة الرمادية إلى اللون الأبيض النقي، يتم تركيز كامل الجودة على حبر التوقيع ليبقى واضحاً تماماً تحت 10 كيلوبايت.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'compress-photo-to-30kb',
+    presetId: 'schengen-35x45',
+    targetKb: 30,
+    badgeText: {
+      en: '30 KB TARGET · 300 DPI PASSPORT & EXAM PHOTO',
+      fr: 'CIBLE EXACTE 30 KO · PHOTO D’IDENTITÉ & DOSSIER',
+      es: 'LÍMITE EXACTO 30 KB · FOTO DE PASAPORTE Y TRÁMITE',
+      ar: 'حجم 30 كيلوبايت دقيق · لصور الوثائق والتسجيل'
+    },
+    title: {
+      en: 'Compress Photo to 30KB Online Free (Exact KB Size) | CompressPhoto',
+      fr: 'Compresser Photo à 30 Ko en Ligne Gratuit (Taille Exacte) | CompressPhoto',
+      es: 'Comprimir Foto a 30KB Online Gratis (Tamaño Exacto) | CompressPhoto',
+      ar: 'ضغط الصورة إلى 30 كيلوبايت أونلاين مجاناً بدقة عالية | CompressPhoto'
+    },
+    metaDescription: {
+      en: 'Resize and compress any passport photo, visa portrait, or ID picture to 30KB online without losing quality. Instant 300 DPI formatting on your device.',
+      fr: 'Redimensionnez et compressez toute photo d’identité, passeport ou dossier à moins de 30 Ko en ligne sans perte de qualité. 100% privé.',
+      es: 'Ajusta y comprime cualquier foto de pasaporte, DNI o solicitud a menos de 30KB online sin perder nitidez. 100% privado en tu dispositivo.',
+      ar: 'اضبط واضغط أي صورة شخصية أو صورة جواز سفر إلى 30 كيلوبايت أونلاين مجاناً مع الحفاظ على وضوح الملامح بدقة 300 DPI.'
+    },
+    h1: {
+      en: 'Compress Photo to 30KB Online Free',
+      fr: 'Compresser une Photo à 30 Ko en Ligne Gratuitement',
+      es: 'Comprimir Foto a 30KB Online Gratis',
+      ar: 'ضغط الصورة إلى 30 كيلوبايت أونلاين مجاناً'
+    },
+    subtitle: {
+      en: 'Ideal for portals requiring a 20KB–30KB or 15KB–30KB photo upload limit at 35×45 mm or custom dimensions.',
+      fr: 'Idéal pour les inscriptions en ligne demandant une photo entre 20 Ko et 30 Ko au format 35×45 mm ou personnalisé.',
+      es: 'Ideal para portales de inscripción que piden una foto entre 20KB y 30KB en formato 35×45 mm o personalizado.',
+      ar: 'مثالي لبوابات التسجيل والجامعات التي تطلب صورة شخصية بحجم يتراوح بين 20 و30 كيلوبايت.'
+    },
+    directAnswer: {
+      en: 'A 30KB ceiling is the sweet spot for online exam and university portals that require a file between 20KB and 50KB. Upload your image above to lock it between 27 KB and 29.8 KB at 300 DPI.',
+      fr: 'Une cible de 30 Ko est idéale pour les portails demandant une photo comprise entre 20 Ko et 50 Ko. Importez votre photo ci-dessus pour obtenir un fichier net entre 27 Ko et 29,8 Ko.',
+      es: 'Un objetivo de 30KB es perfecto para formularios que piden un archivo entre 20KB y 50KB. Sube tu foto arriba para ajustarla entre 27 KB y 29,8 KB a 300 DPI.',
+      ar: 'يعد حجم 30 كيلوبايت خياراً مثالياً للمواقع التي تطلب صورة بين 20 و50 كيلوبايت. ارفع صورتك أعلاه لضبطها بدقة تحت 30 كيلوبايت.'
+    },
+    portalSpecs: {
+      dimensionsMm: '35 × 45 mm (or Custom)',
+      dimensionsPx: '413 × 531 px (300 DPI)',
+      maxKb: '≤ 30.0 KB (30,720 Bytes)',
+      background: 'Pure White (#FFFFFF)',
+      standardCode: '20KB–30KB Portal Spec'
+    },
+    specificFaqs: {
+      en: [
+        {
+          question: 'Will a 30KB photo pass a "20KB to 50KB" upload requirement?',
+          answer: 'Yes. Compressing to ~28–29.8 KB safely satisfies any portal asking for a photo between 20 KB and 50 KB.'
+        }
+      ],
+      fr: [
+        {
+          question: 'Une photo de 30 Ko est-elle acceptée pour une exigence « entre 20 Ko et 50 Ko » ?',
+          answer: 'Oui, un fichier calibré autour de 28 à 29,8 Ko passe immédiatement sur tous les portails demandant entre 20 Ko et 50 Ko.'
+        }
+      ],
+      es: [
+        {
+          question: '¿Una foto de 30KB sirve para un requisito de "entre 20KB y 50KB"?',
+          answer: 'Sí, un archivo ajustado entre 28 KB y 29,8 KB cumple perfectamente con cualquier rango de 20 KB a 50 KB.'
+        }
+      ],
+      ar: [
+        {
+          question: 'هل تُقبل صورة بحجم 30 كيلوبايت في المواقع التي تطلب من 20 إلى 50 كيلوبايت؟',
+          answer: 'نعم، ضبط الصورة عند حدود 28 إلى 29.8 كيلوبايت يضمن قبولها فوراً في جميع النماذج التي تشترط حجماً بين 20 و50 كيلوبايت.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'compress-photo-to-200kb',
+    presetId: 'us-visa-2x2',
+    targetKb: 200,
+    badgeText: {
+      en: '200 KB HIGH-DEFINITION · VISA, PASSPORT & E-COMMERCE',
+      fr: 'LIMITE 200 KO HAUTE DÉFINITION · VISA & PASSEPORT',
+      es: 'LÍMITE 200 KB ALTA DEFINICIÓN · VISA Y PASAPORTE',
+      ar: 'سقف 200 كيلوبايت عالي الوضوح · للتأشيرات وجوازات السفر'
+    },
+    title: {
+      en: 'Compress Photo to 200KB Online Free (High Quality 300 DPI) | CompressPhoto',
+      fr: 'Compresser Photo à 200 Ko en Ligne Gratuit (Haute Qualité) | CompressPhoto',
+      es: 'Comprimir Foto a 200KB Online Gratis (Alta Calidad) | CompressPhoto',
+      ar: 'ضغط الصورة إلى 200 كيلوبايت أونلاين مجاناً بجودة عالية | CompressPhoto'
+    },
+    metaDescription: {
+      en: 'Compress high-resolution visa photos (US DS-160 240KB max), passport scans, and profile pictures under 200KB online with near-lossless 300 DPI clarity.',
+      fr: 'Compressez vos photos de visa (DS-160), passeports et portraits haute résolution à moins de 200 Ko en ligne sans aucune perte visible.',
+      es: 'Comprime fotos de visa (DS-160), pasaportes y retratos de alta resolución a menos de 200KB online conservando toda la nitidez.',
+      ar: 'اضغط صور التأشيرات وجوازات السفر والصور عالية الدقة إلى أقل من 200 كيلوبايت أونلاين مع الحفاظ الكامل على التفاصيل.'
+    },
+    h1: {
+      en: 'Compress Photo to 200KB Online (High-Resolution 300 DPI)',
+      fr: 'Compresser une Photo à 200 Ko en Ligne (Haute Définition)',
+      es: 'Comprimir Foto a 200KB Online (Alta Resolución 300 DPI)',
+      ar: 'ضغط الصورة إلى 200 كيلوبايت أونلاين بجودة عالية'
+    },
+    subtitle: {
+      en: 'Perfect for US Visa DS-160 & Green Card Lottery (240KB limit), international e-Visas, and high-detail ID documents.',
+      fr: 'Parfait pour le visa américain DS-160 et DV Lottery (limite 240 Ko), les e-Visas internationaux et les documents haute netteté.',
+      es: 'Perfecto para la visa de EE.UU. DS-160 y Lotería DV (límite 240KB), e-Visas internacionales y documentos de alta nitidez.',
+      ar: 'مثالي لتأشيرة أمريكا DS-160 واللوتري (الحد الأقصى 240 كيلوبايت) والتأشيرات الإلكترونية الدولية.'
+    },
+    directAnswer: {
+      en: 'Many modern embassy portals—including the US Department of State CEAC (240 KB max), UK eVisa, and Canada IRCC—accept photos up to 200KB–240KB. Compressing to 200KB preserves studio-grade skin detail while guaranteeing instant upload acceptance.',
+      fr: 'De nombreux portails consulaires (comme le DS-160 américain limité à 240 Ko ou les visas internationaux) acceptent jusqu’à 200 Ko. Ce réglage conserve une qualité studio maximale sans jamais dépasser la limite.',
+      es: 'Muchos portales consulares (como el DS-160 de EE.UU. con límite de 240 KB) permiten hasta 200 KB. Este ajuste conserva calidad de estudio garantizando una subida sin errores.',
+      ar: 'تقبل العديد من بوابات السفارات الحديثة (مثل تأشيرة أمريكا DS-160 بحد 240 كيلوبايت) صوراً حتى 200 كيلوبايت، مما يمنحك أعلى جودة ممكنة مع ضمان القبول الفوري.'
+    },
+    portalSpecs: {
+      dimensionsMm: '51 × 51 mm (2×2") or 35 × 45 mm',
+      dimensionsPx: '600 × 600 px (300 DPI)',
+      maxKb: '≤ 200.0 KB (Max 240 KB)',
+      background: 'Pure White (#FFFFFF)',
+      standardCode: 'US DOS / International e-Visa'
+    },
+    specificFaqs: {
+      en: [
+        {
+          question: 'Does a 200KB photo meet the US Visa DS-160 240KB requirement?',
+          answer: 'Yes. The US Department of State requires a 600×600 pixel JPEG under 240 KB. Locking your photo under 200 KB ensures 100% compliance with maximum visual sharpness.'
+        }
+      ],
+      fr: [
+        {
+          question: 'Une photo de 200 Ko respecte-t-elle la limite de 240 Ko du visa US DS-160 ?',
+          answer: 'Oui. Le Département d’État américain exige un fichier 600×600 px inférieur à 240 Ko. Une cible à 200 Ko garantit une qualité optimale et une acceptation immédiate.'
+        }
+      ],
+      es: [
+        {
+          question: '¿Una foto de 200KB cumple el requisito de 240KB de la visa DS-160?',
+          answer: 'Sí. El Departamento de Estado de EE.UU. exige una imagen de 600×600 px menor de 240 KB. Ajustarla bajo 200 KB asegura la máxima nitidez.'
+        }
+      ],
+      ar: [
+        {
+          question: 'هل تتوافق صورة 200 كيلوبايت مع شرط 240 كيلوبايت لتأشيرة أمريكا DS-160؟',
+          answer: 'نعم، تشترط الخارجية الأمريكية صورة بمقاس 600×600 بكسل وأقل من 240 كيلوبايت، لذا فإن حجم 200 كيلوبايت يمنحك أعلى دقة مع قبول مضمون.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'ssc-upsc-ibps-photo-signature-resizer',
+    presetId: 'schengen-35x45',
+    targetKb: 20,
+    autoFeature: 'name-slate',
+    badgeText: {
+      en: 'SSC · UPSC · IBPS · SBI · NEET · NAME & DATE ON PHOTO',
+      fr: 'CONCOURS SSC · UPSC · IBPS · BANDEAU NOM & DATE INCLUS',
+      es: 'EXÁMENES SSC · UPSC · IBPS · BANDA DE NOMBRE Y FECHA',
+      ar: 'امتحانات SSC وUPSC وIBPS وNEET · مع شريط الاسم والتاريخ'
+    },
+    title: {
+      en: 'SSC, UPSC, IBPS & NEET Photo & Signature Resizer (20KB–50KB + Name & Date) | CompressPhoto',
+      fr: 'Redimensionner Photo & Signature SSC, UPSC, IBPS (20 Ko–50 Ko + Nom & Date) | CompressPhoto',
+      es: 'Ajustar Foto y Firma SSC, UPSC, IBPS (20KB–50KB + Nombre y Fecha) | CompressPhoto',
+      ar: 'ضبط حجم الصورة والتوقيع لامتحانات SSC وUPSC وIBPS (20–50 كيلوبايت مع الاسم والتاريخ) | CompressPhoto'
+    },
+    metaDescription: {
+      en: 'Resize and compress photos (20KB–50KB) and signatures (10KB–20KB) for SSC, UPSC, IBPS, SBI, and NEET exams. Includes free Name & Date of Photo (DOP) slate banner.',
+      fr: 'Compressez vos photos (20–50 Ko) et signatures (10–20 Ko) pour les concours administratifs avec ajout gratuit du bandeau Nom et Date sur la photo.',
+      es: 'Comprime fotos (20–50KB) y firmas (10–20KB) para exámenes oficiales con opción gratuita para añadir banda de Nombre y Fecha en la foto.',
+      ar: 'اضبط واضغط الصور الشخصية (20–50 كيلوبايت) والتوقيعات (10–20 كيلوبايت) للامتحانات الرسمية مع ميزة إضافة الاسم وتاريخ الصورة مجاناً.'
+    },
+    h1: {
+      en: 'SSC, UPSC, IBPS & NEET Photo & Signature Compressor (With Name & Date)',
+      fr: 'Compresseur Photo & Signature Concours (20 Ko–50 Ko avec Nom & Date)',
+      es: 'Compresor de Foto y Firma para Exámenes (20KB–50KB con Nombre y Fecha)',
+      ar: 'أداة ضبط الصور والتوقيعات للامتحانات (20–50 كيلوبايت مع الاسم والتاريخ)'
+    },
+    subtitle: {
+      en: 'Pre-configured for 20KB–50KB passport photos, 10KB–20KB signatures, and automatic Name & Date of Photo (DOP) bottom slate.',
+      fr: 'Pré-configuré pour les photos de 20 à 50 Ko, signatures de 10 à 20 Ko et bandeau inférieur Nom & Date de prise de vue.',
+      es: 'Preconfigurado para fotos de 20 a 50 KB, firmas de 10 a 20 KB y banda inferior con Nombre y Fecha de la foto.',
+      ar: 'مضبوط مسبقاً للصور (20–50 كيلوبايت) والتوقيعات (10–20 كيلوبايت) مع شريط الاسم وتاريخ التقاط الصورة.'
+    },
+    directAnswer: {
+      en: 'SSC, UPSC, IBPS, SBI, and NEET portals require a 3.5×4.5 cm (35×45 mm) colour photo between 20KB and 50KB and a black/blue ink signature on white paper between 10KB and 20KB. You can also toggle the Name & Date banner directly below Step 2.',
+      fr: 'Les portails de concours exigent une photo couleur 3,5×4,5 cm (35×45 mm) entre 20 Ko et 50 Ko ainsi qu’une signature sur papier blanc entre 10 Ko et 20 Ko, souvent accompagnée du nom et de la date en bas de la photo.',
+      es: 'Los portales de exámenes exigen una foto de 3,5×4,5 cm entre 20KB y 50KB y una firma sobre papel blanco entre 10KB y 20KB, con opción de incluir el nombre y la fecha en el borde inferior.',
+      ar: 'تشترط بوابات الامتحانات صورة ملونة بمقاس 3.5×4.5 سم بحجم 20 إلى 50 كيلوبايت وتوقيعاً خطياً بحجم 10 إلى 20 كيلوبايت، مع إمكانية إضافة شريط الاسم والتاريخ أسفل الصورة.'
+    },
+    portalSpecs: {
+      dimensionsMm: '35 × 45 mm (Photo) / 47 × 15 mm (Signature)',
+      dimensionsPx: '413 × 531 px / 560 × 180 px',
+      maxKb: '20–50 KB (Photo) · 10–20 KB (Sig)',
+      background: 'Pure White + Optional Name/Date Slate',
+      standardCode: 'SSC / UPSC / IBPS / NTA Spec'
+    },
+    specificFaqs: {
+      en: [
+        {
+          question: 'How do I add my Name and Date of Photo (DOP) at the bottom of the photo?',
+          answer: 'The "Add Name & Date on Photo" panel is enabled automatically on this page. Type your full name and click "Today" to print a clean white or black slate at the bottom of your photo.'
+        },
+        {
+          question: 'How do I switch from compressing my photo (20KB–50KB) to my signature (10KB–20KB)?',
+          answer: 'In Step 1 above, click "Signature (< 20 KB)". The tool automatically switches to signature dimensions, cleans grey paper shadows, and locks the file size under 20 KB (or 10 KB).'
+        }
+      ],
+      fr: [
+        {
+          question: 'Comment ajouter mon Nom et la Date en bas de la photo ?',
+          answer: 'Le panneau « Ajouter Nom & Date » est ouvert sous l’Étape 2. Saisissez votre nom et la date du jour pour afficher automatiquement le bandeau réglementaire.'
+        }
+      ],
+      es: [
+        {
+          question: '¿Cómo añadir mi Nombre y Fecha en la parte inferior de la foto?',
+          answer: 'El panel "Añadir Nombre y Fecha" está activo debajo del Paso 2. Escribe tu nombre y selecciona la fecha para mostrar la banda automáticamente.'
+        }
+      ],
+      ar: [
+        {
+          question: 'كيف أضيف اسمي وتاريخ الصورة في الشريط السفلي؟',
+          answer: 'لوحة إضافة الاسم والتاريخ مفعّلة تلقائياً في هذه الصفحة؛ اكتب اسمك واختر تاريخ اليوم ليظهر الشريط بوضوح أسفل الصورة.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'campus-france-photo-50ko',
+    presetId: 'schengen-35x45',
+    targetKb: 50,
+    badgeText: {
+      en: 'CAMPUS FRANCE PASTEL · 35×45 MM · STRICT 50 KB MAX',
+      fr: 'CAMPUS FRANCE (ÉTUDES EN FRANCE) · 35×45 MM · MAX 50 KO',
+      es: 'CAMPUS FRANCE · 35×45 MM · MÁXIMO ESTRICTO 50 KB',
+      ar: 'كامبوس فرانس Campus France · مقاس 35×45 مم · أقل من 50 كيلوبايت'
+    },
+    title: {
+      en: 'Campus France Photo 50KB (35x45mm) Online Compressor | CompressPhoto',
+      fr: 'Photo Campus France 50 Ko (35x45 mm) en Ligne Gratuit | CompressPhoto',
+      es: 'Foto Campus France 50KB (35x45 mm) Compresor Online | CompressPhoto',
+      ar: 'ضبط وضغط صورة كامبوس فرانس Campus France أقل من 50 كيلوبايت | CompressPhoto'
+    },
+    metaDescription: {
+      en: 'Resize and compress your ID photo for the Campus France (Études en France) portal to exact 35x45 mm proportions and strictly under the 50KB limit.',
+      fr: 'Redimensionnez et compressez votre photo d’identité pour votre dossier Campus France (Études en France) au format 35x45 mm et strictement moins de 50 Ko.',
+      es: 'Ajusta y comprime tu foto de identidad para la plataforma Campus France (Études en France) en formato 35x45 mm y estrictamente menos de 50 KB.',
+      ar: 'اضبط واضغط صورتك الشخصية لمنصة كامبوس فرانس (الدراسة في فرنسا) بمقاس 35×45 مم وبحجم يقل بدقة عن 50 كيلوبايت.'
+    },
+    h1: {
+      en: 'Campus France Photo Resizer & 50KB Compressor (35×45 mm)',
+      fr: 'Photo Campus France 50 Ko : Format 35×45 mm Homologué',
+      es: 'Foto para Campus France 50KB: Formato Oficial 35×45 mm',
+      ar: 'ضبط صورة كامبوس فرانس Campus France بحجم أقل من 50 كيلوبايت'
+    },
+    subtitle: {
+      en: 'Prevents the "File too large (> 50 KB)" error on the Études en France / Pastel student application platform.',
+      fr: 'Évite l’erreur « Fichier trop volumineux (> 50 Ko) » lors du dépôt de votre photo d’identité sur la plateforme Études en France.',
+      es: 'Evita el error de archivo demasiado pesado (> 50 KB) al subir tu foto en la plataforma Études en France.',
+      ar: 'يتجنب رسالة الخطأ الخاصة بتجاوز حجم 50 كيلوبايت عند رفع الصورة الشخصية على منصة الدراسة في فرنسا.'
+    },
+    directAnswer: {
+      en: 'The Campus France (Études en France) portal requires an official 35×45 mm identity photo weighing strictly no more than 50 kilobytes (50 Ko) in JPEG format. Upload your photo above to crop and lock it between 46 KB and 49.8 KB.',
+      fr: 'La plateforme Campus France (Études en France) impose une photo d’identité au format 35×45 mm pesant au maximum 50 kilo-octets (50 Ko) en format JPEG. Importez votre photo ci-dessus pour la calibrer automatiquement entre 46 Ko et 49,8 Ko.',
+      es: 'La plataforma Campus France exige una foto de identidad de 35×45 mm que pese como máximo 50 KB en formato JPEG. Sube tu foto arriba para ajustarla entre 46 KB y 49,8 KB.',
+      ar: 'تشترط منصة كامبوس فرانس (Études en France) صورة شخصية بمقاس 35×45 مم لا يتجاوز حجمها 50 كيلوبايت بصيغة JPEG. ارفع صورتك أعلاه لضبطها تلقائياً.'
+    },
+    portalSpecs: {
+      dimensionsMm: '35 × 45 mm',
+      dimensionsPx: '413 × 531 px (300 DPI)',
+      maxKb: '≤ 50.0 KB (50 Ko Strict)',
+      background: 'Plain Light or White (#FFFFFF)',
+      standardCode: 'Études en France / Pastel Spec'
+    },
+    specificFaqs: {
+      en: [
+        {
+          question: 'Why does Campus France reject my smartphone photo?',
+          answer: 'Smartphone photos are usually 2 MB to 5 MB and have a 4:3 ratio. Campus France requires a 35×45 mm portrait ratio and a maximum file size of 50 KB.'
+        }
+      ],
+      fr: [
+        {
+          question: 'Pourquoi le site Études en France refuse-t-il ma photo ?',
+          answer: 'Le portail bloque toute image dépassant 50 Ko. Notre outil réduit le poids juste sous 50 Ko (environ 48 Ko) tout en respectant les dimensions 35×45 mm (413×531 px).'
+        },
+        {
+          question: 'Puis-je aussi compresser mes justificatifs PDF pour Campus France ?',
+          answer: 'Oui, vous pouvez télécharger toute pièce d’identité ou photo directement en PDF léger via le bouton « Télécharger en PDF ».'
+        }
+      ],
+      es: [
+        {
+          question: '¿Por qué Campus France rechaza mi foto?',
+          answer: 'El portal rechaza cualquier imagen que supere los 50 KB. Nuestra herramienta la ajusta a ~48 KB manteniendo el formato 35×45 mm.'
+        }
+      ],
+      ar: [
+        {
+          question: 'لماذا ترفض منصة كامبوس فرانس قبول صورتي؟',
+          answer: 'يرفض الموقع أي صورة يتجاوز حجمها 50 كيلوبايت. تقوم أداتنا بضبط المقاس الرسمي 35×45 مم وتثبيت الحجم عند حدود 48 كيلوبايت.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'uk-passport-photo-35x45mm',
+    presetId: 'schengen-35x45',
+    targetKb: 50,
+    badgeText: {
+      en: 'UK HM PASSPORT OFFICE & VISA · 35×45 MM · 300 DPI',
+      fr: 'PASSEPORT & VISA ROYAUME-UNI (UK) · 35×45 MM',
+      es: 'PASAPORTE Y VISA REINO UNIDO (UK) · 35×45 MM',
+      ar: 'جواز سفر وتأشيرة بريطانيا (UK) · مقاس 35×45 مم'
+    },
+    title: {
+      en: 'UK Passport & Visa Photo Size (35x45mm) Online Compressor | CompressPhoto',
+      fr: 'Photo Passeport & Visa Royaume-Uni (35x45 mm) en Ligne | CompressPhoto',
+      es: 'Foto de Pasaporte y Visa Reino Unido (35x45 mm) Online | CompressPhoto',
+      ar: 'ضبط مقاس وحجم صورة جواز سفر وتأشيرة بريطانيا 35×45 مم | CompressPhoto'
+    },
+    metaDescription: {
+      en: 'Format and resize your UK passport, UKVI visa, or driving licence photo to official 35x45 mm (413x531 px at 300 DPI) specifications privately in your browser.',
+      fr: 'Formatez et compressez votre photo de passeport britannique ou visa UK au format officiel 35x45 mm (413x531 px à 300 DPI) directement dans votre navigateur.',
+      es: 'Ajusta y comprime tu foto de pasaporte británico o visa del Reino Unido al formato oficial 35x45 mm (413x531 px a 300 DPI) en tu navegador.',
+      ar: 'اضبط مقاس وحجم صورة جواز السفر البريطاني أو تأشيرة المملكة المتحدة بالمقاس الرسمي 35×45 مم (413×531 بكسل) مباشرة في متصفحك.'
+    },
+    h1: {
+      en: 'UK Passport & Visa Photo Resizer (35×45 mm)',
+      fr: 'Photo Passeport & Visa Royaume-Uni (Format 35×45 mm)',
+      es: 'Foto de Pasaporte y Visa del Reino Unido (35×45 mm)',
+      ar: 'ضبط صورة جواز السفر وتأشيرة بريطانيا (35×45 مم)'
+    },
+    subtitle: {
+      en: 'Calibrated to official 35×45 mm proportions with head-size alignment guide and printable 4×6" (10×15 cm) 8-photo sheet.',
+      fr: 'Calibré au format officiel 35×45 mm avec guide d’alignement du visage et planche imprimable 10×15 cm de 8 photos.',
+      es: 'Calibrado al tamaño oficial de 35×45 mm con guía de alineación facial y hoja imprimible de 8 fotos.',
+      ar: 'معاير بالمقاس الرسمي 35×45 مم مع دليل محاذاة الوجه وإمكانية طباعة ورقة تضم 8 صور.'
+    },
+    directAnswer: {
+      en: 'Standard UK passport, visa (UKVI), and photocard driving licence photos measure 35 mm wide by 45 mm high (413 × 531 pixels at 300 DPI), with the head measuring between 29 mm and 34 mm from chin to crown on a plain light background.',
+      fr: 'Les photos de passeport et de visa pour le Royaume-Uni mesurent 35 mm de large sur 45 mm de haut (413 × 531 pixels en 300 DPI), avec une hauteur de tête comprise entre 29 mm et 34 mm sur fond clair uni.',
+      es: 'Las fotos de pasaporte y visa del Reino Unido miden 35 mm de ancho por 45 mm de alto (413 × 531 píxeles a 300 DPI), sobre un fondo claro uniforme.',
+      ar: 'يبلغ المقاس الرسمي لصورة جواز السفر والتأشيرة البريطانية 35 مم عرضاً في 45 مم ارتفاعاً (413×531 بكسل بدقة 300 DPI) على خلفية فاتحة سادة.'
+    },
+    portalSpecs: {
+      dimensionsMm: '35 × 45 mm (Head 29–34 mm)',
+      dimensionsPx: '413 × 531 px (300 DPI)',
+      maxKb: '≤ 50 KB / 100 KB / 200 KB',
+      background: 'Plain Cream, Light Grey or White',
+      standardCode: 'HM Passport Office / UKVI Spec'
+    },
+    specificFaqs: {
+      en: [
+        {
+          question: 'Can I check if my head size is between 29mm and 34mm?',
+          answer: 'Yes. Turn on the "Face & Eye Alignment Guide" under Step 2 to align your eyes and head height within the official 35×45 mm biometric zones.'
+        }
+      ],
+      fr: [
+        {
+          question: 'Puis-je vérifier l’alignement du visage et des yeux ?',
+          answer: 'Oui, activez le « Guide d’Alignement Visage & Yeux » sous l’Étape 2 pour centrer votre visage selon les normes officielles.'
+        }
+      ],
+      es: [
+        {
+          question: '¿Puedo comprobar la alineación del rostro y los ojos?',
+          answer: 'Sí, activa la "Guía de Alineación de Rostro y Ojos" debajo del Paso 2 para centrar tu retrato correctamente.'
+        }
+      ],
+      ar: [
+        {
+          question: 'هل يمكنني التحقق من محاذاة الوجه والعينين؟',
+          answer: 'نعم، فعّل دليل محاذاة الوجه والعينين أسفل الخطوة الثانية لضبط موقع الرأس والعينين بدقة.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'canada-passport-visa-photo-50x70mm',
+    presetId: 'custom',
+    targetKb: 100,
+    customWidth: 591,
+    customHeight: 827,
+    badgeText: {
+      en: 'CANADA IRCC PASSPORT, VISA & PR · 50×70 MM (591×827 PX)',
+      fr: 'PASSEPORT, VISA & RP CANADA (IRCC) · 50×70 MM (591×827 PX)',
+      es: 'PASAPORTE Y VISA DE CANADÁ (IRCC) · 50×70 MM (591×827 PX)',
+      ar: 'جواز سفر وتأشيرة كندا (IRCC) · مقاس 50×70 مم (591×827 بكسل)'
+    },
+    title: {
+      en: 'Canada Passport & Visa Photo Size (50x70mm / 591x827 px) Compressor | CompressPhoto',
+      fr: 'Photo Passeport, Visa & RP Canada (50x70 mm) en Ligne | CompressPhoto',
+      es: 'Foto de Pasaporte y Visa de Canadá (50x70 mm) Online | CompressPhoto',
+      ar: 'ضبط مقاس صورة جواز سفر وتأشيرة كندا 50×70 مم أونلاين | CompressPhoto'
+    },
+    metaDescription: {
+      en: 'Resize and compress Canada passport, IRCC temporary resident visa, and Permanent Resident (PR) photos to exact 50x70 mm (591x827 px at 300 DPI) online.',
+      fr: 'Redimensionnez et compressez votre photo de passeport canadien, visa IRCC ou Résidence Permanente au format officiel 50x70 mm (591x827 px à 300 DPI).',
+      es: 'Ajusta y comprime tu foto de pasaporte canadiense, visa IRCC o Residencia Permanente al tamaño oficial de 50x70 mm (591x827 px a 300 DPI).',
+      ar: 'اضبط واضغط صورة جواز السفر الكندي أو تأشيرة كندا والإقامة الدائمة بالمقاس الرسمي 50×70 مم (591×827 بكسل بدقة 300 DPI).'
+    },
+    h1: {
+      en: 'Canada Passport, Visa & PR Photo Resizer (50×70 mm)',
+      fr: 'Photo Passeport, Visa & RP Canada : Format Officiel 50×70 mm',
+      es: 'Foto de Pasaporte y Visa de Canadá (Formato 50×70 mm)',
+      ar: 'ضبط صورة جواز السفر وتأشيرة كندا (مقاس 50×70 مم)'
+    },
+    subtitle: {
+      en: 'Automatically sets the exact 50×70 mm (2 × 2¾ inches = 591 × 827 pixels at 300 DPI) dimensions required by Immigration, Refugees and Citizenship Canada (IRCC).',
+      fr: 'Applique automatiquement les dimensions exactes de 50×70 mm (591 × 827 pixels en 300 DPI) exigées par Immigration, Réfugiés et Citoyenneté Canada (IRCC).',
+      es: 'Configura automáticamente las dimensiones exactas de 50×70 mm (591 × 827 píxeles a 300 DPI) exigidas por IRCC Canadá.',
+      ar: 'يطبق تلقائياً الأبعاد الرسمية 50×70 مم (591 × 827 بكسل بدقة 300 DPI) المعتمدة لدى دائرة الهجرة والجنسية الكندية (IRCC).'
+    },
+    directAnswer: {
+      en: 'Unlike European 35×45 mm or US 2×2 inch photos, Canada passports and IRCC visa applications require a 50 mm wide by 70 mm high frame (591 × 827 pixels at 300 DPI, or at least 420 × 540 pixels for online uploads). This page pre-sets those exact 50×70 mm dimensions.',
+      fr: 'Contrairement au format européen 35×45 mm, le passeport canadien et les demandes IRCC (Visa, Permis d’études, RP) exigent un format de 50 mm × 70 mm (soit 591 × 827 pixels à 300 DPI). Cette page pré-remplit automatiquement ces dimensions.',
+      es: 'A diferencia del formato 35×45 mm, el pasaporte canadiense y las solicitudes IRCC exigen un tamaño de 50 mm × 70 mm (591 × 827 píxeles a 300 DPI). Esta página configura esas medidas automáticamente.',
+      ar: 'بخلاف المقاس الأوروبي 35×45 مم، يشترط جواز السفر الكندي وطلبات الهجرة والتأشيرة الكندية (IRCC) مقاس 50×70 مم (أي 591×827 بكسل بدقة 300 DPI)، وهو مضبوط تلقائياً في هذه الصفحة.'
+    },
+    portalSpecs: {
+      dimensionsMm: '50 × 70 mm (2 × 2¾ inches)',
+      dimensionsPx: '591 × 827 px (300 DPI) / Min 420×540 px',
+      maxKb: '≤ 100 KB / 200 KB',
+      background: 'Plain White (#FFFFFF)',
+      standardCode: 'Canada IRCC 50×70 mm Spec'
+    },
+    specificFaqs: {
+      en: [
+        {
+          question: 'What are the pixel dimensions for a 50x70 mm Canada photo at 300 DPI?',
+          answer: 'At 300 DPI print resolution, 50 mm × 70 mm equals 591 × 827 pixels. For IRCC online digital uploads, the minimum accepted pixel size is 420 × 540 pixels.'
+        }
+      ],
+      fr: [
+        {
+          question: 'Quelle est la taille en pixels d’une photo Canada 50×70 mm ?',
+          answer: 'En résolution d’impression 300 DPI, 50 × 70 mm correspond à 591 × 827 pixels (et au minimum 420 × 540 pixels pour un téléversement numérique sur le portail IRCC).'
+        }
+      ],
+      es: [
+        {
+          question: '¿Cuántos píxeles tiene una foto de Canadá de 50×70 mm?',
+          answer: 'A 300 DPI de resolución, 50 × 70 mm equivale exactamente a 591 × 827 píxeles.'
+        }
+      ],
+      ar: [
+        {
+          question: 'كم يبلغ مقاس صورة كندا 50×70 مم بالبكسل؟',
+          answer: 'عند دقة طباعة 300 DPI، يعادل مقاس 50×70 مم أبعاد 591 × 827 بكسل.'
+        }
+      ]
+    }
+  },
+  {
+    slug: 'passport-photo-4x6-print-sheet',
+    presetId: 'schengen-35x45',
+    targetKb: 50,
+    autoFeature: 'print-sheet',
+    badgeText: {
+      en: 'PRINT 8 PASSPORT PHOTOS ON ONE 4×6" (10×15 CM) SHEET · FREE',
+      fr: 'PLANCHE IMPRIMABLE 10×15 CM (4×6") DE 8 PHOTOS D’IDENTITÉ',
+      es: 'HOJA IMPRIMIBLE 10×15 CM (4×6") CON 8 FOTOS DE PASAPORTE',
+      ar: 'ورقة طباعة 10×15 سم (4×6 بوصة) تضم 8 صور شخصية مجاناً'
+    },
+    title: {
+      en: 'Print Passport Photos on 4x6 Sheet (10x15 cm 8-Photo Grid) Free | CompressPhoto',
+      fr: 'Planche Photo d’Identité 10x15 cm (8 Photos à Imprimer) Gratuit | CompressPhoto',
+      es: 'Imprimir 8 Fotos de Pasaporte en Hoja 10x15 cm (4x6") Gratis | CompressPhoto',
+      ar: 'طباعة 8 صور شخصية على ورقة 10×15 سم (4×6 بوصة) مجاناً | CompressPhoto'
+    },
+    metaDescription: {
+      en: 'Arrange 8 passport or visa photos on a single 4x6 inch (10x15 cm) 300 DPI printable photo sheet with crop marks for free. Print at home or any pharmacy kiosk.',
+      fr: 'Créez gratuitement une planche de 8 photos d’identité 35x45 mm sur une feuille 10x15 cm (4x6 pouces) à 300 DPI avec traits de coupe pour impression maison ou borne.',
+      es: 'Genera gratis una plantilla de 8 fotos de pasaporte o visa en una hoja de 10x15 cm (4x6 pulgadas) a 300 DPI con líneas de corte lista para imprimir.',
+      ar: 'أنشئ مجاناً ورقة طباعة بحجم 10×15 سم (4×6 بوصة) تضم 8 صور جواز سفر أو هوية بدقة 300 DPI مع علامات القص للطباعة الفورية.'
+    },
+    h1: {
+      en: 'Free 4×6 Inch (10×15 cm) Passport Photo Print Sheet Generator',
+      fr: 'Créer une Planche de 8 Photos d’Identité 10×15 cm (4×6") à Imprimer',
+      es: 'Plantilla para Imprimir 8 Fotos de Pasaporte en Hoja 10×15 cm (4×6")',
+      ar: 'إنشاء ورقة طباعة 8 صور شخصية بمقاس 10×15 سم (4×6 بوصة) مجاناً'
+    },
+    subtitle: {
+      en: 'Generates a 300 DPI 1800×1200 px postcard sheet containing 8 perfectly sized passport or visa photos with scissor cut guides—100% free with no watermark.',
+      fr: 'Génère une planche 10×15 cm en 300 DPI (1800×1200 px) contenant 8 photos d’identité à la taille exacte avec repères de découpe — 100 % gratuit et sans filigrane.',
+      es: 'Genera una hoja de 10×15 cm a 300 DPI (1800×1200 px) con 8 fotos al tamaño exacto y guías de corte — 100% gratis y sin marca de agua.',
+      ar: 'ينشئ ورقة طباعة قياسية 10×15 سم بدقة 300 DPI تضم 8 صور بالمقاس الرسمي مع خطوط قص واضحة — مجاناً بالكامل وبدون علامة مائية.'
+    },
+    directAnswer: {
+      en: 'Instead of paying $10–$15 at a photo booth, upload your portrait above and click "4×6" Print Sheet (8 Photos)". You get a 300 DPI 4×6 inch (10×15 cm) JPEG sheet containing 8 passport photos with crop marks that costs around $0.25 to print at any pharmacy or home printer.',
+      fr: 'Au lieu de payer 8 € à 12 € en photomaton, importez votre photo ci-dessus et cliquez sur « Planche 4×6" (8 Photos) ». Vous obtenez une feuille 10×15 cm à 300 DPI contenant 8 photos d’identité avec traits de coupe, imprimable pour quelques centimes sur n’importe quelle borne photo ou imprimante.',
+      es: 'En lugar de pagar en una cabina fotográfica, sube tu foto arriba y abre la hoja 4×6" (10×15 cm). Obtendrás una plantilla a 300 DPI con 8 fotos y marcas de corte lista para imprimir en casa o en cualquier tienda.',
+      ar: 'بدلاً من دفع تكلفة باهظة في أكشاك التصوير، ارفع صورتك أعلاه واحصل فوراً على ورقة مقاس 10×15 سم (4×6 بوصة) بدقة 300 DPI تحتوي على 8 صور جاهزة للطباعة والقص.'
+    },
+    portalSpecs: {
+      dimensionsMm: '101.6 × 152.4 mm (4×6" / 10×15 cm Sheet)',
+      dimensionsPx: '1800 × 1200 px (300 DPI Print Sheet)',
+      maxKb: '8 Photos per Sheet + Cut Marks',
+      background: 'Pure White Studio Grid',
+      standardCode: '300 DPI Pharmacy & Home Print Standard'
+    },
+    specificFaqs: {
+      en: [
+        {
+          question: 'Will the photos print at the exact 35×45 mm or 2×2 inch physical size?',
+          answer: 'Yes. Because the 4×6 inch (10×15 cm) canvas is rendered at an exact 1800 × 1200 pixels (300 DPI), printing it on standard 4×6" photo paper without "Fit/Stretch to Fill" produces exact millimeter dimensions.'
+        },
+        {
+          question: 'Does the printable sheet have any watermarks?',
+          answer: 'No. Watermarks are off by default, and you can also toggle the bottom studio date label on or off before downloading.'
+        }
+      ],
+      fr: [
+        {
+          question: 'Les 8 photos auront-elles exactement la taille 35×45 mm une fois imprimées ?',
+          answer: 'Oui. La planche 10×15 cm étant calibrée à 1800 × 1200 pixels (300 DPI), chaque photo mesure exactement 35 × 45 mm à l’impression sur papier photo 10×15 cm standard.'
+        }
+      ],
+      es: [
+        {
+          question: '¿Las 8 fotos saldrán al tamaño exacto de 35×45 mm al imprimir?',
+          answer: 'Sí. Al estar calibrada a 1800 × 1200 píxeles (300 DPI), cada foto mide exactamente 35 × 45 mm al imprimirse en papel fotográfico estándar de 10×15 cm (4×6").'
+        }
+      ],
+      ar: [
+        {
+          question: 'هل ستخرج الصور الثماني بالمقاس الحقيقي 35×45 مم عند الطباعة؟',
+          answer: 'نعم، لأن ورقة 10×15 سم مصممة بأبعاد 1800×1200 بكسل (بدقة 300 DPI)، فإن كل صورة تخرج بالمقاس الرسمي الدقيق عند طباعتها على ورق صور 10×15 سم.'
         }
       ]
     }

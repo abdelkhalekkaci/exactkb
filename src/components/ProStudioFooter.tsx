@@ -397,6 +397,17 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
             <ul className="space-y-2 text-xs text-[#ffffff]/85">
               <li>
                 <a
+                  href={`${langPrefix}/compress-photo-to-10kb`}
+                  onClick={(e) =>
+                    onNavigate(e, 'exactkb', null, 'compress-photo-to-10kb')
+                  }
+                  className="hover:text-[#fca311] transition-colors block"
+                >
+                  Compress Photo to 10 KB
+                </a>
+              </li>
+              <li>
+                <a
                   href={`${langPrefix}/compress-photo-to-20kb`}
                   onClick={(e) =>
                     onNavigate(e, 'exactkb', null, 'compress-photo-to-20kb')
@@ -404,6 +415,17 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   className="hover:text-[#fca311] transition-colors block"
                 >
                   Compress Photo to 20 KB
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${langPrefix}/compress-photo-to-30kb`}
+                  onClick={(e) =>
+                    onNavigate(e, 'exactkb', null, 'compress-photo-to-30kb')
+                  }
+                  className="hover:text-[#fca311] transition-colors block"
+                >
+                  Compress Photo to 30 KB
                 </a>
               </li>
               <li>
@@ -499,6 +521,17 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
               </li>
               <li>
                 <a
+                  href={`${langPrefix}/campus-france-photo-50ko`}
+                  onClick={(e) =>
+                    onNavigate(e, 'exactkb', null, 'campus-france-photo-50ko')
+                  }
+                  className="hover:text-[#fca311] transition-colors block"
+                >
+                  🎓 Campus France (50 Ko · 35×45 mm)
+                </a>
+              </li>
+              <li>
+                <a
                   href={`${langPrefix}/ds160-photo-compressor-600x600`}
                   onClick={(e) =>
                     onNavigate(
@@ -515,50 +548,66 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
               </li>
               <li>
                 <a
-                  href={`${langPrefix}/passport-photo-35x45mm-50kb`}
+                  href={`${langPrefix}/uk-passport-photo-35x45mm`}
                   onClick={(e) =>
                     onNavigate(
                       e,
                       'exactkb',
                       null,
-                      'passport-photo-35x45mm-50kb'
+                      'uk-passport-photo-35x45mm'
                     )
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  🇪🇺 Schengen, UK &amp; Canada Passport
+                  🇬🇧 UK Passport &amp; Visa (35×45 mm)
                 </a>
               </li>
               <li>
                 <a
-                  href={`${langPrefix}/ssc-upsc-photo-signature-20kb`}
+                  href={`${langPrefix}/canada-passport-visa-photo-50x70mm`}
                   onClick={(e) =>
                     onNavigate(
                       e,
                       'exactkb',
                       null,
-                      'ssc-upsc-photo-signature-20kb'
+                      'canada-passport-visa-photo-50x70mm'
                     )
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  🇮🇳 SSC, UPSC, IBPS &amp; NEET (20 KB)
+                  🇨🇦 Canada Passport &amp; Visa (50×70 mm)
                 </a>
               </li>
               <li>
                 <a
-                  href={`${langPrefix}/amazon-1000x1000-white-background-photo`}
+                  href={`${langPrefix}/ssc-upsc-ibps-photo-signature-resizer`}
                   onClick={(e) =>
                     onNavigate(
                       e,
                       'exactkb',
                       null,
-                      'amazon-1000x1000-white-background-photo'
+                      'ssc-upsc-ibps-photo-signature-resizer'
                     )
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
-                  📦 E-Commerce 1000×1000 White Background
+                  🇮🇳 SSC, UPSC, IBPS &amp; NEET (+ Name/Date)
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${langPrefix}/passport-photo-4x6-print-sheet`}
+                  onClick={(e) =>
+                    onNavigate(
+                      e,
+                      'exactkb',
+                      null,
+                      'passport-photo-4x6-print-sheet'
+                    )
+                  }
+                  className="hover:text-[#fca311] transition-colors block"
+                >
+                  🖨️ 4×6&quot; (10×15 cm) 8-Photo Print Sheet
                 </a>
               </li>
             </ul>

@@ -111,8 +111,12 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
   const [presetId, setPresetId] = useState<BiometricPresetId>(
     activeLanding ? activeLanding.presetId : initialPresetId
   );
-  const [customWidth, setCustomWidth] = useState<number>(413);
-  const [customHeight, setCustomHeight] = useState<number>(531);
+  const [customWidth, setCustomWidth] = useState<number>(
+    activeLanding?.customWidth || 413
+  );
+  const [customHeight, setCustomHeight] = useState<number>(
+    activeLanding?.customHeight || 531
+  );
   const [targetKb, setTargetKb] = useState<number>(
     activeLanding ? activeLanding.targetKb : initialTargetKb
   );
@@ -130,17 +134,24 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
   const [wetInkColor] = useState<SignatureInkColor>('fountain-blue');
 
   // FREE PRO FEATURE 1: Official Name & Date of Photo (DOP) Slate Overlay
-  const [slateConfig, setSlateConfig] = useState<NameDateSlateOptions>(
-    DEFAULT_NAME_DATE_SLATE
+  const [slateConfig, setSlateConfig] = useState<NameDateSlateOptions>(() => ({
+    ...DEFAULT_NAME_DATE_SLATE,
+    enabled: activeLanding?.autoFeature === 'name-slate'
+  }));
+  const [showSlatePanel, setShowSlatePanel] = useState<boolean>(
+    activeLanding?.autoFeature === 'name-slate'
   );
-  const [showSlatePanel, setShowSlatePanel] = useState<boolean>(false);
 
   // FREE PRO FEATURE 2: Biometric Face/Eye Grid Overlay & Framing (Zoom/Pan/Rotate/Lighting)
-  const [showBiometricGrid, setShowBiometricGrid] = useState<boolean>(false);
+  const [showBiometricGrid, setShowBiometricGrid] = useState<boolean>(
+    activeLanding?.autoFeature === 'grid-framing'
+  );
   const [framing, setFraming] = useState<StudioFramingOptions>(
     DEFAULT_FRAMING_OPTIONS
   );
-  const [showFramingPanel, setShowFramingPanel] = useState<boolean>(false);
+  const [showFramingPanel, setShowFramingPanel] = useState<boolean>(
+    activeLanding?.autoFeature === 'grid-framing'
+  );
 
   // FREE PRO FEATURE 3: Unlimited Multi-Photo Batch Exact-KB Queue
   const [batchItems, setBatchItems] = useState<BatchPhotoItem[]>([]);
@@ -161,7 +172,9 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
 
   // 4x6 Pharmacy sheet modal
   const [pharmacySheetUrl, setPharmacySheetUrl] = useState<string | null>(null);
-  const [showPharmacyModal, setShowPharmacyModal] = useState<boolean>(false);
+  const [showPharmacyModal, setShowPharmacyModal] = useState<boolean>(
+    activeLanding?.autoFeature === 'print-sheet'
+  );
   const [stampConfig, setStampConfig] = useState<StudioStampConfig>({
     enabled: true,
     studioName: 'COMPRESSPHOTO STUDIO',
@@ -184,6 +197,23 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     const nextKb = activeLanding ? activeLanding.targetKb : initialTargetKb;
     setPresetId(nextPreset);
     setTargetKb(nextKb);
+
+    if (activeLanding?.customWidth && activeLanding?.customHeight) {
+      setCustomWidth(activeLanding.customWidth);
+      setCustomHeight(activeLanding.customHeight);
+    }
+
+    if (activeLanding?.autoFeature === 'name-slate') {
+      setShowSlatePanel(true);
+      setSlateConfig((prev) => ({ ...prev, enabled: true }));
+    } else {
+      setShowSlatePanel(false);
+      setSlateConfig((prev) => ({ ...prev, enabled: false }));
+    }
+
+    if (activeLanding?.autoFeature === 'print-sheet') {
+      setShowPharmacyModal(true);
+    }
 
     if (nextPreset === 'wet-ink-sig') {
       setWetInkEnabled(true);
