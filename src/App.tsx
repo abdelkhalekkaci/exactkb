@@ -16,11 +16,11 @@ import {
   TRANSLATIONS
 } from './data/seoRoutesAndTranslations';
 import {
-  getToolLandingBySlug,
-  TOOL_LANDING_PAGES
+  getToolLandingBySlug
 } from './data/toolLandingPages';
 import { ExactKbLabPage } from './components/ExactKbLabPage';
 import { CustomAtelierCursor } from './components/CustomAtelierCursor';
+import { ProStudioFooter } from './components/ProStudioFooter';
 
 const QrPrintshopPage = lazy(() =>
   import('./components/QrPrintshopPage').then((m) => ({
@@ -654,199 +654,22 @@ export default function App() {
         </Suspense>
       </main>
 
-      {/* COMPLETE FOOTER WITH DEDICATED KB TOOLS, OFFICIAL PORTALS & E-E-A-T TRUST LINKS */}
-      <footer className="border-t border-[#14213d]/15 dark:border-[#ffffff]/15 py-10 mt-16 bg-[#ffffff] dark:bg-[#14213d]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Column 1: Brand Logo & Privacy Promise */}
-            <div className="space-y-2.5">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#14213d] dark:bg-[#ffffff] flex items-center justify-center shrink-0">
-                  <svg
-                    viewBox="0 0 64 64"
-                    fill="none"
-                    className="w-6 h-6"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12 23V14C12 12.8954 12.8954 12 14 12H23"
-                      stroke="#fca311"
-                      strokeWidth="5.5"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M52 23V14C52 12.8954 51.1046 12 50 12H41"
-                      stroke="#fca311"
-                      strokeWidth="5.5"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M12 41V50C12 51.1046 12.8954 52 14 52H23"
-                      stroke="#fca311"
-                      strokeWidth="5.5"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M52 41V50C52 51.1046 51.1046 52 50 52H41"
-                      stroke="#fca311"
-                      strokeWidth="5.5"
-                      strokeLinecap="round"
-                    />
-                    <circle
-                      cx="32"
-                      cy="32"
-                      r="10"
-                      className="stroke-[#ffffff] dark:stroke-[#14213d]"
-                      strokeWidth="4.5"
-                    />
-                    <circle cx="32" cy="32" r="4.5" fill="#fca311" />
-                  </svg>
-                </div>
-                <span className="font-serif text-lg font-bold">
-                  Compress<span className="text-[#fca311]">Photo</span>
-                </span>
-              </div>
-              <p className="text-xs opacity-75 leading-relaxed">
-                {t.footerDesc}
-              </p>
-              <div className="pt-1 text-[11px] font-mono opacity-80">
-                <a
-                  href="https://github.com/abdelkhalekkaci/exactkb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#fca311] underline"
-                >
-                  Open-Source Client-Side Engine (GitHub)
-                </a>
-              </div>
-            </div>
-
-            {/* Column 2: Exact KB Compressors */}
-            <div className="space-y-2">
-              <div className="text-xs font-mono font-bold uppercase text-[#fca311]">
-                {locale === 'fr'
-                  ? 'Compression au Ko Exact'
-                  : locale === 'es'
-                    ? 'Compresión por KB Exacto'
-                    : locale === 'ar'
-                      ? 'ضغط بالكيلوبايت الدقيق'
-                      : 'Exact-KB Compressors'}
-              </div>
-              <ul className="space-y-1.5 text-xs font-semibold">
-                {TOOL_LANDING_PAGES.slice(0, 5).map((tool) => (
-                  <li key={tool.slug}>
-                    <a
-                      href={`${langPrefix}/${tool.slug}`}
-                      onClick={(e) =>
-                        handleLinkClick(e, 'exactkb', null, tool.slug)
-                      }
-                      className="hover:text-[#fca311] transition-colors cursor-pointer"
-                    >
-                      {tool.h1[locale]}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 3: Official Biometric Portals */}
-            <div className="space-y-2">
-              <div className="text-xs font-mono font-bold uppercase text-[#fca311]">
-                {locale === 'fr'
-                  ? 'Portails Officiels & Normes'
-                  : locale === 'es'
-                    ? 'Portales Oficiales'
-                    : locale === 'ar'
-                      ? 'البوابات الحكومية الرسمية'
-                      : 'Official Portal Presets'}
-              </div>
-              <ul className="space-y-1.5 text-xs font-semibold">
-                {TOOL_LANDING_PAGES.slice(5).map((tool) => (
-                  <li key={tool.slug}>
-                    <a
-                      href={`${langPrefix}/${tool.slug}`}
-                      onClick={(e) =>
-                        handleLinkClick(e, 'exactkb', null, tool.slug)
-                      }
-                      className="hover:text-[#fca311] transition-colors cursor-pointer"
-                    >
-                      {tool.h1[locale]}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 4: Information, Legal & Secondary Studio */}
-            <div className="space-y-2">
-              <div className="text-xs font-mono font-bold uppercase text-[#fca311]">
-                {t.footerLegalTitle}
-              </div>
-              <ul className="space-y-1.5 text-xs font-semibold">
-                <li>
-                  <a
-                    href={`${langPrefix}/blog`}
-                    onClick={(e) => handleLinkClick(e, 'blog')}
-                    className="hover:text-[#fca311] transition-colors cursor-pointer"
-                  >
-                    {t.navBlog}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`${langPrefix}/qr`}
-                    onClick={(e) => handleLinkClick(e, 'qr')}
-                    className="hover:text-[#fca311] transition-colors cursor-pointer"
-                  >
-                    {t.navQrStudio}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`${langPrefix}/about`}
-                    onClick={(e) => handleLinkClick(e, 'about')}
-                    className="hover:text-[#fca311] transition-colors cursor-pointer"
-                  >
-                    {t.navAbout}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`${langPrefix}/privacy`}
-                    onClick={(e) => handleLinkClick(e, 'privacy')}
-                    className="hover:text-[#fca311] transition-colors cursor-pointer"
-                  >
-                    {t.navPrivacy}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`${langPrefix}/legal`}
-                    onClick={(e) => handleLinkClick(e, 'legal')}
-                    className="hover:text-[#fca311] transition-colors cursor-pointer"
-                  >
-                    {t.navLegal}
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`${langPrefix}/contact`}
-                    onClick={(e) => handleLinkClick(e, 'contact')}
-                    className="hover:text-[#fca311] transition-colors cursor-pointer"
-                  >
-                    {t.navContact}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-6 border-t border-[#14213d]/10 dark:border-[#ffffff]/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs opacity-70">
-            <div>© {new Date().getFullYear()} CompressPhoto.</div>
-            <div>{t.localGuaranteeFooter}</div>
-          </div>
-        </div>
-      </footer>
+      <ProStudioFooter
+        locale={locale}
+        langPrefix={langPrefix}
+        getLocalizedPath={getLocalizedPath}
+        activePage={activePage}
+        activeToolSlug={activeToolSlug}
+        activeBlogSlug={activeBlogSlug}
+        onSelectLocale={(code, nextUrl) => {
+          setLocale(code);
+          if (typeof window !== 'undefined') {
+            window.history.pushState({}, '', nextUrl);
+          }
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onNavigate={handleLinkClick}
+      />
     </div>
   );
 }

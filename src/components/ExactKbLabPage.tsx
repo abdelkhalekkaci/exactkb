@@ -4,11 +4,17 @@ import {
   ChevronDown,
   ChevronUp,
   Download,
+  Eye,
   FileText,
   Grid,
+  Layers,
   MoveHorizontal,
+  RotateCcw,
   ShieldCheck,
+  Sliders,
   Sparkles,
+  Trash2,
+  Type,
   Upload
 } from 'lucide-react';
 import {
@@ -38,8 +44,12 @@ import {
 } from '../utils/sampleCanvasGenerators';
 import {
   compileExactKbPdfBlob,
+  DEFAULT_FRAMING_OPTIONS,
+  DEFAULT_NAME_DATE_SLATE,
   generatePharmacySheetDataUrl,
-  runSevenPassBinarySearch
+  NameDateSlateOptions,
+  runSevenPassBinarySearch,
+  StudioFramingOptions
 } from '../utils/exactKbEngine';
 import { VisitorVisualGuide } from './VisitorVisualGuide';
 
@@ -52,6 +62,18 @@ interface ExactKbLabPageProps {
   onClearBridgedQr: () => void;
   onSelectToolSlug: (slug: string | null) => void;
   onSelectBlogSlug: (slug: string) => void;
+}
+
+interface BatchPhotoItem {
+  id: string;
+  fileName: string;
+  originalKb: number;
+  targetKb: number;
+  compressedKb: number;
+  dataUrl: string;
+  width: number;
+  height: number;
+  status: 'processing' | 'done' | 'error';
 }
 
 export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
@@ -99,6 +121,23 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
   const [wetInkBoost, setWetInkBoost] = useState<number>(1.85);
   const [wetInkColor] = useState<SignatureInkColor>('fountain-blue');
 
+  // FREE PRO FEATURE 1: Official Name & Date of Photo (DOP) Slate Overlay
+  const [slateConfig, setSlateConfig] = useState<NameDateSlateOptions>(
+    DEFAULT_NAME_DATE_SLATE
+  );
+  const [showSlatePanel, setShowSlatePanel] = useState<boolean>(false);
+
+  // FREE PRO FEATURE 2: Biometric Face/Eye Grid Overlay & Framing (Zoom/Pan/Rotate/Lighting)
+  const [showBiometricGrid, setShowBiometricGrid] = useState<boolean>(false);
+  const [framing, setFraming] = useState<StudioFramingOptions>(
+    DEFAULT_FRAMING_OPTIONS
+  );
+  const [showFramingPanel, setShowFramingPanel] = useState<boolean>(false);
+
+  // FREE PRO FEATURE 3: Unlimited Multi-Photo Batch Exact-KB Queue
+  const [batchItems, setBatchItems] = useState<BatchPhotoItem[]>([]);
+  const [isBatchProcessing, setIsBatchProcessing] = useState<boolean>(false);
+
   // Show/hide extra options so default UI stays super simple
   const [showAdvancedOptions, setShowAdvancedOptions] =
     useState<boolean>(false);
@@ -118,7 +157,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
   const [stampConfig, setStampConfig] = useState<StudioStampConfig>({
     enabled: true,
     studioName: 'COMPRESSPHOTO STUDIO',
-    dateString: '2026-11-01',
+    dateString: '2026-11-05',
     certificationCode: '300-DPI-VERIFIED',
     showWatermark: false,
     watermarkText: 'PROOF',
@@ -128,6 +167,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
   const [exportFeedback, setExportFeedback] = useState<string | null>(null);
   const splitContainerRef = useRef<HTMLDivElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const batchFileInputRef = useRef<HTMLInputElement | null>(null);
 
   // Sync preset & target KB when landing route or initialPresetId changes
   useEffect(() => {
@@ -138,12 +178,14 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
 
     if (nextPreset === 'wet-ink-sig') {
       setWetInkEnabled(true);
+      setShowBiometricGrid(false);
       setBackdropMode('pure-white');
       setActiveSampleId('wet-ink-signature');
       setSourceDataUrl(generateCuratedSampleDataUrl('wet-ink-signature'));
       setSourceLabel('Sample Handwritten Signature');
     } else if (nextPreset === 'amazon-1000') {
       setWetInkEnabled(false);
+      setShowBiometricGrid(false);
       setBackdropMode('pure-white');
       setActiveSampleId('studio-product');
       setSourceDataUrl(generateCuratedSampleDataUrl('studio-product'));
@@ -168,6 +210,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
       setCustomHeight(600);
       setTargetKb(20);
       setWetInkEnabled(false);
+      setShowBiometricGrid(false);
       setBackdropMode('original');
     }
   }, [bridgedQrDataUrl]);
@@ -195,7 +238,9 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
         threshold: wetInkThreshold,
         contrastBoost: wetInkBoost,
         inkColor: wetInkColor
-      }
+      },
+      framing,
+      slateConfig
     )
       .then(({ result }) => {
         if (cancelled) return;
@@ -219,7 +264,9 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     wetInkEnabled,
     wetInkThreshold,
     wetInkBoost,
-    wetInkColor
+    wetInkColor,
+    framing,
+    slateConfig
   ]);
 
   const loadFileObject = (file: File) => {
@@ -234,17 +281,116 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     reader.readAsDataURL(file);
   };
 
+  const processBatchFiles = async (files: FileList | File[]) => {
+    const imageFiles = Array.from(files).filter((f) =>
+      f.type.startsWith('image/')
+    );
+    if (imageFiles.length === 0) return;
+
+    // Also load the first file into the main interactive preview
+    loadFileObject(imageFiles[0]);
+
+    if (imageFiles.length === 1 && batchItems.length === 0) {
+      return;
+    }
+
+    setIsBatchProcessing(true);
+    const placeholders: BatchPhotoItem[] = imageFiles.map((file, idx) => ({
+      id: `${Date.now()}-${idx}-${file.name}`,
+      fileName: file.name,
+      originalKb: Number((file.size / 1024).toFixed(1)),
+      targetKb,
+      compressedKb: 0,
+      dataUrl: '',
+      width: effectiveWidth,
+      height: effectiveHeight,
+      status: 'processing'
+    }));
+
+    setBatchItems((prev) => [...placeholders, ...prev]);
+
+    for (let i = 0; i < imageFiles.length; i++) {
+      const file = imageFiles[i];
+      const itemId = placeholders[i].id;
+      try {
+        const rawDataUrl = await new Promise<string>((resolve, reject) => {
+          const r = new FileReader();
+          r.onload = () =>
+            typeof r.result === 'string'
+              ? resolve(r.result)
+              : reject(new Error('Invalid file'));
+          r.onerror = () => reject(new Error('Read error'));
+          r.readAsDataURL(file);
+        });
+
+        const { result } = await runSevenPassBinarySearch(
+          rawDataUrl,
+          effectiveWidth,
+          effectiveHeight,
+          targetKb,
+          mimeType,
+          backdropMode,
+          {
+            enabled: wetInkEnabled,
+            threshold: wetInkThreshold,
+            contrastBoost: wetInkBoost,
+            inkColor: wetInkColor
+          },
+          framing,
+          slateConfig
+        );
+
+        setBatchItems((prev) =>
+          prev.map((item) =>
+            item.id === itemId
+              ? {
+                  ...item,
+                  compressedKb: result.kb,
+                  dataUrl: result.dataUrl,
+                  width: result.width,
+                  height: result.height,
+                  status: 'done'
+                }
+              : item
+          )
+        );
+      } catch {
+        setBatchItems((prev) =>
+          prev.map((item) =>
+            item.id === itemId ? { ...item, status: 'error' } : item
+          )
+        );
+      }
+    }
+    setIsBatchProcessing(false);
+  };
+
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) loadFileObject(file);
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    if (files.length > 1) {
+      processBatchFiles(files);
+    } else {
+      loadFileObject(files[0]);
+    }
+  };
+
+  const handleBatchUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      processBatchFiles(files);
+    }
   };
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDraggingFile(false);
-    const file = e.dataTransfer.files?.[0];
-    if (file && file.type.startsWith('image/')) {
-      loadFileObject(file);
+    const files = e.dataTransfer.files;
+    if (!files || files.length === 0) return;
+    if (files.length > 1) {
+      processBatchFiles(files);
+    } else if (files[0].type.startsWith('image/')) {
+      loadFileObject(files[0]);
     }
   };
 
@@ -258,6 +404,9 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     setPresetId(sample.recommendedPreset);
     setTargetKb(sample.recommendedKb);
     setWetInkEnabled(sample.id === 'wet-ink-signature');
+    if (sample.id === 'wet-ink-signature') {
+      setShowBiometricGrid(false);
+    }
   };
 
   const handleSelectPreset = (newPresetId: BiometricPresetId) => {
@@ -270,6 +419,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     setBackdropMode(preset.defaultBackdrop);
     if (preset.isSignature) {
       setWetInkEnabled(true);
+      setShowBiometricGrid(false);
       if (activeSampleId !== 'wet-ink-signature' && !bridgedQrDataUrl) {
         setActiveSampleId('wet-ink-signature');
         setSourceDataUrl(generateCuratedSampleDataUrl('wet-ink-signature'));
@@ -311,8 +461,8 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
           : 'jpg';
     triggerDownload(
       compressionResult.dataUrl,
-      `compressphoto-${compressionResult.kb}KB.${ext}`,
-      `Downloaded ${ext.toUpperCase()} (${compressionResult.kb} KB)`
+      `compressphoto-${compressionResult.kb}KB-300dpi.${ext}`,
+      `Downloaded 300 DPI ${ext.toUpperCase()} (${compressionResult.kb} KB)`
     );
   };
 
@@ -329,7 +479,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     triggerDownload(
       url,
       `compressphoto-${finalKb}KB.pdf`,
-      `Downloaded PDF (${finalKb} KB)`
+      `Downloaded ISO-32000 PDF (${finalKb} KB)`
     );
     setTimeout(() => URL.revokeObjectURL(url), 5000);
   };
@@ -344,6 +494,20 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     );
     setPharmacySheetUrl(url);
     setShowPharmacyModal(true);
+  };
+
+  const handleDownloadAllBatch = () => {
+    const doneItems = batchItems.filter((item) => item.status === 'done');
+    doneItems.forEach((item, idx) => {
+      setTimeout(() => {
+        const cleanBase = item.fileName.replace(/\.[^.]+$/, '');
+        triggerDownload(
+          item.dataUrl,
+          `${cleanBase}-${item.compressedKb}KB-300dpi.jpg`,
+          `Downloaded ${doneItems.length} Batch Photos`
+        );
+      }, idx * 220);
+    });
   };
 
   const SIMPLE_PRESETS: { id: BiometricPresetId; title: string; sub: string }[] =
@@ -390,7 +554,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
           {activeLanding ? activeLanding.subtitle[locale] : t.kbHeroSub}
         </p>
 
-        {/* Quick-Access Interactive Preset & Portal Bar (Segmented Functional Navigation) */}
+        {/* Quick-Access Interactive Preset & Portal Bar */}
         <nav
           aria-label="Dedicated KB & Official Portal Compressors"
           className="pt-2 flex flex-wrap items-center justify-center gap-1.5"
@@ -469,7 +633,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
         </nav>
       </header>
 
-      {/* STEP 1: HUGE, OBVIOUS DRAG & DROP UPLOAD BOX */}
+      {/* STEP 1: HUGE, OBVIOUS DRAG & DROP UPLOAD BOX (SINGLE OR MULTI-PHOTO BATCH) */}
       <div
         data-cursor-label="DROP PHOTO"
         onDragOver={(e) => {
@@ -488,8 +652,17 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
         <input
           ref={fileInputRef}
           type="file"
+          multiple
           accept="image/jpeg,image/png,image/webp"
           onChange={handleFileUpload}
+          className="hidden"
+        />
+        <input
+          ref={batchFileInputRef}
+          type="file"
+          multiple
+          accept="image/jpeg,image/png,image/webp"
+          onChange={handleBatchUpload}
           className="hidden"
         />
 
@@ -507,7 +680,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
           {t.dropSub} <strong>{sourceLabel}</strong>
         </p>
 
-        {/* Quick Sample Switchers (Stop propagation so clicking sample doesn't open file dialog) */}
+        {/* Quick Sample Switchers & Free Batch Upload Trigger */}
         <div
           onClick={(e) => e.stopPropagation()}
           className="mt-5 pt-4 border-t border-[#14213d]/10 dark:border-[#ffffff]/10 flex flex-wrap items-center justify-center gap-2 text-xs"
@@ -530,13 +703,126 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
               {smp.label}
             </button>
           ))}
+
+          <button
+            onClick={() => batchFileInputRef.current?.click()}
+            className="px-3 py-1.5 rounded-md font-bold border border-[#fca311] text-[#14213d] dark:text-[#fca311] bg-[#fca311]/15 hover:bg-[#fca311] hover:text-[#14213d] transition-colors flex items-center gap-1.5 cursor-pointer"
+          >
+            <Layers className="w-3.5 h-3.5" />
+            <span>
+              {locale === 'fr'
+                ? '+ Lot Multi-Photos (Gratuit)'
+                : locale === 'es'
+                  ? '+ Lote Múltiples Fotos (Gratis)'
+                  : locale === 'ar'
+                    ? '+ ضغط مجموعة صور دفعة واحدة (مجاناً)'
+                    : '+ Batch Compress Multiple Photos (Free)'}
+            </span>
+          </button>
         </div>
       </div>
 
-      {/* STEP 2 & STEP 3: SIMPLE WORKBENCH */}
+      {/* UNLIMITED MULTI-PHOTO BATCH QUEUE PANEL (WHEN MULTIPLE FILES DROPPED/SELECTED) */}
+      {batchItems.length > 0 && (
+        <section
+          aria-label="Multi-Photo Batch Compression Queue"
+          className="p-6 rounded-xl border-2 border-[#fca311] bg-[#ffffff] dark:bg-[#1b2c52] space-y-4"
+        >
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <Layers className="w-5 h-5 text-[#fca311]" />
+              <h2 className="font-serif text-lg font-bold">
+                {locale === 'fr'
+                  ? `Compression par Lot Exact-KB (${batchItems.length} photos · Plafond ≤ ${targetKb} Ko)`
+                  : locale === 'es'
+                    ? `Compresión por Lotes Exact-KB (${batchItems.length} fotos · Límite ≤ ${targetKb} KB)`
+                    : locale === 'ar'
+                      ? `ضغط الدفعات (${batchItems.length} صور · السقف ≤ ${targetKb} كيلوبايت)`
+                      : `Multi-Photo Batch Exact-KB Queue (${batchItems.length} photos · Target ≤ ${targetKb} KB)`}
+              </h2>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleDownloadAllBatch}
+                disabled={isBatchProcessing}
+                className="px-4 py-2 rounded-lg bg-[#fca311] hover:bg-[#e5920e] text-[#14213d] text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+              >
+                <Download className="w-4 h-4" />
+                <span>
+                  {locale === 'fr'
+                    ? 'Tout Télécharger'
+                    : locale === 'es'
+                      ? 'Descargar Todo'
+                      : locale === 'ar'
+                        ? 'تحميل الكل'
+                        : 'Download All'}
+                </span>
+              </button>
+              <button
+                onClick={() => setBatchItems([])}
+                className="p-2 rounded-lg border border-[#14213d]/20 dark:border-[#ffffff]/20 hover:border-[#fca311] text-xs cursor-pointer"
+                title="Clear Batch Queue"
+              >
+                <Trash2 className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr className="border-b border-[#14213d]/15 dark:border-[#ffffff]/15 opacity-75">
+                  <th className="py-2 px-3">File</th>
+                  <th className="py-2 px-3">Original</th>
+                  <th className="py-2 px-3">Locked Output (300 DPI)</th>
+                  <th className="py-2 px-3 text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#14213d]/10 dark:divide-[#ffffff]/10">
+                {batchItems.map((item) => (
+                  <tr key={item.id}>
+                    <td className="py-2.5 px-3 font-medium truncate max-w-[200px]">
+                      {item.fileName}
+                    </td>
+                    <td className="py-2.5 px-3 font-mono tabular-nums opacity-75">
+                      {item.originalKb} KB
+                    </td>
+                    <td className="py-2.5 px-3 font-mono font-bold text-[#fca311] tabular-nums">
+                      {item.status === 'processing'
+                        ? 'Compressing...'
+                        : item.status === 'done'
+                          ? `✓ ${item.compressedKb} KB (${item.width}×${item.height} px)`
+                          : 'Error'}
+                    </td>
+                    <td className="py-2.5 px-3 text-right">
+                      {item.status === 'done' && (
+                        <button
+                          onClick={() =>
+                            triggerDownload(
+                              item.dataUrl,
+                              `${item.fileName.replace(/\.[^.]+$/, '')}-${item.compressedKb}KB.jpg`,
+                              `Downloaded ${item.fileName} (${item.compressedKb} KB)`
+                            )
+                          }
+                          className="px-3 py-1 rounded bg-[#14213d] text-[#ffffff] dark:bg-[#ffffff] dark:text-[#14213d] font-bold cursor-pointer"
+                        >
+                          Download JPG
+                        </button>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
+
+      {/* STEP 2 & STEP 3: SIMPLE WORKBENCH + FREE PRO STUDIO CONTROLS */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        {/* LEFT 5 COLUMNS: Simple Step 1 (Document Type) & Step 2 (Max KB) */}
-        <div className="lg:col-span-5 space-y-6">
+        {/* LEFT 5 COLUMNS: Step 1 (Document Type), Step 2 (Max KB), and Free Pro Tools */}
+        <div className="lg:col-span-5 space-y-5">
           {/* Step 1: Document Size Preset */}
           <div className="p-6 rounded-xl border border-[#14213d]/15 dark:border-[#ffffff]/15 bg-[#ffffff] dark:bg-[#1b2c52] space-y-4">
             <div className="flex items-center justify-between">
@@ -663,7 +949,274 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
             </div>
           </div>
 
-          {/* Optional Collapsible Advanced Settings (Keeps UI clean) */}
+          {/* FREE PRO TOOL 1: OFFICIAL NAME & DATE OF PHOTO (DOP) SLATE OVERLAY */}
+          <div className="rounded-xl border border-[#14213d]/15 dark:border-[#ffffff]/15 bg-[#ffffff] dark:bg-[#1b2c52] overflow-hidden">
+            <button
+              onClick={() => setShowSlatePanel(!showSlatePanel)}
+              className="w-full px-6 py-4 flex items-center justify-between text-xs font-bold cursor-pointer hover:bg-[#fca311]/10 transition-colors"
+            >
+              <span className="flex items-center gap-2">
+                <Type className="w-4 h-4 text-[#fca311]" />
+                <span>
+                  {locale === 'fr'
+                    ? 'Bandeau Nom & Date sur Photo (Gratuit)'
+                    : locale === 'es'
+                      ? 'Rótulo Nombre y Fecha en Foto (Gratis)'
+                      : locale === 'ar'
+                        ? 'إضافة شريط الاسم وتاريخ الصورة (مجاناً)'
+                        : 'Add Name & Date Slate on Photo (Free Pro)'}
+                </span>
+              </span>
+              {showSlatePanel ? (
+                <ChevronUp className="w-4 h-4" />
+              ) : (
+                <ChevronDown className="w-4 h-4" />
+              )}
+            </button>
+
+            {showSlatePanel && (
+              <div className="px-6 pb-6 pt-2 space-y-3 border-t border-[#14213d]/10 dark:border-[#ffffff]/10">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-semibold">
+                    {locale === 'fr'
+                      ? 'Activer le bandeau Nom + Date'
+                      : locale === 'es'
+                        ? 'Activar rótulo Nombre + Fecha'
+                        : locale === 'ar'
+                          ? 'تفعيل شريط الاسم والتاريخ'
+                          : 'Enable Name & Date Banner'}
+                  </span>
+                  <button
+                    onClick={() =>
+                      setSlateConfig({
+                        ...slateConfig,
+                        enabled: !slateConfig.enabled,
+                        fullName: slateConfig.fullName || 'ALEXANDER SMITH'
+                      })
+                    }
+                    className={`px-3 py-1 rounded text-xs font-bold cursor-pointer ${
+                      slateConfig.enabled
+                        ? 'bg-[#fca311] text-[#14213d]'
+                        : 'border border-[#14213d]/25 dark:border-[#ffffff]/25'
+                    }`}
+                  >
+                    {slateConfig.enabled ? 'ON' : 'OFF'}
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div>
+                    <label className="block text-[11px] font-medium mb-1 opacity-80">
+                      Full Name on Slate
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g. RAHUL SHARMA"
+                      value={slateConfig.fullName}
+                      onChange={(e) =>
+                        setSlateConfig({
+                          ...slateConfig,
+                          enabled: true,
+                          fullName: e.target.value
+                        })
+                      }
+                      className="w-full px-3 py-1.5 text-xs rounded border border-[#14213d]/25 dark:border-[#ffffff]/25 bg-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-medium mb-1 opacity-80">
+                      Date of Photo (DOP)
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="DD/MM/YYYY"
+                      value={slateConfig.dateText}
+                      onChange={(e) =>
+                        setSlateConfig({
+                          ...slateConfig,
+                          enabled: true,
+                          dateText: e.target.value
+                        })
+                      }
+                      className="w-full px-3 py-1.5 text-xs font-mono rounded border border-[#14213d]/25 dark:border-[#ffffff]/25 bg-transparent"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 pt-1">
+                  {(
+                    [
+                      { id: 'white-bar', label: 'White Slate (Standard)' },
+                      { id: 'dark-bar', label: 'Dark Slate (Contrast)' }
+                    ] as const
+                  ).map((st) => (
+                    <button
+                      key={st.id}
+                      onClick={() =>
+                        setSlateConfig({
+                          ...slateConfig,
+                          enabled: true,
+                          style: st.id
+                        })
+                      }
+                      className={`py-1.5 px-2 rounded text-xs font-semibold border cursor-pointer ${
+                        slateConfig.style === st.id
+                          ? 'bg-[#fca311] text-[#14213d] border-[#fca311]'
+                          : 'border-[#14213d]/20 dark:border-[#ffffff]/20'
+                      }`}
+                    >
+                      {st.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* FREE PRO TOOL 2: BIOMETRIC FRAMING, ZOOM, ROTATE & LIGHTING STUDIO */}
+          <div className="rounded-xl border border-[#14213d]/15 dark:border-[#ffffff]/15 bg-[#ffffff] dark:bg-[#1b2c52] overflow-hidden">
+            <button
+              onClick={() => setShowFramingPanel(!showFramingPanel)}
+              className="w-full px-6 py-4 flex items-center justify-between text-xs font-bold cursor-pointer hover:bg-[#fca311]/10 transition-colors"
+            >
+              <span className="flex items-center gap-2">
+                <Sliders className="w-4 h-4 text-[#fca311]" />
+                <span>
+                  {locale === 'fr'
+                    ? 'Recadrage Biométrique, Zoom & Lumière (Gratuit)'
+                    : locale === 'es'
+                      ? 'Encuadre Biométrico, Zoom y Luz (Gratis)'
+                      : locale === 'ar'
+                        ? 'ضبط المحاذاة والتكبير والإضاءة (مجاناً)'
+                        : 'Biometric Crop, Zoom, Rotate & Light (Free Pro)'}
+                </span>
+              </span>
+              {showFramingPanel ? (
+                <ChevronUp className="w-4 h-4" />
+              ) : (
+                <ChevronDown className="w-4 h-4" />
+              )}
+            </button>
+
+            {showFramingPanel && (
+              <div className="px-6 pb-6 pt-2 space-y-3 border-t border-[#14213d]/10 dark:border-[#ffffff]/10">
+                <div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span>Zoom Scale</span>
+                    <span className="font-mono tabular-nums">
+                      {Math.round(framing.zoom * 100)}%
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min={1.0}
+                    max={2.0}
+                    step={0.02}
+                    value={framing.zoom}
+                    onChange={(e) =>
+                      setFraming({ ...framing, zoom: Number(e.target.value) })
+                    }
+                    className="w-full accent-[#fca311]"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <div className="flex justify-between text-xs mb-1">
+                      <span>Pan Horizontal</span>
+                      <span className="font-mono tabular-nums">
+                        {framing.panX}%
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min={-40}
+                      max={40}
+                      value={framing.panX}
+                      onChange={(e) =>
+                        setFraming({ ...framing, panX: Number(e.target.value) })
+                      }
+                      className="w-full accent-[#fca311]"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex justify-between text-xs mb-1">
+                      <span>Pan Vertical</span>
+                      <span className="font-mono tabular-nums">
+                        {framing.panY}%
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min={-40}
+                      max={40}
+                      value={framing.panY}
+                      onChange={(e) =>
+                        setFraming({ ...framing, panY: Number(e.target.value) })
+                      }
+                      className="w-full accent-[#fca311]"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <div className="flex justify-between text-xs mb-1">
+                      <span>Tilt / Rotate</span>
+                      <span className="font-mono tabular-nums">
+                        {framing.rotateDeg}°
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min={-12}
+                      max={12}
+                      step={0.5}
+                      value={framing.rotateDeg}
+                      onChange={(e) =>
+                        setFraming({
+                          ...framing,
+                          rotateDeg: Number(e.target.value)
+                        })
+                      }
+                      className="w-full accent-[#fca311]"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex justify-between text-xs mb-1">
+                      <span>Studio Brightness</span>
+                      <span className="font-mono tabular-nums">
+                        {framing.brightness}%
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min={85}
+                      max={125}
+                      value={framing.brightness}
+                      onChange={(e) =>
+                        setFraming({
+                          ...framing,
+                          brightness: Number(e.target.value)
+                        })
+                      }
+                      className="w-full accent-[#fca311]"
+                    />
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => setFraming(DEFAULT_FRAMING_OPTIONS)}
+                  className="w-full py-1.5 rounded border border-[#14213d]/20 dark:border-[#ffffff]/20 text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-[#fca311] cursor-pointer"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                  <span>Reset Framing &amp; Lighting</span>
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Optional Collapsible Signature Shadow & Background Settings */}
           <div className="rounded-xl border border-[#14213d]/15 dark:border-[#ffffff]/15 bg-[#ffffff] dark:bg-[#1b2c52] overflow-hidden">
             <button
               onClick={() => setShowAdvancedOptions(!showAdvancedOptions)}
@@ -772,7 +1325,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
                   <div className="grid grid-cols-3 gap-2">
                     {(
                       [
-                        { mime: 'image/jpeg', label: 'JPG' },
+                        { mime: 'image/jpeg', label: 'JPG (300 DPI)' },
                         { mime: 'image/webp', label: 'WebP' },
                         { mime: 'image/png', label: 'PNG' }
                       ] as const
@@ -796,24 +1349,48 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
           </div>
         </div>
 
-        {/* RIGHT 7 COLUMNS: Step 3 — Live Preview & 3 Clear Download Buttons */}
+        {/* RIGHT 7 COLUMNS: Step 3 — Live Preview, Biometric Eye-Line Grid & 3 Clear Download Buttons */}
         <div className="lg:col-span-7 space-y-6">
           <div className="p-6 rounded-xl border border-[#14213d]/15 dark:border-[#ffffff]/15 bg-[#ffffff] dark:bg-[#1b2c52] space-y-5">
-            {/* Result Status Bar */}
+            {/* Result Status Bar + Biometric ICAO Grid Toggle */}
             <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-[#14213d]/10 dark:border-[#ffffff]/10">
               <h2 className="text-base font-bold">{t.step3PreviewDownload}</h2>
-              {compressionResult && (
-                <div className="flex items-center gap-2 text-xs font-mono font-bold px-3 py-1 rounded bg-[#fca311] text-[#14213d] tabular-nums">
-                  <CheckCircle2 className="w-4 h-4" />
-                  <span>
-                    {t.readyUnderLimit}: {compressionResult.kb} KB (&le;{' '}
-                    {targetKb} KB)
-                  </span>
-                </div>
-              )}
+
+              <div className="flex flex-wrap items-center gap-2">
+                {presetId !== 'wet-ink-sig' && (
+                  <button
+                    onClick={() => setShowBiometricGrid(!showBiometricGrid)}
+                    className={`px-2.5 py-1 rounded text-xs font-semibold border flex items-center gap-1.5 transition-colors cursor-pointer ${
+                      showBiometricGrid
+                        ? 'bg-[#14213d] text-[#fca311] border-[#fca311]'
+                        : 'border-[#14213d]/20 dark:border-[#ffffff]/25 hover:border-[#fca311]'
+                    }`}
+                  >
+                    <Eye className="w-3.5 h-3.5" />
+                    <span>
+                      {locale === 'fr'
+                        ? 'Grille Biométrique OACI'
+                        : locale === 'es'
+                          ? 'Guía Biométrica OACI'
+                          : locale === 'ar'
+                            ? 'شبكة المحاذاة البيومترية'
+                            : 'ICAO Face Grid'}
+                    </span>
+                  </button>
+                )}
+
+                {compressionResult && (
+                  <div className="flex items-center gap-1.5 text-xs font-mono font-bold px-3 py-1 rounded bg-[#fca311] text-[#14213d] tabular-nums">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>
+                      {compressionResult.kb} KB (&le; {targetKb} KB)
+                    </span>
+                  </div>
+                )}
+              </div>
             </div>
 
-            {/* Interactive Before / After Split Preview */}
+            {/* Interactive Before / After Split Preview + Optional Biometric Face/Eye-Line SVG Overlay */}
             <div
               ref={splitContainerRef}
               data-cursor-label="DRAG SLIDER"
@@ -848,6 +1425,96 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
                   className="w-full h-full max-h-[380px] object-contain block mx-auto"
                 />
               </div>
+
+              {/* FREE PRO OVERLAY: ICAO 9303 / US DOS Biometric Head, Eye-Line & Chin Alignment Guide */}
+              {showBiometricGrid && (
+                <svg
+                  viewBox="0 0 400 500"
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  aria-hidden="true"
+                >
+                  {/* Vertical Center Nose Axis */}
+                  <line
+                    x1="200"
+                    y1="20"
+                    x2="200"
+                    y2="480"
+                    stroke="#fca311"
+                    strokeWidth="1.5"
+                    strokeDasharray="5 5"
+                  />
+                  {/* Crown Top Margin Line (10% - 14%) */}
+                  <line
+                    x1="60"
+                    y1="58"
+                    x2="340"
+                    y2="58"
+                    stroke="#fca311"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="65"
+                    y="51"
+                    fill="#14213d"
+                    fontSize="10"
+                    fontFamily="monospace"
+                    fontWeight="bold"
+                  >
+                    TOP OF HEAD (CROWN)
+                  </text>
+                  {/* Official Eye-Level Corridor (42% - 48%) */}
+                  <rect
+                    x="60"
+                    y="205"
+                    width="280"
+                    height="32"
+                    fill="#fca311"
+                    fillOpacity="0.18"
+                    stroke="#fca311"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="65"
+                    y="225"
+                    fill="#14213d"
+                    fontSize="10"
+                    fontFamily="monospace"
+                    fontWeight="bold"
+                  >
+                    ICAO EYE-LINE ZONE
+                  </text>
+                  {/* Chin Bottom Line (78%) */}
+                  <line
+                    x1="60"
+                    y1="388"
+                    x2="340"
+                    y2="388"
+                    stroke="#fca311"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="65"
+                    y="402"
+                    fill="#14213d"
+                    fontSize="10"
+                    fontFamily="monospace"
+                    fontWeight="bold"
+                  >
+                    CHIN BASE (70-80% HEAD RATIO)
+                  </text>
+                  {/* Biometric Head Oval */}
+                  <ellipse
+                    cx="200"
+                    cy="223"
+                    rx="96"
+                    ry="165"
+                    fill="none"
+                    stroke="#fca311"
+                    strokeWidth="2"
+                    strokeDasharray="6 4"
+                  />
+                </svg>
+              )}
 
               {/* Yellow Slider Handle */}
               <div
@@ -894,7 +1561,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
                   </span>
                   <span aria-hidden="true">·</span>
                   <span>
-                    ✓ {effectiveWidth}×{effectiveHeight} px (300 DPI)
+                    ✓ {effectiveWidth}×{effectiveHeight} px (300 DPI JFIF)
                   </span>
                   <span aria-hidden="true">·</span>
                   <span>✓ {geo.checklistSrgbPass}</span>

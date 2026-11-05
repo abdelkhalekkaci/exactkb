@@ -13,6 +13,38 @@ export interface WetInkCleanserOptions {
   inkColor: SignatureInkColor;
 }
 
+export interface NameDateSlateOptions {
+  enabled: boolean;
+  fullName: string;
+  dateText: string;
+  style: 'white-bar' | 'dark-bar';
+}
+
+export interface StudioFramingOptions {
+  zoom: number; // 1.0 .. 2.2 (default 1.0)
+  panX: number; // -50 .. 50 percent (default 0)
+  panY: number; // -50 .. 50 percent (default 0)
+  rotateDeg: number; // -15 .. 15 degrees (default 0)
+  brightness: number; // 80 .. 130 percent (default 100)
+  contrast: number; // 80 .. 130 percent (default 100)
+}
+
+export const DEFAULT_FRAMING_OPTIONS: StudioFramingOptions = {
+  zoom: 1.0,
+  panX: 0,
+  panY: 0,
+  rotateDeg: 0,
+  brightness: 100,
+  contrast: 100
+};
+
+export const DEFAULT_NAME_DATE_SLATE: NameDateSlateOptions = {
+  enabled: false,
+  fullName: '',
+  dateText: new Date().toISOString().slice(0, 10).split('-').reverse().join('/'),
+  style: 'white-bar'
+};
+
 function dataUrlToUint8Array(dataUrl: string): Uint8Array {
   const base64 = dataUrl.split(',')[1] || '';
   const binary = atob(base64);
@@ -21,6 +53,43 @@ function dataUrlToUint8Array(dataUrl: string): Uint8Array {
     bytes[i] = binary.charCodeAt(i);
   }
   return bytes;
+}
+
+function uint8ArrayToDataUrl(bytes: Uint8Array, mimeType: string): string {
+  let binary = '';
+  const chunkSize = 8192;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    const sub = bytes.subarray(i, i + chunkSize);
+    binary += String.fromCharCode(...sub);
+  }
+  return `data:${mimeType};base64,${btoa(binary)}`;
+}
+
+/**
+ * Rewrites the binary JPEG JFIF APP0 header density from default 72 DPI to genuine 300 DPI (0x012C)
+ * without adding a single extra byte. Ensures strict portal validators read 300 DPI in file properties.
+ */
+export function inject300DpiJfifHeader(jpegBytes: Uint8Array): Uint8Array {
+  if (
+    jpegBytes.length > 20 &&
+    jpegBytes[0] === 0xff &&
+    jpegBytes[1] === 0xd8 &&
+    jpegBytes[2] === 0xff &&
+    jpegBytes[3] === 0xe0 &&
+    jpegBytes[6] === 0x4a && // 'J'
+    jpegBytes[7] === 0x46 && // 'F'
+    jpegBytes[8] === 0x49 && // 'I'
+    jpegBytes[9] === 0x46 // 'F'
+  ) {
+    const out = new Uint8Array(jpegBytes);
+    out[13] = 1; // Density units: 1 = pixels per inch (DPI)
+    out[14] = 0x01; // Xdensity high byte (300 = 0x012C)
+    out[15] = 0x2c; // Xdensity low byte
+    out[16] = 0x01; // Ydensity high byte (300 = 0x012C)
+    out[17] = 0x2c; // Ydensity low byte
+    return out;
+  }
+  return jpegBytes;
 }
 
 function getBackdropRgb(mode: BackdropMode): [number, number, number] | null {
@@ -49,14 +118,17 @@ function getInkRgb(inkColor: SignatureInkColor): [number, number, number] {
 }
 
 /**
- * Applies studio backdrop normalization or Wet-Ink Signature Shadow Cleansing on pixel buffer
+ * Applies studio backdrop normalization, framing (zoom/pan/rotate/lighting),
+ * Wet-Ink Signature Shadow Cleansing, and optional Official Name & Date Slate on pixel buffer
  */
 export function processStudioCanvas(
   sourceImg: HTMLImageElement,
   targetWidth: number,
   targetHeight: number,
   backdropMode: BackdropMode,
-  wetInk: WetInkCleanserOptions
+  wetInk: WetInkCleanserOptions,
+  framing: StudioFramingOptions = DEFAULT_FRAMING_OPTIONS,
+  slate: NameDateSlateOptions = DEFAULT_NAME_DATE_SLATE
 ): HTMLCanvasElement {
   const canvas = document.createElement('canvas');
   canvas.width = targetWidth;
@@ -83,113 +155,204 @@ export function processStudioCanvas(
     sy = (sourceImg.height - sh) / 2;
   }
 
-  ctx.drawImage(sourceImg, sx, sy, sw, sh, 0, 0, targetWidth, targetHeight);
-
-  if (!wetInk.enabled && backdropMode === 'original') {
-    return canvas;
+  ctx.save();
+  if (framing.brightness !== 100 || framing.contrast !== 100) {
+    ctx.filter = `brightness(${framing.brightness}%) contrast(${framing.contrast}%)`;
   }
 
-  const imgData = ctx.getImageData(0, 0, targetWidth, targetHeight);
-  const data = imgData.data;
+  const centerX = targetWidth / 2;
+  const centerY = targetHeight / 2;
+  const offsetX = (framing.panX / 100) * targetWidth * 0.5;
+  const offsetY = (framing.panY / 100) * targetHeight * 0.5;
 
-  if (wetInk.enabled) {
-    // Adaptive illumination compensation to strip diagonal smartphone shadows on paper
-    // Sample coarse horizontal illumination profile across top & bottom margins
-    const colBgLuma = new Float32Array(targetWidth);
-    for (let x = 0; x < targetWidth; x++) {
-      let sum = 0;
-      let count = 0;
-      const stepY = Math.max(1, Math.floor(targetHeight / 12));
-      for (let y = 0; y < targetHeight; y += stepY) {
-        const idx = (y * targetWidth + x) * 4;
-        const luma = 0.299 * data[idx] + 0.587 * data[idx + 1] + 0.114 * data[idx + 2];
-        sum += luma;
-        count++;
-      }
-      colBgLuma[x] = count > 0 ? sum / count : 220;
-    }
-
-    const [inkR, inkG, inkB] = getInkRgb(wetInk.inkColor);
-    const bgRgb = getBackdropRgb(backdropMode) || [255, 255, 255];
-    // Relative darkness cutoff
-    const relativeCutoff = 0.72 + (wetInk.threshold - 50) * 0.0035;
-
-    for (let y = 0; y < targetHeight; y++) {
-      for (let x = 0; x < targetWidth; x++) {
-        const idx = (y * targetWidth + x) * 4;
-        const r = data[idx];
-        const g = data[idx + 1];
-        const b = data[idx + 2];
-        const luma = 0.299 * r + 0.587 * g + 0.114 * b;
-        const localPaperLuma = Math.max(140, colBgLuma[x]);
-        const ratio = luma / localPaperLuma;
-
-        if (ratio < relativeCutoff) {
-          // Ink pixel: compute smooth anti-aliased ink density
-          const rawStrength = Math.min(1, ((relativeCutoff - ratio) / (relativeCutoff * 0.45)) * wetInk.contrastBoost);
-          const alpha = Math.pow(rawStrength, 0.85);
-          data[idx] = Math.round(bgRgb[0] * (1 - alpha) + inkR * alpha);
-          data[idx + 1] = Math.round(bgRgb[1] * (1 - alpha) + inkG * alpha);
-          data[idx + 2] = Math.round(bgRgb[2] * (1 - alpha) + inkB * alpha);
-        } else {
-          // Paper shadow pixel -> normalize cleanly to pure paper backdrop
-          data[idx] = bgRgb[0];
-          data[idx + 1] = bgRgb[1];
-          data[idx + 2] = bgRgb[2];
-        }
-      }
-    }
-    ctx.putImageData(imgData, 0, 0);
-    return canvas;
+  ctx.translate(centerX + offsetX, centerY + offsetY);
+  if (framing.rotateDeg !== 0) {
+    ctx.rotate((framing.rotateDeg * Math.PI) / 180);
+  }
+  if (framing.zoom !== 1.0) {
+    ctx.scale(framing.zoom, framing.zoom);
   }
 
-  // Studio Backdrop Normalization (replaces studio cyclorama background around portrait/object)
-  const targetBg = getBackdropRgb(backdropMode);
-  if (targetBg) {
-    // Sample top-left, top-right, and upper-margin background reference color
-    const sampleIndices = [
-      (4 * targetWidth + 4) * 4,
-      (4 * targetWidth + (targetWidth - 5)) * 4,
-      (Math.floor(targetHeight * 0.12) * targetWidth + 6) * 4,
-      (Math.floor(targetHeight * 0.12) * targetWidth + (targetWidth - 7)) * 4
-    ];
-    let refR = 0,
-      refG = 0,
-      refB = 0;
-    for (const si of sampleIndices) {
-      refR += data[si];
-      refG += data[si + 1];
-      refB += data[si + 2];
-    }
-    refR /= sampleIndices.length;
-    refG /= sampleIndices.length;
-    refB /= sampleIndices.length;
+  ctx.drawImage(
+    sourceImg,
+    sx,
+    sy,
+    sw,
+    sh,
+    -targetWidth / 2,
+    -targetHeight / 2,
+    targetWidth,
+    targetHeight
+  );
+  ctx.restore();
 
-    const cx = targetWidth * 0.5;
-    const cy = targetHeight * 0.54;
+  if (wetInk.enabled || backdropMode !== 'original') {
+    const imgData = ctx.getImageData(0, 0, targetWidth, targetHeight);
+    const data = imgData.data;
 
-    for (let y = 0; y < targetHeight; y++) {
+    if (wetInk.enabled) {
+      // Adaptive illumination compensation to strip diagonal smartphone shadows on paper
+      const colBgLuma = new Float32Array(targetWidth);
       for (let x = 0; x < targetWidth; x++) {
-        const idx = (y * targetWidth + x) * 4;
-        const dr = data[idx] - refR;
-        const dg = data[idx + 1] - refG;
-        const db = data[idx + 2] - refB;
-        const colorDist = Math.sqrt(dr * dr + dg * dg + db * db);
+        let sum = 0;
+        let count = 0;
+        const stepY = Math.max(1, Math.floor(targetHeight / 12));
+        for (let y = 0; y < targetHeight; y += stepY) {
+          const idx = (y * targetWidth + x) * 4;
+          const luma =
+            0.299 * data[idx] + 0.587 * data[idx + 1] + 0.114 * data[idx + 2];
+          sum += luma;
+          count++;
+        }
+        colBgLuma[x] = count > 0 ? sum / count : 220;
+      }
 
-        // Protect central face/subject region
-        const nx = (x - cx) / (targetWidth * 0.34);
-        const ny = (y - cy) / (targetHeight * 0.42);
-        const radialDist = Math.sqrt(nx * nx + ny * ny);
+      const [inkR, inkG, inkB] = getInkRgb(wetInk.inkColor);
+      const bgRgb = getBackdropRgb(backdropMode) || [255, 255, 255];
+      const relativeCutoff = 0.72 + (wetInk.threshold - 50) * 0.0035;
 
-        if (radialDist > 0.78 && colorDist < 46) {
-          const blend = Math.min(1, Math.max(0, (46 - colorDist) / 22) * Math.min(1, (radialDist - 0.72) * 3.5));
-          data[idx] = Math.round(data[idx] * (1 - blend) + targetBg[0] * blend);
-          data[idx + 1] = Math.round(data[idx + 1] * (1 - blend) + targetBg[1] * blend);
-          data[idx + 2] = Math.round(data[idx + 2] * (1 - blend) + targetBg[2] * blend);
+      for (let y = 0; y < targetHeight; y++) {
+        for (let x = 0; x < targetWidth; x++) {
+          const idx = (y * targetWidth + x) * 4;
+          const r = data[idx];
+          const g = data[idx + 1];
+          const b = data[idx + 2];
+          const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+          const localPaperLuma = Math.max(140, colBgLuma[x]);
+          const ratio = luma / localPaperLuma;
+
+          if (ratio < relativeCutoff) {
+            const rawStrength = Math.min(
+              1,
+              ((relativeCutoff - ratio) / (relativeCutoff * 0.45)) *
+                wetInk.contrastBoost
+            );
+            const alpha = Math.pow(rawStrength, 0.85);
+            data[idx] = Math.round(bgRgb[0] * (1 - alpha) + inkR * alpha);
+            data[idx + 1] = Math.round(bgRgb[1] * (1 - alpha) + inkG * alpha);
+            data[idx + 2] = Math.round(bgRgb[2] * (1 - alpha) + inkB * alpha);
+          } else {
+            data[idx] = bgRgb[0];
+            data[idx + 1] = bgRgb[1];
+            data[idx + 2] = bgRgb[2];
+          }
         }
       }
+      ctx.putImageData(imgData, 0, 0);
+    } else {
+      // Studio Backdrop Normalization (replaces studio cyclorama background around portrait/object)
+      const targetBg = getBackdropRgb(backdropMode);
+      if (targetBg) {
+        const sampleIndices = [
+          (4 * targetWidth + 4) * 4,
+          (4 * targetWidth + (targetWidth - 5)) * 4,
+          (Math.floor(targetHeight * 0.12) * targetWidth + 6) * 4,
+          (Math.floor(targetHeight * 0.12) * targetWidth + (targetWidth - 7)) *
+            4
+        ];
+        let refR = 0,
+          refG = 0,
+          refB = 0;
+        for (const si of sampleIndices) {
+          refR += data[si];
+          refG += data[si + 1];
+          refB += data[si + 2];
+        }
+        refR /= sampleIndices.length;
+        refG /= sampleIndices.length;
+        refB /= sampleIndices.length;
+
+        const cx = targetWidth * 0.5;
+        const cy = targetHeight * 0.54;
+
+        for (let y = 0; y < targetHeight; y++) {
+          for (let x = 0; x < targetWidth; x++) {
+            const idx = (y * targetWidth + x) * 4;
+            const dr = data[idx] - refR;
+            const dg = data[idx + 1] - refG;
+            const db = data[idx + 2] - refB;
+            const colorDist = Math.sqrt(dr * dr + dg * dg + db * db);
+
+            // Protect central face/subject region
+            const nx = (x - cx) / (targetWidth * 0.34);
+            const ny = (y - cy) / (targetHeight * 0.42);
+            const radialDist = Math.sqrt(nx * nx + ny * ny);
+
+            if (radialDist > 0.78 && colorDist < 46) {
+              const blend = Math.min(
+                1,
+                Math.max(0, (46 - colorDist) / 22) *
+                  Math.min(1, (radialDist - 0.72) * 3.5)
+              );
+              data[idx] = Math.round(
+                data[idx] * (1 - blend) + targetBg[0] * blend
+              );
+              data[idx + 1] = Math.round(
+                data[idx + 1] * (1 - blend) + targetBg[1] * blend
+              );
+              data[idx + 2] = Math.round(
+                data[idx + 2] * (1 - blend) + targetBg[2] * blend
+              );
+            }
+          }
+        }
+        ctx.putImageData(imgData, 0, 0);
+      }
     }
-    ctx.putImageData(imgData, 0, 0);
+  }
+
+  // Optional Official Name & Date of Photo Slate Overlay (SSC / UPSC / NEET / Civil Service Spec)
+  if (slate.enabled && (slate.fullName.trim() || slate.dateText.trim())) {
+    const barHeight = Math.max(36, Math.round(targetHeight * 0.145));
+    const barY = targetHeight - barHeight;
+
+    ctx.save();
+    ctx.fillStyle = slate.style === 'dark-bar' ? '#14213d' : '#FFFFFF';
+    ctx.fillRect(0, barY, targetWidth, barHeight);
+
+    // Top hairline divider
+    ctx.strokeStyle = slate.style === 'dark-bar' ? '#fca311' : '#14213d';
+    ctx.lineWidth = Math.max(1.5, Math.round(targetHeight * 0.004));
+    ctx.beginPath();
+    ctx.moveTo(0, barY);
+    ctx.lineTo(targetWidth, barY);
+    ctx.stroke();
+
+    ctx.fillStyle = slate.style === 'dark-bar' ? '#FFFFFF' : '#14213d';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    const nameStr = slate.fullName.trim().toUpperCase();
+    const dateStr = slate.dateText.trim();
+
+    if (nameStr && dateStr) {
+      const nameFontPx = Math.max(11, Math.round(barHeight * 0.36));
+      const dateFontPx = Math.max(10, Math.round(barHeight * 0.31));
+      ctx.font = `700 ${nameFontPx}px "Plus Jakarta Sans", sans-serif`;
+      ctx.fillText(
+        nameStr,
+        targetWidth / 2,
+        barY + Math.round(barHeight * 0.34),
+        targetWidth - 16
+      );
+      ctx.font = `600 ${dateFontPx}px "JetBrains Mono", monospace`;
+      ctx.fillText(
+        `DOP: ${dateStr}`,
+        targetWidth / 2,
+        barY + Math.round(barHeight * 0.74),
+        targetWidth - 16
+      );
+    } else {
+      const singleFontPx = Math.max(12, Math.round(barHeight * 0.42));
+      ctx.font = `700 ${singleFontPx}px "Plus Jakarta Sans", sans-serif`;
+      ctx.fillText(
+        nameStr || `DOP: ${dateStr}`,
+        targetWidth / 2,
+        barY + Math.round(barHeight * 0.52),
+        targetWidth - 16
+      );
+    }
+    ctx.restore();
   }
 
   return canvas;
@@ -205,7 +368,9 @@ export async function runSevenPassBinarySearch(
   targetKb: number,
   mimeType: 'image/jpeg' | 'image/webp' | 'image/png',
   backdropMode: BackdropMode,
-  wetInk: WetInkCleanserOptions
+  wetInk: WetInkCleanserOptions,
+  framing: StudioFramingOptions = DEFAULT_FRAMING_OPTIONS,
+  slate: NameDateSlateOptions = DEFAULT_NAME_DATE_SLATE
 ): Promise<{
   processedSourceDataUrl: string;
   result: CompressionResult;
@@ -220,7 +385,15 @@ export async function runSevenPassBinarySearch(
   });
 
   // Render full-resolution normalized base canvas
-  const baseCanvas = processStudioCanvas(img, targetWidth, targetHeight, backdropMode, wetInk);
+  const baseCanvas = processStudioCanvas(
+    img,
+    targetWidth,
+    targetHeight,
+    backdropMode,
+    wetInk,
+    framing,
+    slate
+  );
   const processedSourceDataUrl = baseCanvas.toDataURL('image/jpeg', 0.98);
 
   const targetBytes = Math.max(1024, Math.floor(targetKb * 1024));
@@ -241,22 +414,37 @@ export async function runSevenPassBinarySearch(
       wCtx.drawImage(baseCanvas, 0, 0, w, h);
     }
 
-    // Note: image/png ignores quality in canvas.toDataURL, so for PNG we binary-search resolution scale or use WebP/JPEG quantization
     const effectiveMime = mimeType === 'image/png' ? 'image/jpeg' : mimeType;
-    const dataUrl = workCanvas.toDataURL(effectiveMime, quality);
-    const bytes = dataUrlToUint8Array(dataUrl).byteLength;
+    let dataUrl = workCanvas.toDataURL(effectiveMime, quality);
+    let rawBytes = dataUrlToUint8Array(dataUrl);
+
+    if (effectiveMime === 'image/jpeg') {
+      rawBytes = inject300DpiJfifHeader(rawBytes);
+      dataUrl = uint8ArrayToDataUrl(rawBytes, effectiveMime);
+    }
+
+    const bytes = rawBytes.byteLength;
     return { dataUrl, bytes, width: w, height: h };
   };
 
   let low = 0.04;
   let high = 0.98;
-  let bestCandidate: { dataUrl: string; bytes: number; quality: number; width: number; height: number } | null = null;
+  let bestCandidate: {
+    dataUrl: string;
+    bytes: number;
+    quality: number;
+    width: number;
+    height: number;
+  } | null = null;
   let scaleFactor = 1.0;
 
   // Check if even minimum quality at 1.0x scale exceeds ultra-tight ceiling (e.g. 10 KB on 1000x1000)
   const minFloorTest = encodeAttempt(0.05, 1.0);
   if (minFloorTest.bytes > targetBytes) {
-    scaleFactor = Math.max(0.28, Math.sqrt((targetBytes * 0.82) / minFloorTest.bytes));
+    scaleFactor = Math.max(
+      0.28,
+      Math.sqrt((targetBytes * 0.82) / minFloorTest.bytes)
+    );
   }
 
   for (let pass = 1; pass <= 7; pass++) {
@@ -287,7 +475,6 @@ export async function runSevenPassBinarySearch(
       low = midQuality; // Try higher quality while staying under ceiling
     } else {
       high = midQuality; // Reduce quality to get under ceiling
-      // If still over on pass 5+, nudge scaleFactor slightly to guarantee lock
       if (pass >= 5 && !bestCandidate) {
         scaleFactor = Math.max(0.22, scaleFactor * 0.82);
       }
@@ -321,7 +508,9 @@ export async function runSevenPassBinarySearch(
   }
 
   const finalBytesArr = dataUrlToUint8Array(bestCandidate.dataUrl);
-  const blob = new Blob([finalBytesArr as unknown as BlobPart], { type: mimeType });
+  const blob = new Blob([finalBytesArr as unknown as BlobPart], {
+    type: mimeType
+  });
   const blobUrl = URL.createObjectURL(blob);
   const durationMs = Math.max(12, Math.round(performance.now() - t0));
 
@@ -354,7 +543,6 @@ export function compileExactKbPdfBlob(
   heightPx: number,
   targetKb: number
 ): { blob: Blob; finalBytes: number } {
-  // Always ensure we embed a baseline RGB JPEG stream for PDF /DCTDecode compatibility
   const jpegBytes = dataUrlToUint8Array(jpegDataUrl);
   const pdfWidthPt = Math.round((widthPx / 300) * 72 * 100) / 100 || 200;
   const pdfHeightPt = Math.round((heightPx / 300) * 72 * 100) / 100 || 260;
@@ -362,7 +550,7 @@ export function compileExactKbPdfBlob(
   const encoder = new TextEncoder();
   const chunks: Uint8Array[] = [];
   let offset = 0;
-  const offsets: number[] = [0]; // 1-indexed object offsets
+  const offsets: number[] = [0];
 
   const pushStr = (str: string) => {
     const arr = encoder.encode(str);
@@ -377,21 +565,17 @@ export function compileExactKbPdfBlob(
 
   pushStr('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n');
 
-  // Object 1: Catalog
   offsets[1] = offset;
   pushStr('1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n');
 
-  // Object 2: Pages
   offsets[2] = offset;
   pushStr('2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n');
 
-  // Object 3: Page
   offsets[3] = offset;
   pushStr(
     `3 0 obj\n<< /Type /Page /Parent 2 0 R /Resources << /XObject << /Im0 4 0 R >> >> /MediaBox [0 0 ${pdfWidthPt} ${pdfHeightPt}] /Contents 5 0 R >>\nendobj\n`
   );
 
-  // Object 4: Image XObject (/DCTDecode raw JPEG bytes)
   offsets[4] = offset;
   pushStr(
     `4 0 obj\n<< /Type /XObject /Subtype /Image /Width ${widthPx} /Height ${heightPx} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jpegBytes.byteLength} >>\nstream\n`
@@ -399,7 +583,6 @@ export function compileExactKbPdfBlob(
   pushBytes(jpegBytes);
   pushStr('\nendstream\nendobj\n');
 
-  // Object 5: Page Content Stream
   const contentStream = `q\n${pdfWidthPt} 0 0 ${pdfHeightPt} 0 0 cm\n/Im0 Do\nQ\n`;
   const contentBytes = encoder.encode(contentStream);
   offsets[5] = offset;
@@ -407,11 +590,13 @@ export function compileExactKbPdfBlob(
   pushBytes(contentBytes);
   pushStr('\nendstream\nendobj\n');
 
-  // Optional calibration comment block if user wants Exact-KB padding near ceiling without exceeding it
   const targetBytes = Math.floor(targetKb * 1024);
   const trailerEstimate = 280;
   if (offset + trailerEstimate < targetBytes * 0.94) {
-    const padLen = Math.max(0, Math.min(2048, Math.floor(targetBytes * 0.92 - offset - trailerEstimate)));
+    const padLen = Math.max(
+      0,
+      Math.min(2048, Math.floor(targetBytes * 0.92 - offset - trailerEstimate))
+    );
     if (padLen > 32) {
       pushStr(`% CompressPhoto Calibration Seal: ${'A'.repeat(padLen - 40)}\n`);
     }
@@ -422,7 +607,9 @@ export function compileExactKbPdfBlob(
   for (let i = 1; i <= 5; i++) {
     pushStr(`${String(offsets[i]).padStart(10, '0')} 00000 n \n`);
   }
-  pushStr(`trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n${xrefOffset}\n%%EOF\n`);
+  pushStr(
+    `trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n${xrefOffset}\n%%EOF\n`
+  );
 
   const totalLength = chunks.reduce((acc, c) => acc + c.byteLength, 0);
   const merged = new Uint8Array(totalLength);
@@ -451,11 +638,11 @@ export async function generatePharmacySheetDataUrl(
   const img = new Image();
   await new Promise<void>((resolve, reject) => {
     img.onload = () => resolve();
-    img.onerror = () => reject(new Error('Failed to load calibrated photo for sheet'));
+    img.onerror = () =>
+      reject(new Error('Failed to load calibrated photo for sheet'));
     img.src = calibratedPhotoDataUrl;
   });
 
-  // 6x4 inches @ 300 DPI = 1800 x 1200 px
   const sheetW = 1800;
   const sheetH = 1200;
   const canvas = document.createElement('canvas');
@@ -463,11 +650,9 @@ export async function generatePharmacySheetDataUrl(
   canvas.height = sheetH;
   const ctx = canvas.getContext('2d')!;
 
-  // Archival pharmacy sheet background
   ctx.fillStyle = '#FFFFFF';
   ctx.fillRect(0, 0, sheetW, sheetH);
 
-  // Subtle millimeter ruler ticks along top and left edge
   ctx.fillStyle = '#9E978B';
   ctx.font = '500 13px "JetBrains Mono", monospace';
   for (let x = 60; x < sheetW - 60; x += 30) {
@@ -481,7 +666,6 @@ export async function generatePharmacySheetDataUrl(
     ctx.fillRect(sheetW - (isMajor ? 18 : 9), y, isMajor ? 18 : 9, 1.5);
   }
 
-  // Header metadata bar on the sheet
   ctx.fillStyle = '#161514';
   ctx.font = '600 19px "JetBrains Mono", monospace';
   ctx.fillText(
@@ -490,7 +674,6 @@ export async function generatePharmacySheetDataUrl(
     56
   );
 
-  // Compute tile size for 4 columns x 2 rows = 8 photos
   const cols = 4;
   const rows = 2;
   const maxTileW = 340;
@@ -516,39 +699,31 @@ export async function generatePharmacySheetDataUrl(
       const x = startX + c * (tileW + gapX);
       const y = startY + r * (tileH + gapY);
 
-      // Draw photo tile
       ctx.drawImage(img, x, y, tileW, tileH);
 
-      // Hairline border around each photo
       ctx.strokeStyle = '#D0C9BC';
       ctx.lineWidth = 1;
       ctx.strokeRect(x, y, tileW, tileH);
 
-      // Corner Crop Registration Marks ┌ ┐ └ ┘
       const mLen = 16;
       const mOff = 6;
       ctx.strokeStyle = '#161514';
       ctx.lineWidth = 2;
       ctx.beginPath();
-      // Top-left ┌
       ctx.moveTo(x - mOff, y - mOff + mLen);
       ctx.lineTo(x - mOff, y - mOff);
       ctx.lineTo(x - mOff + mLen, y - mOff);
-      // Top-right ┐
       ctx.moveTo(x + tileW + mOff - mLen, y - mOff);
       ctx.lineTo(x + tileW + mOff, y - mOff);
       ctx.lineTo(x + tileW + mOff, y - mOff + mLen);
-      // Bottom-left └
       ctx.moveTo(x - mOff, y + tileH + mOff - mLen);
       ctx.lineTo(x - mOff, y + tileH + mOff);
       ctx.lineTo(x - mOff + mLen, y + tileH + mOff);
-      // Bottom-right ┘
       ctx.moveTo(x + tileW + mOff - mLen, y + tileH + mOff);
       ctx.lineTo(x + tileW + mOff, y + tileH + mOff);
       ctx.lineTo(x + tileW + mOff, y + tileH + mOff - mLen);
       ctx.stroke();
 
-      // Optional subtle proof watermark across each tile
       if (stampConfig.showWatermark && stampConfig.watermarkText.trim()) {
         ctx.save();
         ctx.translate(x + tileW / 2, y + tileH / 2);
@@ -562,7 +737,6 @@ export async function generatePharmacySheetDataUrl(
     }
   }
 
-  // Optional Custom Studio Stamp Overlay in Bottom Margin
   if (stampConfig.enabled) {
     const stampColor =
       stampConfig.inkColor === 'vermilion'
@@ -600,7 +774,6 @@ export async function generatePharmacySheetDataUrl(
     ctx.restore();
   }
 
-  // Left footer cutting guide legend
   ctx.fillStyle = '#5A554E';
   ctx.font = '500 15px "JetBrains Mono", monospace';
   ctx.textAlign = 'left';
