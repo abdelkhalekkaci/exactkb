@@ -373,6 +373,7 @@ export async function runSevenPassBinarySearch(
   slate: NameDateSlateOptions = DEFAULT_NAME_DATE_SLATE
 ): Promise<{
   processedSourceDataUrl: string;
+  rawCroppedDataUrl: string;
   result: CompressionResult;
 }> {
   const t0 = performance.now();
@@ -384,7 +385,19 @@ export async function runSevenPassBinarySearch(
     img.src = sourceDataUrl;
   });
 
-  // Render full-resolution normalized base canvas
+  // Render raw center-cropped canvas (without backdrop whitening or wet-ink) for 1:1 Before/After comparison
+  const rawCropCanvas = processStudioCanvas(
+    img,
+    targetWidth,
+    targetHeight,
+    'original',
+    { ...wetInk, enabled: false },
+    DEFAULT_FRAMING_OPTIONS,
+    { ...slate, enabled: false }
+  );
+  const rawCroppedDataUrl = rawCropCanvas.toDataURL('image/jpeg', 0.92);
+
+  // Render full-resolution normalized base canvas with all active Pro options
   const baseCanvas = processStudioCanvas(
     img,
     targetWidth,
@@ -404,7 +417,7 @@ export async function runSevenPassBinarySearch(
     const w = Math.max(64, Math.round(targetWidth * scaleFactor));
     const h = Math.max(32, Math.round(targetHeight * scaleFactor));
     let workCanvas = baseCanvas;
-    if (scaleFactor < 0.999) {
+    if (scaleFactor < 0.999 || mimeType === 'image/png') {
       workCanvas = document.createElement('canvas');
       workCanvas.width = w;
       workCanvas.height = h;
@@ -412,15 +425,28 @@ export async function runSevenPassBinarySearch(
       wCtx.fillStyle = '#FFFFFF';
       wCtx.fillRect(0, 0, w, h);
       wCtx.drawImage(baseCanvas, 0, 0, w, h);
+
+      // For lossless PNG, quantize color bit-depth proportional to quality so PNG compresses under strict KB ceiling
+      if (mimeType === 'image/png' && quality < 0.92) {
+        const imgData = wCtx.getImageData(0, 0, w, h);
+        const d = imgData.data;
+        const levels = Math.max(4, Math.round(4 + quality * 28));
+        const step = 255 / (levels - 1);
+        for (let i = 0; i < d.length; i += 4) {
+          d[i] = Math.round(Math.round(d[i] / step) * step);
+          d[i + 1] = Math.round(Math.round(d[i + 1] / step) * step);
+          d[i + 2] = Math.round(Math.round(d[i + 2] / step) * step);
+        }
+        wCtx.putImageData(imgData, 0, 0);
+      }
     }
 
-    const effectiveMime = mimeType === 'image/png' ? 'image/jpeg' : mimeType;
-    let dataUrl = workCanvas.toDataURL(effectiveMime, quality);
+    let dataUrl = workCanvas.toDataURL(mimeType, quality);
     let rawBytes = dataUrlToUint8Array(dataUrl);
 
-    if (effectiveMime === 'image/jpeg') {
+    if (mimeType === 'image/jpeg') {
       rawBytes = inject300DpiJfifHeader(rawBytes);
-      dataUrl = uint8ArrayToDataUrl(rawBytes, effectiveMime);
+      dataUrl = uint8ArrayToDataUrl(rawBytes, mimeType);
     }
 
     const bytes = rawBytes.byteLength;
@@ -442,8 +468,8 @@ export async function runSevenPassBinarySearch(
   const minFloorTest = encodeAttempt(0.05, 1.0);
   if (minFloorTest.bytes > targetBytes) {
     scaleFactor = Math.max(
-      0.28,
-      Math.sqrt((targetBytes * 0.82) / minFloorTest.bytes)
+      0.25,
+      Math.sqrt((targetBytes * 0.8) / minFloorTest.bytes)
     );
   }
 
@@ -475,19 +501,24 @@ export async function runSevenPassBinarySearch(
       low = midQuality; // Try higher quality while staying under ceiling
     } else {
       high = midQuality; // Reduce quality to get under ceiling
-      if (pass >= 5 && !bestCandidate) {
-        scaleFactor = Math.max(0.22, scaleFactor * 0.82);
+      if (pass >= 4 && !bestCandidate) {
+        scaleFactor = Math.max(0.2, scaleFactor * 0.78);
       }
     }
   }
 
   // Fallback guarantee if all 7 passes were slightly over
   if (!bestCandidate) {
-    const guaranteed = encodeAttempt(0.05, scaleFactor * 0.75);
+    let fallbackScale = scaleFactor * 0.72;
+    let guaranteed = encodeAttempt(0.04, fallbackScale);
+    while (guaranteed.bytes > targetBytes && fallbackScale > 0.16) {
+      fallbackScale *= 0.75;
+      guaranteed = encodeAttempt(0.04, fallbackScale);
+    }
     bestCandidate = {
       dataUrl: guaranteed.dataUrl,
       bytes: guaranteed.bytes,
-      quality: 0.05,
+      quality: 0.04,
       width: guaranteed.width,
       height: guaranteed.height
     };
@@ -516,6 +547,7 @@ export async function runSevenPassBinarySearch(
 
   return {
     processedSourceDataUrl,
+    rawCroppedDataUrl,
     result: {
       blobUrl,
       dataUrl: bestCandidate.dataUrl,
@@ -537,13 +569,59 @@ export async function runSevenPassBinarySearch(
  * Compiles a genuine ISO-32000 PDF 1.4 binary file containing the calibrated JPEG image,
  * guaranteeing that the total PDF file size is also locked beneath the target KB ceiling.
  */
-export function compileExactKbPdfBlob(
-  jpegDataUrl: string,
+export async function compileExactKbPdfBlob(
+  imageDataUrl: string,
   widthPx: number,
   heightPx: number,
   targetKb: number
-): { blob: Blob; finalBytes: number } {
-  const jpegBytes = dataUrlToUint8Array(jpegDataUrl);
+): Promise<{ blob: Blob; finalBytes: number }> {
+  const targetBytes = Math.max(2048, Math.floor(targetKb * 1024));
+  const pdfContainerOverhead = 820; // PDF 1.4 objects + xref + trailer
+  const maxAllowedJpegBytes = Math.max(1024, targetBytes - pdfContainerOverhead);
+
+  let jpegDataUrl = imageDataUrl;
+  let jpegBytes = dataUrlToUint8Array(jpegDataUrl);
+
+  // If source is PNG/WebP or if the JPEG + PDF wrapper would exceed targetBytes, re-encode JPEG to fit strictly inside PDF budget
+  if (
+    !imageDataUrl.startsWith('data:image/jpeg') ||
+    jpegBytes.byteLength > maxAllowedJpegBytes
+  ) {
+    const img = new Image();
+    await new Promise<void>((resolve, reject) => {
+      img.onload = () => resolve();
+      img.onerror = () => reject(new Error('Failed to load image for PDF'));
+      img.src = imageDataUrl;
+    });
+    const canvas = document.createElement('canvas');
+    canvas.width = widthPx;
+    canvas.height = heightPx;
+    const ctx = canvas.getContext('2d')!;
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, widthPx, heightPx);
+    ctx.drawImage(img, 0, 0, widthPx, heightPx);
+
+    let low = 0.04;
+    let high = 0.92;
+    let bestBytes: Uint8Array | null = null;
+    for (let i = 0; i < 6; i++) {
+      const mid = (low + high) / 2;
+      const attemptUrl = canvas.toDataURL('image/jpeg', mid);
+      const attemptBytes = inject300DpiJfifHeader(dataUrlToUint8Array(attemptUrl));
+      if (attemptBytes.byteLength <= maxAllowedJpegBytes) {
+        bestBytes = attemptBytes;
+        low = mid;
+      } else {
+        high = mid;
+      }
+    }
+    if (!bestBytes) {
+      const fallbackUrl = canvas.toDataURL('image/jpeg', 0.04);
+      bestBytes = inject300DpiJfifHeader(dataUrlToUint8Array(fallbackUrl));
+    }
+    jpegBytes = bestBytes;
+  }
+
   const pdfWidthPt = Math.round((widthPx / 300) * 72 * 100) / 100 || 200;
   const pdfHeightPt = Math.round((heightPx / 300) * 72 * 100) / 100 || 260;
 
@@ -590,14 +668,13 @@ export function compileExactKbPdfBlob(
   pushBytes(contentBytes);
   pushStr('\nendstream\nendobj\n');
 
-  const targetBytes = Math.floor(targetKb * 1024);
-  const trailerEstimate = 280;
+  const trailerEstimate = 260;
   if (offset + trailerEstimate < targetBytes * 0.94) {
     const padLen = Math.max(
       0,
-      Math.min(2048, Math.floor(targetBytes * 0.92 - offset - trailerEstimate))
+      Math.min(1800, Math.floor(targetBytes * 0.92 - offset - trailerEstimate))
     );
-    if (padLen > 32) {
+    if (padLen > 45) {
       pushStr(`% CompressPhoto Calibration Seal: ${'A'.repeat(padLen - 40)}\n`);
     }
   }

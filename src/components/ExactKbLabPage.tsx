@@ -53,12 +53,15 @@ import {
 } from '../utils/exactKbEngine';
 import { VisitorVisualGuide } from './VisitorVisualGuide';
 
+import { ProFeatureId } from './ProStudioFooter';
+
 interface ExactKbLabPageProps {
   locale: LocaleCode;
   activeToolSlug: string | null;
   initialPresetId: BiometricPresetId;
   initialTargetKb: number;
   bridgedQrDataUrl: string | null;
+  proFeatureTrigger?: { id: ProFeatureId; tick: number } | null;
   onClearBridgedQr: () => void;
   onSelectToolSlug: (slug: string | null) => void;
   onSelectBlogSlug: (slug: string) => void;
@@ -67,6 +70,7 @@ interface ExactKbLabPageProps {
 interface BatchPhotoItem {
   id: string;
   fileName: string;
+  rawSourceDataUrl: string;
   originalKb: number;
   targetKb: number;
   compressedKb: number;
@@ -82,6 +86,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
   initialPresetId,
   initialTargetKb,
   bridgedQrDataUrl,
+  proFeatureTrigger,
   onClearBridgedQr,
   onSelectToolSlug,
   onSelectBlogSlug
@@ -93,6 +98,9 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
   const [activeSampleId, setActiveSampleId] =
     useState<SampleId>('biometric-portrait');
   const [sourceDataUrl, setSourceDataUrl] = useState<string>(() =>
+    generateCuratedSampleDataUrl('biometric-portrait')
+  );
+  const [beforePreviewUrl, setBeforePreviewUrl] = useState<string>(() =>
     generateCuratedSampleDataUrl('biometric-portrait')
   );
   const [sourceLabel, setSourceLabel] = useState<string>(
@@ -168,6 +176,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
   const splitContainerRef = useRef<HTMLDivElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const batchFileInputRef = useRef<HTMLInputElement | null>(null);
+  const workbenchRef = useRef<HTMLDivElement | null>(null);
 
   // Sync preset & target KB when landing route or initialPresetId changes
   useEffect(() => {
@@ -242,8 +251,9 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
       framing,
       slateConfig
     )
-      .then(({ result }) => {
+      .then(({ rawCroppedDataUrl, result }) => {
         if (cancelled) return;
+        setBeforePreviewUrl(rawCroppedDataUrl);
         setCompressionResult(result);
         setIsCompressing(false);
       })
@@ -269,6 +279,101 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     slateConfig
   ]);
 
+  // Automatically regenerate 4x6" Print Sheet whenever modal is open or stampConfig/compressionResult changes
+  useEffect(() => {
+    if (!showPharmacyModal || !compressionResult) return;
+    let cancelled = false;
+    generatePharmacySheetDataUrl(
+      compressionResult.dataUrl,
+      activePreset.name,
+      activePreset.physicalSize,
+      stampConfig
+    )
+      .then((url) => {
+        if (!cancelled) setPharmacySheetUrl(url);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    showPharmacyModal,
+    compressionResult,
+    activePreset.name,
+    activePreset.physicalSize,
+    stampConfig
+  ]);
+
+  // Automatically re-compress existing Batch Queue items whenever targetKb or dimensions change
+  useEffect(() => {
+    if (batchItems.length === 0) return;
+    const needsUpdate = batchItems.some(
+      (item) =>
+        item.status === 'done' &&
+        (item.targetKb !== targetKb ||
+          item.width !== effectiveWidth ||
+          item.height !== effectiveHeight)
+    );
+    if (!needsUpdate) return;
+
+    let cancelled = false;
+    setIsBatchProcessing(true);
+
+    (async () => {
+      for (const item of batchItems) {
+        if (cancelled || !item.rawSourceDataUrl) break;
+        try {
+          const { result } = await runSevenPassBinarySearch(
+            item.rawSourceDataUrl,
+            effectiveWidth,
+            effectiveHeight,
+            targetKb,
+            mimeType,
+            backdropMode,
+            {
+              enabled: wetInkEnabled,
+              threshold: wetInkThreshold,
+              contrastBoost: wetInkBoost,
+              inkColor: wetInkColor
+            },
+            framing,
+            slateConfig
+          );
+          if (cancelled) break;
+          setBatchItems((prev) =>
+            prev.map((row) =>
+              row.id === item.id
+                ? {
+                    ...row,
+                    targetKb,
+                    compressedKb: result.kb,
+                    dataUrl: result.dataUrl,
+                    width: result.width,
+                    height: result.height,
+                    status: 'done'
+                  }
+                : row
+            )
+          );
+        } catch {
+          // ignore
+        }
+      }
+      if (!cancelled) setIsBatchProcessing(false);
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    targetKb,
+    effectiveWidth,
+    effectiveHeight,
+    mimeType,
+    backdropMode,
+    slateConfig
+  ]);
+
   const loadFileObject = (file: File) => {
     onClearBridgedQr();
     const reader = new FileReader();
@@ -281,24 +386,17 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     reader.readAsDataURL(file);
   };
 
-  const processBatchFiles = async (files: FileList | File[]) => {
-    const imageFiles = Array.from(files).filter((f) =>
-      f.type.startsWith('image/')
-    );
-    if (imageFiles.length === 0) return;
-
-    // Also load the first file into the main interactive preview
-    loadFileObject(imageFiles[0]);
-
-    if (imageFiles.length === 1 && batchItems.length === 0) {
-      return;
-    }
-
+  const runBatchOnEntries = async (
+    entries: Array<{ fileName: string; rawDataUrl: string; originalKb: number }>
+  ) => {
+    if (entries.length === 0) return;
     setIsBatchProcessing(true);
-    const placeholders: BatchPhotoItem[] = imageFiles.map((file, idx) => ({
-      id: `${Date.now()}-${idx}-${file.name}`,
-      fileName: file.name,
-      originalKb: Number((file.size / 1024).toFixed(1)),
+    const now = Date.now();
+    const placeholders: BatchPhotoItem[] = entries.map((entry, idx) => ({
+      id: `${now}-${idx}-${entry.fileName}`,
+      fileName: entry.fileName,
+      rawSourceDataUrl: entry.rawDataUrl,
+      originalKb: entry.originalKb,
       targetKb,
       compressedKb: 0,
       dataUrl: '',
@@ -309,22 +407,12 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
 
     setBatchItems((prev) => [...placeholders, ...prev]);
 
-    for (let i = 0; i < imageFiles.length; i++) {
-      const file = imageFiles[i];
+    for (let i = 0; i < entries.length; i++) {
+      const entry = entries[i];
       const itemId = placeholders[i].id;
       try {
-        const rawDataUrl = await new Promise<string>((resolve, reject) => {
-          const r = new FileReader();
-          r.onload = () =>
-            typeof r.result === 'string'
-              ? resolve(r.result)
-              : reject(new Error('Invalid file'));
-          r.onerror = () => reject(new Error('Read error'));
-          r.readAsDataURL(file);
-        });
-
         const { result } = await runSevenPassBinarySearch(
-          rawDataUrl,
+          entry.rawDataUrl,
           effectiveWidth,
           effectiveHeight,
           targetKb,
@@ -345,6 +433,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
             item.id === itemId
               ? {
                   ...item,
+                  targetKb,
                   compressedKb: result.kb,
                   dataUrl: result.dataUrl,
                   width: result.width,
@@ -364,6 +453,97 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     }
     setIsBatchProcessing(false);
   };
+
+  const processBatchFiles = async (files: FileList | File[]) => {
+    const imageFiles = Array.from(files).filter((f) =>
+      f.type.startsWith('image/')
+    );
+    if (imageFiles.length === 0) return;
+
+    loadFileObject(imageFiles[0]);
+
+    if (imageFiles.length === 1 && batchItems.length === 0) {
+      return;
+    }
+
+    const entries: Array<{
+      fileName: string;
+      rawDataUrl: string;
+      originalKb: number;
+    }> = [];
+
+    for (const file of imageFiles) {
+      try {
+        const rawDataUrl = await new Promise<string>((resolve, reject) => {
+          const r = new FileReader();
+          r.onload = () =>
+            typeof r.result === 'string'
+              ? resolve(r.result)
+              : reject(new Error('Invalid file'));
+          r.onerror = () => reject(new Error('Read error'));
+          r.readAsDataURL(file);
+        });
+        entries.push({
+          fileName: file.name,
+          rawDataUrl,
+          originalKb: Number((file.size / 1024).toFixed(1))
+        });
+      } catch {
+        // skip unreadable file
+      }
+    }
+
+    await runBatchOnEntries(entries);
+  };
+
+  const handleLoadDemoBatch = () => {
+    const demoEntries = [
+      {
+        fileName: 'applicant-passport-photo.jpg',
+        rawDataUrl: generateCuratedSampleDataUrl('biometric-portrait'),
+        originalKb: 412.6
+      },
+      {
+        fileName: 'candidate-signature-scan.jpg',
+        rawDataUrl: generateCuratedSampleDataUrl('wet-ink-signature'),
+        originalKb: 285.4
+      },
+      {
+        fileName: 'studio-id-portrait-02.jpg',
+        rawDataUrl: generateCuratedSampleDataUrl('studio-product'),
+        originalKb: 640.8
+      }
+    ];
+    setBatchItems([]);
+    runBatchOnEntries(demoEntries);
+  };
+
+  // Handle interactive Pro Feature activation triggered from Footer Ribbon
+  useEffect(() => {
+    if (!proFeatureTrigger) return;
+    const { id } = proFeatureTrigger;
+    if (id === 'grid-framing') {
+      if (presetId === 'wet-ink-sig') {
+        handleSelectPreset('schengen-35x45');
+      }
+      setShowBiometricGrid(true);
+      setShowFramingPanel(true);
+      workbenchRef.current?.scrollIntoView({ behavior: 'smooth' });
+    } else if (id === 'print-sheet') {
+      setShowPharmacyModal(true);
+    } else if (id === 'name-slate') {
+      setShowSlatePanel(true);
+      setSlateConfig((prev) => ({
+        ...prev,
+        enabled: true,
+        fullName: prev.fullName || 'ALEXANDER SMITH'
+      }));
+      workbenchRef.current?.scrollIntoView({ behavior: 'smooth' });
+    } else if (id === 'batch-queue') {
+      handleLoadDemoBatch();
+      workbenchRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [proFeatureTrigger]);
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -466,9 +646,9 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     );
   };
 
-  const handleDownloadExactPdf = () => {
+  const handleDownloadExactPdf = async () => {
     if (!compressionResult) return;
-    const { blob, finalBytes } = compileExactKbPdfBlob(
+    const { blob, finalBytes } = await compileExactKbPdfBlob(
       compressionResult.dataUrl,
       compressionResult.width,
       compressionResult.height,
@@ -479,7 +659,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     triggerDownload(
       url,
       `compressphoto-${finalKb}KB.pdf`,
-      `Downloaded ISO-32000 PDF (${finalKb} KB)`
+      `Downloaded ISO-32000 PDF (${finalKb} KB ≤ ${targetKb} KB)`
     );
     setTimeout(() => URL.revokeObjectURL(url), 5000);
   };
@@ -719,6 +899,19 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
                     : '+ Batch Compress Multiple Photos (Free)'}
             </span>
           </button>
+
+          <button
+            onClick={handleLoadDemoBatch}
+            className="px-3 py-1.5 rounded-md font-semibold border border-[#14213d]/25 dark:border-[#ffffff]/25 hover:border-[#fca311] transition-colors cursor-pointer"
+          >
+            {locale === 'fr'
+              ? 'Tester Lot (3 Photos)'
+              : locale === 'es'
+                ? 'Probar Lote (3 Fotos)'
+                : locale === 'ar'
+                  ? 'تجربة ضغط دفعة (3 صور)'
+                  : 'Try 3-Photo Batch Demo'}
+          </button>
         </div>
       </div>
 
@@ -820,7 +1013,11 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
       )}
 
       {/* STEP 2 & STEP 3: SIMPLE WORKBENCH + FREE PRO STUDIO CONTROLS */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div
+        ref={workbenchRef}
+        id="studio-workbench"
+        className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+      >
         {/* LEFT 5 COLUMNS: Step 1 (Document Type), Step 2 (Max KB), and Free Pro Tools */}
         <div className="lg:col-span-5 space-y-5">
           {/* Step 1: Document Size Preset */}
@@ -1205,6 +1402,28 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
                   </div>
                 </div>
 
+                <div>
+                  <div className="flex justify-between text-xs mb-1">
+                    <span>Studio Contrast</span>
+                    <span className="font-mono tabular-nums">
+                      {framing.contrast}%
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min={85}
+                    max={130}
+                    value={framing.contrast}
+                    onChange={(e) =>
+                      setFraming({
+                        ...framing,
+                        contrast: Number(e.target.value)
+                      })
+                    }
+                    className="w-full accent-[#fca311]"
+                  />
+                </div>
+
                 <button
                   onClick={() => setFraming(DEFAULT_FRAMING_OPTIONS)}
                   className="w-full py-1.5 rounded border border-[#14213d]/20 dark:border-[#ffffff]/20 text-xs font-semibold flex items-center justify-center gap-1.5 hover:border-[#fca311] cursor-pointer"
@@ -1413,13 +1632,13 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
                 </div>
               )}
 
-              {/* Before Layer */}
+              {/* Before Layer (1:1 Cropped Original for Exact Pixel Comparison) */}
               <div
                 style={{ clipPath: `inset(0 ${100 - splitPercent}% 0 0)` }}
                 className="absolute inset-0 bg-[#ffffff]"
               >
                 <img
-                  src={sourceDataUrl}
+                  src={beforePreviewUrl}
                   alt="Original Photo Before Compression"
                   referrerPolicy="no-referrer"
                   className="w-full h-full max-h-[380px] object-contain block mx-auto"
@@ -1908,9 +2127,14 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
         <div className="fixed inset-0 z-50 bg-[#14213d]/85 flex items-center justify-center p-4 overflow-y-auto">
           <div className="bg-[#ffffff] dark:bg-[#1b2c52] border-2 border-[#fca311] rounded-xl max-w-3xl w-full p-6 space-y-5 my-8">
             <div className="flex items-center justify-between border-b border-[#14213d]/15 dark:border-[#ffffff]/15 pb-4">
-              <h3 className="font-serif text-xl font-bold">
-                Printable 4×6 inch (10×15 cm) 8-Photo Sheet
-              </h3>
+              <div>
+                <h3 className="font-serif text-xl font-bold">
+                  Printable 4×6 inch (10×15 cm) 8-Photo Sheet
+                </h3>
+                <p className="text-xs font-mono opacity-75">
+                  1800×1200 px @ 300 DPI · Calibrated Scissor Crop Marks
+                </p>
+              </div>
               <button
                 onClick={() => setShowPharmacyModal(false)}
                 className="px-3 py-1.5 rounded bg-[#fca311] text-[#14213d] text-xs font-bold cursor-pointer"
@@ -1928,22 +2152,93 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
               />
             </div>
 
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <label className="flex items-center gap-2 text-xs font-semibold cursor-pointer">
+            {/* Live Studio Stamp & Watermark Customization Bar */}
+            <div className="p-4 rounded-lg border border-[#14213d]/15 dark:border-[#ffffff]/15 bg-[#14213d]/5 dark:bg-[#ffffff]/5 grid grid-cols-1 sm:grid-cols-3 gap-3 items-center text-xs">
+              <div className="space-y-1.5">
+                <label className="flex items-center gap-2 font-bold cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={stampConfig.enabled}
+                    onChange={(e) =>
+                      setStampConfig({
+                        ...stampConfig,
+                        enabled: e.target.checked
+                      })
+                    }
+                    className="accent-[#fca311]"
+                  />
+                  <span>Include Studio Date Stamp</span>
+                </label>
+                <label className="flex items-center gap-2 font-semibold cursor-pointer opacity-85">
+                  <input
+                    type="checkbox"
+                    checked={stampConfig.showWatermark}
+                    onChange={(e) =>
+                      setStampConfig({
+                        ...stampConfig,
+                        showWatermark: e.target.checked
+                      })
+                    }
+                    className="accent-[#fca311]"
+                  />
+                  <span>Show Proof Watermark</span>
+                </label>
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-semibold mb-1 opacity-80">
+                  Studio / Applicant Stamp Label
+                </label>
                 <input
-                  type="checkbox"
-                  checked={stampConfig.enabled}
+                  type="text"
+                  value={stampConfig.studioName}
                   onChange={(e) =>
                     setStampConfig({
                       ...stampConfig,
-                      enabled: e.target.checked
+                      enabled: true,
+                      studioName: e.target.value
                     })
                   }
-                  className="accent-[#fca311]"
+                  className="w-full px-2.5 py-1.5 rounded border border-[#14213d]/25 dark:border-[#ffffff]/25 bg-transparent font-mono text-xs"
                 />
-                <span>Include Studio Date Stamp</span>
-              </label>
+              </div>
 
+              <div>
+                <label className="block text-[11px] font-semibold mb-1 opacity-80">
+                  Stamp Ink Color
+                </label>
+                <div className="grid grid-cols-3 gap-1.5">
+                  {(
+                    [
+                      { id: 'charcoal', label: 'Charcoal' },
+                      { id: 'vermilion', label: 'Red' },
+                      { id: 'emerald', label: 'Green' }
+                    ] as const
+                  ).map((col) => (
+                    <button
+                      key={col.id}
+                      type="button"
+                      onClick={() =>
+                        setStampConfig({
+                          ...stampConfig,
+                          enabled: true,
+                          inkColor: col.id
+                        })
+                      }
+                      className={`py-1 px-2 rounded font-semibold border cursor-pointer ${
+                        stampConfig.inkColor === col.id
+                          ? 'bg-[#fca311] text-[#14213d] border-[#fca311]'
+                          : 'border-[#14213d]/20 dark:border-[#ffffff]/20'
+                      }`}
+                    >
+                      {col.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-end gap-3">
               <button
                 onClick={() =>
                   triggerDownload(
@@ -1955,7 +2250,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
                 className="py-3 px-6 rounded-lg bg-[#fca311] hover:bg-[#e5920e] text-[#14213d] text-xs font-bold flex items-center gap-2 cursor-pointer"
               >
                 <Download className="w-4 h-4" />
-                <span>Download Printable 4×6&quot; Sheet</span>
+                <span>Download Printable 4×6&quot; Sheet (300 DPI)</span>
               </button>
             </div>
           </div>

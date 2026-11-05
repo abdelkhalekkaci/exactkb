@@ -221,6 +221,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
   onLaunchQrPreset
 }) => {
   const ui = BLOG_UI_COPY[locale];
+  const langPrefix = locale === 'en' ? '' : `/${locale}`;
   const [selectedDomain, setSelectedDomain] = useState<ToolDomainFilter>('all');
   const [selectedCategory, setSelectedCategory] =
     useState<UnifiedCategoryFilter>('all');
@@ -530,7 +531,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
         {/* Top Back Navigation & Category Info */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#14213d]/15 dark:border-[#ffffff]/15 pb-4">
           <a
-            href="/blog"
+            href={`${langPrefix}/blog`}
             onClick={(e) => handleArticleLinkClick(e, null)}
             className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-[#14213d]/20 dark:border-[#ffffff]/25 text-xs sm:text-sm font-bold hover:border-[#fca311] hover:text-[#fca311] transition-colors cursor-pointer"
           >
@@ -734,7 +735,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
                     </span>
                     <h4 className="font-serif font-bold text-sm leading-snug">
                       <a
-                        href={`/blog/${rel.slug}`}
+                        href={`${langPrefix}/blog/${rel.slug}`}
                         onClick={(e) => handleArticleLinkClick(e, rel.slug)}
                         className="hover:text-[#fca311] transition-colors"
                       >
@@ -743,7 +744,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
                     </h4>
                   </div>
                   <a
-                    href={`/blog/${rel.slug}`}
+                    href={`${langPrefix}/blog/${rel.slug}`}
                     onClick={(e) => handleArticleLinkClick(e, rel.slug)}
                     className="text-xs font-bold text-[#fca311] inline-flex items-center gap-1 hover:underline cursor-pointer"
                   >
@@ -882,7 +883,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
                 {/* Article Title with Crawlable Anchor */}
                 <h2 className="font-serif text-lg sm:text-xl font-bold leading-snug">
                   <a
-                    href={`/blog/${article.slug}`}
+                    href={`${langPrefix}/blog/${article.slug}`}
                     onClick={(e) => handleArticleLinkClick(e, article.slug)}
                     className="hover:text-[#fca311] transition-colors cursor-pointer"
                   >
@@ -907,7 +908,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <a
-                    href={`/blog/${article.slug}`}
+                    href={`${langPrefix}/blog/${article.slug}`}
                     onClick={(e) => handleArticleLinkClick(e, article.slug)}
                     className="px-3.5 py-2.5 rounded-xl border border-[#14213d]/25 dark:border-[#ffffff]/25 text-xs font-bold hover:border-[#fca311] hover:text-[#fca311] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                   >

@@ -20,7 +20,7 @@ import {
 } from './data/toolLandingPages';
 import { ExactKbLabPage } from './components/ExactKbLabPage';
 import { CustomAtelierCursor } from './components/CustomAtelierCursor';
-import { ProStudioFooter } from './components/ProStudioFooter';
+import { ProFeatureId, ProStudioFooter } from './components/ProStudioFooter';
 
 const QrPrintshopPage = lazy(() =>
   import('./components/QrPrintshopPage').then((m) => ({
@@ -262,6 +262,10 @@ export default function App() {
   );
   const [bridgedQrDataUrl, setBridgedQrDataUrl] = useState<string | null>(null);
   const [qrPayloadType, setQrPayloadType] = useState<QRPayloadType>('url');
+  const [proFeatureTrigger, setProFeatureTrigger] = useState<{
+    id: ProFeatureId;
+    tick: number;
+  } | null>(null);
 
   const t = TRANSLATIONS[locale];
   const isRtl = locale === 'ar';
@@ -611,6 +615,7 @@ export default function App() {
             initialPresetId={exactKbPreset}
             initialTargetKb={exactKbTarget}
             bridgedQrDataUrl={bridgedQrDataUrl}
+            proFeatureTrigger={proFeatureTrigger}
             onClearBridgedQr={() => setBridgedQrDataUrl(null)}
             onSelectToolSlug={(slug) => navigateToPage('exactkb', null, slug)}
             onSelectBlogSlug={(slug) => navigateToPage('blog', slug, null)}
@@ -669,6 +674,12 @@ export default function App() {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onNavigate={handleLinkClick}
+        onActivateProFeature={(featureId) => {
+          if (activePage !== 'exactkb') {
+            navigateToPage('exactkb', null, activeToolSlug);
+          }
+          setProFeatureTrigger({ id: featureId, tick: Date.now() });
+        }}
       />
     </div>
   );

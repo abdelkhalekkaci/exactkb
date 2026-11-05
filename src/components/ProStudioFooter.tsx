@@ -15,6 +15,12 @@ import { AtelierPage, LocaleCode } from '../types/atelier';
 import { TRANSLATIONS } from '../data/seoRoutesAndTranslations';
 import { TOOL_LANDING_PAGES } from '../data/toolLandingPages';
 
+export type ProFeatureId =
+  | 'grid-framing'
+  | 'print-sheet'
+  | 'name-slate'
+  | 'batch-queue';
+
 interface ProStudioFooterProps {
   locale: LocaleCode;
   langPrefix: string;
@@ -34,6 +40,7 @@ interface ProStudioFooterProps {
     blogSlug?: string | null,
     toolSlug?: string | null
   ) => void;
+  onActivateProFeature?: (featureId: ProFeatureId) => void;
 }
 
 interface FooterProCopy {
@@ -41,6 +48,7 @@ interface FooterProCopy {
   proRibbonTitle: string;
   proRibbonSub: string;
   freeFeatures: Array<{
+    id: ProFeatureId;
     title: string;
     desc: string;
     competitorPrice: string;
@@ -60,27 +68,31 @@ const FOOTER_PRO_COPY: Record<LocaleCode, FooterProCopy> = {
     proRibbonTitle:
       'Premium Studio Capabilities Other Websites Charge $7–$19 For — Included Free',
     proRibbonSub:
-      'Because all image processing runs locally inside your own browser RAM, our server cost per photo is $0.00. We pass 100% of those savings to you:',
+      'Because all image processing runs locally inside your own browser RAM, our server cost per photo is $0.00. Click any Pro feature below to launch it in the studio:',
     freeFeatures: [
       {
+        id: 'grid-framing',
         title: 'Biometric ICAO Face Grid & Framing',
         desc: 'Live eye-line & crown-to-chin overlay with pan, zoom, tilt & lighting controls.',
-        competitorPrice: '$9.95 on photo booths → FREE'
+        competitorPrice: '$9.95 on photo booths → LAUNCH FREE'
       },
       {
+        id: 'print-sheet',
         title: '4×6" (10×15 cm) 8-Photo Print Sheet',
         desc: '300 DPI pharmacy print sheet with millimeter crop marks & studio date stamp.',
-        competitorPrice: '$6.99 on ID sites → FREE'
+        competitorPrice: '$6.99 on ID sites → LAUNCH FREE'
       },
       {
+        id: 'name-slate',
         title: 'Official Name & Date Photo Slate',
         desc: '1-click DOP name & date plate at the bottom of your photo locked under 20KB/50KB.',
-        competitorPrice: 'Paid Pro add-on → FREE'
+        competitorPrice: 'Paid Pro add-on → LAUNCH FREE'
       },
       {
+        id: 'batch-queue',
         title: 'Unlimited Multi-Photo Batch Queue',
-        desc: 'Drop 20+ photos at once and lock every file to your exact KB ceiling simultaneously.',
-        competitorPrice: '$12/mo on cloud tools → FREE'
+        desc: 'Drop multiple photos at once and lock every file to your exact KB ceiling simultaneously.',
+        competitorPrice: '$12/mo on cloud tools → LAUNCH FREE'
       }
     ],
     colExactKb: 'Exact-KB Compressors',
@@ -98,27 +110,31 @@ const FOOTER_PRO_COPY: Record<LocaleCode, FooterProCopy> = {
     proRibbonTitle:
       'Les Options Payantes ailleurs (7 € à 19 €) — Intégrées 100 % Gratuitement',
     proRibbonSub:
-      'Comme tout le calcul s’exécute dans la mémoire RAM de votre propre appareil, nos serveurs ne coûtent rien par photo. Toutes les fonctions Pro sont gratuites :',
+      'Comme tout le calcul s’exécute dans la mémoire RAM de votre propre appareil, nos serveurs ne coûtent rien par photo. Cliquez sur une fonction Pro pour l’activer :',
     freeFeatures: [
       {
+        id: 'grid-framing',
         title: 'Grille Biométrique OACI & Recadrage Pro',
         desc: 'Alignement yeux/menton en direct avec zoom, déplacement, rotation et luminosité.',
-        competitorPrice: '8,90 € en cabine → GRATUIT'
+        competitorPrice: '8,90 € en cabine → LANCER GRATUIT'
       },
       {
+        id: 'print-sheet',
         title: 'Planche 10×15 cm (4×6") de 8 Photos',
         desc: 'Planche 300 DPI prête à imprimer avec traits de coupe millimétrés et tampon date.',
-        competitorPrice: '5,99 € ailleurs → GRATUIT'
+        competitorPrice: '5,99 € ailleurs → LANCER GRATUIT'
       },
       {
+        id: 'name-slate',
         title: 'Bandeau Officiel Nom + Date sur Photo',
         desc: 'Ajoutez votre nom et la date de prise de vue en bas de la photo sous 20 Ko / 50 Ko.',
-        competitorPrice: 'Option Pro payante → GRATUIT'
+        competitorPrice: 'Option Pro payante → LANCER GRATUIT'
       },
       {
+        id: 'batch-queue',
         title: 'Compression par Lot (Batch Illimité)',
-        desc: 'Compressez 10 ou 30 photos simultanément au Ko exact sans limite quotidienne.',
-        competitorPrice: '12 €/mois ailleurs → GRATUIT'
+        desc: 'Compressez plusieurs photos simultanément au Ko exact sans limite quotidienne.',
+        competitorPrice: '12 €/mois ailleurs → LANCER GRATUIT'
       }
     ],
     colExactKb: 'Compression au Ko Exact',
@@ -136,27 +152,31 @@ const FOOTER_PRO_COPY: Record<LocaleCode, FooterProCopy> = {
     proRibbonTitle:
       'Funciones Pro por las que otros sitios cobran $7–$19 — Aquí 100% Gratis',
     proRibbonSub:
-      'Como todo el procesamiento ocurre localmente en la memoria RAM de tu navegador, incluimos gratis todas las herramientas avanzadas de estudio:',
+      'Como todo el procesamiento ocurre localmente en la memoria RAM de tu navegador, incluimos gratis todas las herramientas avanzadas de estudio. Haz clic para activar:',
     freeFeatures: [
       {
+        id: 'grid-framing',
         title: 'Guía Biométrica OACI y Encuadre Pro',
         desc: 'Alineación de ojos y barbilla con controles de zoom, rotación, encuadre y luz.',
-        competitorPrice: '$9.95 en otros sitios → GRATIS'
+        competitorPrice: '$9.95 en otros sitios → ABRIR GRATIS'
       },
       {
+        id: 'print-sheet',
         title: 'Hoja 10×15 cm (4×6") con 8 Fotos',
         desc: 'Plantilla de impresión a 300 DPI con guías de corte milimétricas y sello de fecha.',
-        competitorPrice: '$6.99 en otros sitios → GRATIS'
+        competitorPrice: '$6.99 en otros sitios → ABRIR GRATIS'
       },
       {
+        id: 'name-slate',
         title: 'Rótulo Oficial Nombre + Fecha en Foto',
         desc: 'Inserta tu nombre y fecha de captura al pie de la foto manteniendo el límite de 20KB/50KB.',
-        competitorPrice: 'Función Pro de pago → GRATIS'
+        competitorPrice: 'Función Pro de pago → ABRIR GRATIS'
       },
       {
+        id: 'batch-queue',
         title: 'Compresión por Lotes Ilimitada (Batch)',
         desc: 'Comprime múltiples fotos simultáneamente al KB exacto sin límites diarios.',
-        competitorPrice: '$12/mes en otros sitios → GRATIS'
+        competitorPrice: '$12/mes en otros sitios → ABRIR GRATIS'
       }
     ],
     colExactKb: 'Compresión por KB Exacto',
@@ -174,27 +194,31 @@ const FOOTER_PRO_COPY: Record<LocaleCode, FooterProCopy> = {
     proRibbonTitle:
       'ميزات احترافية مدفوعة في المواقع الأخرى (7$ إلى 19$) — متاحة هنا مجاناً بالكامل',
     proRibbonSub:
-      'لأن جميع عمليات المعالجة تتم محلياً داخل ذاكرة متصفحك (RAM)، نوفر لك جميع أدوات الاستوديو الاحترافية مجاناً:',
+      'لأن جميع عمليات المعالجة تتم محلياً داخل ذاكرة متصفحك (RAM)، نوفر لك جميع أدوات الاستوديو الاحترافية مجاناً. انقر على أي ميزة لتشغيلها:',
     freeFeatures: [
       {
+        id: 'grid-framing',
         title: 'شبكة المحاذاة البيومترية ICAO والتحكم بالصورة',
         desc: 'محاذاة دقيقة للعينين والذقن مع التحكم بالتكبير والإزاحة والدوران والإضاءة.',
-        competitorPrice: '9.95$ في المواقع الأخرى ← مجاناً'
+        competitorPrice: '9.95$ في المواقع الأخرى ← تشغيل مجاناً'
       },
       {
+        id: 'print-sheet',
         title: 'ورقة طباعة 10×15 سم (4×6 بوصة) تضم 8 صور',
         desc: 'جاهزة للطباعة بدقة 300 DPI مع علامات قص بالمليمتر وختم التاريخ.',
-        competitorPrice: '6.99$ في المواقع الأخرى ← مجاناً'
+        competitorPrice: '6.99$ في المواقع الأخرى ← تشغيل مجاناً'
       },
       {
+        id: 'name-slate',
         title: 'شريط الاسم وتاريخ الصورة الرسمي (DOP)',
         desc: 'إضافة الاسم وتاريخ التقاط الصورة أسفل الصورة الشخصية مع تثبيت الحجم تحت 20 أو 50 كيلوبايت.',
-        competitorPrice: 'ميزة مدفوعة ← مجاناً'
+        competitorPrice: 'ميزة مدفوعة ← تشغيل مجاناً'
       },
       {
+        id: 'batch-queue',
         title: 'ضغط دفعات متعددة من الصور (Batch) بلا حدود',
         desc: 'ارفع واضغط عشرات الصور دفعة واحدة بالكيلوبايت الدقيق بدون أي قيود يومية.',
-        competitorPrice: '12$/شهرياً ← مجاناً'
+        competitorPrice: '12$/شهرياً ← تشغيل مجاناً'
       }
     ],
     colExactKb: 'ضغط بالكيلوبايت الدقيق',
@@ -217,7 +241,8 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
   activeToolSlug,
   activeBlogSlug,
   onSelectLocale,
-  onNavigate
+  onNavigate,
+  onActivateProFeature
 }) => {
   const t = TRANSLATIONS[locale];
   const copy = FOOTER_PRO_COPY[locale];
@@ -248,14 +273,16 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {copy.freeFeatures.map((feat, idx) => (
-              <div
-                key={idx}
-                className="p-4 rounded-xl border border-[#ffffff]/12 bg-[#14213d]/80 flex flex-col justify-between space-y-3"
+              <button
+                key={feat.id}
+                type="button"
+                onClick={() => onActivateProFeature?.(feat.id)}
+                className="p-4 rounded-xl border border-[#ffffff]/15 hover:border-[#fca311] bg-[#14213d]/85 hover:bg-[#14213d] text-start flex flex-col justify-between space-y-3 transition-all group cursor-pointer"
               >
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2">
                     {featureIcons[idx]}
-                    <h3 className="text-xs sm:text-sm font-bold text-[#ffffff] leading-snug">
+                    <h3 className="text-xs sm:text-sm font-bold text-[#ffffff] group-hover:text-[#fca311] transition-colors leading-snug">
                       {feat.title}
                     </h3>
                   </div>
@@ -263,10 +290,13 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                     {feat.desc}
                   </p>
                 </div>
-                <div className="pt-2 border-t border-[#ffffff]/10 text-[11px] font-mono font-semibold text-[#fca311]">
-                  ✓ {feat.competitorPrice}
+                <div className="pt-2 border-t border-[#ffffff]/10 text-[11px] font-mono font-semibold text-[#fca311] flex items-center justify-between">
+                  <span>✓ {feat.competitorPrice}</span>
+                  <span className="group-hover:translate-x-0.5 transition-transform">
+                    →
+                  </span>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -658,7 +688,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 rel="noopener noreferrer"
                 className="hover:text-[#fca311] transition-colors"
               >
-                Sitemap.xml (148 URLs)
+                Sitemap.xml (156 URLs)
               </a>
               <span aria-hidden="true">·</span>
               <a
