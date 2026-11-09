@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      if (window.location.hostname === 'compressphoto.space' && window.location.protocol === 'http:') {
+        window.location.replace('https://compressphoto.space' + window.location.pathname + window.location.search + window.location.hash);
+      }
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Compress Photo to 20KB, 50KB, 100KB Online | CompressPhoto</title>
     <meta

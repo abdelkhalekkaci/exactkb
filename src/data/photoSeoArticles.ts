@@ -1025,7 +1025,7 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
   // =========================================================================
   {
     id: 'compress-photo-to-target-kb-pdf',
-    slug: 'convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb',
+    slug: 'convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb',
     number: 8,
     category: 'pdf-print',
     readingTimeMin: 4,
@@ -1275,7 +1275,7 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
   // =========================================================================
   {
     id: 'jpeg-vs-webp-vs-png-compression',
-    slug: 'compress-jpeg-vs-webp-vs-png-target-kb-binary-search',
+    slug: 'compress-jpeg-vs-webp-vs-png-exact-kb-binary-search',
     number: 10,
     category: 'target-kb',
     readingTimeMin: 5,

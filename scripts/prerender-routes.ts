@@ -1067,7 +1067,7 @@ function generateSitemapXml(routes: StaticRouteConfig[]): string {
 
       return `  <url>
     <loc>${locUrl}</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
     <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />
