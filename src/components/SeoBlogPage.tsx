@@ -65,7 +65,7 @@ interface BlogUiCopy {
   domainQr: string;
   searchPlaceholder: string;
   catAll: string;
-  catExactKb: string;
+  catTargetKb: string;
   catPassport: string;
   catSignature: string;
   catPdfPrint: string;
@@ -98,7 +98,7 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     searchPlaceholder:
       'Search articles (e.g. 20kb, passport, signature, wifi qr, vcard, menu, barcode)...',
     catAll: 'All Topics',
-    catExactKb: 'Exact KB Limits',
+    catTargetKb: 'Exact KB Limits',
     catPassport: 'Passport & Visa',
     catSignature: 'Digital Signature',
     catPdfPrint: 'PDF & 4×6" Print',
@@ -129,7 +129,7 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     searchPlaceholder:
       'Rechercher un article (ex: 20 ko, passeport, signature, qr wifi, vcard, menu)...',
     catAll: 'Tous les Sujets',
-    catExactKb: 'Limites Ko Exactes',
+    catTargetKb: 'Limites Ko Exactes',
     catPassport: 'Passeport & Visa',
     catSignature: 'Signature Manuscrite',
     catPdfPrint: 'PDF & Planche 10×15',
@@ -160,7 +160,7 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     searchPlaceholder:
       'Buscar un artículo (ej: 20kb, pasaporte, firma, qr wifi, vcard, menú)...',
     catAll: 'Todos los Temas',
-    catExactKb: 'Límites KB Exactos',
+    catTargetKb: 'Límites KB Exactos',
     catPassport: 'Pasaporte y Visa',
     catSignature: 'Firma Manuscrita',
     catPdfPrint: 'PDF y Hoja 10×15',
@@ -191,7 +191,7 @@ const BLOG_UI_COPY: Record<LocaleCode, BlogUiCopy> = {
     searchPlaceholder:
       'ابحث في المقالات (مثال: 20 كيلوبايت، جواز سفر، توقيع، واي فاي، منيو، باركود)...',
     catAll: 'جميع المواضيع',
-    catExactKb: 'حجم الكيلوبايت الدقيق',
+    catTargetKb: 'حجم الكيلوبايت الدقيق',
     catPassport: 'جواز السفر والتأشيرة',
     catSignature: 'التوقيع الخطي',
     catPdfPrint: 'ملف PDF وطباعة 10×15',
@@ -439,8 +439,8 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
     cat: Exclude<BlogCategoryId, 'all'> | QrBlogCategoryId
   ) => {
     switch (cat) {
-      case 'exact-kb':
-        return ui.catExactKb;
+      case 'target-kb':
+        return ui.catTargetKb;
       case 'passport-visa':
         return ui.catPassport;
       case 'signature':
@@ -464,7 +464,7 @@ export const SeoBlogPage: React.FC<SeoBlogPageProps> = ({
     ];
     if (selectedDomain === 'all' || selectedDomain === 'photo') {
       base.push(
-        { id: 'exact-kb', label: ui.catExactKb },
+        { id: 'target-kb', label: ui.catTargetKb },
         { id: 'passport-visa', label: ui.catPassport },
         { id: 'signature', label: ui.catSignature },
         { id: 'pdf-print', label: ui.catPdfPrint }

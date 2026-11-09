@@ -43,19 +43,19 @@ import {
   SampleId
 } from '../utils/sampleCanvasGenerators';
 import {
-  compileExactKbPdfBlob,
+  compileCompressPhotoPdfBlob,
   DEFAULT_FRAMING_OPTIONS,
   DEFAULT_NAME_DATE_SLATE,
   generatePharmacySheetDataUrl,
   NameDateSlateOptions,
   runSevenPassBinarySearch,
   StudioFramingOptions
-} from '../utils/exactKbEngine';
+} from '../utils/compressPhotoEngine';
 import { VisitorVisualGuide } from './VisitorVisualGuide';
 
 import { ProFeatureId } from './ProStudioFooter';
 
-interface ExactKbLabPageProps {
+interface CompressPhotoLabPageProps {
   locale: LocaleCode;
   activeToolSlug: string | null;
   initialPresetId: BiometricPresetId;
@@ -80,7 +80,7 @@ interface BatchPhotoItem {
   status: 'processing' | 'done' | 'error';
 }
 
-export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
+export const CompressPhotoLabPage: React.FC<CompressPhotoLabPageProps> = ({
   locale,
   activeToolSlug,
   initialPresetId,
@@ -153,7 +153,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
     activeLanding?.autoFeature === 'grid-framing'
   );
 
-  // FREE PRO FEATURE 3: Unlimited Multi-Photo Batch Exact-KB Queue
+  // FREE PRO FEATURE 3: Unlimited Multi-Photo Batch Queue
   const [batchItems, setBatchItems] = useState<BatchPhotoItem[]>([]);
   const [isBatchProcessing, setIsBatchProcessing] = useState<boolean>(false);
 
@@ -678,7 +678,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
 
   const handleDownloadExactPdf = async () => {
     if (!compressionResult) return;
-    const { blob, finalBytes } = await compileExactKbPdfBlob(
+    const { blob, finalBytes } = await compileCompressPhotoPdfBlob(
       compressionResult.dataUrl,
       compressionResult.width,
       compressionResult.height,
@@ -956,12 +956,12 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
               <Layers className="w-5 h-5 text-[#fca311]" />
               <h2 className="font-serif text-lg font-bold">
                 {locale === 'fr'
-                  ? `Compression par Lot Exact-KB (${batchItems.length} photos · Plafond ≤ ${targetKb} Ko)`
+                  ? `Compression par Lot CompressPhoto (${batchItems.length} photos · Plafond ≤ ${targetKb} Ko)`
                   : locale === 'es'
-                    ? `Compresión por Lotes Exact-KB (${batchItems.length} fotos · Límite ≤ ${targetKb} KB)`
+                    ? `Compresión por Lotes CompressPhoto (${batchItems.length} fotos · Límite ≤ ${targetKb} KB)`
                     : locale === 'ar'
                       ? `ضغط الدفعات (${batchItems.length} صور · السقف ≤ ${targetKb} كيلوبايت)`
-                      : `Multi-Photo Batch Exact-KB Queue (${batchItems.length} photos · Target ≤ ${targetKb} KB)`}
+                      : `Multi-Photo Batch Queue (${batchItems.length} photos · Target ≤ ${targetKb} KB)`}
               </h2>
             </div>
 
@@ -1879,7 +1879,7 @@ export const ExactKbLabPage: React.FC<ExactKbLabPageProps> = ({
       </div>
 
       {/* ILLUSTRATED VISITOR GUIDE WITH WEBSITE SCREENS & BEFORE/AFTER EXPLANATION */}
-      <VisitorVisualGuide mode="exactkb" locale={locale} />
+      <VisitorVisualGuide mode="compress" locale={locale} />
 
       {/* SECTION 1: OFFICIAL BIOMETRIC PORTAL SPECIFICATION TABLE (HTML <TABLE> FOR SEO & AI LLMs) */}
       <section

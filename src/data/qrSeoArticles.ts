@@ -1179,7 +1179,7 @@ export const QR_SEO_ARTICLES: QrSeoArticle[] = [
             bullets: [
               'Full ASCII 32–127 Support: Encode SKU strings like SKU-2026-094, serial numbers, or bin locations effortlessly.',
               'Thermal & Laser Printer Ready: Crisp vertical bars with zero anti-aliasing blur ensure 100% first-pass reads on Zebra, Dymo, Brother, and standard laser sheet printers.',
-              '1-Click Exact-KB Compression Bridge: Need to upload a barcode image under 20 KB to a customs or inventory portal? Click "Send QR to Exact-KB (< 20KB)" right below the preview.'
+              '1-Click CompressPhoto Bridge: Need to upload a barcode image under 20 KB to a customs or inventory portal? Click "Send QR to CompressPhoto (< 20KB)" right below the preview.'
             ]
           }
         ],
@@ -1457,7 +1457,7 @@ export const QR_SEO_ARTICLES: QrSeoArticle[] = [
     translations: {
       en: {
         title: 'How to Compress a QR Code Image Under 20KB for Official Portals & E-Invoicing Without Blur',
-        metaDescription: 'Need to upload a QR code or barcode image strictly under 20KB or 50KB for an official portal, e-invoice, or ID form? Use our 1-click QR-to-Exact-KB bridge with zero edge blur.',
+        metaDescription: 'Need to upload a QR code or barcode image strictly under 20KB or 50KB for an official portal, e-invoice, or ID form? Use our 1-click QR-to-CompressPhoto bridge with zero edge blur.',
         excerpt: 'Official registration portals, e-invoicing templates, and certificate systems often require uploaded QR code images to weigh strictly under 20 KB. Here is how to generate and compress a QR code in 1 click.',
         primaryKeywords: [
           'compress qr code image under 20kb',
@@ -1468,16 +1468,16 @@ export const QR_SEO_ARTICLES: QrSeoArticle[] = [
         intro: 'High-resolution 2400×2400 px QR codes are wonderful for print shops, but they typically weigh 120 KB to 350 KB. When an e-invoicing system, tax portal, or digital badge template requires an uploaded QR code image strictly under 20 KB (20,480 bytes), naive resizing can blur the black-and-white module edges.',
         sections: [
           {
-            heading: 'Our Exclusive 1-Click Bridge: QR Generator → Exact-KB Compressor',
-            body: 'CompressPhoto is the only studio where the QR Code Generator and the 7-Pass Exact-KB Compressor are directly connected:',
+            heading: 'Our Exclusive 1-Click Bridge: QR Generator → CompressPhoto',
+            body: 'CompressPhoto is the only studio where the QR Code Generator and the 7-Pass KB Compressor are directly connected:',
             bullets: [
               'Step 1 — Generate Your QR or Barcode: Configure your URL, vCard, Wi-Fi, or CODE-128 barcode in the QR Studio.',
-              'Step 2 — Click "Send QR to Exact-KB (< 20KB)": Located directly under the SVG/PNG download buttons, this 1-click bridge transfers your crisp QR canvas straight into the Exact-KB Compressor pre-set to 20 KB.',
+              'Step 2 — Click "Send QR to CompressPhoto (< 20KB)": Located directly under the SVG/PNG download buttons, this 1-click bridge transfers your crisp QR canvas straight into CompressPhoto pre-set to 20 KB.',
               'Step 3 — Download Your ≤ 20.0 KB QR Image: Pure #FFFFFF quiet-zone background and sharp #14213d/#000000 modules compress cleanly to 14–19 KB with 100% camera scannability.'
             ]
           }
         ],
-        proTip: 'In the QR Generator, click the "Send QR to Exact-KB (< 20KB)" button right below the preview to automatically compress any generated QR code or barcode to your exact kilobyte ceiling!',
+        proTip: 'In the QR Generator, click the "Send QR to CompressPhoto (< 20KB)" button right below the preview to automatically compress any generated QR code or barcode to your exact kilobyte ceiling!',
         ctaButtonLabel: 'Generate & Compress QR Under 20KB →',
         faqs: [
           {
@@ -1503,7 +1503,7 @@ export const QR_SEO_ARTICLES: QrSeoArticle[] = [
         sections: [
           {
             heading: 'La Passerelle 1-Clic : Générateur QR → Compresseur 20 Ko',
-            body: 'Sous l’aperçu du générateur QR, cliquez simplement sur le bouton « Envoyer le QR vers Exact-KB (< 20 Ko) » :',
+            body: 'Sous l’aperçu du générateur QR, cliquez simplement sur le bouton « Envoyer le QR vers CompressPhoto (< 20 Ko) » :',
             bullets: [
               'Transfert instantané sans téléchargement intermédiaire.',
               'Préservation de la netteté des modules noirs sur fond blanc pur #FFFFFF.',
@@ -1511,7 +1511,7 @@ export const QR_SEO_ARTICLES: QrSeoArticle[] = [
             ]
           }
         ],
-        proTip: 'Utilisez le bouton « Envoyer vers Exact-KB (< 20KB) » sous l’aperçu du QR code pour calibrer son poids en un seul clic.',
+        proTip: 'Utilisez le bouton « Envoyer vers CompressPhoto (< 20KB) » sous l’aperçu du QR code pour calibrer son poids en un seul clic.',
         ctaButtonLabel: 'Créer & Compresser un QR (< 20 Ko) →',
         faqs: [
           {
@@ -1541,7 +1541,7 @@ export const QR_SEO_ARTICLES: QrSeoArticle[] = [
             ]
           }
         ],
-        proTip: 'Haz clic en "Enviar QR a Exact-KB (< 20KB)" debajo de la vista previa del QR para comprimirlo automáticamente.',
+        proTip: 'Haz clic en "Enviar QR a CompressPhoto (< 20KB)" debajo de la vista previa del QR para comprimirlo automáticamente.',
         ctaButtonLabel: 'Crear y Comprimir QR (< 20KB) Ahora →',
         faqs: [
           {

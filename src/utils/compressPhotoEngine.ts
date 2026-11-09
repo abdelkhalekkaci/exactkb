@@ -569,7 +569,7 @@ export async function runSevenPassBinarySearch(
  * Compiles a genuine ISO-32000 PDF 1.4 binary file containing the calibrated JPEG image,
  * guaranteeing that the total PDF file size is also locked beneath the target KB ceiling.
  */
-export async function compileExactKbPdfBlob(
+export async function compileCompressPhotoPdfBlob(
   imageDataUrl: string,
   widthPx: number,
   heightPx: number,

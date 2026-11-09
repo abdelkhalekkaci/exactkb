@@ -19,6 +19,7 @@ CompressPhoto (`https://compressphoto.space`) is a 100% browser-local (zero-serv
 ## 3. Core Engineering Capabilities
 1. **7-Pass Binary Search Quantization**: Converges on the highest possible visual quality factor `q ∈ [0.05, 0.98]` whose encoded byte length is strictly `≤ Target_KB × 1024` bytes (typically locking between 92% and 99.5% of the ceiling, e.g. 19.4 KB for a 20.0 KB target).
 2. **Adaptive Wet-Ink Signature Shadow Cleanser**: Applies local luminance thresholding to remove grey smartphone camera paper shadows, turning paper background into pure `#FFFFFF` white while boosting fountain-pen ink contrast so compressed signatures easily fit under 20 KB.
-3. **Exact-KB ISO-32000 PDF Wrapper**: Subtracts the exact 1.4 KB PDF container header budget before running image binary search so exported `.pdf` files never exceed 50 KB or 100 KB portal limits.
-4. **Printable 4×6 Inch (10×15 cm) 8-Photo Sheet**: Tiles 8 calibrated 35×45 mm or 2×2 inch photos onto a 300 DPI 1800×1200 px canvas with precision crop marks for pharmacy or home printing.
-5. **100% Client-Side Privacy**: Zero files are ever transmitted over the network. All processing occurs in local browser RAM.
+3. **Target-KB ISO-32000 PDF Wrapper**: Subtracts the 1.4 KB PDF container header budget before running image binary search so exported `.pdf` files never exceed 50 KB or 100 KB portal limits.
+4. **Universal Browser-Local Image & Document Converter (`/image-converter`)**: Converts between HEIC/HEIF, PDF, PNG, JPG, WebP, AVIF, TIFF, SVG, BMP, GIF, and multi-size ICO (16–256 px) 100% locally in browser RAM with lazy-loaded decoders.
+5. **Printable 4×6 Inch (10×15 cm) 8-Photo Sheet**: Tiles 8 calibrated 35×45 mm or 2×2 inch photos onto a 300 DPI 1800×1200 px canvas with precision crop marks for pharmacy or home printing.
+6. **100% Client-Side Privacy**: Zero files are ever transmitted over the network. All processing occurs in local browser RAM.

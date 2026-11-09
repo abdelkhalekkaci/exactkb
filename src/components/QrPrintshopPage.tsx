@@ -64,7 +64,7 @@ import { VisitorVisualGuide } from './VisitorVisualGuide';
 interface QrPrintshopPageProps {
   locale: LocaleCode;
   initialPayloadType: QRPayloadType;
-  onSendQrToExactKb: (pngDataUrl: string) => void;
+  onSendQrToCompressor: (pngDataUrl: string) => void;
 }
 
 type CustomizeSubTab = 'shapes' | 'colors' | 'logo-frame' | 'advanced';
@@ -372,7 +372,7 @@ const COLOR_PRESETS = [
 export const QrPrintshopPage: React.FC<QrPrintshopPageProps> = ({
   locale,
   initialPayloadType,
-  onSendQrToExactKb
+  onSendQrToCompressor
 }) => {
   const t = TRANSLATIONS[locale];
   const m = QR_MENU_I18N[locale];
@@ -723,11 +723,11 @@ export const QrPrintshopPage: React.FC<QrPrintshopPageProps> = ({
     setTimeout(() => setExportStatus(null), 3500);
   };
 
-  const handleBridgeToExactKb = async () => {
+  const handleBridgeToCompressor = async () => {
     const w = payloadType === 'code128' ? 1000 : 800;
     const h = payloadType === 'code128' ? 420 : 800;
     const pngUrl = await renderSvgToHighResPngDataUrl(svgMarkup, w, h, false);
-    onSendQrToExactKb(pngUrl);
+    onSendQrToCompressor(pngUrl);
   };
 
   const handleAddCustomPair = () => {
@@ -2563,7 +2563,7 @@ export const QrPrintshopPage: React.FC<QrPrintshopPageProps> = ({
                 </button>
 
                 <button
-                  onClick={handleBridgeToExactKb}
+                  onClick={handleBridgeToCompressor}
                   className="py-3 px-4 rounded-lg border-2 border-[#14213d]/20 dark:border-[#ffffff]/25 hover:border-[#fca311] text-xs font-bold flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <ArrowRightLeft className="w-4 h-4 text-[#fca311]" />

@@ -50,7 +50,7 @@ interface FooterProCopy {
     desc: string;
     ctaLabel: string;
   }>;
-  colExactKb: string;
+  colCompress: string;
   colPortals: string;
   colTrustLegal: string;
   languageLabel: string;
@@ -90,7 +90,7 @@ const FOOTER_PRO_COPY: Record<LocaleCode, FooterProCopy> = {
         ctaLabel: 'Open Batch Compressor'
       }
     ],
-    colExactKb: 'Compress by KB Size',
+    colCompress: 'Compress by KB Size',
     colPortals: 'Official Country & Exam Presets',
     colTrustLegal: 'Guides & Information',
     languageLabel: 'Language:',
@@ -129,7 +129,7 @@ const FOOTER_PRO_COPY: Record<LocaleCode, FooterProCopy> = {
         ctaLabel: 'Compresser par Lot'
       }
     ],
-    colExactKb: 'Compresser par Poids (Ko)',
+    colCompress: 'Compresser par Poids (Ko)',
     colPortals: 'Formats Officiels par Pays',
     colTrustLegal: 'Guides & Informations',
     languageLabel: 'Langue :',
@@ -168,7 +168,7 @@ const FOOTER_PRO_COPY: Record<LocaleCode, FooterProCopy> = {
         ctaLabel: 'Comprimir por Lotes'
       }
     ],
-    colExactKb: 'Comprimir por Peso (KB)',
+    colCompress: 'Comprimir por Peso (KB)',
     colPortals: 'Formatos Oficiales por País',
     colTrustLegal: 'Guías e Información',
     languageLabel: 'Idioma:',
@@ -207,7 +207,7 @@ const FOOTER_PRO_COPY: Record<LocaleCode, FooterProCopy> = {
         ctaLabel: 'فتح ضغط الدفعات'
       }
     ],
-    colExactKb: 'ضغط حسب الحجم بالكيلوبايت',
+    colCompress: 'ضغط حسب الحجم بالكيلوبايت',
     colPortals: 'المقاسات الرسمية حسب الدولة',
     colTrustLegal: 'الأدلة والمعلومات',
     languageLabel: 'اللغة:',
@@ -292,7 +292,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
           <div className="lg:col-span-4 space-y-4">
             <a
               href={langPrefix || '/'}
-              onClick={(e) => onNavigate(e, 'exactkb', null, null)}
+              onClick={(e) => onNavigate(e, 'compress', null, null)}
               className="inline-flex items-center gap-2.5 group"
             >
               <div className="w-9 h-9 rounded-lg bg-[#ffffff] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -389,17 +389,17 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
             </div>
           </div>
 
-          {/* Column 2 (2 cols): Exact-KB Compressors */}
+          {/* Column 2 (2 cols): Compress by KB Size */}
           <div className="lg:col-span-2 space-y-3">
             <div className="text-xs font-bold uppercase tracking-wider text-[#fca311]">
-              {copy.colExactKb}
+              {copy.colCompress}
             </div>
             <ul className="space-y-2 text-xs text-[#ffffff]/85">
               <li>
                 <a
                   href={`${langPrefix}/compress-photo-to-10kb`}
                   onClick={(e) =>
-                    onNavigate(e, 'exactkb', null, 'compress-photo-to-10kb')
+                    onNavigate(e, 'compress', null, 'compress-photo-to-10kb')
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
@@ -410,7 +410,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 <a
                   href={`${langPrefix}/compress-photo-to-20kb`}
                   onClick={(e) =>
-                    onNavigate(e, 'exactkb', null, 'compress-photo-to-20kb')
+                    onNavigate(e, 'compress', null, 'compress-photo-to-20kb')
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
@@ -421,7 +421,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 <a
                   href={`${langPrefix}/compress-photo-to-30kb`}
                   onClick={(e) =>
-                    onNavigate(e, 'exactkb', null, 'compress-photo-to-30kb')
+                    onNavigate(e, 'compress', null, 'compress-photo-to-30kb')
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
@@ -432,7 +432,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 <a
                   href={`${langPrefix}/compress-photo-to-50kb`}
                   onClick={(e) =>
-                    onNavigate(e, 'exactkb', null, 'compress-photo-to-50kb')
+                    onNavigate(e, 'compress', null, 'compress-photo-to-50kb')
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
@@ -443,7 +443,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 <a
                   href={`${langPrefix}/compress-photo-to-100kb`}
                   onClick={(e) =>
-                    onNavigate(e, 'exactkb', null, 'compress-photo-to-100kb')
+                    onNavigate(e, 'compress', null, 'compress-photo-to-100kb')
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
@@ -454,7 +454,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 <a
                   href={`${langPrefix}/compress-photo-to-200kb`}
                   onClick={(e) =>
-                    onNavigate(e, 'exactkb', null, 'compress-photo-to-200kb')
+                    onNavigate(e, 'compress', null, 'compress-photo-to-200kb')
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
@@ -465,7 +465,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 <a
                   href={`${langPrefix}/compress-signature-to-20kb`}
                   onClick={(e) =>
-                    onNavigate(e, 'exactkb', null, 'compress-signature-to-20kb')
+                    onNavigate(e, 'compress', null, 'compress-signature-to-20kb')
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
@@ -478,7 +478,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   onClick={(e) =>
                     onNavigate(
                       e,
-                      'exactkb',
+                      'compress',
                       null,
                       'compress-photo-to-pdf-under-50kb'
                     )
@@ -501,7 +501,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 <a
                   href={`${langPrefix}/ants-photo-identite-50ko`}
                   onClick={(e) =>
-                    onNavigate(e, 'exactkb', null, 'ants-photo-identite-50ko')
+                    onNavigate(e, 'compress', null, 'ants-photo-identite-50ko')
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
@@ -512,7 +512,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 <a
                   href={`${langPrefix}/photo-cnie-maroc-35x45mm`}
                   onClick={(e) =>
-                    onNavigate(e, 'exactkb', null, 'photo-cnie-maroc-35x45mm')
+                    onNavigate(e, 'compress', null, 'photo-cnie-maroc-35x45mm')
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
@@ -523,7 +523,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 <a
                   href={`${langPrefix}/campus-france-photo-50ko`}
                   onClick={(e) =>
-                    onNavigate(e, 'exactkb', null, 'campus-france-photo-50ko')
+                    onNavigate(e, 'compress', null, 'campus-france-photo-50ko')
                   }
                   className="hover:text-[#fca311] transition-colors block"
                 >
@@ -536,7 +536,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   onClick={(e) =>
                     onNavigate(
                       e,
-                      'exactkb',
+                      'compress',
                       null,
                       'ds160-photo-compressor-600x600'
                     )
@@ -552,7 +552,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   onClick={(e) =>
                     onNavigate(
                       e,
-                      'exactkb',
+                      'compress',
                       null,
                       'uk-passport-photo-35x45mm'
                     )
@@ -568,7 +568,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   onClick={(e) =>
                     onNavigate(
                       e,
-                      'exactkb',
+                      'compress',
                       null,
                       'canada-passport-visa-photo-50x70mm'
                     )
@@ -584,7 +584,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   onClick={(e) =>
                     onNavigate(
                       e,
-                      'exactkb',
+                      'compress',
                       null,
                       'ssc-upsc-ibps-photo-signature-resizer'
                     )
@@ -600,7 +600,7 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                   onClick={(e) =>
                     onNavigate(
                       e,
-                      'exactkb',
+                      'compress',
                       null,
                       'passport-photo-4x6-print-sheet'
                     )
@@ -627,6 +627,51 @@ export const ProStudioFooter: React.FC<ProStudioFooterProps> = ({
                 >
                   <Camera className="w-3.5 h-3.5 text-[#fca311]" />
                   <span>{t.navBlog}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${langPrefix}/image-converter`}
+                  onClick={(e) =>
+                    onNavigate(e, 'converter', null, 'image-converter')
+                  }
+                  className="hover:text-[#fca311] transition-colors flex items-center gap-1.5"
+                >
+                  <Layers className="w-3.5 h-3.5 text-[#fca311]" />
+                  <span>{t.navConverter}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${langPrefix}/heic-to-jpg`}
+                  onClick={(e) =>
+                    onNavigate(e, 'converter', null, 'heic-to-jpg')
+                  }
+                  className="hover:text-[#fca311] transition-colors block"
+                >
+                  HEIC to JPG Converter
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${langPrefix}/jpg-to-pdf`}
+                  onClick={(e) =>
+                    onNavigate(e, 'converter', null, 'jpg-to-pdf')
+                  }
+                  className="hover:text-[#fca311] transition-colors block"
+                >
+                  JPG to PDF Converter
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${langPrefix}/pdf-to-jpg`}
+                  onClick={(e) =>
+                    onNavigate(e, 'converter', null, 'pdf-to-jpg')
+                  }
+                  className="hover:text-[#fca311] transition-colors block"
+                >
+                  PDF to JPG Converter
                 </a>
               </li>
               <li>

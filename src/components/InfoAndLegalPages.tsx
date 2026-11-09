@@ -96,7 +96,7 @@ export const InfoAndLegalPages: React.FC<InfoAndLegalPagesProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#14213d]/15 dark:border-[#ffffff]/15">
         <a
           href="/"
-          onClick={(e) => handleLinkClick(e, 'exactkb')}
+          onClick={(e) => handleLinkClick(e, 'compress')}
           className="inline-flex items-center gap-2 text-xs font-bold px-3.5 py-2 rounded-lg bg-[#fca311] text-[#14213d] hover:bg-[#e5920e] transition-colors w-fit cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />

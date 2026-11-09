@@ -79,10 +79,15 @@ export const LOCALIZED_ROUTE_META: Record<
   Record<NonBlogPage, { title: string; description: string }>
 > = {
   en: {
-    exactkb: {
+    compress: {
       title: 'Compress Photo to 20KB, 50KB, 100KB Online | CompressPhoto',
       description:
         'Compress passport photos, visa portraits, and signatures to 20KB, 50KB, or 100KB online. Crop 35x45mm & 2x2 IDs and generate static vector QR codes in browser.'
+    },
+    converter: {
+      title: 'Free Image Converter: HEIC, PDF, PNG, JPG, WebP | CompressPhoto',
+      description:
+        'Convert images and PDFs between JPG, PNG, WebP, AVIF, HEIC, TIFF, SVG, BMP, GIF & ICO with target KB sizing. 100% private in your browser.'
     },
     qr: {
       title: 'Free Static QR Code & Vector Barcode Generator | CompressPhoto',
@@ -92,7 +97,7 @@ export const LOCALIZED_ROUTE_META: Record<
     about: {
       title: 'About CompressPhoto — 100% Client-Side Photo & QR Studio',
       description:
-        'Learn how CompressPhoto compresses passport photos and signatures to exact KB limits and generates non-expiring static QR codes with zero server uploads.'
+        'Learn how CompressPhoto compresses passport photos and signatures to target KB limits and generates non-expiring static QR codes with zero server uploads.'
     },
     legal: {
       title: 'Legal Notice & Terms of Service | CompressPhoto',
@@ -111,10 +116,15 @@ export const LOCALIZED_ROUTE_META: Record<
     }
   },
   fr: {
-    exactkb: {
+    compress: {
       title: 'Compresser Photo à 20 Ko, 50 Ko, 100 Ko en Ligne | CompressPhoto',
       description:
         'Compressez vos photos de passeport, visa et signatures à 20 Ko, 50 Ko ou 100 Ko en ligne. Calibrez le format 35x45mm ANTS/CNIE et créez des QR codes statiques.'
+    },
+    converter: {
+      title: 'Convertisseur d’Images : HEIC, PDF, PNG, JPG, WebP | CompressPhoto',
+      description:
+        'Convertissez vos images et PDF entre JPG, PNG, WebP, AVIF, HEIC, TIFF, SVG, BMP, GIF et ICO avec contrôle du poids en Ko dans votre navigateur.'
     },
     qr: {
       title: 'Générateur QR Code Statique & Code-Barres SVG | CompressPhoto',
@@ -124,7 +134,7 @@ export const LOCALIZED_ROUTE_META: Record<
     about: {
       title: 'À Propos de CompressPhoto — Studio Photo Ko & QR Local',
       description:
-        'Découvrez comment CompressPhoto compresse vos photos d’identité et signatures au Ko exact et génère des QR codes vectoriels sans aucun envoi sur serveur.'
+        'Découvrez comment CompressPhoto compresse vos photos d’identité et signatures au Ko cible et génère des QR codes vectoriels sans aucun envoi sur serveur.'
     },
     legal: {
       title: 'Mentions Légales & Conditions d’Utilisation | CompressPhoto',
@@ -143,10 +153,15 @@ export const LOCALIZED_ROUTE_META: Record<
     }
   },
   es: {
-    exactkb: {
+    compress: {
       title: 'Comprimir Foto a 20KB, 50KB, 100KB Online | CompressPhoto',
       description:
         'Comprime fotos de pasaporte, visa y firmas a 20KB, 50KB o 100KB online. Ajusta fotos carnet 35x45mm y 2x2 pulgadas y genera códigos QR estáticos en navegador.'
+    },
+    converter: {
+      title: 'Convertidor de Imágenes: HEIC, PDF, PNG, JPG, WebP | CompressPhoto',
+      description:
+        'Convierte imágenes y PDF entre JPG, PNG, WebP, AVIF, HEIC, TIFF, SVG, BMP, GIF e ICO con tamaño en KB en tu navegador sin subir archivos.'
     },
     qr: {
       title: 'Generador de Código QR Estático y Barras Vector | CompressPhoto',
@@ -156,7 +171,7 @@ export const LOCALIZED_ROUTE_META: Record<
     about: {
       title: 'Sobre CompressPhoto — Estudio Local de Fotos KB y QR',
       description:
-        'Conoce cómo CompressPhoto comprime fotos de pasaporte y firmas al KB exacto y genera códigos QR vectoriales permanentes sin subir archivos.'
+        'Conoce cómo CompressPhoto comprime fotos de pasaporte y firmas al KB objetivo y genera códigos QR vectoriales permanentes sin subir archivos.'
     },
     legal: {
       title: 'Aviso Legal y Términos de Uso | CompressPhoto',
@@ -175,10 +190,15 @@ export const LOCALIZED_ROUTE_META: Record<
     }
   },
   ar: {
-    exactkb: {
+    compress: {
       title: 'ضغط الصور إلى 20KB و50KB و100KB أونلاين | CompressPhoto',
       description:
         'اضغط صور جواز السفر والتأشيرة والتوقيع الخطي إلى 20 أو 50 أو 100 كيلوبايت بدقة في متصفحك. ضبط مقاس 35x45 مم و2x2 بوصة مع مولّد رموز QR ثابتة مجاناً.'
+    },
+    converter: {
+      title: 'محول صيغ الصور وPDF: HEIC وPNG وJPG وWebP | CompressPhoto',
+      description:
+        'حول الصور وملفات PDF بين JPG وPNG وWebP وAVIF وHEIC وTIFF وSVG وBMP وGIF وICO مع تحديد الحجم بالكيلوبايت محلياً في متصفحك.'
     },
     qr: {
       title: 'مولّد رموز QR الثابتة الدائمة والباركود المتجه | CompressPhoto',
@@ -188,7 +208,7 @@ export const LOCALIZED_ROUTE_META: Record<
     about: {
       title: 'من نحن — منصة CompressPhoto لضغط الصور وتوليد رموز QR محلياً',
       description:
-        'تعرّف على كيفية عمل CompressPhoto لضغط الصور الرسمية والتوقيعات بالكيلوبايت الدقيق وإنشاء رموز QR دائمة داخل متصفحك بدون رفع أي ملفات.'
+        'تعرّف على كيفية عمل CompressPhoto لضغط الصور الرسمية والتوقيعات بالكيلوبايت المطلوب وإنشاء رموز QR دائمة داخل متصفحك بدون رفع أي ملفات.'
     },
     legal: {
       title: 'إشعار قانوني وشروط الاستخدام | CompressPhoto',
@@ -210,7 +230,8 @@ export const LOCALIZED_ROUTE_META: Record<
 
 export interface LocaleDictionary {
   brandTitle: string;
-  navExactKb: string;
+  navCompress: string;
+  navConverter: string;
   navQrStudio: string;
   navBlog: string;
   // Photo KB Compressor Page
@@ -292,7 +313,8 @@ export interface LocaleDictionary {
 export const TRANSLATIONS: Record<LocaleCode, LocaleDictionary> = {
   en: {
     brandTitle: 'CompressPhoto',
-    navExactKb: 'Photo KB Compressor',
+    navCompress: 'Photo Compressor',
+    navConverter: 'Image Converter',
     navQrStudio: 'QR Code Generator',
     navBlog: 'Blog & Guides',
     kbHeroTitle: 'Compress Photo & Signature to 20KB, 50KB, 100KB Online',
@@ -359,7 +381,7 @@ export const TRANSLATIONS: Record<LocaleCode, LocaleDictionary> = {
         ]
       },
       {
-        title: '100% Browser-Local Privacy & Exact-KB PDF Wrapper',
+        title: '100% Browser-Local Privacy & Target-KB PDF Wrapper',
         body: 'Your biometric portraits and handwritten signatures never leave your device—zero cloud uploads or external servers.',
         specs: [
           'Instant ISO-32000 PDF Export Locked Under Your Target KB Limit',
@@ -430,7 +452,8 @@ export const TRANSLATIONS: Record<LocaleCode, LocaleDictionary> = {
   },
   fr: {
     brandTitle: 'CompressPhoto',
-    navExactKb: 'Compresseur Photo Ko',
+    navCompress: 'Compresseur Photo',
+    navConverter: 'Convertisseur Image',
     navQrStudio: 'Générateur QR Code',
     navBlog: 'Blog & Guides',
     kbHeroTitle: 'Compresser Photo & Signature à 20 Ko, 50 Ko, 100 Ko en Ligne',
@@ -568,7 +591,8 @@ export const TRANSLATIONS: Record<LocaleCode, LocaleDictionary> = {
   },
   es: {
     brandTitle: 'CompressPhoto',
-    navExactKb: 'Compresor Foto KB',
+    navCompress: 'Compresor Foto',
+    navConverter: 'Convertidor Imagen',
     navQrStudio: 'Generador Código QR',
     navBlog: 'Blog y Guías',
     kbHeroTitle: 'Comprimir Foto y Firma a 20KB, 50KB, 100KB Online',
@@ -706,7 +730,8 @@ export const TRANSLATIONS: Record<LocaleCode, LocaleDictionary> = {
   },
   ar: {
     brandTitle: 'CompressPhoto',
-    navExactKb: 'ضاغط الصور بالكيلوبايت',
+    navCompress: 'ضاغط الصور',
+    navConverter: 'محول الصيغ',
     navQrStudio: 'مولّد رمز QR',
     navBlog: 'المدونة والأدلة',
     kbHeroTitle: 'ضغط الصور والتوقيع إلى 20KB و50KB و100KB أونلاين',
@@ -853,7 +878,7 @@ export const PROGRAMMATIC_SEO_ROUTES: SeoRoute[] = [
     keyword: 'compress signature to 20kb exact for exam portal',
     title: 'Compress Wet-Ink Signature to Under 20KB Exact — CompressPhoto',
     metaDescription: 'Remove phone camera paper shadows and lock your handwritten signature scan strictly under 20KB (140×60 / 560×180 px) in 7 binary-search passes.',
-    targetTool: 'exactkb',
+    targetTool: 'compress',
     presetId: 'wet-ink-sig',
     targetKb: 20,
     monthlyVolume: 48500,
@@ -869,7 +894,7 @@ export const PROGRAMMATIC_SEO_ROUTES: SeoRoute[] = [
     keyword: '2x2 inch us visa photo compressor under 100kb',
     title: 'US Visa & DV Lottery 2×2 Inch (600×600 px) Photo Calibrator Under 100KB',
     metaDescription: 'Calibrate 2×2 inch (600×600 px) US Visa DS-160 and DV Lottery portraits with pure white backdrop normalization and printable 4×6 pharmacy sheets.',
-    targetTool: 'exactkb',
+    targetTool: 'compress',
     presetId: 'us-visa-2x2',
     targetKb: 100,
     monthlyVolume: 39200,
@@ -885,12 +910,12 @@ export const PROGRAMMATIC_SEO_ROUTES: SeoRoute[] = [
     keyword: 'compress photo to 15kb exact online client side',
     title: 'Compress Photo to 15KB Exact — Deterministic 7-Pass Binary Search',
     metaDescription: 'Lock any ID portrait or document scan under 15.0 KB with 100% browser-local privacy and optical split-loupe sharpness inspection.',
-    targetTool: 'exactkb',
+    targetTool: 'compress',
     presetId: 'schengen-35x45',
     targetKb: 15,
     monthlyVolume: 31400,
     cpcUsd: 1.30,
-    faqQuestion: 'Can I export an Exact-KB PDF under 15 KB or 20 KB as well?',
+    faqQuestion: 'Can I export a Target-KB PDF under 15 KB or 20 KB as well?',
     faqAnswer: 'Yes. The CompressPhoto PDF compiler wraps the binary-searched JPEG stream into a minimal ISO-32000 PDF container calibrated to your target kilobyte ceiling.'
   },
   {
@@ -916,7 +941,7 @@ export const PROGRAMMATIC_SEO_ROUTES: SeoRoute[] = [
     keyword: 'photo identité 35x45mm cnie maroc passeport france 50 ko',
     title: 'Calibrage Photo Identité 35×45 mm (Passeport ANTS & CNIE Maroc) < 50 Ko',
     metaDescription: 'Préparez votre photo biométrique 35×45 mm (413×531 px à 300 DPI) sous 50 Ko et imprimez une planche pharmacie 10×15 cm de 8 photos avec repères de coupe.',
-    targetTool: 'exactkb',
+    targetTool: 'compress',
     presetId: 'schengen-35x45',
     targetKb: 50,
     monthlyVolume: 44100,
@@ -932,7 +957,7 @@ export const PROGRAMMATIC_SEO_ROUTES: SeoRoute[] = [
     keyword: 'compresser signature manuscrite moins de 20 ko fond blanc',
     title: 'Nettoyer & Compresser une Signature Manuscrite sous 20 Ko Exact',
     metaDescription: 'Supprimez l’ombre du papier prise au téléphone et verrouillez votre signature manuscrite sous 20 Ko pour les portails administratifs et bancaires.',
-    targetTool: 'exactkb',
+    targetTool: 'compress',
     presetId: 'wet-ink-sig',
     targetKb: 20,
     monthlyVolume: 22900,
@@ -963,7 +988,7 @@ export const PROGRAMMATIC_SEO_ROUTES: SeoRoute[] = [
     keyword: 'comprimir firma escaneada a 20kb exactos fondo blanco',
     title: 'Limpiar y Comprimir Firma Manuscrita a Menos de 20KB Exactos',
     metaDescription: 'Elimina las sombras del papel tomadas con el móvil y bloquea tu firma en tinta por debajo de 20KB mediante búsqueda binaria de 7 pasadas.',
-    targetTool: 'exactkb',
+    targetTool: 'compress',
     presetId: 'wet-ink-sig',
     targetKb: 20,
     monthlyVolume: 33700,
@@ -979,7 +1004,7 @@ export const PROGRAMMATIC_SEO_ROUTES: SeoRoute[] = [
     keyword: 'foto pasaporte 35x45mm hoja 10x15 8 fotos para imprimir',
     title: 'Calibrador de Foto Pasaporte 35×45 mm y Plantilla Farmacia 10×15 cm',
     metaDescription: 'Ajusta tu foto biométrica a 35×45 mm o 2×2 pulgadas bajo 50KB y descarga la hoja de 10×15 cm con 8 fotos y marcas de corte milimétricas.',
-    targetTool: 'exactkb',
+    targetTool: 'compress',
     presetId: 'schengen-35x45',
     targetKb: 50,
     monthlyVolume: 28400,
@@ -1010,7 +1035,7 @@ export const PROGRAMMATIC_SEO_ROUTES: SeoRoute[] = [
     keyword: 'ضغط صورة جواز السفر والبطاقة الوطنية 35x45 مم أقل من 50 كيلوبايت',
     title: 'ضبط حجم صورة جواز السفر والبطاقة الوطنية (35×45 مم) تحت 50 كيلوبايت',
     metaDescription: 'معايرة الصور البيومترية (35×45 مم و 2×2 بوصة) تحت سقف 50 أو 20 كيلوبايت بدقة عبر 7 مراحل بحث ثنائي مع ورقة طباعة 10×15 سم تضم 8 صور.',
-    targetTool: 'exactkb',
+    targetTool: 'compress',
     presetId: 'schengen-35x45',
     targetKb: 50,
     monthlyVolume: 41800,
@@ -1026,7 +1051,7 @@ export const PROGRAMMATIC_SEO_ROUTES: SeoRoute[] = [
     keyword: 'إزالة ظل التوقيع وضغط الصورة إلى 20 كيلوبايت لبوابات التوظيف',
     title: 'تنظيف ظل التوقيع الخطي وضغطه تحت 20 كيلوبايت بدقة',
     metaDescription: 'أزل ظلال تصوير الهاتف عن التوقيع الحبري واحصل على خلفية بيضاء نقية بحجم أقل من 20 كيلوبايت لبوابات المباريات والبنوك.',
-    targetTool: 'exactkb',
+    targetTool: 'compress',
     presetId: 'wet-ink-sig',
     targetKb: 20,
     monthlyVolume: 26500,

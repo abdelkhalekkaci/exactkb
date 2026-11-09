@@ -1,9 +1,9 @@
 # CompressPhoto (https://compressphoto.space)
 
-> CompressPhoto is a 100% private, browser-based passport photo, visa portrait, and handwritten signature compression studio. It resizes and locks JPEG, WebP, PNG, and PDF files to exact kilobyte limits (10KB, 20KB, 30KB, 50KB, 100KB, 200KB, 500KB) at 300 DPI for official government and exam portals.
+> CompressPhoto is a 100% private, browser-based passport photo, visa portrait, handwritten signature compression studio, and universal image & PDF format converter. It converts between HEIC, PDF, PNG, JPG, WebP, AVIF, TIFF, SVG, BMP, GIF, and ICO and locks files to target kilobyte limits (10KB, 20KB, 30KB, 50KB, 100KB, 200KB, 500KB) at 300 DPI.
 
 - Full Documentation: [https://compressphoto.space/llms-full.txt](https://compressphoto.space/llms-full.txt)
-- Sitemap (All 212 Multilingual URLs): [https://compressphoto.space/sitemap.xml](https://compressphoto.space/sitemap.xml)
+- Sitemap (All 304 Multilingual URLs): [https://compressphoto.space/sitemap.xml](https://compressphoto.space/sitemap.xml)
 
 ## Multilingual Studio Editions
 - English (Global): [https://compressphoto.space/](https://compressphoto.space/)
@@ -32,6 +32,31 @@
 - [UK Passport & Visa Photo Resizer (35×45 mm)](https://compressphoto.space/uk-passport-photo-35x45mm)
 - [Canada Passport, Visa & PR Photo Resizer (50×70 mm)](https://compressphoto.space/canada-passport-visa-photo-50x70mm)
 - [Free 4×6 Inch (10×15 cm) Passport Photo Print Sheet Generator](https://compressphoto.space/passport-photo-4x6-print-sheet)
+
+## Universal Image & PDF Format Converters (23 Tools)
+- [Universal Image & PDF Converter — Private, In Your Browser](https://compressphoto.space/image-converter)
+- [Convert HEIC to JPG Online — 100% Private in Your Browser](https://compressphoto.space/heic-to-jpg)
+- [Convert HEIC to PNG — Lossless & 100% Private](https://compressphoto.space/heic-to-png)
+- [Convert HEIC to PDF — Single or Multi-Page Document Builder](https://compressphoto.space/heic-to-pdf)
+- [Convert JPG to PDF — Merge Photos & Hit Exact KB Limits](https://compressphoto.space/jpg-to-pdf)
+- [Convert PNG to PDF — Merge Screenshots & Documents Privately](https://compressphoto.space/png-to-pdf)
+- [Convert PDF to JPG — High-DPI Page Extractor in Your Browser](https://compressphoto.space/pdf-to-jpg)
+- [Convert PDF to PNG — Lossless High-DPI Page Extractor](https://compressphoto.space/pdf-to-png)
+- [Convert PNG to JPG — Reduce File Size & Set Custom Background](https://compressphoto.space/png-to-jpg)
+- [Convert JPG to PNG — Lossless Editing Container in Browser](https://compressphoto.space/jpg-to-png)
+- [Convert WebP to JPG — Universal Compatibility in Your Browser](https://compressphoto.space/webp-to-jpg)
+- [Convert WebP to PNG — Preserve Alpha Transparency Locally](https://compressphoto.space/webp-to-png)
+- [Convert JPG to WebP — Next-Gen Web Optimization in Browser](https://compressphoto.space/jpg-to-webp)
+- [Convert PNG to WebP — Keep Transparency, Slash File Weight](https://compressphoto.space/png-to-webp)
+- [Convert AVIF to JPG — Instant Universal Compatibility](https://compressphoto.space/avif-to-jpg)
+- [Convert AVIF to PNG — Preserve Transparency & Detail Locally](https://compressphoto.space/avif-to-png)
+- [Convert TIFF to JPG — Compress Heavy Scans Locally](https://compressphoto.space/tiff-to-jpg)
+- [Convert BMP to JPG — Shrink Uncompressed Bitmaps by 95%](https://compressphoto.space/bmp-to-jpg)
+- [Convert GIF to JPG — Static Frame & Legacy Graphic Converter](https://compressphoto.space/gif-to-jpg)
+- [Convert SVG to PNG — Crisp Vector Rasterizer in Your Browser](https://compressphoto.space/svg-to-png)
+- [Convert PNG to ICO — Multi-Resolution Favicon & App Icon Builder](https://compressphoto.space/png-to-ico)
+- [Convert JPG to ICO — Favicon & Windows Icon Generator](https://compressphoto.space/jpg-to-ico)
+- [Convert JPEG to PNG — Lossless Format Conversion in Browser](https://compressphoto.space/jpeg-to-png)
 
 ## Outils Dédiés Photo d'Identité, ANTS, CNIE & Concours (Français)
 - [Compresser une Photo à 20 Ko en Ligne (Sans Perte de Netteté)](https://compressphoto.space/fr/compress-photo-to-20kb)
@@ -63,9 +88,9 @@
 - [US Visa DS-160 & DV Lottery 2×2 Inch (600×600 px) Photo Size & KB Guide](https://compressphoto.space/blog/us-visa-ds160-dv-lottery-2x2-inch-600x600-photo-compressor)
 - [How to Compress a Photo to 100KB Exact While Keeping 300 DPI Print Sharpness](https://compressphoto.space/blog/compress-photo-to-100kb-without-losing-sharpness-300-dpi)
 - [How to Print 8 Passport Photos on a Single 4×6 Inch (10×15 cm) Sheet](https://compressphoto.space/blog/how-to-print-8-passport-photos-on-4x6-inch-10x15cm-sheet)
-- [How to Convert & Compress a Photo to an Exact-KB PDF (< 50KB or 100KB)](https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb)
+- [How to Convert & Compress a Photo to a Target-KB PDF (< 50KB or 100KB)](https://compressphoto.space/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb)
 - [How to Get a Pure White Background (#FFFFFF) for Passport & Amazon Photos](https://compressphoto.space/blog/pure-white-background-passport-photo-and-amazon-1000x1000)
-- [Compress JPEG vs. WebP vs. PNG: Which Format Is Best for Exact KB Limits?](https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search)
+- [Compress JPEG vs. WebP vs. PNG: Which Format Is Best for Exact KB Limits?](https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search)
 - [Passport & Visa Photo Size Requirements by Country (mm, Inches, Pixels & KB Table)](https://compressphoto.space/blog/passport-and-visa-photo-size-requirements-by-country-guide)
 - [Why Is My Photo Rejected on Upload? The 7 Common Mistakes & How to Fix Them Instantly](https://compressphoto.space/blog/why-is-my-photo-rejected-on-upload-7-common-mistakes-fixed)
 - [SSC, UPSC, IBPS, SBI PO, Railway & NEET Photo and Signature Size Guide (20KB–50KB)](https://compressphoto.space/blog/ssc-upsc-ibps-sbi-neet-photo-and-signature-size-requirements)

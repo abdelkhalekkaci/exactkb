@@ -256,6 +256,282 @@
   </url>
 
   <url>
+    <loc>https://compressphoto.space/image-converter</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.94</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/image-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/image-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/image-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/image-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/image-converter" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/heic-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/heic-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/heic-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/jpg-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/png-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/pdf-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/pdf-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/pdf-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/pdf-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/png-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/jpg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/webp-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/webp-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/webp-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/webp-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/jpg-to-webp</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-webp" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/png-to-webp</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-webp" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/avif-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/avif-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/avif-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/avif-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/tiff-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/tiff-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/bmp-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/bmp-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/gif-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/gif-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/svg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/svg-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/png-to-ico</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-ico" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/jpg-to-ico</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-ico" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/jpeg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpeg-to-png" />
+  </url>
+
+  <url>
     <loc>https://compressphoto.space/qr</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -412,15 +688,15 @@
   </url>
 
   <url>
-    <loc>https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb</loc>
+    <loc>https://compressphoto.space/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
   </url>
 
   <url>
@@ -436,15 +712,15 @@
   </url>
 
   <url>
-    <loc>https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search</loc>
+    <loc>https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
   </url>
 
   <url>
@@ -892,6 +1168,282 @@
   </url>
 
   <url>
+    <loc>https://compressphoto.space/fr/image-converter</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.94</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/image-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/image-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/image-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/image-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/image-converter" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/heic-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/heic-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/heic-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/jpg-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/png-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/pdf-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/pdf-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/pdf-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/pdf-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/png-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/jpg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/webp-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/webp-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/webp-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/webp-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/jpg-to-webp</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-webp" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/png-to-webp</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-webp" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/avif-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/avif-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/avif-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/avif-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/tiff-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/tiff-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/bmp-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/bmp-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/gif-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/gif-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/svg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/svg-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/png-to-ico</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-ico" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/jpg-to-ico</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-ico" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/fr/jpeg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpeg-to-png" />
+  </url>
+
+  <url>
     <loc>https://compressphoto.space/fr/qr</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -1048,15 +1600,15 @@
   </url>
 
   <url>
-    <loc>https://compressphoto.space/fr/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb</loc>
+    <loc>https://compressphoto.space/fr/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
   </url>
 
   <url>
@@ -1072,15 +1624,15 @@
   </url>
 
   <url>
-    <loc>https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search</loc>
+    <loc>https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
   </url>
 
   <url>
@@ -1528,6 +2080,282 @@
   </url>
 
   <url>
+    <loc>https://compressphoto.space/es/image-converter</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.94</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/image-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/image-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/image-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/image-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/image-converter" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/heic-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/heic-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/heic-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/jpg-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/png-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/pdf-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/pdf-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/pdf-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/pdf-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/png-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/jpg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/webp-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/webp-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/webp-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/webp-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/jpg-to-webp</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-webp" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/png-to-webp</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-webp" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/avif-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/avif-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/avif-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/avif-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/tiff-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/tiff-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/bmp-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/bmp-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/gif-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/gif-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/svg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/svg-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/png-to-ico</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-ico" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/jpg-to-ico</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-ico" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/es/jpeg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpeg-to-png" />
+  </url>
+
+  <url>
     <loc>https://compressphoto.space/es/qr</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -1684,15 +2512,15 @@
   </url>
 
   <url>
-    <loc>https://compressphoto.space/es/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb</loc>
+    <loc>https://compressphoto.space/es/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
   </url>
 
   <url>
@@ -1708,15 +2536,15 @@
   </url>
 
   <url>
-    <loc>https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search</loc>
+    <loc>https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
   </url>
 
   <url>
@@ -2164,6 +2992,282 @@
   </url>
 
   <url>
+    <loc>https://compressphoto.space/ar/image-converter</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.94</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/image-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/image-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/image-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/image-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/image-converter" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/heic-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/heic-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/heic-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/heic-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/heic-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/jpg-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/png-to-pdf</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-pdf" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-pdf" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/pdf-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/pdf-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/pdf-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/pdf-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/pdf-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/pdf-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/png-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/jpg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/webp-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/webp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/webp-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/webp-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/webp-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/webp-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/jpg-to-webp</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-webp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-webp" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/png-to-webp</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-webp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-webp" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/avif-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/avif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/avif-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/avif-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/avif-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/avif-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/tiff-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/tiff-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/tiff-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/bmp-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/bmp-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/bmp-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/gif-to-jpg</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/gif-to-jpg" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/gif-to-jpg" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/svg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/svg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/svg-to-png" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/png-to-ico</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/png-to-ico" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/png-to-ico" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/jpg-to-ico</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpg-to-ico" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpg-to-ico" />
+  </url>
+
+  <url>
+    <loc>https://compressphoto.space/ar/jpeg-to-png</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/jpeg-to-png" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/jpeg-to-png" />
+  </url>
+
+  <url>
     <loc>https://compressphoto.space/ar/qr</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -2320,15 +3424,15 @@
   </url>
 
   <url>
-    <loc>https://compressphoto.space/ar/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb</loc>
+    <loc>https://compressphoto.space/ar/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb" />
   </url>
 
   <url>
@@ -2344,15 +3448,15 @@
   </url>
 
   <url>
-    <loc>https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search</loc>
+    <loc>https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-exact-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://compressphoto.space/fr/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://compressphoto.space/es/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://compressphoto.space/ar/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://compressphoto.space/blog/compress-jpeg-vs-webp-vs-png-target-kb-binary-search" />
   </url>
 
   <url>

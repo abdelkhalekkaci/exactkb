@@ -18,7 +18,7 @@ import { LocaleCode } from '../types/atelier';
 import { generateCuratedSampleDataUrl } from '../utils/sampleCanvasGenerators';
 
 interface VisitorVisualGuideProps {
-  mode: 'exactkb' | 'qr';
+  mode: 'compress' | 'qr';
   locale: LocaleCode;
 }
 
@@ -62,7 +62,7 @@ const GUIDE_COPY: Record<LocaleCode, GuideCopy> = {
     kbStep2Title: 'Step 2 — Select Document Type & Max KB',
     kbStep2Desc: 'Click a ready-made official preset (Passport 35×45 mm, US Visa 2×2", or Signature < 20 KB) and choose your strict maximum kilobyte limit (10 KB to 500 KB).',
     kbStep3Title: 'Step 3 — Compare & Download Instantly',
-    kbStep3Desc: 'Slide the yellow Before/After line to inspect image sharpness, then download your verified JPG, an Exact-KB PDF, or a printable 4×6" 8-photo pharmacy sheet.',
+    kbStep3Desc: 'Slide the yellow Before/After line to inspect image sharpness, then download your verified JPG, a Target-KB PDF, or a printable 4×6" 8-photo pharmacy sheet.',
     sliderExplainTitle: 'What is the Yellow "Before / After" Line in the Preview?',
     sliderExplainDesc: 'The vertical yellow line is an interactive comparison slider. The LEFT side ("Before") shows your original uploaded file with its original background. The RIGHT side ("After") shows the final compressed & whitened image at your exact KB target. Drag the round handle left or right to verify there is zero blur before downloading.',
     sliderLeftTag: 'LEFT = Original Photo (Off-white / Uncompressed)',
@@ -178,7 +178,7 @@ export const VisitorVisualGuide: React.FC<VisitorVisualGuideProps> = ({ mode, lo
   const samplePortraitUrl = useMemo(() => generateCuratedSampleDataUrl('biometric-portrait'), []);
   const sampleSignatureUrl = useMemo(() => generateCuratedSampleDataUrl('wet-ink-signature'), []);
 
-  if (mode === 'exactkb') {
+  if (mode === 'compress') {
     return (
       <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-8 pb-4 space-y-10 border-t border-[#14213d]/15 dark:border-[#ffffff]/15">
         {/* SECTION HEADER */}

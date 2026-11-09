@@ -13,9 +13,9 @@
   </g>
   <!-- Title & Copy -->
   <text x="208" y="158" fill="#FFFFFF" font-family="Georgia, serif" font-size="56" font-weight="bold">Compress<tspan fill="#FCA311">Photo</tspan>.space</text>
-  <text x="88" y="276" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="bold">Exact KB Photo Compressor</text>
-  <text x="88" y="344" fill="#FCA311" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="bold">&amp; Permanent Vector QR Studio</text>
-  <text x="88" y="424" fill="#E5E5E5" font-family="monospace" font-size="26">20KB · 50KB · 100KB · 35x45mm Passport · Wet-Ink Signature · SVG QR &amp; CODE-128</text>
+  <text x="88" y="276" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-size="50" font-weight="bold">CompressPhoto &amp; Image Converter</text>
+  <text x="88" y="344" fill="#FCA311" font-family="system-ui, -apple-system, sans-serif" font-size="46" font-weight="bold">&amp; Permanent Vector QR Studio</text>
+  <text x="88" y="424" fill="#E5E5E5" font-family="monospace" font-size="25">20KB · 50KB · 100KB · HEIC/PDF/PNG/JPG/WebP · 35x45mm Passport · SVG QR</text>
   <!-- Bottom Pill -->
   <rect x="88" y="476" width="590" height="58" rx="12" fill="#FCA311"/>
   <text x="116" y="514" fill="#14213D" font-family="monospace" font-size="24" font-weight="bold">100% BROWSER-LOCAL · ZERO SERVER UPLOADS</text>

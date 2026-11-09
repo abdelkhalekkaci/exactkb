@@ -12,6 +12,11 @@ import {
   TOOL_LANDING_PAGES,
   ToolLandingPageConfig
 } from '../src/data/toolLandingPages';
+import {
+  CONVERTER_ROUTES,
+  CONVERTER_UI_LABELS,
+  ConverterRouteConfig
+} from '../src/data/converterRoutes';
 import { LocaleCode } from '../src/types/atelier';
 
 const SITE_ORIGIN = 'https://compressphoto.space';
@@ -66,14 +71,25 @@ function buildPhotoSiloNavHtml(locale: LocaleCode): string {
       )}</a></li>`
   ).join('\n          ');
 
+  const converterLinks = CONVERTER_ROUTES.map(
+    (c) =>
+      `<li><a href="${prefix}/${escapeHtml(c.slug)}">${escapeHtml(
+        c.h1
+      )}</a></li>`
+  ).join('\n          ');
+
   return `
-    <nav aria-label="Biometric Photo & Exact-KB Compression Directory">
+    <nav aria-label="Biometric Photo, Image Converter &amp; KB Compression Directory">
       <h2>${escapeHtml(HOME_GEO_CONTENT[locale].dedicatedToolsHeading)}</h2>
       <ul>
         <li><a href="${prefix || '/'}">${escapeHtml(
           TRANSLATIONS[locale].kbHeroTitle
         )}</a></li>
         ${toolLinks}
+      </ul>
+      <h2>Universal Image &amp; PDF Format Converters</h2>
+      <ul>
+        ${converterLinks}
       </ul>
       <h2>Biometric Photo, Passport &amp; Signature Guides</h2>
       <ul>
@@ -122,7 +138,10 @@ function buildQrSiloNavHtml(locale: LocaleCode): string {
       </ul>
       <ul>
         <li><a href="${prefix || '/'}">${escapeHtml(
-          TRANSLATIONS[locale].navExactKb
+          TRANSLATIONS[locale].navCompress
+        )}</a></li>
+        <li><a href="${prefix}/image-converter">${escapeHtml(
+          TRANSLATIONS[locale].navConverter
         )}</a></li>
         <li><a href="${prefix}/about">${escapeHtml(
           TRANSLATIONS[locale].navAbout
@@ -297,7 +316,6 @@ function buildPhotoToolJsonLd(
         '@id': `${SITE_ORIGIN}/#organization`,
         name: 'CompressPhoto',
         url: `${SITE_ORIGIN}/`,
-        sameAs: ['https://github.com/abdelkhalekkaci/exactkb'],
         logo: {
           '@type': 'ImageObject',
           url: `${SITE_ORIGIN}/favicon.svg`
@@ -314,7 +332,7 @@ function buildPhotoToolJsonLd(
         '@id': `${SITE_ORIGIN}/#website`,
         url: `${SITE_ORIGIN}/`,
         name: 'CompressPhoto',
-        description: LOCALIZED_ROUTE_META[locale].exactkb.description,
+        description: LOCALIZED_ROUTE_META[locale].compress.description,
         publisher: { '@id': `${SITE_ORIGIN}/#organization` },
         inLanguage: ['en', 'fr', 'es', 'ar']
       },
@@ -329,11 +347,11 @@ function buildPhotoToolJsonLd(
         inLanguage: locale,
         description,
         featureList: [
-          'Exact-KB 7-Pass Binary Search Image Compression (10KB, 20KB, 50KB, 100KB, 200KB)',
+          '7-Pass Binary Search Image Compression (10KB, 20KB, 50KB, 100KB, 200KB)',
           '35x45 mm (413x531 px @ 300 DPI) ICAO 9303 Biometric Passport & ANTS/CNIE Calibration',
           '2x2 inch (600x600 px @ 300 DPI) US Visa DS-160 & Green Card DV Lottery Preset',
           'Handwritten Wet-Ink Signature Paper Shadow Removal (< 20KB)',
-          'ISO-32000 Exact-KB PDF Wrapper & 4x6 inch 8-Photo Sheet Generator',
+          'ISO-32000 Target-KB PDF Wrapper & 4x6 inch 8-Photo Sheet Generator',
           '100% Client-Side Browser RAM Processing (Zero Server Uploads)'
         ],
         publisher: { '@id': `${SITE_ORIGIN}/#organization` },
@@ -406,22 +424,22 @@ function buildRoutes(): StaticRouteConfig[] {
       locale,
       basePath: '/',
       localizedPath: homeLocalizedPath,
-      title: metaMap.exactkb.title,
-      description: metaMap.exactkb.description,
+      title: metaMap.compress.title,
+      description: metaMap.compress.description,
       ogType: 'website',
       priority: locale === 'en' ? '1.0' : '0.95',
       changefreq: 'weekly',
       jsonLd: buildPhotoToolJsonLd(
         locale,
         homeCanonicalUrl,
-        metaMap.exactkb.title,
-        metaMap.exactkb.description,
+        metaMap.compress.title,
+        metaMap.compress.description,
         null
       ),
       bodyHtml: buildPhotoToolBodyHtml(locale, null)
     });
 
-    // 2. All 10 Dedicated Tool Landing Pages (e.g. /compress-photo-to-20kb, /fr/ants-photo-identite-50ko, etc.)
+    // 2. All Dedicated Compressor Tool Landing Pages
     for (const landing of TOOL_LANDING_PAGES) {
       const basePath = `/${landing.slug}`;
       const localizedPath = getLocalizedUrlPath(locale, basePath);
@@ -446,6 +464,154 @@ function buildRoutes(): StaticRouteConfig[] {
           landing
         ),
         bodyHtml: buildPhotoToolBodyHtml(locale, landing)
+      });
+    }
+
+    // 2B. All 23 Image & Document Converter Routes (/image-converter + 22 format pairs)
+    const convUi = CONVERTER_UI_LABELS[locale] || CONVERTER_UI_LABELS.en;
+    for (const conv of CONVERTER_ROUTES) {
+      const basePath = `/${conv.slug}`;
+      const localizedPath = getLocalizedUrlPath(locale, basePath);
+      const canonicalUrl = `${SITE_ORIGIN}${localizedPath}`;
+
+      const comparisonRowsHtml = conv.comparisonRows
+        .map(
+          (r) => `
+              <tr>
+                <td>${escapeHtml(r.feature)}</td>
+                <td>${escapeHtml(r.sourceValue)}</td>
+                <td>${escapeHtml(r.targetValue)}</td>
+              </tr>`
+        )
+        .join('');
+
+      const stepsHtml = conv.steps
+        .map((s) => `<li>${escapeHtml(s)}</li>`)
+        .join('\n            ');
+
+      const faqsHtml = conv.faqs
+        .map(
+          (f) =>
+            `<dt>${escapeHtml(f.question)}</dt><dd>${escapeHtml(f.answer)}</dd>`
+        )
+        .join('\n            ');
+
+      routes.push({
+        locale,
+        basePath,
+        localizedPath,
+        title: conv.title,
+        description: conv.metaDescription,
+        ogType: 'website',
+        priority: conv.slug === 'image-converter' ? '0.94' : '0.90',
+        changefreq: 'weekly',
+        jsonLd: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'SoftwareApplication',
+              '@id': `${canonicalUrl}#software`,
+              name: conv.h1,
+              url: canonicalUrl,
+              applicationCategory: 'MultimediaApplication',
+              operatingSystem: 'All (Web Browser)',
+              inLanguage: locale,
+              description: conv.metaDescription,
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD'
+              }
+            },
+            {
+              '@type': 'FAQPage',
+              '@id': `${canonicalUrl}#faq`,
+              mainEntity: conv.faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: f.answer
+                }
+              }))
+            },
+            {
+              '@type': 'BreadcrumbList',
+              '@id': `${canonicalUrl}#breadcrumb`,
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'CompressPhoto',
+                  item: `${SITE_ORIGIN}${prefix || '/'}`
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Image Converter',
+                  item: `${SITE_ORIGIN}${prefix}/image-converter`
+                },
+                ...(conv.slug !== 'image-converter'
+                  ? [
+                      {
+                        '@type': 'ListItem',
+                        position: 3,
+                        name: `${conv.sourceLabel} to ${conv.targetLabel}`,
+                        item: canonicalUrl
+                      }
+                    ]
+                  : [])
+              ]
+            }
+          ]
+        },
+        bodyHtml: `
+        <main>
+          <header>
+            <h1>${escapeHtml(conv.h1)}</h1>
+            <p>${escapeHtml(conv.subtitle)}</p>
+          </header>
+          <section>
+            <h2>Why Convert ${escapeHtml(conv.sourceLabel)} to ${escapeHtml(
+              conv.targetLabel
+            )} in Your Browser?</h2>
+            <p>${escapeHtml(conv.introParagraphs[0])}</p>
+            <p>${escapeHtml(conv.introParagraphs[1])}</p>
+          </section>
+          <section>
+            <h2>${escapeHtml(convUi.howToHeading)}</h2>
+            <ol>
+              ${stepsHtml}
+            </ol>
+          </section>
+          <section>
+            <h2>${escapeHtml(convUi.comparisonHeading)}: ${escapeHtml(
+              conv.sourceLabel
+            )} vs ${escapeHtml(conv.targetLabel)}</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>${escapeHtml(convUi.featureCol)}</th>
+                  <th>${escapeHtml(conv.sourceLabel)}</th>
+                  <th>${escapeHtml(conv.targetLabel)}</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${comparisonRowsHtml}
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h2>${escapeHtml(convUi.faqHeading)}</h2>
+            <dl>
+              ${faqsHtml}
+            </dl>
+          </section>
+          <p><a href="${prefix}/${escapeHtml(
+            conv.compressorLinkSlug
+          )}">${escapeHtml(conv.compressorLinkAnchor)}</a></p>
+          ${buildPhotoSiloNavHtml(locale)}
+        </main>`
       });
     }
 
@@ -940,12 +1106,16 @@ function generateLlmsTxt(): string {
     (q) => `- [${q.translations.en.title}](${SITE_ORIGIN}/blog/${q.slug})`
   ).join('\n');
 
+  const converterLines = CONVERTER_ROUTES.map(
+    (c) => `- [${c.h1}](${SITE_ORIGIN}/${c.slug})`
+  ).join('\n');
+
   return `# CompressPhoto (${SITE_ORIGIN})
 
-> CompressPhoto is a 100% private, browser-based passport photo, visa portrait, and handwritten signature compression studio. It resizes and locks JPEG, WebP, PNG, and PDF files to exact kilobyte limits (10KB, 20KB, 30KB, 50KB, 100KB, 200KB, 500KB) at 300 DPI for official government and exam portals.
+> CompressPhoto is a 100% private, browser-based passport photo, visa portrait, handwritten signature compression studio, and universal image & PDF format converter. It converts between HEIC, PDF, PNG, JPG, WebP, AVIF, TIFF, SVG, BMP, GIF, and ICO and locks files to target kilobyte limits (10KB, 20KB, 30KB, 50KB, 100KB, 200KB, 500KB) at 300 DPI.
 
 - Full Documentation: [${SITE_ORIGIN}/llms-full.txt](${SITE_ORIGIN}/llms-full.txt)
-- Sitemap (All 212 Multilingual URLs): [${SITE_ORIGIN}/sitemap.xml](${SITE_ORIGIN}/sitemap.xml)
+- Sitemap (All 304 Multilingual URLs): [${SITE_ORIGIN}/sitemap.xml](${SITE_ORIGIN}/sitemap.xml)
 
 ## Multilingual Studio Editions
 - English (Global): [${SITE_ORIGIN}/](${SITE_ORIGIN}/)
@@ -955,6 +1125,9 @@ function generateLlmsTxt(): string {
 
 ## Dedicated Photo, Signature & Official Portal Tools (English)
 ${toolLines}
+
+## Universal Image & PDF Format Converters (23 Tools)
+${converterLines}
 
 ## Outils Dédiés Photo d'Identité, ANTS, CNIE & Concours (Français)
 ${frToolLines}

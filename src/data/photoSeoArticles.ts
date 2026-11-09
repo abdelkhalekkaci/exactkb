@@ -1,6 +1,6 @@
 import { BiometricPresetId, LocaleCode } from '../types/atelier';
 
-export type BlogCategoryId = 'all' | 'exact-kb' | 'passport-visa' | 'signature' | 'pdf-print';
+export type BlogCategoryId = 'all' | 'target-kb' | 'passport-visa' | 'signature' | 'pdf-print';
 
 export interface MasterKeywordItem {
   keyword: string;
@@ -12,83 +12,83 @@ export interface MasterKeywordItem {
 
 export const MASTER_PHOTO_KEYWORDS: Record<LocaleCode, MasterKeywordItem[]> = {
   en: [
-    { keyword: 'compress photo to 20kb', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
-    { keyword: 'reduce image size under 20kb', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
-    { keyword: 'resize jpg to 20kb without losing quality', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
+    { keyword: 'compress photo to 20kb', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
+    { keyword: 'reduce image size under 20kb', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
+    { keyword: 'resize jpg to 20kb without losing quality', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
     { keyword: 'compress signature to 20kb', category: 'signature', presetId: 'wet-ink-sig', targetKb: 20, articleId: 'compress-signature-under-20kb' },
     { keyword: 'ssc upsc signature 10kb to 20kb', category: 'signature', presetId: 'wet-ink-sig', targetKb: 15, articleId: 'compress-signature-under-20kb' },
     { keyword: 'remove gray shadow from signature photo', category: 'signature', presetId: 'wet-ink-sig', targetKb: 20, articleId: 'compress-signature-under-20kb' },
-    { keyword: 'compress photo to 50kb', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-50kb-online' },
-    { keyword: 'reduce passport photo to 50kb jpg', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-50kb-online' },
+    { keyword: 'compress photo to 50kb', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-50kb-online' },
+    { keyword: 'reduce passport photo to 50kb jpg', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-50kb-online' },
     { keyword: '35x45mm passport photo pixels', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: '35x45mm-passport-photo-guide' },
     { keyword: '413x531 pixels 300 dpi converter', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: '35x45mm-passport-photo-guide' },
     { keyword: '2x2 inch us visa photo 600x600 px', category: 'passport-visa', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'us-visa-2x2-inch-photo-guide' },
     { keyword: 'dv lottery photo compressor under 240kb', category: 'passport-visa', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'us-visa-2x2-inch-photo-guide' },
-    { keyword: 'compress photo to 100kb exact', category: 'exact-kb', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'compress-photo-to-100kb-exact' },
+    { keyword: 'compress photo to 100kb exact', category: 'target-kb', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'compress-photo-to-100kb-exact' },
     { keyword: '4x6 inch passport photo sheet 8 photos', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'print-8-passport-photos-4x6-sheet' },
-    { keyword: 'compress jpg to pdf under 50kb', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-exact-kb-pdf' },
+    { keyword: 'compress jpg to pdf under 50kb', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-target-kb-pdf' },
     { keyword: 'pure white background passport photo', category: 'passport-visa', presetId: 'amazon-1000', targetKb: 200, articleId: 'pure-white-background-passport-amazon' },
     { keyword: 'amazon 1000x1000 white background jpg', category: 'passport-visa', presetId: 'amazon-1000', targetKb: 200, articleId: 'pure-white-background-passport-amazon' },
-    { keyword: 'jpeg vs webp exact kb compression', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
+    { keyword: 'jpeg vs webp exact kb compression', category: 'target-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
     { keyword: 'passport photo size in mm cm inches by country', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: 'passport-photo-size-by-country-hub' },
-    { keyword: 'why is my photo rejected on upload', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
+    { keyword: 'why is my photo rejected on upload', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
     { keyword: 'ssc upsc ibps sbi neet photo signature size', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 20, articleId: 'indian-government-exam-photo-signature-guide' },
-    { keyword: 'how to compress photo on iphone android without uploading', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
+    { keyword: 'how to compress photo on iphone android without uploading', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
   ],
   fr: [
-    { keyword: 'compresser photo 20 ko exact', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
-    { keyword: 'réduire taille image moins de 20 ko', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
+    { keyword: 'compresser photo 20 ko exact', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
+    { keyword: 'réduire taille image moins de 20 ko', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
     { keyword: 'compresser signature manuscrite 20 ko', category: 'signature', presetId: 'wet-ink-sig', targetKb: 20, articleId: 'compress-signature-under-20kb' },
     { keyword: 'blanchir fond signature photo téléphone', category: 'signature', presetId: 'wet-ink-sig', targetKb: 20, articleId: 'compress-signature-under-20kb' },
-    { keyword: 'compresser photo 50 ko en ligne', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-50kb-online' },
+    { keyword: 'compresser photo 50 ko en ligne', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-50kb-online' },
     { keyword: 'photo identité 35x45mm ants cnie maroc', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: '35x45mm-passport-photo-guide' },
     { keyword: '413x531 pixels 300 dpi passeport', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: '35x45mm-passport-photo-guide' },
     { keyword: 'photo visa usa 2x2 pouces 600x600 px', category: 'passport-visa', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'us-visa-2x2-inch-photo-guide' },
-    { keyword: 'compresser photo 100 ko sans perte', category: 'exact-kb', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'compress-photo-to-100kb-exact' },
+    { keyword: 'compresser photo 100 ko sans perte', category: 'target-kb', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'compress-photo-to-100kb-exact' },
     { keyword: 'planche 8 photos identité 10x15 cm', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'print-8-passport-photos-4x6-sheet' },
-    { keyword: 'convertir photo en pdf moins de 50 ko', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-exact-kb-pdf' },
+    { keyword: 'convertir photo en pdf moins de 50 ko', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-target-kb-pdf' },
     { keyword: 'fond blanc pur photo identité et amazon', category: 'passport-visa', presetId: 'amazon-1000', targetKb: 200, articleId: 'pure-white-background-passport-amazon' },
-    { keyword: 'comparatif compression jpeg webp png', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
+    { keyword: 'comparatif compression jpeg webp png', category: 'target-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
     { keyword: 'taille photo passeport et visa par pays ants cnie', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: 'passport-photo-size-by-country-hub' },
-    { keyword: 'pourquoi ma photo est refusée en ligne 7 erreurs', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
+    { keyword: 'pourquoi ma photo est refusée en ligne 7 erreurs', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
     { keyword: 'dimensions photo et signature concours ssc upsc ibps', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 20, articleId: 'indian-government-exam-photo-signature-guide' },
-    { keyword: 'réduire taille photo en ko sur iphone et android', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
+    { keyword: 'réduire taille photo en ko sur iphone et android', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
   ],
   es: [
-    { keyword: 'comprimir foto a 20kb exactos', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
-    { keyword: 'reducir tamaño imagen menos de 20kb', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
+    { keyword: 'comprimir foto a 20kb exactos', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
+    { keyword: 'reducir tamaño imagen menos de 20kb', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
     { keyword: 'comprimir firma manuscrita a 20kb', category: 'signature', presetId: 'wet-ink-sig', targetKb: 20, articleId: 'compress-signature-under-20kb' },
     { keyword: 'quitar sombra gris de firma escaneada', category: 'signature', presetId: 'wet-ink-sig', targetKb: 20, articleId: 'compress-signature-under-20kb' },
-    { keyword: 'comprimir foto a 50kb online gratis', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-50kb-online' },
+    { keyword: 'comprimir foto a 50kb online gratis', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-50kb-online' },
     { keyword: 'foto pasaporte 35x45mm 413x531 pixeles', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: '35x45mm-passport-photo-guide' },
     { keyword: 'foto visa americana 2x2 pulgadas 600x600', category: 'passport-visa', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'us-visa-2x2-inch-photo-guide' },
-    { keyword: 'comprimir imagen a 100kb sin perder calidad', category: 'exact-kb', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'compress-photo-to-100kb-exact' },
+    { keyword: 'comprimir imagen a 100kb sin perder calidad', category: 'target-kb', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'compress-photo-to-100kb-exact' },
     { keyword: 'plantilla 8 fotos carnet en hoja 10x15 cm', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'print-8-passport-photos-4x6-sheet' },
-    { keyword: 'convertir foto a pdf menos de 50kb', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-exact-kb-pdf' },
+    { keyword: 'convertir foto a pdf menos de 50kb', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-target-kb-pdf' },
     { keyword: 'fondo blanco puro foto pasaporte y amazon', category: 'passport-visa', presetId: 'amazon-1000', targetKb: 200, articleId: 'pure-white-background-passport-amazon' },
-    { keyword: 'diferencia compresión jpeg vs webp vs png', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
+    { keyword: 'diferencia compresión jpeg vs webp vs png', category: 'target-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
     { keyword: 'tamaño foto pasaporte y visa por país en mm y píxeles', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: 'passport-photo-size-by-country-hub' },
-    { keyword: 'por qué rechazan mi foto al subirla 7 errores', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
+    { keyword: 'por qué rechazan mi foto al subirla 7 errores', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
     { keyword: 'tamaño foto y firma exámenes ssc upsc ibps', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 20, articleId: 'indian-government-exam-photo-signature-guide' },
-    { keyword: 'cómo reducir peso de foto en kb en iphone y android', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
+    { keyword: 'cómo reducir peso de foto en kb en iphone y android', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
   ],
   ar: [
-    { keyword: 'ضغط الصورة إلى 20 كيلوبايت', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
-    { keyword: 'تصغير حجم الصورة أقل من 20 كيلوبايت', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
+    { keyword: 'ضغط الصورة إلى 20 كيلوبايت', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
+    { keyword: 'تصغير حجم الصورة أقل من 20 كيلوبايت', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 20, articleId: 'compress-photo-to-20kb-exact' },
     { keyword: 'ضغط التوقيع الخطي تحت 20 كيلوبايت', category: 'signature', presetId: 'wet-ink-sig', targetKb: 20, articleId: 'compress-signature-under-20kb' },
     { keyword: 'إزالة ظل الكاميرا من صورة التوقيع', category: 'signature', presetId: 'wet-ink-sig', targetKb: 20, articleId: 'compress-signature-under-20kb' },
-    { keyword: 'ضغط الصورة إلى 50 كيلوبايت أونلاين', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-50kb-online' },
+    { keyword: 'ضغط الصورة إلى 50 كيلوبايت أونلاين', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-50kb-online' },
     { keyword: 'مقاس صورة جواز السفر 35x45 مم والبطاقة الوطنية', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: '35x45mm-passport-photo-guide' },
     { keyword: 'صورة التأشيرة الأمريكية واللوتري 2x2 بوصة 600x600', category: 'passport-visa', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'us-visa-2x2-inch-photo-guide' },
-    { keyword: 'ضغط الصورة إلى 100 كيلوبايت بدون فقدان الجودة', category: 'exact-kb', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'compress-photo-to-100kb-exact' },
+    { keyword: 'ضغط الصورة إلى 100 كيلوبايت بدون فقدان الجودة', category: 'target-kb', presetId: 'us-visa-2x2', targetKb: 100, articleId: 'compress-photo-to-100kb-exact' },
     { keyword: 'طباعة 8 صور جواز سفر في ورقة 10x15 سم', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'print-8-passport-photos-4x6-sheet' },
-    { keyword: 'تحويل الصورة إلى PDF أقل من 50 كيلوبايت', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-exact-kb-pdf' },
+    { keyword: 'تحويل الصورة إلى PDF أقل من 50 كيلوبايت', category: 'pdf-print', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-to-target-kb-pdf' },
     { keyword: 'خلفية بيضاء نقية لصور الجواز وأمازون', category: 'passport-visa', presetId: 'amazon-1000', targetKb: 200, articleId: 'pure-white-background-passport-amazon' },
-    { keyword: 'مقارنة ضغط الصور بصيغة JPEG و WebP و PNG', category: 'exact-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
+    { keyword: 'مقارنة ضغط الصور بصيغة JPEG و WebP و PNG', category: 'target-kb', presetId: 'custom', targetKb: 30, articleId: 'jpeg-vs-webp-vs-png-compression' },
     { keyword: 'مقاسات صور جواز السفر والتأشيرات حسب الدولة', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 50, articleId: 'passport-photo-size-by-country-hub' },
-    { keyword: 'لماذا يتم رفض الصورة عند الرفع 7 أخطاء شائعة', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
+    { keyword: 'لماذا يتم رفض الصورة عند الرفع 7 أخطاء شائعة', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'why-photo-upload-rejected-7-mistakes' },
     { keyword: 'مقاس الصورة والتوقيع لامتحانات SSC وUPSC وIBPS', category: 'passport-visa', presetId: 'schengen-35x45', targetKb: 20, articleId: 'indian-government-exam-photo-signature-guide' },
-    { keyword: 'كيفية تقليل حجم الصورة بالكيلوبايت على الآيفون والأندرويد', category: 'exact-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
+    { keyword: 'كيفية تقليل حجم الصورة بالكيلوبايت على الآيفون والأندرويد', category: 'target-kb', presetId: 'schengen-35x45', targetKb: 50, articleId: 'compress-photo-on-iphone-android-without-uploading' }
   ]
 };
 
@@ -140,7 +140,7 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
     id: 'compress-photo-to-20kb-exact',
     slug: 'how-to-compress-photo-to-20kb-exact-without-losing-quality',
     number: 1,
-    category: 'exact-kb',
+    category: 'target-kb',
     readingTimeMin: 4,
     presetId: 'schengen-35x45',
     targetKb: 20,
@@ -402,7 +402,7 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
     id: 'compress-photo-to-50kb-online',
     slug: 'how-to-compress-photo-to-50kb-online-passport-visa',
     number: 3,
-    category: 'exact-kb',
+    category: 'target-kb',
     readingTimeMin: 4,
     presetId: 'schengen-35x45',
     targetKb: 50,
@@ -777,7 +777,7 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
     id: 'compress-photo-to-100kb-exact',
     slug: 'compress-photo-to-100kb-without-losing-sharpness-300-dpi',
     number: 6,
-    category: 'exact-kb',
+    category: 'target-kb',
     readingTimeMin: 4,
     presetId: 'us-visa-2x2',
     targetKb: 100,
@@ -1021,11 +1021,11 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
   },
 
   // =========================================================================
-  // ARTICLE 8: CONVERT & COMPRESS PHOTO TO EXACT-KB PDF (< 50KB / 100KB)
+  // ARTICLE 8: CONVERT & COMPRESS PHOTO TO TARGET-KB PDF (< 50KB / 100KB)
   // =========================================================================
   {
-    id: 'compress-photo-to-exact-kb-pdf',
-    slug: 'convert-and-compress-photo-to-exact-kb-pdf-under-50kb-100kb',
+    id: 'compress-photo-to-target-kb-pdf',
+    slug: 'convert-and-compress-photo-to-target-kb-pdf-under-50kb-100kb',
     number: 8,
     category: 'pdf-print',
     readingTimeMin: 4,
@@ -1039,7 +1039,7 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
     },
     translations: {
       en: {
-        title: 'How to Convert & Compress a Photo to an Exact-KB PDF (< 50KB or 100KB)',
+        title: 'How to Convert & Compress a Photo to a Target-KB PDF (< 50KB or 100KB)',
         metaDescription: 'Convert any JPG or PNG image into a lightweight PDF strictly under 20KB, 50KB, or 100KB in 1 click using our zero-bloat ISO-32000 PDF compiler.',
         excerpt: 'Many portals ask for your ID photo or signature scan in .PDF format under 50 KB—but standard "Print to PDF" tools add 150 KB of font and metadata overhead. Here is the fix.',
         primaryKeywords: ['compress jpg to pdf under 50kb', 'convert photo to pdf exact kb size', 'reduce pdf size to 50kb online', 'image to pdf under 100kb'],
@@ -1056,11 +1056,11 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
           }
         ],
         proTip: 'Set your Max KB in Step 2 (e.g., 50 KB), then click "Download as PDF (≤ 50 KB)" in Step 3!',
-        ctaButtonLabel: 'Convert Photo to Exact-KB PDF (≤ 50 KB) →',
+        ctaButtonLabel: 'Convert Photo to Target-KB PDF (≤ 50 KB) →',
         faqs: [
           {
             question: 'Why does my 40KB JPG become 200KB when saved as a PDF on my computer?',
-            answer: 'OS PDF printers re-compress the image and attach heavy ICC color profiles. Our Exact-KB PDF compiler wraps the raw compressed JPEG stream with less than 1.5 KB of header bytes.'
+            answer: 'OS PDF printers re-compress the image and attach heavy ICC color profiles. Our CompressPhoto PDF compiler wraps the raw compressed JPEG stream with less than 1.5 KB of header bytes.'
           }
         ]
       },
@@ -1275,9 +1275,9 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
   // =========================================================================
   {
     id: 'jpeg-vs-webp-vs-png-compression',
-    slug: 'compress-jpeg-vs-webp-vs-png-exact-kb-binary-search',
+    slug: 'compress-jpeg-vs-webp-vs-png-target-kb-binary-search',
     number: 10,
-    category: 'exact-kb',
+    category: 'target-kb',
     readingTimeMin: 5,
     presetId: 'custom',
     targetKb: 30,
@@ -1559,7 +1559,7 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
     id: 'why-photo-upload-rejected-7-mistakes',
     slug: 'why-is-my-photo-rejected-on-upload-7-common-mistakes-fixed',
     number: 12,
-    category: 'exact-kb',
+    category: 'target-kb',
     readingTimeMin: 5,
     presetId: 'schengen-35x45',
     targetKb: 50,
@@ -1598,7 +1598,7 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
           },
           {
             heading: 'Why Does My Photo Size Sometimes Increase After Editing?',
-            body: 'If you crop or re-save a compressed JPEG in a basic phone gallery app, the app often re-encodes it at 95–100% quality or saves it as an uncompressed PNG—making a 40 KB file jump to 300 KB. Always run the Exact-KB Compressor as your final step before uploading.'
+            body: 'If you crop or re-save a compressed JPEG in a basic phone gallery app, the app often re-encodes it at 95–100% quality or saves it as an uncompressed PNG—making a 40 KB file jump to 300 KB. Always run CompressPhoto as your final step before uploading.'
           }
         ],
         proTip: 'If a portal requires a file "between 20 KB and 50 KB", pick the 30 KB or 50 KB button in Step 2 so your file lands around 28 KB or 48 KB—safely inside both limits.',
@@ -1882,7 +1882,7 @@ export const PHOTO_SEO_ARTICLES: PhotoSeoArticle[] = [
     id: 'compress-photo-on-iphone-android-without-uploading',
     slug: 'how-to-compress-photo-on-iphone-and-android-offline-without-uploading',
     number: 14,
-    category: 'exact-kb',
+    category: 'target-kb',
     readingTimeMin: 5,
     presetId: 'schengen-35x45',
     targetKb: 50,

@@ -1,4 +1,4 @@
-export type AtelierPage = 'exactkb' | 'qr' | 'blog' | 'about' | 'privacy' | 'legal' | 'contact';
+export type AtelierPage = 'compress' | 'converter' | 'qr' | 'blog' | 'about' | 'privacy' | 'legal' | 'contact';
 
 export type LocaleCode = 'en' | 'fr' | 'es' | 'ar';
 
@@ -221,7 +221,7 @@ export interface SeoRoute {
   keyword: string;
   title: string;
   metaDescription: string;
-  targetTool: 'exactkb' | 'qr';
+  targetTool: 'compress' | 'converter' | 'qr';
   presetId?: BiometricPresetId;
   targetKb?: number;
   qrPayloadType?: QRPayloadType;

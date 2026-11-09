@@ -4,7 +4,7 @@
  */
 
 import React, { Suspense, lazy, useCallback, useEffect, useState } from 'react';
-import { Camera, Moon, QrCode, Sun } from 'lucide-react';
+import { Camera, Moon, QrCode, RefreshCw, Sun } from 'lucide-react';
 import {
   AtelierPage,
   BiometricPresetId,
@@ -15,13 +15,17 @@ import {
   LOCALIZED_ROUTE_META,
   TRANSLATIONS
 } from './data/seoRoutesAndTranslations';
-import {
-  getToolLandingBySlug
-} from './data/toolLandingPages';
-import { ExactKbLabPage } from './components/ExactKbLabPage';
+import { getToolLandingBySlug } from './data/toolLandingPages';
+import { getConverterRouteBySlug } from './data/converterRoutes';
+import { CompressPhotoLabPage } from './components/CompressPhotoLabPage';
 import { CustomAtelierCursor } from './components/CustomAtelierCursor';
 import { ProFeatureId, ProStudioFooter } from './components/ProStudioFooter';
 
+const ImageConverterPage = lazy(() =>
+  import('./components/ImageConverterPage').then((m) => ({
+    default: m.ImageConverterPage
+  }))
+);
 const QrPrintshopPage = lazy(() =>
   import('./components/QrPrintshopPage').then((m) => ({
     default: m.QrPrintshopPage
@@ -53,8 +57,10 @@ export function getBasePathForPage(
   blogSlug?: string | null
 ): string {
   switch (page) {
-    case 'exactkb':
+    case 'compress':
       return toolSlug ? `/${toolSlug}` : '/';
+    case 'converter':
+      return toolSlug ? `/${toolSlug}` : '/image-converter';
     case 'qr':
       return '/qr';
     case 'blog':
@@ -85,7 +91,7 @@ export function getLocalizedPath(
 
 function parseLocationRoute(): ParsedRoute {
   if (typeof window === 'undefined') {
-    return { locale: 'en', page: 'exactkb', toolSlug: null, blogSlug: null };
+    return { locale: 'en', page: 'compress', toolSlug: null, blogSlug: null };
   }
 
   let rawPath = window.location.pathname.replace(/\/+$/, '') || '/';
@@ -121,6 +127,13 @@ function parseLocationRoute(): ParsedRoute {
         locale: detectedLocale,
         page: 'qr',
         toolSlug: null,
+        blogSlug: null
+      };
+    if (rawHash === 'image-converter')
+      return {
+        locale: detectedLocale,
+        page: 'converter',
+        toolSlug: 'image-converter',
         blogSlug: null
       };
     if (rawHash === 'blog')
@@ -220,13 +233,25 @@ function parseLocationRoute(): ParsedRoute {
       blogSlug: null
     };
 
-  // Check if rawPath matches one of the Dedicated Tool Landing Pages
   const cleanCandidateSlug = rawPath.replace(/^\/+/, '');
+
+  // Check if rawPath matches one of the 23 Image Converter Routes
+  const matchedConverter = getConverterRouteBySlug(cleanCandidateSlug);
+  if (matchedConverter) {
+    return {
+      locale: detectedLocale,
+      page: 'converter',
+      toolSlug: matchedConverter.slug,
+      blogSlug: null
+    };
+  }
+
+  // Check if rawPath matches one of the Dedicated Compressor Tool Landing Pages
   const matchedTool = getToolLandingBySlug(cleanCandidateSlug);
   if (matchedTool) {
     return {
       locale: detectedLocale,
-      page: 'exactkb',
+      page: 'compress',
       toolSlug: matchedTool.slug,
       blogSlug: null
     };
@@ -234,7 +259,7 @@ function parseLocationRoute(): ParsedRoute {
 
   return {
     locale: detectedLocale,
-    page: 'exactkb',
+    page: 'compress',
     toolSlug: null,
     blogSlug: null
   };
@@ -254,10 +279,10 @@ export default function App() {
 
   // Studio Calibration & Cross-Tool Bridge State
   const initialLanding = getToolLandingBySlug(initialRoute.toolSlug);
-  const [exactKbPreset, setExactKbPreset] = useState<BiometricPresetId>(
+  const [compressPreset, setCompressPreset] = useState<BiometricPresetId>(
     initialLanding ? initialLanding.presetId : 'schengen-35x45'
   );
-  const [exactKbTarget, setExactKbTarget] = useState<number>(
+  const [compressTargetKb, setCompressTargetKb] = useState<number>(
     initialLanding ? initialLanding.targetKb : 50
   );
   const [bridgedQrDataUrl, setBridgedQrDataUrl] = useState<string | null>(null);
@@ -315,7 +340,6 @@ export default function App() {
     }
     canonicalEl.setAttribute('href', selfCanonicalUrl);
 
-    // Sync hreflang alternate links pointing to real subdirectory URLs (/fr/..., /es/..., /ar/...)
     const enUrl = `${SITE_ORIGIN}${getLocalizedPath('en', activePage, activeToolSlug, activeBlogSlug)}`;
     const frUrl = `${SITE_ORIGIN}${getLocalizedPath('fr', activePage, activeToolSlug, activeBlogSlug)}`;
     const esUrl = `${SITE_ORIGIN}${getLocalizedPath('es', activePage, activeToolSlug, activeBlogSlug)}`;
@@ -349,11 +373,21 @@ export default function App() {
     // Blog page manages its own dynamic localized hub/article title & description
     if (activePage !== 'blog') {
       const toolLanding =
-        activePage === 'exactkb' ? getToolLandingBySlug(activeToolSlug) : null;
+        activePage === 'compress' ? getToolLandingBySlug(activeToolSlug) : null;
+      const converterRoute =
+        activePage === 'converter'
+          ? getConverterRouteBySlug(activeToolSlug || 'image-converter')
+          : null;
+
       const meta = toolLanding
         ? {
             title: toolLanding.title[locale],
             description: toolLanding.metaDescription[locale]
+          }
+        : converterRoute
+        ? {
+            title: converterRoute.title,
+            description: converterRoute.metaDescription
           }
         : LOCALIZED_ROUTE_META[locale][activePage];
 
@@ -386,7 +420,12 @@ export default function App() {
       blogSlug: string | null = null,
       toolSlug: string | null = null
     ) => {
-      const nextToolSlug = page === 'exactkb' ? toolSlug : null;
+      const nextToolSlug =
+        page === 'compress'
+          ? toolSlug
+          : page === 'converter'
+          ? toolSlug || 'image-converter'
+          : null;
       const nextBlogSlug = page === 'blog' ? blogSlug : null;
       const targetUrl = getLocalizedPath(
         locale,
@@ -405,11 +444,11 @@ export default function App() {
       setActiveToolSlug(nextToolSlug);
       setActiveBlogSlug(nextBlogSlug);
 
-      if (nextToolSlug) {
+      if (page === 'compress' && nextToolSlug) {
         const landing = getToolLandingBySlug(nextToolSlug);
         if (landing) {
-          setExactKbPreset(landing.presetId);
-          setExactKbTarget(landing.targetKb);
+          setCompressPreset(landing.presetId);
+          setCompressTargetKb(landing.targetKb);
         }
       }
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -440,11 +479,11 @@ export default function App() {
     navigateToPage('qr');
   };
 
-  const handleSendQrToExactKb = (pngDataUrl: string) => {
+  const handleSendQrToCompressor = (pngDataUrl: string) => {
     setBridgedQrDataUrl(pngDataUrl);
-    setExactKbPreset('custom');
-    setExactKbTarget(20);
-    navigateToPage('exactkb', null, null);
+    setCompressPreset('custom');
+    setCompressTargetKb(20);
+    navigateToPage('compress', null, null);
   };
 
   const handleLaunchPresetFromBlog = (
@@ -452,9 +491,9 @@ export default function App() {
     targetKb: number
   ) => {
     setBridgedQrDataUrl(null);
-    setExactKbPreset(presetId);
-    setExactKbTarget(targetKb);
-    navigateToPage('exactkb', null, null);
+    setCompressPreset(presetId);
+    setCompressTargetKb(targetKb);
+    navigateToPage('compress', null, null);
   };
 
   const langPrefix = locale === 'en' ? '' : `/${locale}`;
@@ -465,16 +504,16 @@ export default function App() {
       lang={locale}
       className="min-h-screen flex flex-col bg-[#ffffff] dark:bg-[#14213d] text-[#14213d] dark:text-[#ffffff] transition-colors"
     >
-      {/* QUINTE DISTRICTS INTERACTIVE CURSOR */}
+      {/* INTERACTIVE CURSOR */}
       <CustomAtelierCursor enabled={true} />
 
-      {/* SIMPLE, CLEAN 3-ZONE TOP NAVBAR */}
+      {/* CLEAN 3-ZONE TOP NAVBAR */}
       <header className="sticky top-0 z-40 bg-[#ffffff]/95 dark:bg-[#14213d]/95 backdrop-blur-xs border-b border-[#14213d]/15 dark:border-[#ffffff]/15">
         <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3 px-4 sm:px-6 py-4">
           {/* Zone 1: Custom Brand Logo + CompressPhoto Title */}
           <a
             href={langPrefix || '/'}
-            onClick={(e) => handleLinkClick(e, 'exactkb', null, null)}
+            onClick={(e) => handleLinkClick(e, 'compress', null, null)}
             className="flex items-center gap-2.5 whitespace-nowrap shrink-0 group"
           >
             <div className="w-9 h-9 rounded-lg bg-[#14213d] dark:bg-[#ffffff] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
@@ -523,25 +562,40 @@ export default function App() {
             </span>
           </a>
 
-          {/* Zone 2: Clear 2-Tool Switcher in Navbar */}
-          <nav aria-label="Primary Tools" className="flex items-center gap-2">
+          {/* Zone 2: Primary Tools Switcher in Navbar */}
+          <nav aria-label="Primary Tools" className="flex items-center gap-1.5 sm:gap-2">
             <a
               href={langPrefix || '/'}
-              onClick={(e) => handleLinkClick(e, 'exactkb', null, null)}
-              className={`px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap shrink-0 cursor-pointer ${
-                activePage === 'exactkb'
+              onClick={(e) => handleLinkClick(e, 'compress', null, null)}
+              className={`px-3 sm:px-3.5 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                activePage === 'compress'
                   ? 'bg-[#fca311] text-[#14213d] shadow-xs'
                   : 'hover:bg-[#fca311]/15'
               }`}
             >
               <Camera className="w-4 h-4" />
-              <span>{t.navExactKb}</span>
+              <span>{t.navCompress}</span>
+            </a>
+
+            <a
+              href={`${langPrefix}/image-converter`}
+              onClick={(e) =>
+                handleLinkClick(e, 'converter', null, 'image-converter')
+              }
+              className={`px-3 sm:px-3.5 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                activePage === 'converter'
+                  ? 'bg-[#fca311] text-[#14213d] shadow-xs'
+                  : 'hover:bg-[#fca311]/15'
+              }`}
+            >
+              <RefreshCw className="w-4 h-4" />
+              <span>{t.navConverter}</span>
             </a>
 
             <a
               href={`${langPrefix}/qr`}
               onClick={(e) => handleLinkClick(e, 'qr')}
-              className={`px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+              className={`px-3 sm:px-3.5 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                 activePage === 'qr'
                   ? 'bg-[#fca311] text-[#14213d] shadow-xs'
                   : 'hover:bg-[#fca311]/15'
@@ -608,16 +662,16 @@ export default function App() {
 
       {/* MAIN PAGE ROUTER */}
       <main className="flex-1">
-        {activePage === 'exactkb' && (
-          <ExactKbLabPage
+        {activePage === 'compress' && (
+          <CompressPhotoLabPage
             locale={locale}
             activeToolSlug={activeToolSlug}
-            initialPresetId={exactKbPreset}
-            initialTargetKb={exactKbTarget}
+            initialPresetId={compressPreset}
+            initialTargetKb={compressTargetKb}
             bridgedQrDataUrl={bridgedQrDataUrl}
             proFeatureTrigger={proFeatureTrigger}
             onClearBridgedQr={() => setBridgedQrDataUrl(null)}
-            onSelectToolSlug={(slug) => navigateToPage('exactkb', null, slug)}
+            onSelectToolSlug={(slug) => navigateToPage('compress', null, slug)}
             onSelectBlogSlug={(slug) => navigateToPage('blog', slug, null)}
           />
         )}
@@ -629,11 +683,25 @@ export default function App() {
             </div>
           }
         >
+          {activePage === 'converter' && (
+            <ImageConverterPage
+              locale={locale}
+              converterSlug={activeToolSlug || 'image-converter'}
+              onSelectConverterRoute={(slug) =>
+                navigateToPage('converter', null, slug)
+              }
+              onSelectCompressorTool={(toolSlug, targetKb) => {
+                if (targetKb) setCompressTargetKb(targetKb);
+                navigateToPage('compress', null, toolSlug);
+              }}
+            />
+          )}
+
           {activePage === 'qr' && (
             <QrPrintshopPage
               locale={locale}
               initialPayloadType={qrPayloadType}
-              onSendQrToExactKb={handleSendQrToExactKb}
+              onSendQrToCompressor={handleSendQrToCompressor}
             />
           )}
 
@@ -675,8 +743,8 @@ export default function App() {
         }}
         onNavigate={handleLinkClick}
         onActivateProFeature={(featureId) => {
-          if (activePage !== 'exactkb') {
-            navigateToPage('exactkb', null, activeToolSlug);
+          if (activePage !== 'compress') {
+            navigateToPage('compress', null, activeToolSlug);
           }
           setProFeatureTrigger({ id: featureId, tick: Date.now() });
         }}
